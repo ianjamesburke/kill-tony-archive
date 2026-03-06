@@ -33,6 +33,7 @@ ROOT = Path(__file__).parent.parent
 load_dotenv(ROOT / ".env")
 
 MODEL = "gemini-3-flash-preview"
+GUEST_MODEL = "gemini-3.1-flash-lite-preview"  # cheap model for title parsing
 CHUNK_MINUTES = 20
 OVERLAP_MINUTES = 3
 AUDIO_CACHE_DIR = Path(__file__).parent / "audio_cache"
@@ -255,6 +256,53 @@ def get_youtube_info(url: str) -> dict:
         "comment_count": info.get("comment_count"),
         "upload_date": info.get("upload_date"),
     }
+
+
+# ---------------------------------------------------------------------------
+# Guest extraction from YouTube title (NOT from transcript)
+# ---------------------------------------------------------------------------
+
+GUEST_EXTRACT_PROMPT = """Extract the guest names from this Kill Tony episode title.
+Return ONLY a JSON array of properly capitalized guest names.
+
+Rules:
+- Kill Tony is hosted by Tony Hinchcliffe with co-host Brian Redban — NEVER include them as guests.
+- If someone is playing a character, use format "Real Name (as Character)" e.g. "Adam Ray (as Dr. Phil)".
+- Fix any ALL-CAPS to proper title case.
+- If there are no guests, return an empty array [].
+
+Title: {title}"""
+
+
+def extract_guests_from_title(client: genai.Client, title: str) -> list[str]:
+    """Use a light Gemini pass on the YouTube title to extract guest names.
+
+    Guests are derived EXCLUSIVELY from the episode title, never from
+    transcript content, to avoid false positives (e.g. a comedian being
+    mentioned in conversation but not actually on the panel).
+    """
+    prompt = GUEST_EXTRACT_PROMPT.format(title=title)
+    try:
+        resp = client.models.generate_content(
+            model=GUEST_MODEL,
+            contents=prompt,
+            config={"response_mime_type": "application/json"},
+        )
+        guests = json.loads(resp.text)
+        if isinstance(guests, list):
+            log.info(f"  Guests from title: {guests}")
+            return [g.strip() for g in guests if isinstance(g, str) and g.strip()]
+    except Exception as e:
+        log.warning(f"  Guest extraction from title failed: {e}")
+
+    # Fallback: simple regex split on + / , delimiters after the episode number
+    log.info("  Falling back to regex guest extraction from title")
+    match = re.search(r'#\d+\s*[-–—]\s*(.+)', title)
+    if match:
+        raw = match.group(1)
+        names = re.split(r'\s*[+,]\s*', raw)
+        return [n.strip().title() for n in names if n.strip()]
+    return []
 
 
 # ---------------------------------------------------------------------------
@@ -580,7 +628,7 @@ def compute_laughter_pct(transcript: list[dict]) -> float:
 # SQLite storage
 # ---------------------------------------------------------------------------
 
-def save_episode(yt_info: dict, transcript: list[dict], analysis: dict):
+def save_episode(yt_info: dict, transcript: list[dict], analysis: dict, guests: list[str]):
     episode_number = yt_info["episode_number"]
     ep_data = analysis.get("episode", {})
     laugh_count = compute_laugh_count(transcript)
@@ -603,7 +651,7 @@ def save_episode(yt_info: dict, transcript: list[dict], analysis: dict):
             ep_data.get("venue"),
             f"https://www.youtube.com/watch?v={yt_info['video_id']}",
             yt_info["video_id"],
-            json.dumps(ep_data.get("guests", [])),
+            json.dumps(guests),  # from title extraction, NOT transcript
             laugh_count,
             laughter_pct,
             yt_info.get("view_count"),
@@ -711,6 +759,10 @@ def process_episode(client: genai.Client, ep: dict):
     yt_info = get_youtube_info(url)
     log.info(f"  Views: {yt_info.get('view_count', 'N/A'):,} | Likes: {yt_info.get('like_count', 'N/A'):,} | Comments: {yt_info.get('comment_count', 'N/A'):,}")
 
+    # Extract guests from YouTube title (NOT from transcript content)
+    log.info("Extracting guests from title...")
+    guests = extract_guests_from_title(client, ep.get("title", ""))
+
     # Download and chunk audio
     chunk_paths, chunk_offsets = get_audio_chunks(url, episode_number)
 
@@ -721,7 +773,7 @@ def process_episode(client: genai.Client, ep: dict):
     analysis = pass2_analyze(client, transcript, episode_number)
 
     # Save to SQLite
-    save_episode(yt_info, transcript, analysis)
+    save_episode(yt_info, transcript, analysis, guests)
 
     # Summary
     sets = analysis.get("sets", [])

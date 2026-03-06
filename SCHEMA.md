@@ -87,10 +87,10 @@
 | kill_score | float | See formula below |
 | joke_density | float | joke_count / set_duration_seconds |
 
-## Kill Score Formula
+## Set Kill Score Formula
 
 ```
-kill_score = (
+set_kill_score = (
     tony_praise_level * 2        # 2-10 points
     + crowd_reaction_score        # 0-4 (silence=0, light=1, moderate=2, big_laughs=3, roaring=4)
     + joke_book_score             # 0-3 (none=0, small=1, medium=2, large=3)
@@ -99,3 +99,17 @@ kill_score = (
     + sign_up_again * 2           # bonus
 )
 ```
+
+Theoretical max: 29. Set ranking uses tiebreakers: crowd_reaction ordinal DESC, then joke_density DESC.
+
+## Episode Kill Score Formula
+
+```
+episode_kill_score = (avg_set_kill_score / 29) * 70 + (laughter_pct / 100) * 30
+```
+
+Scale: 0-100. Components:
+- **70%** from average set kill score (normalized against theoretical max of 29)
+- **30%** from laughter percentage (% of episode runtime with crowd laughter/applause)
+
+Episode rank is computed from episode_kill_score DESC across all indexed episodes.

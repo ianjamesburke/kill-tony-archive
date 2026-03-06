@@ -26,6 +26,7 @@ from batch_processor import (
     TRANSCRIPTS_DIR,
     compute_kill_score,
     save_episode,
+    extract_guests_from_title,
     init_db,
 )
 
@@ -181,8 +182,11 @@ def main():
             "upload_date": row["upload_date"],
         }
 
+        # Keep existing guests from DB (already title-derived)
+        existing_guests = json.loads(row["guests"]) if row["guests"] else []
+
         init_db()
-        save_episode(yt_info, transcript, analysis)
+        save_episode(yt_info, transcript, analysis, existing_guests)
         print(f"\nDatabase updated for episode #{args.episode}")
 
 

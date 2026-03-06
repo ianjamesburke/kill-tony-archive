@@ -2,10 +2,17 @@
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
+
+	function formatViews(n: number | null): string {
+		if (n == null) return '—';
+		if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + 'M';
+		if (n >= 1_000) return (n / 1_000).toFixed(0) + 'K';
+		return n.toLocaleString();
+	}
 </script>
 
 <svelte:head>
-	<title>Episodes — Kill Tony DB</title>
+	<title>Kill Tony DB</title>
 </svelte:head>
 
 <div class="section">
@@ -19,7 +26,12 @@
 	<div class="ep-list">
 		{#each data.episodes as ep}
 			<a href="/episodes/{ep.episode_number}" class="ep-row">
-				<div class="ep-num">#{ep.episode_number}</div>
+				<div class="ep-left">
+					{#if ep.episode_rank != null}
+						<div class="ep-rank">#{ep.episode_rank}</div>
+					{/if}
+					<div class="ep-num">#{ep.episode_number}</div>
+				</div>
 				<div class="ep-info">
 					<div class="ep-info-top">
 						{#if ep.date}
@@ -39,13 +51,29 @@
 				</div>
 				<div class="ep-stats">
 					<div class="ep-stat">
+						<span class="ep-stat-label">Kill Score</span>
+						<span class="ep-stat-val score">{ep.episode_kill_score ?? '—'}</span>
+					</div>
+					<div class="ep-stat">
 						<span class="ep-stat-label">Sets</span>
 						<span class="ep-stat-val">{ep.set_count}</span>
 					</div>
 					<div class="ep-stat">
-						<span class="ep-stat-label">Avg Score</span>
-						<span class="ep-stat-val score">{ep.avg_kill_score ?? '—'}</span>
+						<span class="ep-stat-label">Avg Set</span>
+						<span class="ep-stat-val">{ep.avg_kill_score ?? '—'}</span>
 					</div>
+					{#if ep.laughter_pct != null && ep.laughter_pct > 0}
+						<div class="ep-stat">
+							<span class="ep-stat-label">Laugh %</span>
+							<span class="ep-stat-val">{ep.laughter_pct.toFixed(1)}%</span>
+						</div>
+					{/if}
+					{#if ep.view_count}
+						<div class="ep-stat">
+							<span class="ep-stat-label">Views</span>
+							<span class="ep-stat-val">{formatViews(ep.view_count)}</span>
+						</div>
+					{/if}
 				</div>
 			</a>
 		{/each}
@@ -61,7 +89,7 @@
 
 	.ep-row {
 		display: grid;
-		grid-template-columns: 80px 1fr 180px;
+		grid-template-columns: 100px 1fr auto;
 		align-items: center;
 		gap: 20px;
 		padding: 18px 20px;
@@ -78,6 +106,21 @@
 	.ep-row:hover {
 		border-color: var(--bh);
 		background: var(--raised);
+	}
+
+	.ep-left {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2px;
+	}
+
+	.ep-rank {
+		font-family: var(--mono);
+		font-size: 10px;
+		font-weight: 600;
+		color: var(--red);
+		letter-spacing: 0.5px;
 	}
 
 	.ep-num {

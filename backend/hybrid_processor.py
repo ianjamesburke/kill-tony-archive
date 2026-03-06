@@ -499,6 +499,15 @@ def main():
     save_episode(yt_info, transcript, analysis)
     log.info(f"Database updated for episode #{episode_number}")
 
+    # Pass 3: Laughter detection (YAMNet)
+    try:
+        from crowd_reaction_detector import process_episode as detect_laughter
+        log.info("Pass 3: Detecting laughter with YAMNet...")
+        result = detect_laughter(episode_number)
+        log.info(f"Laughter: {result['total_laughter_seconds']:.1f}s total ({result['frame_count']} frames)")
+    except Exception as e:
+        log.warning(f"Laughter detection failed (non-fatal): {e}")
+
     # Update episodes.json status
     for e in episodes:
         if e["episode_number"] == episode_number:

@@ -1,4 +1,4 @@
-import { fetchEpisode } from '$lib/api';
+import { fetchEpisode, fetchLaughterTimeline } from '$lib/api';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
@@ -9,10 +9,14 @@ export const load: PageServerLoad = async ({ params }) => {
 	}
 
 	try {
-		const data = await fetchEpisode(epNum);
+		const [data, laughterTimeline] = await Promise.all([
+			fetchEpisode(epNum),
+			fetchLaughterTimeline(epNum)
+		]);
 		return {
 			episode: data.episode,
-			sets: data.sets
+			sets: data.sets,
+			laughterTimeline
 		};
 	} catch {
 		error(404, `Episode #${epNum} not found`);

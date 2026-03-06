@@ -12,6 +12,7 @@ from database import (
     get_episodes,
     get_guest_detail,
     get_guest_stats,
+    get_laughter_timeline,
     get_set,
     get_sets,
     get_stats,
@@ -128,6 +129,14 @@ def guest_detail(guest_name: str) -> dict[str, Any]:
     if not g:
         raise HTTPException(status_code=404, detail="Guest not found")
     return g
+
+
+@app.get("/api/episodes/{episode_number}/laughter-timeline")
+def laughter_timeline(episode_number: int) -> dict[str, Any]:
+    data = get_laughter_timeline(DB_PATH, episode_number)
+    if not data:
+        raise HTTPException(status_code=404, detail="No laughter data for this episode")
+    return data
 
 
 @app.get("/api/crowd-reactions")

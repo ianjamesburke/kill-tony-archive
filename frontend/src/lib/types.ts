@@ -22,6 +22,11 @@ export interface Episode {
 	processed_at: string | null;
 	set_count: number;
 	avg_kill_score: number | null;
+	episode_kill_score: number | null;
+	episode_rank: number | null;
+	total_episodes: number | null;
+	laughter_pct: number | null;
+	episode_summary: string | null;
 }
 
 export interface ComedySet {
@@ -50,6 +55,8 @@ export interface ComedySet {
 	guests: string[];
 	venue: string | null;
 	date: string | null;
+	set_rank: number | null;
+	total_sets: number | null;
 }
 
 export interface SetsResponse {
@@ -114,4 +121,26 @@ export interface GuestDetail {
 export interface CrowdReaction {
 	crowd_reaction: string;
 	count: number;
+}
+
+export interface LaughterTimelinePoint {
+	t: number;
+	v: number;
+}
+
+export interface LaughterSetMarker {
+	set_id: string;
+	set_number: number;
+	comedian_name: string;
+	start: number;
+	end: number;
+	status: string;
+}
+
+export interface LaughterTimeline {
+	episode_number: number;
+	bucket_seconds: number;
+	total_laughter_seconds: number | null;
+	timeline: LaughterTimelinePoint[];
+	sets: LaughterSetMarker[];
 }

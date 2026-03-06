@@ -18,10 +18,11 @@
 	let expanded = $state(false);
 
 	function formatTime(seconds: number | null): string {
-		if (seconds == null) return '—';
-		const m = Math.floor(seconds / 60);
+		if (seconds == null) return '00:00:00';
+		const h = Math.floor(seconds / 3600);
+		const m = Math.floor((seconds % 3600) / 60);
 		const s = Math.floor(seconds % 60);
-		return `${m}:${s.toString().padStart(2, '0')}`;
+		return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
 	}
 
 	function crowdClass(reaction: string | null): string {
@@ -42,6 +43,14 @@
 		if (status === 'regular') return 'Regular';
 		return status;
 	}
+
+	function shortStatus(status: string): string {
+		if (status === 'bucket_pull') return 'Bucket';
+		if (status === 'regular') return 'Regular';
+		return status;
+	}
+
+	const scoreBarWidth = $derived(((set.kill_score ?? 0) / 29) * 100);
 </script>
 
 <div class="set-card" class:expanded>
@@ -51,12 +60,9 @@
 			<button
 				class="set-timecode"
 				class:clickable={!!onJumpTo}
-				onclick={(e: MouseEvent) => { e.stopPropagation(); onJumpTo?.(); }}
-				title={onJumpTo ? 'Jump to this set in the video' : ''}
+				onclick={(e) => { e.stopPropagation(); onJumpTo?.(); }}
 			>
-				{#if onJumpTo}
-					<span class="play-icon">&#9654;</span>
-				{/if}
+				{#if onJumpTo}<svg class="play-icon" viewBox="0 0 10 12" fill="currentColor"><polygon points="0,0 10,6 0,12"/></svg>{/if}
 				{formatTime(set.set_start_seconds)}
 			</button>
 		{/if}
@@ -71,10 +77,10 @@
 				{/if}
 			</div>
 			<div class="set-meta">
-				<span class="set-status">{statusLabel(set.status)}</span>
+				<span class="set-status">{shortStatus(set.status)}</span>
 				{#if set.topic_tags.length > 0}
 					<span class="set-topics">
-						{#each set.topic_tags as tag}
+						{#each set.topic_tags.slice(0, 3) as tag}
 							<span class="topic-tag">{tag}</span>
 						{/each}
 					</span>
@@ -84,14 +90,41 @@
 		<div class="set-crowd {crowdClass(set.crowd_reaction)}">
 			{formatReaction(set.crowd_reaction)}
 		</div>
-		<div class="set-score">
-			{set.kill_score ?? '—'}
+		<div class="set-score-col">
+			<div class="score-row">
+				<div class="score-bar-bg">
+					<div
+						class="score-bar-fill"
+						style="width: {scoreBarWidth.toFixed(0)}%"
+					></div>
+				</div>
+				<span class="score-num">{set.kill_score ?? '—'}</span>
+			</div>
+			{#if set.set_rank != null}
+				<span class="set-rank-badge">#{set.set_rank}</span>
+			{/if}
 		</div>
 		<div class="set-expand">{expanded ? '−' : '+'}</div>
 	</button>
 
 	{#if expanded}
 		<div class="set-detail">
+			{#if (!showTimecode && (onJumpTo || set.set_start_seconds != null)) || set.date}
+				<div class="detail-top-row">
+					{#if !showTimecode && onJumpTo}
+						<button class="jump-btn" onclick={(e) => { e.stopPropagation(); onJumpTo?.(); }}>
+							<svg class="play-icon" viewBox="0 0 10 12" fill="currentColor"><polygon points="0,0 10,6 0,12"/></svg>
+							{formatTime(set.set_start_seconds)}
+						</button>
+					{:else if !showTimecode && set.set_start_seconds != null}
+						<div class="timecode-label">{formatTime(set.set_start_seconds)}</div>
+					{/if}
+					{#if set.date}
+						<div class="detail-date">{set.date}</div>
+					{/if}
+				</div>
+			{/if}
+
 			<div class="detail-grid">
 				<div class="detail-col">
 					<div class="detail-label">Tony Praise</div>
@@ -154,10 +187,10 @@
 
 	.set-header {
 		display: grid;
-		grid-template-columns: 40px 1fr 120px 60px 30px;
+		grid-template-columns: 40px 1fr 120px 110px 30px;
 		align-items: center;
 		gap: 12px;
-		padding: 16px 20px;
+		padding: 12px 20px;
 		width: 100%;
 		background: none;
 		border: none;
@@ -168,36 +201,37 @@
 	}
 
 	.set-header.has-timecode {
-		grid-template-columns: 40px 70px 1fr 120px 60px 30px;
+		grid-template-columns: 40px auto 1fr 120px 110px 30px;
 	}
 
 	.set-timecode {
 		font-family: var(--mono);
-		font-size: 12px;
+		font-size: 11px;
 		color: var(--muted);
 		background: none;
 		border: none;
 		padding: 0;
 		cursor: default;
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 		gap: 4px;
-		font-family: var(--mono);
+		width: fit-content;
 	}
 
 	.set-timecode.clickable {
 		cursor: pointer;
-		color: var(--t2);
-		transition: color 0.15s;
+		color: var(--red);
+		background: var(--red-d);
+		border: 1px solid rgba(220, 38, 38, 0.25);
+		padding: 4px 8px;
+		border-radius: 5px;
+		font-weight: 600;
+		transition: background 0.15s, border-color 0.15s;
 	}
 
 	.set-timecode.clickable:hover {
-		color: var(--red);
-	}
-
-	.play-icon {
-		font-size: 9px;
-		color: var(--red);
+		background: rgba(220, 38, 38, 0.15);
+		border-color: rgba(220, 38, 38, 0.4);
 	}
 
 	.set-header:hover {
@@ -217,11 +251,12 @@
 	}
 
 	.set-name {
-		font-size: 15px;
+		font-size: 14px;
 		font-weight: 600;
 		display: flex;
 		align-items: center;
 		gap: 8px;
+		flex-wrap: wrap;
 	}
 
 	.set-ep-link {
@@ -251,8 +286,8 @@
 	.set-meta {
 		display: flex;
 		align-items: center;
-		gap: 8px;
-		margin-top: 4px;
+		gap: 6px;
+		margin-top: 3px;
 		flex-wrap: wrap;
 	}
 
@@ -279,13 +314,49 @@
 		text-align: center;
 	}
 
-	.set-score {
+	/* Score column with bar */
+	.set-score-col {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 3px;
+	}
+
+	.score-row {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.score-bar-bg {
+		width: 44px;
+		height: 4px;
+		background: var(--dim2);
+		border-radius: 2px;
+		overflow: hidden;
+	}
+
+	.score-bar-fill {
+		height: 100%;
+		background: var(--red);
+		border-radius: 2px;
+	}
+
+	.score-num {
 		font-family: var(--mono);
-		font-size: 18px;
+		font-size: 16px;
 		font-weight: 700;
 		color: var(--red);
+		min-width: 24px;
 		text-align: right;
 		letter-spacing: -0.5px;
+	}
+
+	.set-rank-badge {
+		font-family: var(--mono);
+		font-size: 9px;
+		font-weight: 600;
+		color: var(--muted);
 	}
 
 	.set-expand {
@@ -295,16 +366,63 @@
 		text-align: center;
 	}
 
+	/* Expanded detail */
 	.set-detail {
 		padding: 0 20px 20px 72px;
 		border-top: 1px solid var(--border);
+	}
+
+	.detail-top-row {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		padding: 16px 0 0;
+	}
+
+	.jump-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		font-family: var(--mono);
+		font-size: 12px;
+		font-weight: 600;
+		color: var(--red);
+		background: var(--red-d);
+		border: 1px solid rgba(220, 38, 38, 0.25);
+		padding: 6px 14px;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: background 0.15s, border-color 0.15s;
+	}
+
+	.jump-btn:hover {
+		background: rgba(220, 38, 38, 0.15);
+		border-color: rgba(220, 38, 38, 0.4);
+	}
+
+	.play-icon {
+		width: 6px;
+		height: 8px;
+		flex-shrink: 0;
+	}
+
+	.timecode-label {
+		font-family: var(--mono);
+		font-size: 12px;
+		color: var(--muted);
+	}
+
+	.detail-date {
+		font-family: var(--mono);
+		font-size: 11px;
+		color: var(--dim);
 	}
 
 	.detail-grid {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 20px;
-		padding: 20px 0;
+		padding: 16px 0;
 	}
 
 	.detail-col {

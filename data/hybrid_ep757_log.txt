@@ -1,0 +1,41 @@
+13:53:17 [INFO] Processing episode #757: KT #757 - MATT RIFE + JEREMY (ADAM RAY)
+13:53:17 [INFO] Fetching YouTube metadata...
+WARNING: [youtube] No supported JavaScript runtime could be found. Only deno is enabled by default; to use another runtime add  --js-runtimes RUNTIME[:PATH]  to your command/config. YouTube extraction without a JS runtime has been deprecated, and some formats may be missing. See  https://github.com/yt-dlp/yt-dlp/wiki/EJS  for details on installing one
+ERROR: [youtube] h55BVmVQJ-8: Sign in to confirm your age. This video may be inappropriate for some users. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/yt_dlp/YoutubeDL.py", line 1698, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/yt_dlp/YoutubeDL.py", line 1833, in __extract_info
+    ie_result = ie.extract(url)
+                ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/yt_dlp/extractor/common.py", line 765, in extract
+    ie_result = self._real_extract(url)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/yt_dlp/extractor/youtube/_video.py", line 4021, in _real_extract
+    self.raise_no_formats(reason, expected=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/yt_dlp/extractor/common.py", line 1277, in raise_no_formats
+    raise ExtractorError(msg, expected=expected, video_id=video_id)
+yt_dlp.utils.ExtractorError: [youtube] h55BVmVQJ-8: Sign in to confirm your age. This video may be inappropriate for some users. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ianburke/Documents/GitHub/kill-tony-data-project-v1/backend/hybrid_processor.py", line 512, in <module>
+    main()
+  File "/Users/ianburke/Documents/GitHub/kill-tony-data-project-v1/backend/hybrid_processor.py", line 423, in main
+    yt_info = get_youtube_info(url)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ianburke/Documents/GitHub/kill-tony-data-project-v1/backend/hybrid_processor.py", line 114, in get_youtube_info
+    info = ydl.extract_info(url, download=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/yt_dlp/YoutubeDL.py", line 1687, in extract_info
+    return self.__extract_info(url, self.get_info_extractor(key), download, extra_info, process)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/yt_dlp/YoutubeDL.py", line 1716, in wrapper
+    self.report_error(str(e), e.format_traceback())
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/yt_dlp/YoutubeDL.py", line 1154, in report_error
+    self.trouble(f'{self._format_err("ERROR:", self.Styles.ERROR)} {message}', *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/yt_dlp/YoutubeDL.py", line 1093, in trouble
+    raise DownloadError(message, exc_info)
+yt_dlp.utils.DownloadError: ERROR: [youtube] h55BVmVQJ-8: Sign in to confirm your age. This video may be inappropriate for some users. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies

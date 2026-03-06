@@ -111,3 +111,67 @@ INFO: Lightning automatically upgraded your loaded checkpoint from v1.5.4 to v2.
 10:44:54 [INFO]   Diarized in 1114s
 10:44:54 [INFO] Chunk 2/8: transcribing chunk_02_1020s.mp3 (offset 1020s)
 2026-03-06 10:46:25 - whisperx.asr - INFO - Detected language: en (1.00) in first 30s of audio
+10:54:15 [INFO]   Transcribed in 561s (49 segments)
+10:54:49 [INFO]   Aligned in 35s (477 segments)
+11:13:43 [INFO]   Diarized in 1133s
+11:13:43 [INFO] Chunk 3/8: transcribing chunk_03_2040s.mp3 (offset 2040s)
+2026-03-06 11:15:17 - whisperx.asr - INFO - Detected language: en (1.00) in first 30s of audio
+11:22:46 [INFO]   Transcribed in 544s (50 segments)
+11:23:23 [INFO]   Aligned in 37s (489 segments)
+11:42:21 [INFO]   Diarized in 1138s
+11:42:21 [INFO] Chunk 4/8: transcribing chunk_04_3060s.mp3 (offset 3060s)
+2026-03-06 11:43:52 - whisperx.asr - INFO - Detected language: en (0.99) in first 30s of audio
+11:50:36 [INFO]   Transcribed in 495s (52 segments)
+11:51:11 [INFO]   Aligned in 35s (448 segments)
+12:10:03 [INFO]   Diarized in 1132s
+12:10:03 [INFO] Chunk 5/8: transcribing chunk_05_4080s.mp3 (offset 4080s)
+2026-03-06 12:11:41 - whisperx.asr - INFO - Detected language: en (1.00) in first 30s of audio
+12:18:58 [INFO]   Transcribed in 536s (47 segments)
+12:19:34 [INFO]   Aligned in 36s (473 segments)
+12:38:35 [INFO]   Diarized in 1141s
+12:38:35 [INFO] Chunk 6/8: transcribing chunk_06_5100s.mp3 (offset 5100s)
+2026-03-06 12:40:03 - whisperx.asr - INFO - Detected language: en (1.00) in first 30s of audio
+12:46:54 [INFO]   Transcribed in 499s (50 segments)
+12:47:28 [INFO]   Aligned in 34s (492 segments)
+13:06:33 [INFO]   Diarized in 1145s
+13:06:33 [INFO] Chunk 7/8: transcribing chunk_07_6120s.mp3 (offset 6120s)
+2026-03-06 13:08:07 - whisperx.asr - INFO - Detected language: en (1.00) in first 30s of audio
+13:15:37 [INFO]   Transcribed in 544s (54 segments)
+13:16:11 [INFO]   Aligned in 34s (538 segments)
+13:34:52 [INFO]   Diarized in 1120s
+13:34:52 [INFO] Chunk 8/8: transcribing chunk_08_7140s.mp3 (offset 7140s)
+2026-03-06 13:35:49 - whisperx.asr - INFO - Detected language: en (1.00) in first 30s of audio
+13:38:59 [INFO]   Transcribed in 247s (27 segments)
+13:39:17 [INFO]   Aligned in 18s (213 segments)
+13:51:16 [INFO]   Diarized in 719s
+13:51:16 [INFO] Pass 1 complete: 3079 segments (430 dupes removed)
+13:51:16 [INFO] Saved raw WhisperX output: /Users/ianburke/Documents/GitHub/kill-tony-data-project-v1/data/whisperx_cache/ep_756/full_diarized.json
+13:51:16 [INFO] Pass 1.5: Mapping anonymous speakers to names
+13:51:16 [INFO]   Mapping speakers with gemini-3-flash-preview...
+13:51:16 [INFO] AFC is enabled with max remote calls: 10.
+13:51:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent "HTTP/1.1 200 OK"
+13:51:44 [INFO]   Speaker map: {"SPEAKER_00": "redban", "SPEAKER_01": "guest:jim_norton", "SPEAKER_02": "comedian:william_montgomery", "SPEAKER_03": "comedian:zachariah_tippett", "SPEAKER_04": "tony", "SPEAKER_05": "guest:ian_fidance"}
+13:51:44 [INFO]   Guests: ['Jim Norton', 'Ian Fidance']
+13:51:44 [INFO] Saved hybrid transcript: /Users/ianburke/Documents/GitHub/kill-tony-data-project-v1/data/transcripts/ep_756_hybrid.json
+13:51:54 [INFO] Pass 2: Extracting structured set data
+13:51:54 [INFO]   Analyzing with gemini-3-flash-preview (3079 lines)...
+13:51:54 [INFO] AFC is enabled with max remote calls: 10.
+13:53:14 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent "HTTP/1.1 200 OK"
+13:53:14 [INFO] Saved analysis: /Users/ianburke/Documents/GitHub/kill-tony-data-project-v1/data/hybrid_ep756_pass2.json
+13:53:14 [INFO] Episode #756: 13 sets extracted
+13:53:14 [INFO]   #1: William Montgomery (regular) @ 4:40 (49s) kill=14
+13:53:14 [INFO]   #2: Zachariah Tippett (bucket_pull) @ 10:52 (47s) kill=14
+13:53:14 [INFO]   #3: Quentin Jones (bucket_pull) @ 24:48 (62s) kill=13
+13:53:14 [INFO]   #4: C.J. Kizerman (bucket_pull) @ 33:12 (62s) kill=7
+13:53:14 [INFO]   #5: Matt Banwart (bucket_pull) @ 45:10 (67s) kill=2
+13:53:14 [INFO]   #6: Orhan Timur (bucket_pull) @ 54:13 (78s) kill=29
+13:53:14 [INFO]   #7: Dedrick Flynn (regular) @ 67:37 (86s) kill=13
+13:53:14 [INFO]   #8: Nicholas Sapaglia (bucket_pull) @ 73:51 (60s) kill=19
+13:53:14 [INFO]   #9: Kirstie Hayden (bucket_pull) @ 79:24 (68s) kill=11
+13:53:14 [INFO]   #10: Young (regular) @ 88:55 (53s) kill=13
+13:53:14 [INFO]   #11: Jordan McDonald (bucket_pull) @ 97:57 (70s) kill=13
+13:53:14 [INFO]   #12: Joey Johnson (bucket_pull) @ 106:51 (77s) kill=11
+13:53:14 [INFO]   #13: Ari Matti (regular) @ 121:00 (110s) kill=14
+13:53:14 [INFO] Database ready at /Users/ianburke/Documents/GitHub/kill-tony-data-project-v1/data/kill_tony.db
+13:53:14 [INFO] Saved episode #756: 13 sets, 0 laughs
+13:53:14 [INFO] Database updated for episode #756

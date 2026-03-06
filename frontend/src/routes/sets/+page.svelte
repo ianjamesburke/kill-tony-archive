@@ -2,11 +2,14 @@
 	import type { PageData } from './$types';
 	import KillScoreHistogram from '$lib/components/KillScoreHistogram.svelte';
 	import CrowdDistribution from '$lib/components/CrowdDistribution.svelte';
+	import SetCard from '$lib/components/SetCard.svelte';
+	import { goto } from '$app/navigation';
 
 	let { data }: { data: PageData } = $props();
 
 	let searchTerm = $state(data.filters.comedian ?? '');
 	let statusFilter = $state(data.filters.status ?? '');
+	let scoreRangeBin: string | null = $state(null);
 
 	const filteredSets = $derived(() => {
 		let sets = data.sets;
@@ -17,21 +20,17 @@
 		if (statusFilter) {
 			sets = sets.filter((s) => s.status === statusFilter);
 		}
+		if (scoreRangeBin) {
+			const [minStr, maxStr] = scoreRangeBin.split('-');
+			const min = parseInt(minStr, 10);
+			const max = parseInt(maxStr, 10);
+			sets = sets.filter((s) => {
+				const score = s.kill_score ?? 0;
+				return score >= min && score < max;
+			});
+		}
 		return sets;
 	});
-
-	function crowdClass(reaction: string | null): string {
-		if (!reaction) return 'crowd-low';
-		const r = reaction.toLowerCase();
-		if (r.includes('roaring') || r.includes('big')) return 'crowd-high';
-		if (r.includes('moderate') || r.includes('strong')) return 'crowd-mid';
-		return 'crowd-low';
-	}
-
-	function formatReaction(reaction: string | null): string {
-		if (!reaction) return '—';
-		return reaction.replace(/_/g, ' ');
-	}
 
 	const bucketSets = $derived(data.sets.filter((s) => s.status === 'bucket_pull'));
 	const regularSets = $derived(data.sets.filter((s) => s.status === 'regular'));
@@ -48,7 +47,7 @@
 </script>
 
 <svelte:head>
-	<title>Sets — Kill Tony DB</title>
+	<title>Kill Tony DB</title>
 </svelte:head>
 
 <!-- KILL SCORE DISTRIBUTION -->
@@ -59,7 +58,11 @@
 			<div class="s-sub">How scores spread across all {data.total} sets</div>
 		</div>
 	</div>
-	<KillScoreHistogram sets={data.sets} />
+	<KillScoreHistogram
+		sets={data.sets}
+		activeBin={scoreRangeBin}
+		onBinClick={(label) => { scoreRangeBin = label; }}
+	/>
 </div>
 
 <!-- CROWD BREAKDOWN -->
@@ -97,12 +100,19 @@
 	</div>
 </div>
 
-<!-- ALL SETS TABLE -->
+<!-- ALL SETS -->
 <div class="section">
 	<div class="s-header">
 		<div>
 			<div class="s-title">All Sets</div>
-			<div class="s-sub">{filteredSets().length} sets</div>
+			<div class="s-sub">
+				{filteredSets().length} sets{#if scoreRangeBin}
+					<span class="filter-badge">
+						Score {scoreRangeBin}
+						<button class="clear-filter" onclick={() => { scoreRangeBin = null; }}>&times;</button>
+					</span>
+				{/if}
+			</div>
 		</div>
 		<div class="filter-bar">
 			<input
@@ -119,55 +129,17 @@
 		</div>
 	</div>
 
-	<div class="sets-wrap">
-		<table class="sets-table">
-			<thead>
-				<tr>
-					<th style="width: 40px">#</th>
-					<th>Comedian</th>
-					<th>Episode</th>
-					<th>Topics</th>
-					<th>Crowd</th>
-					<th>Status</th>
-					<th style="text-align: right">Kill Score</th>
-				</tr>
-			</thead>
-			<tbody>
-				{#each filteredSets() as s, i}
-					<tr>
-						<td class="td-rank">{i + 1}</td>
-						<td class="td-name">{s.comedian_name}</td>
-						<td>
-							<a href="/episodes/{s.episode_number}" class="td-ep">#{s.episode_number}</a>
-						</td>
-						<td>
-							<div class="td-topics">
-								{#each s.topic_tags.slice(0, 3) as tag}
-									<span class="topic-tag">{tag}</span>
-								{/each}
-							</div>
-						</td>
-						<td>
-							<span class="td-crowd {crowdClass(s.crowd_reaction)}">
-								{formatReaction(s.crowd_reaction)}
-							</span>
-						</td>
-						<td class="td-status">{s.status === 'bucket_pull' ? 'Bucket' : 'Regular'}</td>
-						<td>
-							<div class="score-cell">
-								<div class="score-bar-bg">
-									<div
-										class="score-bar-fill"
-										style="width: {((s.kill_score ?? 0) / 30 * 100).toFixed(0)}%"
-									></div>
-								</div>
-								<span class="td-score">{s.kill_score ?? '—'}</span>
-							</div>
-						</td>
-					</tr>
-				{/each}
-			</tbody>
-		</table>
+	<div class="sets-list">
+		{#each filteredSets() as s, i}
+			<SetCard
+				set={s}
+				rank={i + 1}
+				showEpisode={true}
+				onJumpTo={s.set_start_seconds != null
+					? () => goto(`/episodes/${s.episode_number}#t=${s.set_start_seconds}`)
+					: undefined}
+			/>
+		{/each}
 	</div>
 </div>
 
@@ -253,123 +225,39 @@
 		color: var(--red);
 	}
 
-	.sets-wrap {
-		overflow: hidden;
-		border-radius: 8px;
-		border: 1px solid var(--border);
-	}
-
-	table.sets-table {
-		width: 100%;
-		border-collapse: collapse;
-		font-size: 13px;
-	}
-
-	.sets-table thead tr {
-		background: var(--card);
-		border-bottom: 1px solid var(--bh);
-	}
-
-	.sets-table th {
-		font-family: var(--mono);
-		font-size: 10px;
-		letter-spacing: 1.5px;
-		text-transform: uppercase;
-		color: var(--muted);
-		padding: 12px 16px;
-		text-align: left;
-		font-weight: 600;
-	}
-
-	.sets-table th:last-child {
-		text-align: right;
-	}
-
-	.sets-table td {
-		padding: 12px 16px;
-		border-bottom: 1px solid var(--border);
-		vertical-align: middle;
-	}
-
-	.sets-table tr:last-child td {
-		border-bottom: none;
-	}
-
-	.sets-table tbody tr:hover {
-		background: rgba(255, 255, 255, 0.025);
-	}
-
-	.td-rank {
-		font-family: var(--mono);
-		font-size: 12px;
-		color: var(--dim);
-	}
-
-	.td-name {
-		font-weight: 600;
-	}
-
-	.td-ep {
-		font-family: var(--mono);
-		font-size: 12px;
-		color: var(--muted);
-		text-decoration: none;
-		transition: color 0.15s;
-	}
-
-	.td-ep:hover {
-		color: var(--red);
-	}
-
-	.td-topics {
+	.sets-list {
 		display: flex;
-		gap: 4px;
-		flex-wrap: wrap;
+		flex-direction: column;
+		gap: 2px;
 	}
 
-	.td-crowd {
-		font-family: var(--mono);
-		font-size: 10px;
-		letter-spacing: 0.5px;
-		text-transform: uppercase;
-		font-weight: 600;
-	}
-
-	.td-status {
-		font-family: var(--mono);
-		font-size: 10px;
-		color: var(--muted);
-		text-transform: uppercase;
-		letter-spacing: 0.5px;
-	}
-
-	.score-cell {
-		display: flex;
+	.filter-badge {
+		display: inline-flex;
 		align-items: center;
-		gap: 10px;
-		justify-content: flex-end;
-	}
-
-	.score-bar-bg {
-		width: 50px;
-		height: 4px;
-		background: var(--dim2);
-		border-radius: 2px;
-		overflow: hidden;
-	}
-
-	.score-bar-fill {
-		height: 100%;
-		background: var(--red);
-		border-radius: 2px;
-	}
-
-	.td-score {
+		gap: 6px;
 		font-family: var(--mono);
-		font-size: 15px;
-		font-weight: 700;
+		font-size: 11px;
 		color: var(--red);
-		min-width: 30px;
-		text-align: right;
+		background: var(--red-d);
+		border: 1px solid rgba(220, 38, 38, 0.2);
+		padding: 2px 10px;
+		border-radius: 4px;
+		margin-left: 8px;
+	}
+
+	.clear-filter {
+		background: none;
+		border: none;
+		color: var(--red);
+		font-size: 14px;
+		cursor: pointer;
+		padding: 0;
+		line-height: 1;
+		opacity: 0.7;
+		transition: opacity 0.15s;
+	}
+
+	.clear-filter:hover {
+		opacity: 1;
 	}
 </style>

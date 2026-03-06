@@ -38,7 +38,7 @@
 </script>
 
 <svelte:head>
-	<title>{g.guest_name} — Kill Tony DB</title>
+	<title>Kill Tony DB</title>
 </svelte:head>
 
 <div class="guest-hero">

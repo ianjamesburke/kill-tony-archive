@@ -1,7 +1,15 @@
 <script lang="ts">
 	import type { ComedySet } from '$lib/types';
 
-	let { sets }: { sets: ComedySet[] } = $props();
+	let {
+		sets,
+		activeBin = null,
+		onBinClick
+	}: {
+		sets: ComedySet[];
+		activeBin?: string | null;
+		onBinClick?: (label: string | null) => void;
+	} = $props();
 
 	const bins = $derived(() => {
 		const buckets: { label: string; min: number; max: number; count: number; sets: ComedySet[] }[] =
@@ -35,7 +43,17 @@
 <div class="histogram">
 	<div class="hist-chart">
 		{#each bins() as bin}
-			<div class="hist-col" title="{bin.label}: {bin.count} sets">
+			<button
+				class="hist-col"
+				class:active={activeBin === bin.label}
+				class:clickable={!!onBinClick && bin.count > 0}
+				title="{bin.label}: {bin.count} sets"
+				onclick={() => {
+					if (onBinClick && bin.count > 0) {
+						onBinClick(activeBin === bin.label ? null : bin.label);
+					}
+				}}
+			>
 				<div class="hist-count">{bin.count || ''}</div>
 				<div
 					class="hist-bar"
@@ -43,7 +61,7 @@
 					class:empty={bin.count === 0}
 				></div>
 				<div class="hist-label">{bin.label}</div>
-			</div>
+			</button>
 		{/each}
 	</div>
 	<div class="hist-meta">
@@ -76,12 +94,35 @@
 		justify-content: flex-end;
 		height: 100%;
 		position: relative;
+		background: none;
+		border: none;
+		padding: 0;
+		cursor: default;
+		border-radius: 4px;
+		transition: background 0.15s;
+	}
+
+	.hist-col.clickable {
+		cursor: pointer;
+	}
+
+	.hist-col.clickable:hover {
+		background: rgba(255, 255, 255, 0.04);
+	}
+
+	.hist-col.active {
+		background: rgba(220, 38, 38, 0.1);
+	}
+
+	.hist-col.active .hist-bar {
+		background: var(--red);
+		box-shadow: 0 0 8px rgba(220, 38, 38, 0.4);
 	}
 
 	.hist-count {
 		font-family: var(--mono);
 		font-size: 10px;
-		color: var(--muted);
+		color: var(--t2);
 		margin-bottom: 4px;
 		min-height: 14px;
 	}
@@ -90,7 +131,7 @@
 		width: 100%;
 		background: linear-gradient(to top, var(--red), var(--red-s));
 		border-radius: 3px 3px 0 0;
-		transition: height 0.3s ease;
+		transition: height 0.3s ease, box-shadow 0.15s;
 		min-width: 8px;
 	}
 
@@ -102,7 +143,7 @@
 	.hist-label {
 		font-family: var(--mono);
 		font-size: 9px;
-		color: var(--dim);
+		color: var(--text);
 		margin-top: 6px;
 		position: absolute;
 		bottom: 0;

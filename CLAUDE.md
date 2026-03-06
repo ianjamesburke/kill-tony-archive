@@ -33,6 +33,12 @@ Kill Tony is a weekly comedy podcast/show hosted by Tony Hinchcliffe where rando
 
 See [SCHEMA.md](SCHEMA.md) for the full data model (episode, set, transcript entry, outcomes, computed fields).
 
+## Kill Score Formula Notes
+
+The kill score formula is in `backend/batch_processor.py:compute_kill_score()`. If modifying it:
+- **`joke_density` was removed** — unreliable due to subjective Gemini joke counts + WhisperX timestamp drift
+- **YAMNet laughter-per-set** is a planned tiebreaker (see FUTURE_ENHANCEMENTS.md) but blocked until WhisperX timestamps are accurate enough to correctly attribute laughter frames to set windows
+
 ## Website Testing & Screenshots
 
 When asked to pull up a website for UI testing or analysis:

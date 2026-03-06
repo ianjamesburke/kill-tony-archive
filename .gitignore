@@ -43,3 +43,5 @@ yarn-error.log*
 # data/*.db
 backend/audio_cache/*
 data/whisperx_cache/*
+data/crowd_reactions/*
+

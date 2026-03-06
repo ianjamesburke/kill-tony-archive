@@ -7,7 +7,8 @@ import type {
 	TopicStat,
 	GuestDetail,
 	GuestsResponse,
-	CrowdReaction
+	CrowdReaction,
+	LaughterTimeline
 } from './types';
 
 const API_BASE = 'http://localhost:8000/api';
@@ -78,4 +79,12 @@ export async function fetchGuestDetail(name: string): Promise<GuestDetail> {
 
 export async function fetchCrowdReactions(): Promise<CrowdReaction[]> {
 	return get<CrowdReaction[]>('/crowd-reactions');
+}
+
+export async function fetchLaughterTimeline(episodeNumber: number): Promise<LaughterTimeline | null> {
+	try {
+		return await get<LaughterTimeline>(`/episodes/${episodeNumber}/laughter-timeline`);
+	} catch {
+		return null;
+	}
 }

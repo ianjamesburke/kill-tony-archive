@@ -85,10 +85,6 @@
 <!-- HERO -->
 <div class="hero">
 	<div>
-		<div class="hero-tag">
-			<span class="hero-dot"></span>
-			Data Science Thesis
-		</div>
 		<h1 class="hero-title">Kill Tony<br /><span class="thin">Database</span></h1>
 		<p class="hero-desc">
 			Every 1-minute set from {data.stats.episode_count} episodes, scored, transcribed, and analyzed.
@@ -190,7 +186,6 @@
 				<SetCard
 					set={s}
 					rank={i + 1}
-					showTimecode={true}
 					showEpisode={true}
 					onJumpTo={s.set_start_seconds != null
 						? () => goto(`/episodes/${s.episode_number}#t=${s.set_start_seconds}`)

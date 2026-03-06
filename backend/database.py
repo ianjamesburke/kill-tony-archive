@@ -19,13 +19,22 @@ def get_episodes(db_path: Path) -> list[dict[str, Any]]:
     with _conn(db_path) as conn:
         rows = conn.execute(
             """
-            SELECT e.*,
-                   COUNT(s.set_id) AS set_count,
-                   ROUND(AVG(s.kill_score), 1) AS avg_kill_score
-            FROM episodes e
-            LEFT JOIN sets s ON s.episode_number = e.episode_number
-            GROUP BY e.episode_number
-            ORDER BY e.episode_number DESC
+            SELECT *,
+                   RANK() OVER (ORDER BY episode_kill_score DESC) AS episode_rank,
+                   (SELECT COUNT(*) FROM episodes) AS total_episodes
+            FROM (
+                SELECT e.*,
+                       COUNT(s.set_id) AS set_count,
+                       ROUND(AVG(s.kill_score), 1) AS avg_kill_score,
+                       ROUND(
+                           (COALESCE(AVG(s.kill_score), 0) / 29.0) * 70
+                           + (COALESCE(e.laughter_pct, 0) / 100.0) * 30,
+                       1) AS episode_kill_score
+                FROM episodes e
+                LEFT JOIN sets s ON s.episode_number = e.episode_number
+                GROUP BY e.episode_number
+            )
+            ORDER BY episode_number DESC
             """
         ).fetchall()
     return [_episode_row(r) for r in rows]
@@ -35,19 +44,49 @@ def get_episode(db_path: Path, episode_number: int) -> Optional[dict[str, Any]]:
     with _conn(db_path) as conn:
         row = conn.execute(
             """
-            SELECT e.*,
-                   COUNT(s.set_id) AS set_count,
-                   ROUND(AVG(s.kill_score), 1) AS avg_kill_score
-            FROM episodes e
-            LEFT JOIN sets s ON s.episode_number = e.episode_number
-            WHERE e.episode_number = ?
-            GROUP BY e.episode_number
+            SELECT *
+            FROM (
+                SELECT e2.*,
+                       COUNT(s2.set_id) AS set_count,
+                       ROUND(AVG(s2.kill_score), 1) AS avg_kill_score,
+                       ROUND(
+                           (COALESCE(AVG(s2.kill_score), 0) / 29.0) * 70
+                           + (COALESCE(e2.laughter_pct, 0) / 100.0) * 30,
+                       1) AS episode_kill_score
+                FROM episodes e2
+                LEFT JOIN sets s2 ON s2.episode_number = e2.episode_number
+                GROUP BY e2.episode_number
+            ) ranked
+            WHERE episode_number = ?
             """,
             (episode_number,),
         ).fetchone()
     if not row:
         return None
-    return _episode_row(row)
+    d = _episode_row(row)
+    # Compute rank separately (need all episodes for ranking)
+    with _conn(db_path) as conn:
+        rank_row = conn.execute(
+            """
+            SELECT COUNT(*) + 1 AS episode_rank,
+                   (SELECT COUNT(*) FROM episodes) AS total_episodes
+            FROM (
+                SELECT e2.episode_number,
+                       ROUND(
+                           (COALESCE(AVG(s2.kill_score), 0) / 29.0) * 70
+                           + (COALESCE(e2.laughter_pct, 0) / 100.0) * 30,
+                       1) AS episode_kill_score
+                FROM episodes e2
+                LEFT JOIN sets s2 ON s2.episode_number = e2.episode_number
+                GROUP BY e2.episode_number
+            ) all_eps
+            WHERE all_eps.episode_kill_score > ?
+            """,
+            (d["episode_kill_score"],),
+        ).fetchone()
+    d["episode_rank"] = rank_row["episode_rank"]
+    d["total_episodes"] = rank_row["total_episodes"]
+    return d
 
 
 def _episode_row(row: sqlite3.Row) -> dict[str, Any]:
@@ -106,7 +145,27 @@ def get_sets(
 
         rows = conn.execute(
             f"""
-            SELECT s.*, e.guests, e.venue, e.date
+            SELECT s.*, e.guests, e.venue, e.date,
+                   (SELECT COUNT(*) + 1 FROM sets s2
+                    WHERE s2.kill_score > s.kill_score
+                       OR (s2.kill_score = s.kill_score AND (
+                           CASE s2.crowd_reaction
+                               WHEN 'roaring' THEN 4 WHEN 'big_laughs' THEN 3
+                               WHEN 'moderate' THEN 2 WHEN 'light' THEN 1 ELSE 0 END
+                           > CASE s.crowd_reaction
+                               WHEN 'roaring' THEN 4 WHEN 'big_laughs' THEN 3
+                               WHEN 'moderate' THEN 2 WHEN 'light' THEN 1 ELSE 0 END
+                       ))
+                       OR (s2.kill_score = s.kill_score AND (
+                           CASE s2.crowd_reaction
+                               WHEN 'roaring' THEN 4 WHEN 'big_laughs' THEN 3
+                               WHEN 'moderate' THEN 2 WHEN 'light' THEN 1 ELSE 0 END
+                           = CASE s.crowd_reaction
+                               WHEN 'roaring' THEN 4 WHEN 'big_laughs' THEN 3
+                               WHEN 'moderate' THEN 2 WHEN 'light' THEN 1 ELSE 0 END
+                       ) AND COALESCE(s2.joke_density, 0) > COALESCE(s.joke_density, 0))
+                   ) AS set_rank,
+                   (SELECT COUNT(*) FROM sets) AS total_sets
             FROM sets s
             JOIN episodes e ON e.episode_number = s.episode_number
             {where}
@@ -331,6 +390,65 @@ def get_guest_detail(db_path: Path, guest_name: str) -> Optional[dict[str, Any]]
         "avg_laugh_count": round(sum(laughs) / len(laughs), 1) if laughs else None,
         "total_laugh_count": sum(laughs),
         "baseline_bucket_avg": baseline,
+    }
+
+
+def get_laughter_timeline(db_path: Path, episode_number: int, bucket_seconds: int = 5) -> Optional[dict[str, Any]]:
+    """Return bucketed laughter intensity + set boundaries for timeline visualization."""
+    with _conn(db_path) as conn:
+        frames = conn.execute(
+            "SELECT time_seconds, score FROM laughter_frames WHERE episode_number = ? ORDER BY time_seconds",
+            (episode_number,),
+        ).fetchall()
+
+        if not frames:
+            return None
+
+        sets = conn.execute(
+            "SELECT set_id, set_number, comedian_name, set_start_seconds, set_end_seconds, status "
+            "FROM sets WHERE episode_number = ? ORDER BY set_start_seconds",
+            (episode_number,),
+        ).fetchall()
+
+        ep = conn.execute(
+            "SELECT total_laughter_seconds FROM episodes WHERE episode_number = ?",
+            (episode_number,),
+        ).fetchone()
+
+    # Bucket frames into time windows
+    max_time = frames[-1]["time_seconds"]
+    num_buckets = int(max_time / bucket_seconds) + 1
+    buckets = [0.0] * num_buckets
+
+    for f in frames:
+        idx = int(f["time_seconds"] / bucket_seconds)
+        if idx < num_buckets:
+            buckets[idx] = max(buckets[idx], f["score"])
+
+    timeline = [
+        {"t": round(i * bucket_seconds, 1), "v": round(buckets[i], 3)}
+        for i in range(num_buckets)
+    ]
+
+    set_markers = [
+        {
+            "set_id": s["set_id"],
+            "set_number": s["set_number"],
+            "comedian_name": s["comedian_name"],
+            "start": s["set_start_seconds"],
+            "end": s["set_end_seconds"],
+            "status": s["status"],
+        }
+        for s in sets
+        if s["set_start_seconds"] is not None
+    ]
+
+    return {
+        "episode_number": episode_number,
+        "bucket_seconds": bucket_seconds,
+        "total_laughter_seconds": ep["total_laughter_seconds"] if ep else None,
+        "timeline": timeline,
+        "sets": set_markers,
     }
 
 

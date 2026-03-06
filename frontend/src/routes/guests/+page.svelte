@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-	<title>Guests — Kill Tony DB</title>
+	<title>Kill Tony DB</title>
 </svelte:head>
 
 <!-- GUEST IMPACT VISUALIZATION -->

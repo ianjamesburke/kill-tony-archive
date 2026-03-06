@@ -27,6 +27,15 @@
 - Applause duration in seconds (not just "crowd" transcript entries)
 - Comedian delivery metrics: words per minute, pause timing
 
+## YAMNet Laughter as Kill Score Tiebreaker
+- YAMNet frame-level laughter data already stored in `laughter_frames` table (0.48s frames)
+- Idea: count laughter frames in window [set_start, set_end + 5s] × 0.48 = laughter seconds per set
+- Normalize to a small decimal adder (e.g. laughter_seconds / 20.0, capped at ~1.0) to break kill score ties
+- **Blocked by:** WhisperX timestamp drift — set boundary windows are off by 1-2min, causing misattribution
+  - Greg Bergman (big_laughs, 1.4s detected) and Zach Townsend (roaring, 1.0s) both showed near-zero due to drift
+  - Hans Kim's Korean set caused YAMNet false positives (12.5s detected, only moderate crowd)
+- Revisit once WhisperX timestamps are reliable
+
 ## Joke-Level Segmentation
 - Break each 1-min set into individual joke attempts
 - Score each joke independently
@@ -36,3 +45,10 @@
 - Comedians connected by co-appearing on same episodes
 - Visual clusters showing "eras" of the show
 - Guest judge connection maps
+
+## Knockout Bracket Voting System
+- User-facing voting system to break tied set rankings
+- Pin tied 1-minute sets against each other in a bracket-style knockout
+- Users vote on which set is better, shuffling the ranking in the database
+- Helps differentiate the many ties caused by the ~25-30 point kill score range
+- Could be a standalone feature or integrated into the set leaderboard page
