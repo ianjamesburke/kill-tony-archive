@@ -1,0 +1,4 @@
+# Full episode transcripts — large JSON files, stored locally only
+# Kept for potential reprocessing. Not needed for frontend.
+*
+!.gitignore

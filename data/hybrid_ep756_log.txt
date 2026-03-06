@@ -1,0 +1,113 @@
+10:15:51 [INFO] Processing episode #756: KT #756 - JIM NORTON + IAN FIDANCE
+10:15:51 [INFO] Fetching YouTube metadata...
+WARNING: [youtube] No supported JavaScript runtime could be found. Only deno is enabled by default; to use another runtime add  --js-runtimes RUNTIME[:PATH]  to your command/config. YouTube extraction without a JS runtime has been deprecated, and some formats may be missing. See  https://github.com/yt-dlp/yt-dlp/wiki/EJS  for details on installing one
+WARNING: [youtube] tjT1DbnWTb8: Some android_vr client https formats have been skipped as they are missing a URL. YouTube may have enabled the SABR-only streaming experiment for the current session. See  https://github.com/yt-dlp/yt-dlp/issues/12482  for more details
+10:15:52 [INFO] Downloading audio...
+WARNING: [youtube] No supported JavaScript runtime could be found. Only deno is enabled by default; to use another runtime add  --js-runtimes RUNTIME[:PATH]  to your command/config. YouTube extraction without a JS runtime has been deprecated, and some formats may be missing. See  https://github.com/yt-dlp/yt-dlp/wiki/EJS  for details on installing one
+[download]   0.0% of  127.95MiB at  Unknown B/s ETA Unknown[download]   0.0% of  127.95MiB at  Unknown B/s ETA Unknown[download]   0.0% of  127.95MiB at  Unknown B/s ETA Unknown[download]   0.0% of  127.95MiB at  Unknown B/s ETA Unknown[download]   0.0% of  127.95MiB at    2.98MiB/s ETA 00:42  [download]   0.0% of  127.95MiB at    5.94MiB/s ETA 00:21[download]   0.1% of  127.95MiB at    6.30MiB/s ETA 00:20[download]   0.2% of  127.95MiB at    8.75MiB/s ETA 00:14[download]   0.4% of  127.95MiB at   12.03MiB/s ETA 00:10[download]   0.8% of  127.95MiB at   15.14MiB/s ETA 00:08[download]   1.6% of  127.95MiB at   15.25MiB/s ETA 00:08[download]   3.1% of  127.95MiB at   17.49MiB/s ETA 00:07[download]   6.3% of  127.95MiB at   18.18MiB/s ETA 00:06[download]   7.5% of  127.95MiB at   18.54MiB/s ETA 00:06[download]   7.5% of  127.95MiB at  Unknown B/s ETA Unknown[download]   7.5% of  127.95MiB at  Unknown B/s ETA Unknown[download]   7.5% of  127.95MiB at  Unknown B/s ETA Unknown[download]   7.5% of  127.95MiB at  Unknown B/s ETA Unknown[download]   7.5% of  127.95MiB at   28.16MiB/s ETA 00:04  [download]   7.5% of  127.95MiB at   15.04MiB/s ETA 00:07[download]   7.6% of  127.95MiB at   14.15MiB/s ETA 00:08[download]   7.7% of  127.95MiB at   21.88MiB/s ETA 00:05[download]   7.9% of  127.95MiB at    8.92MiB/s ETA 00:13[download]   8.3% of  127.95MiB at   11.22MiB/s ETA 00:10[download]   9.1% of  127.95MiB at   12.77MiB/s ETA 00:09[download]  10.6% of  127.95MiB at   14.91MiB/s ETA 00:07[download]  13.7% of  127.95MiB at   17.54MiB/s ETA 00:06[download]  15.0% of  127.95MiB at   18.86MiB/s ETA 00:05[download]  15.0% of  127.95MiB at  Unknown B/s ETA Unknown[download]  15.0% of  127.95MiB at  Unknown B/s ETA Unknown[download]  15.0% of  127.95MiB at  Unknown B/s ETA Unknown[download]  15.0% of  127.95MiB at  Unknown B/s ETA Unknown[download]  15.0% of  127.95MiB at  Unknown B/s ETA Unknown[download]  15.0% of  127.95MiB at   20.00MiB/s ETA 00:05  [download]  15.1% of  127.95MiB at   33.67MiB/s ETA 00:03[download]  15.2% of  127.95MiB at   32.49MiB/s ETA 00:03[download]  15.4% of  127.95MiB at   34.10MiB/s ETA 00:03[download]  15.8% of  127.95MiB at   24.16MiB/s ETA 00:04[download]  16.6% of  127.95MiB at   17.65MiB/s ETA 00:06[download]  18.1% of  127.95MiB at   18.82MiB/s ETA 00:05[download]  21.2% of  127.95MiB at   21.91MiB/s ETA 00:04[download]  22.5% of  127.95MiB at   19.53MiB/s ETA 00:05[download]  22.5% of  127.95MiB at  Unknown B/s ETA Unknown[download]  22.5% of  127.95MiB at  Unknown B/s ETA Unknown[download]  22.5% of  127.95MiB at  Unknown B/s ETA Unknown[download]  22.5% of  127.95MiB at  Unknown B/s ETA Unknown[download]  22.5% of  127.95MiB at  Unknown B/s ETA Unknown[download]  22.5% of  127.95MiB at  Unknown B/s ETA Unknown[download]  22.6% of  127.95MiB at  Unknown B/s ETA Unknown[download]  22.7% of  127.95MiB at   77.12MiB/s ETA 00:01  [download]  22.9% of  127.95MiB at   34.33MiB/s ETA 00:02[download]  23.3% of  127.95MiB at   40.25MiB/s ETA 00:02[download]  24.0% of  127.95MiB at   19.83MiB/s ETA 00:04[download]  25.6% of  127.95MiB at   20.32MiB/s ETA 00:04[download]  28.7% of  127.95MiB at   24.03MiB/s ETA 00:03[download]  30.0% of  127.95MiB at   22.57MiB/s ETA 00:03[download]  30.0% of  127.95MiB at  Unknown B/s ETA Unknown[download]  30.0% of  127.95MiB at  Unknown B/s ETA Unknown[download]  30.0% of  127.95MiB at  Unknown B/s ETA Unknown[download]  30.0% of  127.95MiB at  Unknown B/s ETA Unknown[download]  30.0% of  127.95MiB at  Unknown B/s ETA Unknown[download]  30.0% of  127.95MiB at   47.96MiB/s ETA 00:01  [download]  30.1% of  127.95MiB at   73.73MiB/s ETA 00:01[download]  30.2% of  127.95MiB at   69.70MiB/s ETA 00:01[download]  30.4% of  127.95MiB at   50.77MiB/s ETA 00:01[download]  30.7% of  127.95MiB at   44.68MiB/s ETA 00:01[download]  31.5% of  127.95MiB at   32.79MiB/s ETA 00:02[download]  33.1% of  127.95MiB at   22.61MiB/s ETA 00:03[download]  36.2% of  127.95MiB at   25.43MiB/s ETA 00:03[download]  37.7% of  127.95MiB at   22.28MiB/s ETA 00:03[download]  37.7% of  127.95MiB at  Unknown B/s ETA Unknown[download]  37.7% of  127.95MiB at  Unknown B/s ETA Unknown[download]  37.7% of  127.95MiB at  Unknown B/s ETA Unknown[download]  37.7% of  127.95MiB at  Unknown B/s ETA Unknown[download]  37.7% of  127.95MiB at  Unknown B/s ETA Unknown[download]  37.7% of  127.95MiB at   40.16MiB/s ETA 00:01  [download]  37.8% of  127.95MiB at   58.42MiB/s ETA 00:01[download]  37.9% of  127.95MiB at   53.86MiB/s ETA 00:01[download]  38.1% of  127.95MiB at   50.85MiB/s ETA 00:01[download]  38.4% of  127.95MiB at   46.46MiB/s ETA 00:01[download]  39.2% of  127.95MiB at   53.68MiB/s ETA 00:01[download]  40.8% of  127.95MiB at   25.22MiB/s ETA 00:03[download]  43.9% of  127.95MiB at   18.48MiB/s ETA 00:03[download]  45.4% of  127.95MiB at   16.76MiB/s ETA 00:04[download]  45.4% of  127.95MiB at  Unknown B/s ETA Unknown[download]  45.4% of  127.95MiB at  Unknown B/s ETA Unknown[download]  45.4% of  127.95MiB at  Unknown B/s ETA Unknown[download]  45.4% of  127.95MiB at  Unknown B/s ETA Unknown[download]  45.4% of  127.95MiB at  Unknown B/s ETA Unknown[download]  45.4% of  127.95MiB at   13.45MiB/s ETA 00:05  [download]  45.5% of  127.95MiB at   25.80MiB/s ETA 00:02[download]  45.6% of  127.95MiB at   37.39MiB/s ETA 00:01[download]  45.8% of  127.95MiB at   49.20MiB/s ETA 00:01[download]  46.2% of  127.95MiB at   53.17MiB/s ETA 00:01[download]  47.0% of  127.95MiB at   54.77MiB/s ETA 00:01[download]  48.5% of  127.95MiB at   24.25MiB/s ETA 00:02[download]  51.7% of  127.95MiB at   23.04MiB/s ETA 00:02[download]  53.0% of  127.95MiB at   26.03MiB/s ETA 00:02[download]  53.0% of  127.95MiB at  Unknown B/s ETA Unknown[download]  53.0% of  127.95MiB at  Unknown B/s ETA Unknown[download]  53.0% of  127.95MiB at  Unknown B/s ETA Unknown[download]  53.0% of  127.95MiB at  Unknown B/s ETA Unknown[download]  53.0% of  127.95MiB at  Unknown B/s ETA Unknown[download]  53.0% of  127.95MiB at   19.26MiB/s ETA 00:03  [download]  53.1% of  127.95MiB at   36.93MiB/s ETA 00:01[download]  53.2% of  127.95MiB at   44.39MiB/s ETA 00:01[download]  53.4% of  127.95MiB at   40.25MiB/s ETA 00:01[download]  53.8% of  127.95MiB at   54.60MiB/s ETA 00:01[download]  54.5% of  127.95MiB at   24.16MiB/s ETA 00:02[download]  56.1% of  127.95MiB at   19.18MiB/s ETA 00:02[download]  59.2% of  127.95MiB at   21.90MiB/s ETA 00:02[download]  60.8% of  127.95MiB at   23.69MiB/s ETA 00:02[download]  60.8% of  127.95MiB at  Unknown B/s ETA Unknown[download]  60.8% of  127.95MiB at  Unknown B/s ETA Unknown[download]  60.8% of  127.95MiB at  Unknown B/s ETA Unknown[download]  60.8% of  127.95MiB at  Unknown B/s ETA Unknown[download]  60.8% of  127.95MiB at   29.60MiB/s ETA 00:01  [download]  60.8% of  127.95MiB at   23.62MiB/s ETA 00:02[download]  60.9% of  127.95MiB at   39.44MiB/s ETA 00:01[download]  61.0% of  127.95MiB at   39.58MiB/s ETA 00:01[download]  61.2% of  127.95MiB at   47.76MiB/s ETA 00:01[download]  61.6% of  127.95MiB at   45.30MiB/s ETA 00:01[download]  62.4% of  127.95MiB at   22.05MiB/s ETA 00:02[download]  63.9% of  127.95MiB at   18.75MiB/s ETA 00:02[download]  67.0% of  127.95MiB at   20.38MiB/s ETA 00:02[download]  68.3% of  127.95MiB at   22.41MiB/s ETA 00:01[download]  68.3% of  127.95MiB at  Unknown B/s ETA Unknown[download]  68.3% of  127.95MiB at  Unknown B/s ETA Unknown[download]  68.3% of  127.95MiB at  Unknown B/s ETA Unknown[download]  68.3% of  127.95MiB at  Unknown B/s ETA Unknown[download]  68.3% of  127.95MiB at  Unknown B/s ETA Unknown[download]  68.3% of  127.95MiB at   17.78MiB/s ETA 00:02  [download]  68.4% of  127.95MiB at   30.88MiB/s ETA 00:01[download]  68.5% of  127.95MiB at   37.39MiB/s ETA 00:01[download]  68.7% of  127.95MiB at   40.72MiB/s ETA 00:00[download]  69.1% of  127.95MiB at   15.40MiB/s ETA 00:02[download]  69.8% of  127.95MiB at   14.90MiB/s ETA 00:02[download]  71.4% of  127.95MiB at   19.83MiB/s ETA 00:01[download]  74.5% of  127.95MiB at   19.23MiB/s ETA 00:01[download]  75.9% of  127.95MiB at   18.39MiB/s ETA 00:01[download]  75.9% of  127.95MiB at  Unknown B/s ETA Unknown[download]  75.9% of  127.95MiB at  Unknown B/s ETA Unknown[download]  75.9% of  127.95MiB at  Unknown B/s ETA Unknown[download]  75.9% of  127.95MiB at  Unknown B/s ETA Unknown[download]  75.9% of  127.95MiB at  Unknown B/s ETA Unknown[download]  75.9% of  127.95MiB at    9.63MiB/s ETA 00:03  [download]  76.0% of  127.95MiB at   18.13MiB/s ETA 00:01[download]  76.1% of  127.95MiB at   29.48MiB/s ETA 00:01[download]  76.3% of  127.95MiB at   35.46MiB/s ETA 00:00[download]  76.7% of  127.95MiB at   14.83MiB/s ETA 00:02[download]  77.5% of  127.95MiB at   14.69MiB/s ETA 00:01[download]  79.0% of  127.95MiB at   18.47MiB/s ETA 00:01[download]  82.1% of  127.95MiB at   20.92MiB/s ETA 00:01[download]  83.3% of  127.95MiB at   17.72MiB/s ETA 00:01[download]  83.3% of  127.95MiB at  Unknown B/s ETA Unknown[download]  83.3% of  127.95MiB at  Unknown B/s ETA Unknown[download]  83.3% of  127.95MiB at  Unknown B/s ETA Unknown[download]  83.3% of  127.95MiB at  Unknown B/s ETA Unknown[download]  83.4% of  127.95MiB at  Unknown B/s ETA Unknown[download]  83.4% of  127.95MiB at   48.36MiB/s ETA 00:00  [download]  83.4% of  127.95MiB at   55.84MiB/s ETA 00:00[download]  83.5% of  127.95MiB at   37.10MiB/s ETA 00:00[download]  83.7% of  127.95MiB at   49.30MiB/s ETA 00:00[download]  84.1% of  127.95MiB at   49.58MiB/s ETA 00:00[download]  84.9% of  127.95MiB at   33.40MiB/s ETA 00:00[download]  86.5% of  127.95MiB at   24.48MiB/s ETA 00:00[download]  89.6% of  127.95MiB at   23.71MiB/s ETA 00:00[download]  91.1% of  127.95MiB at   20.75MiB/s ETA 00:00[download]  91.1% of  127.95MiB at  Unknown B/s ETA Unknown[download]  91.1% of  127.95MiB at  Unknown B/s ETA Unknown[download]  91.1% of  127.95MiB at  Unknown B/s ETA Unknown[download]  91.1% of  127.95MiB at  Unknown B/s ETA Unknown[download]  91.1% of  127.95MiB at  Unknown B/s ETA Unknown[download]  91.2% of  127.95MiB at   31.61MiB/s ETA 00:00  [download]  91.2% of  127.95MiB at   40.85MiB/s ETA 00:00[download]  91.3% of  127.95MiB at   22.39MiB/s ETA 00:00[download]  91.5% of  127.95MiB at   21.44MiB/s ETA 00:00[download]  91.9% of  127.95MiB at   35.30MiB/s ETA 00:00[download]  92.7% of  127.95MiB at   29.61MiB/s ETA 00:00[download]  94.2% of  127.95MiB at   23.23MiB/s ETA 00:00[download]  97.4% of  127.95MiB at   24.41MiB/s ETA 00:00[download]  98.6% of  127.95MiB at   20.12MiB/s ETA 00:00[download]  98.6% of  127.95MiB at  Unknown B/s ETA Unknown[download]  98.6% of  127.95MiB at  Unknown B/s ETA Unknown[download]  98.6% of  127.95MiB at  Unknown B/s ETA Unknown[download]  98.6% of  127.95MiB at  Unknown B/s ETA Unknown[download]  98.6% of  127.95MiB at  Unknown B/s ETA Unknown[download]  98.6% of  127.95MiB at   31.80MiB/s ETA 00:00  [download]  98.7% of  127.95MiB at   51.74MiB/s ETA 00:00[download]  98.8% of  127.95MiB at   63.27MiB/s ETA 00:00[download]  99.0% of  127.95MiB at   47.96MiB/s ETA 00:00[download]  99.4% of  127.95MiB at   61.92MiB/s ETA 00:00[download] 100.0% of  127.95MiB at   44.63MiB/s ETA 00:00[download] 100% of  127.95MiB in 00:00:06 at 19.50MiB/s                                                         10:16:00 [INFO] Converting to MP3...
+10:16:55 [INFO] Duration: 7858s (131.0min)
+10:18:18 [INFO] Split into 8 chunks
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyannote/audio/core/io.py:47: UserWarning: 
+torchcodec is not installed correctly so built-in audio decoding will fail. Solutions are:
+* use audio preloaded in-memory as a {'waveform': (channel, time) torch.Tensor, 'sample_rate': int} dictionary;
+* fix torchcodec installation. Error message was:
+
+Could not load libtorchcodec. Likely causes:
+          1. FFmpeg is not properly installed in your environment. We support
+             versions 4, 5, 6, 7, and 8, and we attempt to load libtorchcodec
+             for each of those versions. Errors for versions not installed on
+             your system are expected; only the error for your installed FFmpeg
+             version is relevant. On Windows, ensure you've installed the
+             "full-shared" version which ships DLLs.
+          2. The PyTorch version (2.8.0) is not compatible with
+             this version of TorchCodec. Refer to the version compatibility
+             table:
+             https://github.com/pytorch/torchcodec?tab=readme-ov-file#installing-torchcodec.
+          3. Another runtime dependency; see exceptions below.
+
+        The following exceptions were raised as we tried to load libtorchcodec:
+        
+[start of libtorchcodec loading traceback]
+FFmpeg version 8:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchcodec/_core/ops.py", line 57, in load_torchcodec_shared_libraries
+    torch.ops.load_library(core_library_path)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torch/_ops.py", line 1478, in load_library
+    ctypes.CDLL(path)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ctypes/__init__.py", line 376, in __init__
+    self._handle = _dlopen(self._name, mode)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: dlopen(/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchcodec/libtorchcodec_core8.dylib, 0x0006): Symbol not found: __ZN3c1013MessageLogger6streamEv
+  Referenced from: <8B2C1B8A-B128-3035-BF1E-44861574A688> /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchcodec/libtorchcodec_core8.dylib
+  Expected in:     <D1057909-9D16-345A-8B8C-73FA6C3DB62C> /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torch/lib/libc10.dylib
+
+FFmpeg version 7:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchcodec/_core/ops.py", line 57, in load_torchcodec_shared_libraries
+    torch.ops.load_library(core_library_path)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torch/_ops.py", line 1478, in load_library
+    ctypes.CDLL(path)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ctypes/__init__.py", line 376, in __init__
+    self._handle = _dlopen(self._name, mode)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: dlopen(/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchcodec/libtorchcodec_core7.dylib, 0x0006): Library not loaded: @rpath/libavutil.59.dylib
+  Referenced from: <99507B66-07B4-3CCE-BCC8-57E40E869A82> /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchcodec/libtorchcodec_core7.dylib
+  Reason: tried: '/opt/homebrew/opt/ffmpeg/lib/libavutil.59.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/opt/ffmpeg/lib/libavutil.59.dylib' (no such file), '/opt/homebrew/opt/ffmpeg/lib/libavutil.59.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/opt/ffmpeg/lib/libavutil.59.dylib' (no such file)
+
+FFmpeg version 6:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchcodec/_core/ops.py", line 57, in load_torchcodec_shared_libraries
+    torch.ops.load_library(core_library_path)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torch/_ops.py", line 1478, in load_library
+    ctypes.CDLL(path)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ctypes/__init__.py", line 376, in __init__
+    self._handle = _dlopen(self._name, mode)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: dlopen(/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchcodec/libtorchcodec_core6.dylib, 0x0006): Library not loaded: @rpath/libavutil.58.dylib
+  Referenced from: <86639CB1-DD57-3ADF-A6A4-A476231AB716> /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchcodec/libtorchcodec_core6.dylib
+  Reason: tried: '/opt/homebrew/opt/ffmpeg/lib/libavutil.58.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/opt/ffmpeg/lib/libavutil.58.dylib' (no such file), '/opt/homebrew/opt/ffmpeg/lib/libavutil.58.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/opt/ffmpeg/lib/libavutil.58.dylib' (no such file)
+
+FFmpeg version 5:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchcodec/_core/ops.py", line 57, in load_torchcodec_shared_libraries
+    torch.ops.load_library(core_library_path)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torch/_ops.py", line 1478, in load_library
+    ctypes.CDLL(path)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ctypes/__init__.py", line 376, in __init__
+    self._handle = _dlopen(self._name, mode)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: dlopen(/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchcodec/libtorchcodec_core5.dylib, 0x0006): Library not loaded: @rpath/libavutil.57.dylib
+  Referenced from: <78E71A73-4AF9-3A75-B63E-7C6261A7F3ED> /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchcodec/libtorchcodec_core5.dylib
+  Reason: tried: '/opt/homebrew/opt/ffmpeg/lib/libavutil.57.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/opt/ffmpeg/lib/libavutil.57.dylib' (no such file), '/opt/homebrew/opt/ffmpeg/lib/libavutil.57.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/opt/ffmpeg/lib/libavutil.57.dylib' (no such file)
+
+FFmpeg version 4:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchcodec/_core/ops.py", line 57, in load_torchcodec_shared_libraries
+    torch.ops.load_library(core_library_path)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torch/_ops.py", line 1478, in load_library
+    ctypes.CDLL(path)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ctypes/__init__.py", line 376, in __init__
+    self._handle = _dlopen(self._name, mode)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: dlopen(/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchcodec/libtorchcodec_core4.dylib, 0x0006): Library not loaded: @rpath/libavutil.56.dylib
+  Referenced from: <C03ACBF5-D573-300D-B2F6-F4E4DE83E1BE> /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/torchcodec/libtorchcodec_core4.dylib
+  Reason: tried: '/opt/homebrew/opt/ffmpeg/lib/libavutil.56.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/opt/ffmpeg/lib/libavutil.56.dylib' (no such file), '/opt/homebrew/opt/ffmpeg/lib/libavutil.56.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/opt/homebrew/opt/ffmpeg/lib/libavutil.56.dylib' (no such file)
+[end of libtorchcodec loading traceback].
+  warnings.warn(
+10:18:22 [INFO] Loading WhisperX model (large-v3)...
+2026-03-06 10:18:27 - whisperx.asr - INFO - No language specified, language will be detected for each audio file (increases inference time)
+2026-03-06 10:18:27 - whisperx.vads.pyannote - INFO - Performing voice activity detection using Pyannote...
+INFO: Lightning automatically upgraded your loaded checkpoint from v1.5.4 to v2.6.1. To apply the upgrade to your files permanently, run `python -m lightning.pytorch.utilities.upgrade_checkpoint ../../../../../../Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/whisperx/assets/pytorch_model.bin`
+10:18:27 [INFO] Lightning automatically upgraded your loaded checkpoint from v1.5.4 to v2.6.1. To apply the upgrade to your files permanently, run `python -m lightning.pytorch.utilities.upgrade_checkpoint ../../../../../../Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/whisperx/assets/pytorch_model.bin`
+10:18:27 [INFO] Loading alignment model...
+10:18:27 [INFO] Loading diarization model...
+2026-03-06 10:18:27 - whisperx.diarize - INFO - Loading diarization model: pyannote/speaker-diarization-community-1
+10:18:28 [INFO] Chunk 1/8: transcribing chunk_01_0s.mp3 (offset 0s)
+2026-03-06 10:19:54 - whisperx.asr - INFO - Detected language: nn (0.13) in first 30s of audio
+10:25:49 [INFO]   Transcribed in 441s (48 segments)
+10:26:20 [INFO]   Aligned in 31s (379 segments)
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyannote/audio/models/blocks/pooling.py:103: UserWarning: std(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/native/ReduceOps.cpp:1839.)
+  std = sequences.std(dim=-1, correction=1)
+10:44:54 [INFO]   Diarized in 1114s
+10:44:54 [INFO] Chunk 2/8: transcribing chunk_02_1020s.mp3 (offset 1020s)
+2026-03-06 10:46:25 - whisperx.asr - INFO - Detected language: en (1.00) in first 30s of audio

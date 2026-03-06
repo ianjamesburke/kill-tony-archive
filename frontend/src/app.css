@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Geist+Mono:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--bg: #09090b;
+	--surface: #0f0f11;
+	--card: #141416;
+	--raised: #1a1a1e;
+	--border: #1e1e22;
+	--bh: #2a2a30;
+	--text: #fafafa;
+	--t2: #d4d4d8;
+	--muted: #71717a;
+	--dim: #3f3f46;
+	--dim2: #27272a;
+	--red: #dc2626;
+	--red-s: #ef4444;
+	--red-d: rgba(220, 38, 38, 0.1);
+	--red-g: rgba(220, 38, 38, 0.2);
+	--green: #22c55e;
+	--amber: #f59e0b;
+	--blue: #3b82f6;
+	--purple: #8b5cf6;
+	--pink: #ec4899;
+	--cyan: #06b6d4;
+	--lime: #84cc16;
+	--violet: #a78bfa;
+	--sans: 'Instrument Sans', system-ui, sans-serif;
+	--mono: 'Geist Mono', 'SF Mono', monospace;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--sans);
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+}
+
+/* Shared section styles */
+.section {
+	padding: 40px;
+	border-bottom: 1px solid var(--border);
+}
+
+.s-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 24px;
+}
+
+.s-title {
+	font-family: var(--mono);
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: var(--text);
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.s-title::before {
+	content: '';
+	display: inline-block;
+	width: 3px;
+	height: 14px;
+	background: var(--red);
+	border-radius: 2px;
+}
+
+.s-sub {
+	font-size: 13px;
+	color: var(--muted);
+	margin-top: 4px;
+	font-style: italic;
+}
+
+.s-badge {
+	font-family: var(--mono);
+	font-size: 10px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	background: var(--raised);
+	border: 1px solid var(--border);
+	padding: 4px 10px;
+	border-radius: 4px;
+	color: var(--muted);
+	white-space: nowrap;
+}
+
+/* Topic tag */
+.topic-tag {
+	font-family: var(--mono);
+	font-size: 10px;
+	letter-spacing: 0.3px;
+	text-transform: uppercase;
+	padding: 4px 10px;
+	border-radius: 4px;
+	color: var(--t2);
+	background: var(--raised);
+	border: 1px solid var(--bh);
+	white-space: nowrap;
+	font-weight: 500;
+}
+
+/* Crowd reaction colors */
+.crowd-high {
+	color: var(--green);
+}
+.crowd-mid {
+	color: var(--amber);
+}
+.crowd-low {
+	color: var(--muted);
+}

@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kill Tony DB — v3b</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Geist+Mono:wght@400;500;600;700&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#09090b;--surface:#0f0f11;--card:#141416;--raised:#1a1a1e;
+  --border:#1e1e22;--bh:#2a2a30;--text:#fafafa;--t2:#d4d4d8;
+  --muted:#71717a;--dim:#3f3f46;--dim2:#27272a;
+  --red:#dc2626;--red-s:#ef4444;--red-d:rgba(220,38,38,0.1);--red-g:rgba(220,38,38,0.2);
+  --green:#22c55e;--amber:#f59e0b;--blue:#3b82f6;--purple:#8b5cf6;
+  --pink:#ec4899;--cyan:#06b6d4;--lime:#84cc16;--violet:#a78bfa;
+  --sans:'Instrument Sans',system-ui,sans-serif;
+  --mono:'Geist Mono','SF Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* LIVE BAR */
+.live-bar{background:var(--red);padding:5px 24px;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:white}
+.live-dot{width:6px;height:6px;border-radius:50%;background:white;animation:blink 1.4s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.live-bar .sp{flex:1}
+.live-bar .lm{opacity:0.65;font-weight:400;letter-spacing:.5px}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:54px;border-bottom:1px solid var(--border);background:var(--surface)}
+.brand{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+.brand em{color:var(--red);font-style:normal}
+.nav-tabs{display:flex;height:54px}
+.nt{display:flex;align-items:center;padding:0 18px;font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;letter-spacing:.3px}
+.nt:hover{color:var(--t2)}
+.nt.active{color:var(--text);border-bottom-color:var(--red)}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-tag{font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);background:var(--raised);border:1px solid var(--border);padding:5px 12px;border-radius:4px}
+
+/* HERO */
+.hero{padding:48px 40px 44px;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr 260px;gap:48px;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--red);background:var(--red-d);padding:5px 14px;border-radius:4px;margin-bottom:16px;border:1px solid rgba(220,38,38,0.2)}
+.hero-title{font-size:clamp(36px,5vw,56px);font-weight:700;line-height:1.05;letter-spacing:-1.5px;margin-bottom:10px}
+.hero-title .thin{font-weight:400;color:var(--muted)}
+.hero-desc{font-size:14px;color:var(--muted);line-height:1.65;max-width:520px}
+
+/* HERO METRICS TABLE */
+.hero-metrics{display:flex;flex-direction:column;gap:0;border-left:1px solid var(--border);padding-left:36px}
+.hm-row{display:flex;flex-direction:column;padding:14px 0;border-bottom:1px solid var(--border)}
+.hm-row:last-child{border-bottom:none;padding-bottom:0}
+.hm-row:first-child{padding-top:0}
+.hm-label{font-family:var(--mono);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.hm-val{font-family:var(--mono);font-size:32px;font-weight:700;letter-spacing:-1.5px;line-height:1}
+.hm-delta{font-family:var(--mono);font-size:9px;color:var(--green);font-weight:600;margin-top:4px}
+
+/* SECTIONS */
+.section{padding:40px;border-bottom:1px solid var(--border)}
+.s-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px}
+.s-title{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text);display:flex;align-items:center;gap:8px}
+.s-title::before{content:'';display:inline-block;width:3px;height:14px;background:var(--red);border-radius:2px}
+.s-sub{font-size:13px;color:var(--muted);margin-top:4px;font-style:italic}
+.s-badge{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;background:var(--raised);border:1px solid var(--border);padding:4px 10px;border-radius:4px;color:var(--muted)}
+
+/* EPISODE PULSE TIMELINE */
+.ep-wrap{position:relative}
+.ep-bars{display:flex;align-items:flex-end;height:80px;gap:0;overflow:hidden;border-radius:4px}
+.ep-bar{flex:1;min-width:1px;transition:opacity .1s;cursor:pointer}
+.ep-bar:hover{opacity:0.65}
+.ep-axis{display:flex;justify-content:space-between;margin-top:10px;padding:0 2px}
+.ep-era{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.5px}
+.ep-legend{display:flex;align-items:center;gap:20px;margin-top:14px}
+.ep-leg-item{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:10px;color:var(--muted)}
+.ep-leg-swatch{width:22px;height:5px;border-radius:2px}
+
+/* MAIN GRID */
+.main-grid{display:grid;grid-template-columns:1fr 400px;gap:1px;background:var(--border);border-radius:8px;overflow:hidden;border:1px solid var(--border)}
+.mg-panel{background:var(--bg);padding:36px 40px}
+
+/* TOPIC NETWORK */
+#force-container{width:100%;position:relative;border-radius:8px;overflow:hidden;background:var(--card);border:1px solid var(--border)}
+.force-overlay-label{position:absolute;bottom:14px;left:16px;font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--dim);pointer-events:none}
+
+/* TIME CONTROL */
+.time-control{display:flex;align-items:center;gap:14px;margin-top:16px;padding:14px 18px;background:var(--card);border:1px solid var(--border);border-radius:8px}
+.tc-play{width:34px;height:34px;border-radius:50%;background:var(--raised);border:1px solid var(--bh);color:var(--text);font-size:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .15s,border-color .15s}
+.tc-play:hover{background:var(--bh);border-color:var(--dim)}
+.tc-play.playing{background:var(--red-d);border-color:var(--red);color:var(--red-s)}
+.tc-slider-wrap{flex:1;display:flex;flex-direction:column;gap:6px}
+.tc-slider-row{display:flex;align-items:center;gap:12px}
+.tc-era-label{font-family:var(--mono);font-size:11px;font-weight:600;color:var(--t2);letter-spacing:.5px;white-space:nowrap;min-width:180px;text-align:right}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:4px;background:var(--dim2);border-radius:2px;outline:none;cursor:pointer}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;border-radius:50%;background:var(--red);cursor:pointer;border:2px solid var(--bg);box-shadow:0 0 8px rgba(220,38,38,0.35)}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--red);cursor:pointer;border:2px solid var(--bg);box-shadow:0 0 8px rgba(220,38,38,0.35)}
+.tc-ticks{display:flex;justify-content:space-between;padding:0 6px}
+.tc-tick{font-family:var(--mono);font-size:8px;color:var(--dim);letter-spacing:.5px}
+
+/* TOPIC LEGEND */
+.topic-legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tl-item{display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;color:var(--t2);background:var(--card);border:1px solid var(--border);padding:5px 10px;border-radius:20px;cursor:default}
+.tl-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.tl-count{color:var(--muted);margin-left:3px;font-size:9px}
+
+/* GUEST LEADERBOARD */
+.guest-list{display:flex;flex-direction:column;gap:0}
+.guest-row{display:grid;grid-template-columns:32px 1fr 60px;align-items:center;gap:10px;padding:14px 8px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .1s;border-radius:4px}
+.guest-row:last-child{border-bottom:none}
+.guest-row:hover{background:rgba(255,255,255,0.03)}
+.g-rank{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--dim);text-align:center}
+.g-rank.gold{color:var(--amber)}
+.g-rank.silver{color:var(--t2)}
+.g-name{font-size:14px;font-weight:600}
+.g-eps{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:2px}
+.g-score{font-family:var(--mono);font-size:16px;font-weight:700;text-align:right;color:var(--text)}
+.g-score-bar{height:3px;background:var(--dim2);border-radius:2px;margin-top:4px;overflow:hidden}
+.g-score-fill{height:100%;background:var(--red);border-radius:2px;transition:width .4s ease}
+
+/* TOP SETS TABLE */
+.sets-wrap{overflow:hidden;border-radius:8px;border:1px solid var(--border)}
+table.sets-table{width:100%;border-collapse:collapse;font-size:13px}
+.sets-table thead tr{background:var(--card);border-bottom:1px solid var(--bh)}
+.sets-table th{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);padding:12px 18px;text-align:left;font-weight:600}
+.sets-table th:last-child,.sets-table td:last-child{text-align:right}
+.sets-table td{padding:14px 18px;border-bottom:1px solid var(--border);vertical-align:middle}
+.sets-table tr:last-child td{border-bottom:none}
+.sets-table tbody tr:hover{background:rgba(255,255,255,0.025)}
+.td-rank{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--muted);width:40px}
+.td-name{font-weight:600;font-size:14px}
+.td-ep{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:2px}
+.td-topics{display:flex;gap:5px;flex-wrap:wrap}
+.topic-tag{font-family:var(--mono);font-size:10px;letter-spacing:.3px;text-transform:uppercase;padding:4px 10px;border-radius:4px;color:var(--t2);background:var(--raised);border:1px solid var(--bh);white-space:nowrap;font-weight:500}
+.td-crowd{font-family:var(--mono);font-size:10px;letter-spacing:.5px;text-transform:uppercase;font-weight:600}
+.crowd-high{color:var(--green)}
+.crowd-mid{color:var(--amber)}
+.crowd-low{color:var(--muted)}
+.td-score{font-family:var(--mono);font-size:17px;font-weight:700;letter-spacing:-0.5px}
+.score-bar-wrap{display:flex;align-items:center;gap:10px}
+.score-bar-bg{flex:1;height:4px;background:var(--dim2);border-radius:2px;overflow:hidden;max-width:60px}
+.score-bar-fill{height:100%;background:var(--red);border-radius:2px}
+
+/* FOOTER */
+.footer{padding:24px 40px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
+.footer-left{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+.footer-right{font-family:var(--mono);font-size:10px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<!-- LIVE BAR -->
+<div class="live-bar">
+  <div class="live-dot"></div>
+  LIVE DATABASE
+  <span class="sp"></span>
+  <span class="lm">8,432 SETS INDEXED · 612 EPISODES · LAST UPDATED EP #612</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div style="display:flex;align-items:center;gap:36px">
+    <div class="brand"><em>KILL</em> TONY DB</div>
+    <div class="nav-tabs">
+      <div class="nt active">Overview</div>
+      <div class="nt">Episodes</div>
+      <div class="nt">Sets</div>
+      <div class="nt">Regulars</div>
+      <div class="nt">Guests</div>
+    </div>
+  </div>
+  <div class="nav-right">
+    <div class="nav-tag">Kill Score v2.1</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <div class="hero-tag"><span style="width:5px;height:5px;background:var(--red);border-radius:50%;display:inline-block"></span>Data Science Thesis</div>
+    <h1 class="hero-title">Kill Tony<br><span class="thin">Database</span></h1>
+    <p class="hero-desc">Every 1-minute set from 612 episodes, scored, transcribed, and analyzed. The complete record of what makes a crowd erupt — and what falls flat.</p>
+  </div>
+  <div class="hero-metrics">
+    <div class="hm-row">
+      <div class="hm-label">Episodes</div>
+      <div class="hm-val">612</div>
+    </div>
+    <div class="hm-row">
+      <div class="hm-label">Total Sets</div>
+      <div class="hm-val">8,432</div>
+      <div class="hm-delta">+47 last episode</div>
+    </div>
+    <div class="hm-row">
+      <div class="hm-label">Comedians</div>
+      <div class="hm-val">5,891</div>
+    </div>
+  </div>
+</div>
+
+<!-- EPISODE PULSE -->
+<div class="section">
+  <div class="s-header">
+    <div>
+      <div class="s-title">Episode Pulse</div>
+      <div class="s-sub">Composite crowd energy across all 612 episodes — height and intensity reflect overall show performance</div>
+    </div>
+    <div class="s-badge">612 episodes</div>
+  </div>
+  <div class="ep-wrap">
+    <div class="ep-bars" id="ep-timeline"></div>
+    <div class="ep-axis">
+      <span class="ep-era">Ep #1 — Early Days</span>
+      <span class="ep-era">Era II — Growing</span>
+      <span class="ep-era">Golden Era</span>
+      <span class="ep-era">Late Surge</span>
+      <span class="ep-era">#612 — Current</span>
+    </div>
+    <div class="ep-legend">
+      <div class="ep-leg-item"><div class="ep-leg-swatch" style="background:rgba(220,38,38,0.15)"></div>Low energy</div>
+      <div class="ep-leg-item"><div class="ep-leg-swatch" style="background:rgba(220,38,38,0.55)"></div>Average</div>
+      <div class="ep-leg-item"><div class="ep-leg-swatch" style="background:rgba(220,38,38,1)"></div>Peak energy</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN GRID -->
+<div class="section">
+  <div class="main-grid">
+
+    <!-- TOPIC NETWORK -->
+    <div class="mg-panel">
+      <div class="s-header">
+        <div>
+          <div class="s-title">Topic Co-occurrence Network</div>
+          <div class="s-sub">Topics connected by how often they appear together in the same set. Distance = semantic similarity.</div>
+        </div>
+      </div>
+      <div id="force-container" style="position:relative">
+        <!-- SVG inserted by JS -->
+        <div class="force-overlay-label">Node size = frequency · Edge weight = co-occurrence</div>
+      </div>
+
+      <!-- TIME SLIDER -->
+      <div class="time-control">
+        <button class="tc-play" id="tc-play" title="Play through eras">&#9654;</button>
+        <div class="tc-slider-wrap">
+          <div class="tc-slider-row">
+            <input type="range" id="era-slider" min="0" max="6" value="6" step="1">
+            <div class="tc-era-label" id="era-label">All Time</div>
+          </div>
+          <div class="tc-ticks">
+            <span class="tc-tick">2014</span>
+            <span class="tc-tick">2016</span>
+            <span class="tc-tick">2018</span>
+            <span class="tc-tick">2020</span>
+            <span class="tc-tick">2022</span>
+            <span class="tc-tick">2024</span>
+            <span class="tc-tick">All</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="topic-legend" id="topic-legend"></div>
+    </div>
+
+    <!-- GUEST LEADERBOARD -->
+    <div class="mg-panel">
+      <div class="s-header">
+        <div>
+          <div class="s-title">Top Guests</div>
+          <div class="s-sub">Ranked by avg Kill Score during their episodes</div>
+        </div>
+      </div>
+      <div class="guest-list" id="guest-list"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- TOP SETS TABLE -->
+<div class="section">
+  <div class="s-header">
+    <div>
+      <div class="s-title">All-Time Top Sets</div>
+      <div class="s-sub">The highest-performing 1-minute sets in the database, ranked by Kill Score</div>
+    </div>
+    <div class="s-badge">Top 10</div>
+  </div>
+  <div class="sets-wrap">
+    <table class="sets-table">
+      <thead>
+        <tr>
+          <th style="width:40px">#</th><th>Comedian</th><th>Topics</th><th>Crowd</th><th style="text-align:right">Kill Score</th>
+        </tr>
+      </thead>
+      <tbody id="sets-tbody"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-left">Kill Tony DB · Data Science Thesis · All data from public sources</div>
+  <div class="footer-right">Last build: March 2026</div>
+</div>
+
+<script>
+// ── SEEDED RANDOM ──
+let _seed = 42;
+function sr() {
+  _seed = (_seed * 1664525 + 1013904223) & 0xffffffff;
+  return ((_seed >>> 0) / 0xffffffff);
+}
+
+// ── EPISODE PULSE TIMELINE ──
+(function() {
+  const container = document.getElementById('ep-timeline');
+  for (let i = 0; i < 612; i++) {
+    const t = i / 612;
+    const trend = 30 + t * 40;
+    const slow = Math.sin(i * 0.05) * 10;
+    const fast = Math.sin(i * 0.4) * 6;
+    const golden = (i > 200 && i < 290) ? 18 : 0;
+    const surge = (i > 460 && i < 520) ? 12 : 0;
+    const score = Math.max(4, Math.min(100, trend + slow + fast + golden + surge + (sr() * 18 - 9)));
+    const bar = document.createElement('div');
+    bar.className = 'ep-bar';
+    const alpha = 0.1 + (score / 100) * 0.9;
+    bar.style.height = (score * 0.76) + 'px';
+    bar.style.background = `rgba(220,38,38,${alpha.toFixed(2)})`;
+    bar.title = `Ep #${i + 1}  Pulse: ${score.toFixed(1)}`;
+    container.appendChild(bar);
+  }
+})();
+
+// ── TOPIC COLORS MAP (for tags) ──
+const topicColorMap = {
+  'self-deprecation':'#ef4444','relationships':'#f59e0b','race':'#8b5cf6',
+  'observations':'#3b82f6','dark humor':'#ec4899','politics':'#22c55e',
+  'wordplay':'#06b6d4','crowd work':'#a78bfa','absurdism':'#06b6d4',
+};
+
+// ── GUEST DATA ──
+const guests = [
+  { name:'Dave Chappelle', eps:1, score:96.8, best:201 },
+  { name:'Ron White',      eps:3, score:94.1, best:478 },
+  { name:'Bill Burr',      eps:2, score:91.3, best:341 },
+  { name:'Joe Rogan',      eps:5, score:88.7, best:289 },
+  { name:'Tom Segura',     eps:4, score:87.2, best:512 },
+  { name:'Shane Gillis',   eps:3, score:85.9, best:567 },
+  { name:'Christina P',    eps:6, score:84.3, best:198 },
+  { name:'Andrew Schulz',  eps:4, score:83.1, best:443 },
+  { name:'Theo Von',       eps:3, score:81.8, best:389 },
+  { name:'Mark Normand',   eps:7, score:79.4, best:156 },
+];
+const guestList = document.getElementById('guest-list');
+guests.forEach((g, i) => {
+  const rankClass = i === 0 ? 'gold' : i === 1 ? 'silver' : '';
+  const pct = ((g.score - 70) / 30 * 100).toFixed(0);
+  guestList.innerHTML += `
+  <div class="guest-row">
+    <div class="g-rank ${rankClass}">${i + 1}</div>
+    <div>
+      <div class="g-name">${g.name}</div>
+      <div class="g-eps">${g.eps} ep${g.eps > 1 ? 's' : ''} · Best: #${g.best}</div>
+    </div>
+    <div style="text-align:right">
+      <div class="g-score">${g.score}</div>
+      <div class="g-score-bar"><div class="g-score-fill" style="width:${pct}%"></div></div>
+    </div>
+  </div>`;
+});
+
+// ── TOP SETS ──
+const topSets = [
+  { rank:1, name:'Hans Kim',           ep:512, topics:['self-deprecation','relationships'], crowd:'ERUPTION', score:9.8 },
+  { rank:2, name:'David Lucas',        ep:341, topics:['race','dark humor'],                crowd:'ERUPTION', score:9.6 },
+  { rank:3, name:'William Montgomery', ep:478, topics:['observations','wordplay'],          crowd:'ERUPTION', score:9.4 },
+  { rank:4, name:'Uncle Laser',        ep:289, topics:['absurdism','crowd work'],            crowd:'HUGE',     score:9.3 },
+  { rank:5, name:'Pinky Patel',        ep:389, topics:['race','self-deprecation'],           crowd:'HUGE',     score:9.1 },
+  { rank:6, name:'Tim Dillon',         ep:156, topics:['politics','dark humor'],             crowd:'HUGE',     score:8.9 },
+  { rank:7, name:'Hans Kim',           ep:201, topics:['relationships','self-deprecation'],  crowd:'STRONG',   score:8.8 },
+  { rank:8, name:'Shane Gillis',       ep:443, topics:['observations','crowd work'],         crowd:'STRONG',   score:8.7 },
+  { rank:9, name:'David Lucas',        ep:112, topics:['race','relationships'],              crowd:'STRONG',   score:8.5 },
+  { rank:10,name:'Uncle Laser',        ep:567, topics:['absurdism','wordplay'],              crowd:'STRONG',   score:8.4 },
+];
+const tbody = document.getElementById('sets-tbody');
+topSets.forEach(s => {
+  const crowdClass = s.crowd === 'ERUPTION' ? 'crowd-high' : s.crowd === 'HUGE' ? 'crowd-mid' : 'crowd-low';
+  tbody.innerHTML += `<tr>
+    <td class="td-rank" style="color:${s.rank<=3?'var(--amber)':'var(--muted)'}">${s.rank}</td>
+    <td><div class="td-name">${s.name}</div><div class="td-ep">Ep #${s.ep}</div></td>
+    <td><div class="td-topics">${s.topics.map(t => `<span class="topic-tag">${t}</span>`).join('')}</div></td>
+    <td class="td-crowd ${crowdClass}">${s.crowd}</td>
+    <td>
+      <div class="score-bar-wrap">
+        <div class="score-bar-bg"><div class="score-bar-fill" style="width:${s.score*10}%"></div></div>
+        <div class="td-score" style="color:var(--red)">${s.score}</div>
+      </div>
+    </td>
+  </tr>`;
+});
+
+// ── FORCE-DIRECTED TOPIC NETWORK WITH TIME SLIDER ──
+(function() {
+  const container = document.getElementById('force-container');
+  const W = container.clientWidth || 700;
+  const H = 420;
+  const NS = 'http://www.w3.org/2000/svg';
+
+  const topics = [
+    { id:0, label:'Self-Deprecation', color:'#ef4444' },
+    { id:1, label:'Relationships',    color:'#f59e0b' },
+    { id:2, label:'Race & Culture',   color:'#8b5cf6' },
+    { id:3, label:'Observations',     color:'#3b82f6' },
+    { id:4, label:'Dark Humor',       color:'#ec4899' },
+    { id:5, label:'Politics',         color:'#22c55e' },
+    { id:6, label:'Wordplay',         color:'#06b6d4' },
+    { id:7, label:'Crowd Work',       color:'#a78bfa' },
+  ];
+
+  const links = [
+    { s:0, t:1, w:820 }, { s:0, t:3, w:890 }, { s:0, t:2, w:720 },
+    { s:0, t:4, w:580 }, { s:1, t:3, w:740 }, { s:2, t:4, w:510 },
+    { s:2, t:5, w:410 }, { s:3, t:6, w:380 }, { s:4, t:5, w:290 },
+    { s:1, t:6, w:290 }, { s:0, t:7, w:220 }, { s:3, t:7, w:180 },
+  ];
+
+  // Era data: topic counts per era window
+  // [self-dep, relationships, race, observations, dark, politics, wordplay, crowd]
+  const eraData = [
+    [320, 280, 150, 290, 180,  80,  60,  20], // Ep 1-100
+    [420, 350, 250, 380, 280, 120, 100,  40], // Ep 101-200
+    [580, 420, 380, 460, 350, 200, 140,  60], // Ep 201-300
+    [450, 300, 320, 350, 260, 250, 130,  80], // Ep 301-400
+    [540, 380, 420, 400, 280, 180, 150, 110], // Ep 401-500
+    [537, 374, 372, 351, 219, 157, 144, 122], // Ep 501-612
+    [2847,2104,1892,2231,1567, 987, 724, 432], // All Time
+  ];
+  const eraLabels = [
+    'Ep 1–100 · 2014–2015',
+    'Ep 101–200 · 2016–2017',
+    'Ep 201–300 · 2018–2019',
+    'Ep 301–400 · 2020–2021',
+    'Ep 401–500 · 2022–2023',
+    'Ep 501–612 · 2024–2025',
+    'All Time',
+  ];
+
+  const allTimeCounts = eraData[6];
+  let currentEra = 6;
+
+  // Compute radius from count
+  function countToR(count, era) {
+    const divisor = era < 6 ? 60 : 220;
+    return Math.max(16, Math.sqrt(count / divisor) * 1.1);
+  }
+
+  // Init topics with all-time counts
+  const cx = W / 2, cy = H / 2;
+  topics.forEach((n, i) => {
+    n.count = allTimeCounts[i];
+    n.r = countToR(n.count, 6);
+    const a = (i / topics.length) * Math.PI * 2 - Math.PI / 2;
+    n.x = cx + 150 * Math.cos(a);
+    n.y = cy + 120 * Math.sin(a);
+    n.vx = n.vy = 0;
+  });
+
+  // Store original edge weights
+  links.forEach(l => { l.origW = l.w; });
+
+  // Create SVG
+  const svg = document.createElementNS(NS, 'svg');
+  svg.setAttribute('width', W);
+  svg.setAttribute('height', H);
+  svg.style.cssText = 'display:block;width:100%';
+  container.insertBefore(svg, container.querySelector('.force-overlay-label'));
+
+  // Defs: glow filter
+  const defs = document.createElementNS(NS, 'defs');
+  const filter = document.createElementNS(NS, 'filter');
+  filter.setAttribute('id', 'glow');
+  filter.setAttribute('x', '-40%'); filter.setAttribute('y', '-40%');
+  filter.setAttribute('width', '180%'); filter.setAttribute('height', '180%');
+  const feG = document.createElementNS(NS, 'feGaussianBlur');
+  feG.setAttribute('stdDeviation', '4'); feG.setAttribute('result', 'blur');
+  const feM = document.createElementNS(NS, 'feMerge');
+  const m1 = document.createElementNS(NS, 'feMergeNode'); m1.setAttribute('in', 'blur');
+  const m2 = document.createElementNS(NS, 'feMergeNode'); m2.setAttribute('in', 'SourceGraphic');
+  feM.appendChild(m1); feM.appendChild(m2);
+  filter.appendChild(feG); filter.appendChild(feM);
+  defs.appendChild(filter);
+  svg.appendChild(defs);
+
+  // Edge group
+  const edgeG = document.createElementNS(NS, 'g');
+  links.forEach(l => {
+    const line = document.createElementNS(NS, 'line');
+    const op = 0.06 + (l.w / 890) * 0.32;
+    const sw = 0.5 + (l.w / 890) * 3;
+    line.setAttribute('stroke', '#ffffff');
+    line.setAttribute('stroke-opacity', op.toFixed(2));
+    line.setAttribute('stroke-width', sw.toFixed(1));
+    l.el = line;
+    edgeG.appendChild(line);
+  });
+  svg.appendChild(edgeG);
+
+  // Node group
+  const nodeG = document.createElementNS(NS, 'g');
+  topics.forEach(n => {
+    const g = document.createElementNS(NS, 'g');
+    g.style.cursor = 'pointer';
+
+    const glow = document.createElementNS(NS, 'circle');
+    glow.setAttribute('r', n.r + 12);
+    glow.setAttribute('fill', n.color);
+    glow.setAttribute('opacity', '0.1');
+    n.glowEl = glow;
+
+    const circle = document.createElementNS(NS, 'circle');
+    circle.setAttribute('r', n.r);
+    circle.setAttribute('fill', n.color);
+    circle.setAttribute('opacity', '0.85');
+    circle.setAttribute('stroke', n.color);
+    circle.setAttribute('stroke-width', '1.5');
+    circle.setAttribute('stroke-opacity', '0.4');
+    n.circleEl = circle;
+
+    const countT = document.createElementNS(NS, 'text');
+    countT.setAttribute('text-anchor', 'middle');
+    countT.setAttribute('dy', '4');
+    countT.setAttribute('fill', 'white');
+    countT.setAttribute('font-size', n.r > 24 ? '11' : '9');
+    countT.setAttribute('font-family', 'Geist Mono, monospace');
+    countT.setAttribute('font-weight', '700');
+    countT.setAttribute('pointer-events', 'none');
+    countT.textContent = formatCount(n.count);
+    n.countEl = countT;
+
+    const labelT = document.createElementNS(NS, 'text');
+    labelT.setAttribute('text-anchor', 'middle');
+    labelT.setAttribute('dy', n.r + 16);
+    labelT.setAttribute('fill', '#9a9aa0');
+    labelT.setAttribute('font-size', '10');
+    labelT.setAttribute('font-family', 'Geist Mono, monospace');
+    labelT.setAttribute('font-weight', '500');
+    labelT.setAttribute('pointer-events', 'none');
+    labelT.textContent = n.label;
+    n.labelEl = labelT;
+
+    g.appendChild(glow);
+    g.appendChild(circle);
+    g.appendChild(countT);
+    g.appendChild(labelT);
+    n.el = g;
+    nodeG.appendChild(g);
+  });
+  svg.appendChild(nodeG);
+
+  function formatCount(c) {
+    return c >= 1000 ? (c / 1000).toFixed(1) + 'k' : c.toString();
+  }
+
+  // Populate legend
+  const legend = document.getElementById('topic-legend');
+  topics.forEach(n => {
+    legend.innerHTML += `<div class="tl-item"><div class="tl-dot" style="background:${n.color}"></div>${n.label}<span class="tl-count">${n.count.toLocaleString()}</span></div>`;
+  });
+
+  // ── PHYSICS ──
+  let physFrame = 0;
+  let physMax = 300;
+  let physRunning = false;
+
+  function startPhysics(frames) {
+    physFrame = 0;
+    physMax = frames;
+    if (!physRunning) {
+      physRunning = true;
+      requestAnimationFrame(physicsTick);
+    }
+  }
+
+  function physicsTick() {
+    if (physFrame >= physMax) { physRunning = false; return; }
+    physFrame++;
+
+    // Repulsion
+    for (let i = 0; i < topics.length; i++) {
+      for (let j = i + 1; j < topics.length; j++) {
+        const a = topics[i], b = topics[j];
+        const dx = b.x - a.x || 0.01;
+        const dy = b.y - a.y || 0.01;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const minD = a.r + b.r + 40;
+        if (dist < minD * 3.5) {
+          const force = 4500 / (dist * dist);
+          a.vx -= (dx / dist) * force;
+          a.vy -= (dy / dist) * force;
+          b.vx += (dx / dist) * force;
+          b.vy += (dy / dist) * force;
+        }
+      }
+    }
+    // Spring for edges
+    links.forEach(l => {
+      const a = topics[l.s], b = topics[l.t];
+      const dx = b.x - a.x, dy = b.y - a.y;
+      const dist = Math.sqrt(dx * dx + dy * dy) || 0.01;
+      const targetLen = 170 - (l.w / 890) * 60;
+      const stretch = (dist - targetLen) * 0.02;
+      a.vx += (dx / dist) * stretch;
+      a.vy += (dy / dist) * stretch;
+      b.vx -= (dx / dist) * stretch;
+      b.vy -= (dy / dist) * stretch;
+    });
+    // Update
+    topics.forEach(n => {
+      n.vx += (cx - n.x) * 0.004;
+      n.vy += (cy - n.y) * 0.004;
+      n.vx *= 0.86;
+      n.vy *= 0.86;
+      n.x = Math.max(n.r + 16, Math.min(W - n.r - 16, n.x + n.vx));
+      n.y = Math.max(n.r + 22, Math.min(H - n.r - 28, n.y + n.vy));
+      n.el.setAttribute('transform', `translate(${n.x.toFixed(1)},${n.y.toFixed(1)})`);
+    });
+    // Update edges
+    links.forEach(l => {
+      l.el.setAttribute('x1', topics[l.s].x.toFixed(1));
+      l.el.setAttribute('y1', topics[l.s].y.toFixed(1));
+      l.el.setAttribute('x2', topics[l.t].x.toFixed(1));
+      l.el.setAttribute('y2', topics[l.t].y.toFixed(1));
+    });
+    requestAnimationFrame(physicsTick);
+  }
+
+  // Initial physics run
+  startPhysics(300);
+
+  // ── ERA TRANSITION ──
+  let transFrame = 0;
+  let transRunning = false;
+  const TRANS_FRAMES = 28;
+
+  function switchEra(idx) {
+    if (idx === currentEra) return;
+    currentEra = idx;
+    const counts = eraData[idx];
+
+    // Set up transition targets
+    topics.forEach((n, i) => {
+      n.fromR = n.r;
+      n.toR = countToR(counts[i], idx);
+      n.fromCount = n.count;
+      n.toCount = counts[i];
+    });
+
+    // Compute new edge weights
+    links.forEach(l => {
+      l.fromW = l.w;
+      const scaleA = eraData[idx][l.s] / allTimeCounts[l.s];
+      const scaleB = eraData[idx][l.t] / allTimeCounts[l.t];
+      l.toW = l.origW * Math.sqrt(scaleA * scaleB);
+    });
+
+    transFrame = 0;
+    if (!transRunning) {
+      transRunning = true;
+      requestAnimationFrame(transitionTick);
+    }
+
+    document.getElementById('era-label').textContent = eraLabels[idx];
+  }
+
+  function transitionTick() {
+    transFrame++;
+    const p = Math.min(1, transFrame / TRANS_FRAMES);
+    const e = 1 - Math.pow(1 - p, 3); // ease-out cubic
+
+    topics.forEach(n => {
+      n.r = n.fromR + (n.toR - n.fromR) * e;
+      n.count = Math.round(n.fromCount + (n.toCount - n.fromCount) * e);
+      n.circleEl.setAttribute('r', n.r.toFixed(1));
+      n.glowEl.setAttribute('r', (n.r + 12).toFixed(1));
+      n.countEl.textContent = formatCount(n.count);
+      n.countEl.setAttribute('font-size', n.r > 24 ? '11' : '9');
+      n.labelEl.setAttribute('dy', (n.r + 16).toFixed(0));
+    });
+
+    links.forEach(l => {
+      l.w = l.fromW + (l.toW - l.fromW) * e;
+      const op = 0.06 + (l.w / 890) * 0.32;
+      const sw = 0.5 + (l.w / 890) * 3;
+      l.el.setAttribute('stroke-opacity', op.toFixed(2));
+      l.el.setAttribute('stroke-width', sw.toFixed(1));
+    });
+
+    if (transFrame < TRANS_FRAMES) {
+      requestAnimationFrame(transitionTick);
+    } else {
+      transRunning = false;
+      // Re-settle physics briefly
+      startPhysics(100);
+    }
+  }
+
+  // ── SLIDER CONTROLS ──
+  const slider = document.getElementById('era-slider');
+  slider.addEventListener('input', () => {
+    switchEra(parseInt(slider.value));
+    if (playInterval) stopPlay();
+  });
+
+  // Play button
+  let playInterval = null;
+  const playBtn = document.getElementById('tc-play');
+
+  function startPlay() {
+    playBtn.classList.add('playing');
+    playBtn.innerHTML = '&#9646;&#9646;';
+    slider.value = 0;
+    switchEra(0);
+    let step = 1;
+    playInterval = setInterval(() => {
+      if (step > 6) { stopPlay(); return; }
+      slider.value = step;
+      switchEra(step);
+      step++;
+    }, 1800);
+  }
+
+  function stopPlay() {
+    clearInterval(playInterval);
+    playInterval = null;
+    playBtn.classList.remove('playing');
+    playBtn.innerHTML = '&#9654;';
+  }
+
+  playBtn.addEventListener('click', () => {
+    if (playInterval) stopPlay();
+    else startPlay();
+  });
+})();
+</script>
+</body>
+</html>

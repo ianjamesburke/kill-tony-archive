@@ -1,0 +1,92 @@
+{
+  "episodes": [
+    {
+      "episode_number": 758,
+      "title": "KT #758 - DONNELL RAWLINGS + TREVOR WALLACE",
+      "url": "https://www.youtube.com/watch?v=6jytsJ8JIDk",
+      "video_id": "6jytsJ8JIDk",
+      "duration_seconds": 6749,
+      "status": "pending"
+    },
+    {
+      "episode_number": 757,
+      "title": "KT #757 - MATT RIFE + JEREMY (ADAM RAY)",
+      "url": "https://www.youtube.com/watch?v=h55BVmVQJ-8",
+      "video_id": "h55BVmVQJ-8",
+      "duration_seconds": 7663,
+      "status": "pending"
+    },
+    {
+      "episode_number": 756,
+      "title": "KT #756 - JIM NORTON + IAN FIDANCE",
+      "url": "https://www.youtube.com/watch?v=tjT1DbnWTb8",
+      "video_id": "tjT1DbnWTb8",
+      "duration_seconds": 7858,
+      "status": "pending"
+    },
+    {
+      "episode_number": 755,
+      "title": "KT #755 - DR PHIL (ADAM RAY) + SAL VULCANO, + GREG FITZSIMMONS",
+      "url": "https://www.youtube.com/watch?v=PG_8dq4YtSQ",
+      "video_id": "PG_8dq4YtSQ",
+      "duration_seconds": 8699,
+      "status": "done"
+    },
+    {
+      "episode_number": 754,
+      "title": "KT #754 - BERT KREISCHER + RICK INGRAHAM",
+      "url": "https://www.youtube.com/watch?v=oj5Qi7P9Gcc",
+      "video_id": "oj5Qi7P9Gcc",
+      "duration_seconds": 7411,
+      "status": "done"
+    },
+    {
+      "episode_number": 753,
+      "title": "KT #753 - JIM BREUER - SAM TALLENT",
+      "url": "https://www.youtube.com/watch?v=2LGShfsvnTM",
+      "video_id": "2LGShfsvnTM",
+      "duration_seconds": 7980,
+      "status": "done"
+    },
+    {
+      "episode_number": 752,
+      "title": "KT #752 - STEVE BYRNE + TOMMY POPE",
+      "url": "https://www.youtube.com/watch?v=1XnqVp6Vy_k",
+      "video_id": "1XnqVp6Vy_k",
+      "duration_seconds": 7044,
+      "status": "done"
+    },
+    {
+      "episode_number": 751,
+      "title": "KT #751 - JOE ROGAN + SHANE GILLIS",
+      "url": "https://www.youtube.com/watch?v=tXW0SFv1C-U",
+      "video_id": "tXW0SFv1C-U",
+      "duration_seconds": 7365,
+      "status": "done"
+    },
+    {
+      "episode_number": 750,
+      "title": "KT #750 - LANCE ARMSTRONG + MATT MCCUSKER + TIM BUTTERLY",
+      "url": "https://www.youtube.com/watch?v=7rrHAhe1TsM",
+      "video_id": "7rrHAhe1TsM",
+      "duration_seconds": 7029,
+      "status": "done"
+    },
+    {
+      "episode_number": 749,
+      "title": "KT #749 - SLY STALLONE (KYLE DUNNIGAN) + TONY YAYO",
+      "url": "https://www.youtube.com/watch?v=n41jDuAwD_s",
+      "video_id": "n41jDuAwD_s",
+      "duration_seconds": 7542,
+      "status": "done"
+    },
+    {
+      "episode_number": 748,
+      "title": "KT #748 - ARI MATTI + EHSAN AHMAD",
+      "url": "https://www.youtube.com/watch?v=Bd6M_-Ky1HI",
+      "video_id": "Bd6M_-Ky1HI",
+      "duration_seconds": 8376,
+      "status": "pending"
+    }
+  ]
+}
