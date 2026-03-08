@@ -1,0 +1,426 @@
+{
+  "episode": {
+    "episode_number": 758,
+    "guests": [
+      "Donnell Rawlings",
+      "Trevor Wallace"
+    ],
+    "venue": "Comedy Mothership"
+  },
+  "sets": [
+    {
+      "set_number": 1,
+      "comedian_name": "Uncle Lazer",
+      "status": "regular",
+      "set_transcript": "How we doing, Austin? Y'all all right? You okay? Happy Black History Month. They got Darnell here. They got that light-skinned feller painting. And they got Dee Madness dressed like a butler. Unreal. What a trait. Before we get started on these, you know, listen, I don't care what you are, okay? It's your right as a human being. Whatever you do, don't impede on what someone else does. It's your right as a human being. Like, look, I don't care if you're gay. I don't care if you're trans. I don't even care if you're black. Your body, your choice. You know what I'm talking about? And y'all are like, well, black's not a choice. Well, they choose to be that loud at the movie theater, don't they? Listen now. Listen here, God damn it. Listen. I ain't racist to nobody. But there is one motherfucker I do hate, okay? One motherfucker I can't stand. And that is a motherfucker with the audacity to ask me if I want to help them move furniture from one apartment complex to the other. Okay, listen, dude. The goddamn blatant disrespect you got to ask me to help you move a California king? Down two flights of stairs? Yeah, man, as soon as we get there, you might as well just fuck my wife on that mattress, all right? I'd rather have full-blown fucking AIDS, all right? Like, not Magic Johnson AIDS, quit playing basketball in the 90s. I'm talking Dallas Buyer Club's AIDS, all right? 99 cents a day AIDS. You can swat them flies off that meat-be-opening kid's face. With that being said... I got to move on Saturday if anybody's got a pickup truck I can borrow.",
+      "set_start_seconds": 315.0,
+      "set_end_seconds": 421.0,
+      "topic_tags": [
+        "race",
+        "relationships",
+        "sex",
+        "observational",
+        "shock_humor"
+      ],
+      "crowd_reaction": "big_laughs",
+      "tony_praise_level": 4,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "Lazer talks about winning a dating show date with Heidi's 'big bear' friend and mentions moving furniture as a euphemism for their encounter.",
+      "disclosed_age": null,
+      "disclosed_occupation": null,
+      "disclosed_location": null,
+      "disclosed_relationship_status": "married",
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Won a date with Heidi's friend on a dating show",
+        "Claims to be moving on Saturday and needs a truck"
+      ]
+    },
+    {
+      "set_number": 2,
+      "comedian_name": "Seth Shepard",
+      "status": "bucket_pull",
+      "set_transcript": "Howdy, y'all. I found out recently I'm one eighth black. It's our month now. Now, this doesn't mean that I can say any of the fun words. I sure have been thinking about it. I lost my virginity with a soft dick. Y'all might be thinking, wow, that's got to take a hog to work, right? You'd be wrong. All it takes is a girl that believes deep enough and keeps drinking after she pukes on you. I was 17. She was 22. She knew what she wanted. Between me and whiskey, though, we figured it out. It's all right. All right. I wish I had got a bigger pot, but thank you all so much.",
+      "set_start_seconds": 667.0,
+      "set_end_seconds": 717.0,
+      "topic_tags": [
+        "race",
+        "sex",
+        "drugs",
+        "self_deprecation"
+      ],
+      "crowd_reaction": "moderate",
+      "tony_praise_level": 2,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "small",
+      "interview_summary": "Seth discusses his cowboy persona, building guns, and working at a dispensary despite not smoking weed. Tony compares his voice to the Big Lebowski narrator.",
+      "disclosed_age": 29,
+      "disclosed_occupation": "works at a dispensary",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": 1,
+      "fun_facts": [
+        "Likes building guns",
+        "Works at a weed dispensary but does not smoke weed",
+        "Lost his virginity to his sister's friend"
+      ]
+    },
+    {
+      "set_number": 3,
+      "comedian_name": "Julian Casas",
+      "status": "bucket_pull",
+      "set_transcript": "So I don't think Stephen Hawking fucked any kids. Because how? There's only one thing he could have done. Only one thing that makes any sense. He lined them up on the ground, put a ramp on either side, and turned his chair up to full speed. And he has the science to make it happen. I could just imagine his tires creating fire tracks. And I'm pretty sure that's how his face got that way. It's just the wind resistance. You know what I mean? It's just like... All right. That's my set.",
+      "set_start_seconds": 1318.0,
+      "set_end_seconds": 1378.0,
+      "topic_tags": [
+        "disability",
+        "observational",
+        "shock_humor"
+      ],
+      "crowd_reaction": "big_laughs",
+      "tony_praise_level": 5,
+      "golden_ticket": false,
+      "sign_up_again": true,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "large",
+      "interview_summary": "Tony is very impressed with Julian's writing. Julian discusses his mother's schizophrenia, his former job at Amazon, and living in a travel trailer.",
+      "disclosed_age": 30,
+      "disclosed_occupation": "Uber driver",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Mother is schizophrenic",
+        "Lives in a travel trailer",
+        "Saved $14,000 to move to Austin for comedy"
+      ]
+    },
+    {
+      "set_number": 4,
+      "comedian_name": "Jay Legend",
+      "status": "regular",
+      "set_transcript": "Yeah, yeah. I had one on a date with a white woman. It's important that I say that part for the story. And as I was getting to know her, she was telling me how she was into gender pronouns and how she identified as a they-them, which is a crazy sentence to hear. But I'm a super chill guy. I don't overreact. I'm like, if that's how you choose to live your life, I'll call you what you want to be called. But I did let them know, before we go out, I can only afford to pay for me and you. And that's going to be a problem. We shouldn't do this, because they could come, just make sure they bring money, for real. Because if they order anything off of this menu, they're going to pay for the shit, gratuity and all. I'm not going to be stuck with a bill for seven fucking people, because you don't know who you want to be in life. That's not my responsibility, and I refuse to deal with it. The part that pissed me off the most was they got up when it was time to order, so now I look like a dumbass at the table, because the waiter take the order. He like, sir, what would you like? Put my order in with confidence. Then he was like, what about your guests? I'm like, I don't know what they want. He said, they? You expecting more people? I was like, no, it's just one of them. He said, one of them? I said, yes, nigga, one of them. I don't know what the fuck I just said. I'm confused, too. I thought you helped me figure this shit out, for real. Because at this point, it's us versus them, and we're losing. Hey, y'all was going to tell him, J-Lo?",
+      "set_start_seconds": 1803.0,
+      "set_end_seconds": 1882.0,
+      "topic_tags": [
+        "lgbtq",
+        "relationships",
+        "observational",
+        "race"
+      ],
+      "crowd_reaction": "big_laughs",
+      "tony_praise_level": 4,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "large",
+      "interview_summary": "Jay Legend, a Mothership door guy, discusses his toxic living situation with his baby mama and two kids. He reveals a tragic story about nearly being sold for crack as a baby.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Door guy at Comedy Mothership",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "complicated",
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "His son has autism",
+        "His crackhead grandmother almost sold him for two dime bags in the 90s",
+        "His dad was a crack dealer"
+      ]
+    },
+    {
+      "set_number": 5,
+      "comedian_name": "Derek Larson",
+      "status": "bucket_pull",
+      "set_transcript": "Hey, what's up, guys? I'm not from Texas. When I first moved here, I thought I was going to have to learn, like, the Texas lingo, right? So I started saying things like howdy, I reckon, and yee-haw after somebody would say the N-word. Yeah, I learned pretty quick, that's not how people talk in Austin at all. No, people here, they say things like woke and progressive, and if you live here long enough, you'll say the same kind of stuff too. Like the other day, this person walks by, and I turn to my buddy, I go, damn, dude, check out the ass on that they-them. Now, a little about me, I have a pocket pussy. Yeah, I'll be honest with you guys, after you use it a couple times, it starts to taste kind of weird. Yeah, but hey, a chef should never fear his own recipe, am I right, fellas? Yeah, my pocket pussy's also brown, so you know when I'm using it, I'm yelling, ee-haw. All right, yeah. Cool. I hooked up with this big girl recently. Talk about a heavy sleeper.",
+      "set_start_seconds": 2306.0,
+      "set_end_seconds": 2372.0,
+      "topic_tags": [
+        "regional",
+        "sex",
+        "shock_humor",
+        "lgbtq"
+      ],
+      "crowd_reaction": "light",
+      "tony_praise_level": 2,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "medium",
+      "interview_summary": "Derek is a high-rise window cleaner who recently quit drinking. He tells a story about catching someone masturbating inside an apartment while he was on the job.",
+      "disclosed_age": 31,
+      "disclosed_occupation": "Rope access technician (window cleaner)",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": 7,
+      "fun_facts": [
+        "Cleans 45-story high-rise buildings",
+        "Refilled small liquor bottles from large ones to hide his drinking problem",
+        "Once plowed through snowmen in his car while drunk"
+      ]
+    },
+    {
+      "set_number": 6,
+      "comedian_name": "Nick Cano",
+      "status": "bucket_pull",
+      "set_transcript": "I was talking to my black friend the other day on the phone, and he was ignoring me. He was really pissing me off. So I was like, you know what, man? Fuck you. Go to hell. You know what? Go to black hell. That got his attention. Yeah, he turned around real quick. Yo, black hell is crazy, bro. Is it? You guys think hell's not segregated? It's run by the fucking devil. Like, the most evil guy of all time. What do you think black hell would be like? Just Maury every day finding out you are the father forever? Baby's name is Smoke Detector. Always needs batteries, you know? There's gay hell. There's two levels of gay hell. There's top and bottom, hell yeah. I'm not homophobic. I just hate people that love to gossip. Japanese hell would just be Vietnamese heaven. I don't know. I think Mexican Hill is actually froze over right now because of all the ice. I'm just really glad I don't have to go to Indian Hill. Can you imagine how bad that place fucking smells? Holy shit. Thank you so much, guys.",
+      "set_start_seconds": 2753.0,
+      "set_end_seconds": 2821.0,
+      "topic_tags": [
+        "race",
+        "religion",
+        "shock_humor",
+        "observational"
+      ],
+      "crowd_reaction": "moderate",
+      "tony_praise_level": 4,
+      "golden_ticket": false,
+      "sign_up_again": true,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "large",
+      "interview_summary": "Nick shares an incredibly dark story about his parents being dead and how his dad died of a heart attack in a car Nick was driving while high on Xanax.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Works at Big Laugh Comedy Club",
+      "disclosed_location": "Fort Worth",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": 1,
+      "fun_facts": [
+        "Both parents are dead",
+        "Lost 100 pounds after a girlfriend cheated on him",
+        "Claims to go to church (then admits it's a lie)"
+      ]
+    },
+    {
+      "set_number": 7,
+      "comedian_name": "Randolph Davies",
+      "status": "special_request",
+      "set_transcript": "No way. That's what I said when my masseuse told me she farted in my mouth while I was asleep. I've been on the road with the Counting Crows for about 35 years. Things get you down, get you tense, so I try to get a massage from time to time. I used to get a massage from this girl. She started having too many seizures, so I had to stop using her. So I got a new girl, bigger girl. Fat, you could say. And while that would push up on top of me, I was getting a massage, getting relaxed, fell asleep. And I wake up, and she goes, hey, sorry about the fart. And I said, uh, what? And at first I thought she was blaming, you know, blaming me. I'm like, sorry about that. You couldn't control your asshole, you know? And then I said, uh, I said, my bad. It has a mind of its own. And she goes, no, no, I'm the one that farted. I'm the farter is what she said. I said, I don't know why, don't know why you would, you know, turn yourself in after you robbed the bank, but. That's not going to help your reviews. You know what I'm saying? I'm not going to go online and say, Tina's super honest. I love that. And if you fall asleep at the right moment, she'll put a little secret in your mouth for free.",
+      "set_start_seconds": 3219.0,
+      "set_end_seconds": 3307.0,
+      "topic_tags": [
+        "storytelling",
+        "sex",
+        "observational",
+        "musical"
+      ],
+      "crowd_reaction": "roaring",
+      "tony_praise_level": 5,
+      "golden_ticket": true,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": true,
+      "joke_book_size": "none",
+      "interview_summary": "Randolph (Adam Ray in character) claims to be a roadie for Counting Crows for 35 years. He delivers a slam poem and is awarded a golden ticket.",
+      "disclosed_age": 55,
+      "disclosed_occupation": "Roadie for Counting Crows",
+      "disclosed_location": "Temecula",
+      "disclosed_relationship_status": "married",
+      "disclosed_years_doing_comedy": 0,
+      "fun_facts": [
+        "Saw Courtney Cox's tits",
+        "Owns a winery called Oops",
+        "Performed slam poetry about a coconut tree"
+      ]
+    },
+    {
+      "set_number": 8,
+      "comedian_name": "Pat O'Neill",
+      "status": "bucket_pull",
+      "set_transcript": "Folks, I was watching Batman earlier, and it really got me thinking, you know, because Bruce Wayne, his alter ego is Batman, inspired by his paralyzing fear of bats. So I guess then my superhero name would be Black Man. Uh... Man, okay. And considering how many of these superheroes get their power from radiation, not nearly enough of them are Japanese. Uh... Come on, Asian jokes are short-sighted. And... What do I know? Until Oppenheimer came out, I thought Nagasaki was about black blowjobs. Uh... Speaking of... Speaking of overreactions, Hamas really brought a knife to a fucking space laser fight, huh? Holy shit. Out of control. I'll never understand how conflict in the Middle East has lasted so long. Considering half of them face the same way five times a day. Fucking sneak up behind them. Problem solved! You are welcome, Jews! Okay, thank you.",
+      "set_start_seconds": 4074.0,
+      "set_end_seconds": 4151.0,
+      "topic_tags": [
+        "politics",
+        "race",
+        "religion",
+        "observational"
+      ],
+      "crowd_reaction": "big_laughs",
+      "tony_praise_level": 5,
+      "golden_ticket": true,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": true,
+      "joke_book_size": "medium",
+      "interview_summary": "Pat O'Neill wins a golden ticket after a strong set. He admits to doing a lot of cocaine and being fired from his mortgage job recently.",
+      "disclosed_age": 29,
+      "disclosed_occupation": "Mortgage company (recently fired)",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Dad died of liver cirrhosis at 40",
+        "Receiving severance pay so he isn't homeless yet",
+        "Tony calls him 'one of the funniest people'"
+      ]
+    },
+    {
+      "set_number": 9,
+      "comedian_name": "Dedrick Flynn",
+      "status": "regular",
+      "set_transcript": "Y'all, me and my white roommate, I had to go do a show in Marble Falls, Texas. It's not a real place, even though I went there. And when the sun went down, I looked at my roommate. I said, I think it's time for us to go. I think that's the rules out here. And so we start driving back, and the shit looked on the way. There's no, like, street lights. It looked like where you meet the devil, and that nigga charged, like, he challenged you to play guitar for your soul. So while we're driving, I looked at him, and I said, yo, I got to pee. I'm about to pee in this Gatorade bottle. And then he looked at me, his white ass, and said, I'll just pull over. No, nigga, you're not. We're not stopping here. And then he was like, what, are you scared like a mountain lion's going to come get you? I said, nigga, that's best case scenario. Worst case scenario, a white guy. You know what I'm saying? Like that. I'm trying to take a piss and a nigga come out of the cornfield and talk about, you fellers lost. Wrong turn, now I'm getting raped and slowly eaten. I don't care what you say. If y'all was in the woods and you saw a white guy disappear the whole time in your head, you're like, I wish this nigga was a grizzly bear. They have shit for bears. They got the shit called bear mace. You spray it on a bear and the bear get the fuck away. There's a hundred videos have been working. There's twice as many videos of a white guy walking through bear mace and getting tased, still trying to make a point. And I told that bitch to Bring my soda over there. Nigga, I don't want to do that. That's just scary. And if we being honest, nigga, the scariest bears are white. Polar bears don't... All they do is kill, nigga. That's just... My biggest fear is running to a polar bear with no Coca-Cola. Actually, let me change that. My biggest fear is running to a polar bear with Pepsi, nigga. That... Now I'm getting raped and slowly eaten by a goddamn polar bear. That's my time. I love y'all.",
+      "set_start_seconds": 4518.0,
+      "set_end_seconds": 4639.0,
+      "topic_tags": [
+        "race",
+        "observational",
+        "animals",
+        "crime"
+      ],
+      "crowd_reaction": "big_laughs",
+      "tony_praise_level": 4,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "large",
+      "interview_summary": "Dedrick (introduced as regular) talks about his fear of small-town Texas and his childhood crime of stealing Flamin' Hot Cheetos.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Comedian",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "From Atlanta",
+        "Was caught stealing from a gas station at age 7",
+        "Scared of polar bears specifically with Pepsi"
+      ]
+    },
+    {
+      "set_number": 10,
+      "comedian_name": "Vincenzo Maraschio",
+      "status": "bucket_pull",
+      "set_transcript": "I got a confession to make, guys. The first time I ever heard of LGBTQ+, I thought it was like a fancy way of saying, I want everything on my burger. Turns out it's a fancy way of saying, you love everything up your ass. I'm from the East Coast, and I'm a foodie. So the first time I heard of Grindr, I thought it was an app for sandwiches. Turns out it's for dicks. Yeah. So I came in the dude's mouth. I was like, where's the sandwich? When does it show up? I'm way hungrier and a lot more yay now. Yeah, I really didn't know that guy was gay until about a week later. He texted me. He was like, do you want to go to a Dallas Cowboys football game? That was it. That didn't mean. All right, that's been my time. Thank you, guys.",
+      "set_start_seconds": 4942.0,
+      "set_end_seconds": 5004.0,
+      "topic_tags": [
+        "lgbtq",
+        "sex",
+        "food"
+      ],
+      "crowd_reaction": "light",
+      "tony_praise_level": 2,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "medium",
+      "interview_summary": "Vincenzo, a door guy at Vulcan, claims to have eaten 36 black pussies and lost 100 pounds eating salad and Chick-fil-A.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Door guy at Vulcan Gas Company",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Sells Pokemon and sports cards",
+        "Lost 100 pounds",
+        "Claims to have eaten 36 black pussies"
+      ]
+    },
+    {
+      "set_number": 11,
+      "comedian_name": "Jerry Debo Smith",
+      "status": "bucket_pull",
+      "set_transcript": "I like to eat pussy. But don't get me confused with these young dudes eating ass, calling it groceries. That's not groceries. That's chitlins, and you niggas need to stop. That is chitlins. I think a lot of dudes eat ass because they still don't know where the clitoris is, but I do. And because of that, I have two rules, ladies. Like, the first one is if I can smell it before you take your pants off, I'm not eating that shit. And they always get mad at you when you tell them that they pussy stink like they don't know. Like, bitch, you knew that pussy smelled like a 91-degree day in Puerto Rico before you came over here. And the second one is, um, if you ever had an abortion... Yeah, I always lose people on that part. But fuck that, somebody got murdered in there. Y'all know niggas don't fuck around in haunted houses. My tongue, my choice, bitch. Thank you.",
+      "set_start_seconds": 5285.0,
+      "set_end_seconds": 5350.0,
+      "topic_tags": [
+        "sex",
+        "race",
+        "shock_humor",
+        "observational"
+      ],
+      "crowd_reaction": "moderate",
+      "tony_praise_level": 3,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "large",
+      "interview_summary": "Jerry (Debo) discusses his biracial heritage (white mom, 'purple' dad) and his background in San Antonio. He used to deliver furniture for 7 years.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Comedian",
+      "disclosed_location": "San Antonio",
+      "disclosed_relationship_status": "divorced",
+      "disclosed_years_doing_comedy": 15,
+      "fun_facts": [
+        "Originally from DC",
+        "His dad is 76 and currently on dialysis",
+        "Delivered furniture for Aaron's for 7 years"
+      ]
+    },
+    {
+      "set_number": 12,
+      "comedian_name": "Ralphie Da Bartender",
+      "status": "bucket_pull",
+      "set_transcript": "So a couple months ago, I go to Home Depot to look for a dude. And he didn't really come with a green card, but a really long kink card. So we started dating, and things have been going pretty good. The other night we're having a really intimate, deep discussion. He's giving me the reassurance that you want and that you need a new relationship. He's like, I love you forever and ever and always. Amen. I'm like, Chingao, dude, did you just bring your faith into this? How cochino are you? And later that night, he's actually trying to put me on the dinner table. And can you blame him? You know, a boy's got to eat. And he's getting all sexy with me, rubbing up on me and whatnot. And he's like, who's your man? And so immediately I sit up, and I look him dead in the eyes. And I'm like, our one and only, Lord and Savior, Jesus Christ, amen. So he came. Which is pretty cool, because before this relationship, I really wasn't that religious. But apparently we pray every night now, because our men's our new safe word. Thank you. I'm Ralphie.",
+      "set_start_seconds": 5699.0,
+      "set_end_seconds": 5765.0,
+      "topic_tags": [
+        "religion",
+        "relationships",
+        "sex",
+        "shock_humor"
+      ],
+      "crowd_reaction": "light",
+      "tony_praise_level": 2,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "small",
+      "interview_summary": "Ralphie is a welder and mechanic who recently started doing stunt work for motorcycles. She shares a sad story about her father dying of rat-poison-laced heroin.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Welder / Mechanic / Bartender",
+      "disclosed_location": "Corpus Christi",
+      "disclosed_relationship_status": "divorced",
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Stunt double for motorcycle work",
+        "Has ridden 3,000 miles on her motorcycle",
+        "Dad died when she was four years old"
+      ]
+    },
+    {
+      "set_number": 13,
+      "comedian_name": "Tony Star",
+      "status": "regular",
+      "set_transcript": "Folks. What if I told you there was a place Where brilliant minds could collide Where you could be drowning in pussy Even if you're only the size of Big Mike Celebrities around every corner And women that want you bad Nothing but nines and tens Folks, would you be interested in that? Well, welcome to Epstein's Island I'm sure you won't forget it I'm trying not to get sued here So everything I say is alleged It's always perfect weather I wonder who controls that Probably the guys with the beady eyes And one fourth of a hat If Bill Clinton comes in under four minutes, there's four more weeks of winter. But he only comes in Asian women, or as he likes to call them, squinters. In his bathroom, there was a black midget taking a bath. It was the world's first sopping wet three-fifths of one half. Trump was at the table tricking Muslims into eating pork he was sitting on jd vance and jd vance was on all force they were eating with anthony fauci and right before they prayed fauci turned into a bat and flew away it was crazy Biden slept with a prostitute, and after they had sex, she stepped onto the balcony to smoke a candy cigarette. Stephen Hawking was on the treadmill yelling, until I hit his eject button and he flew across the room. There was an Arabic stripper. She didn't take cash. She preferred that I threw rocks. She stripped down as much as a Muslim can. She took her socks halfway off. There was a black stripper, a smoke show with beautiful ebony skin. She stripped all her clothes off and stripped all the paint off and then she was white again. And I couldn't believe she did blackface. That's racist. That's fucked. So I only paid her half price once she redid all the makeup. I got dragged to the island by my friend Leanne. She had a tampon in her purse, but no game plan. It was racquetball and pinball and badminton too. And not a single ball that left the island was blue. But I didn't want to go, but I didn't want to miss the show. Because ever since I was a young, young boy, I had FOMO. But I had FOMO.",
+      "set_start_seconds": 6141.0,
+      "set_end_seconds": 6431.0,
+      "topic_tags": [
+        "musical",
+        "politics",
+        "celebrity",
+        "shock_humor"
+      ],
+      "crowd_reaction": "roaring",
+      "tony_praise_level": 5,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "Tony Star (Tony Scar) closes the show with a musical number about Epstein's Island. He mentions having a hard time getting booked despite winning a golden ticket at 21.",
+      "disclosed_age": 21,
+      "disclosed_occupation": "Musical Comedian",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Won a golden ticket at 21 years old",
+        "Bit his tongue very hard while eating",
+        "Claims to be a 'human flashlight' on Epstein's Island"
+      ]
+    }
+  ]
+}
