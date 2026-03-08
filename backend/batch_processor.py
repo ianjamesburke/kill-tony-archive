@@ -467,7 +467,7 @@ def get_audio_chunks(url: str, episode_number: int) -> tuple[list[Path], list[in
 # ---------------------------------------------------------------------------
 
 def upload_and_wait(client: genai.Client, audio_path: Path):
-    uploaded = client.files.upload(file=audio_path)
+    uploaded = client.files.upload(path=audio_path)
     for _ in range(120):
         info = client.files.get(name=uploaded.name or "")
         if info.state == "ACTIVE":

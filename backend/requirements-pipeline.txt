@@ -1,0 +1,5 @@
+# Pipeline deps — not needed on Railway, only for local data processing
+-r requirements.txt
+google-genai>=1.0.0
+yt-dlp==2026.2.21
+requests==2.32.3

@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+import os
+import shutil
 from pathlib import Path
 from typing import Any, Optional
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, Header, HTTPException, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 
 from database import (
@@ -22,7 +24,10 @@ from database import (
 )
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-DB_PATH = BASE_DIR / "data" / "kill_tony.db"
+DB_PATH = Path(os.environ.get("DB_PATH", str(BASE_DIR / "data" / "kill_tony.db")))
+
+_raw_origins = os.environ.get("ALLOWED_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173")
+_allowed_origins = [o.strip() for o in _raw_origins.split(",") if o.strip()]
 
 app = FastAPI(
     title="Kill Tony DB",
@@ -31,7 +36,7 @@ app = FastAPI(
 )
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=_allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -148,3 +153,25 @@ def laughter_timeline(episode_number: int) -> dict[str, Any]:
 @app.get("/api/crowd-reactions")
 def crowd_reactions() -> list[dict[str, Any]]:
     return get_crowd_reaction_distribution(DB_PATH)
+
+
+# ── Admin ──
+
+_ADMIN_SECRET = os.environ.get("ADMIN_SECRET", "")
+
+
+@app.post("/admin/upload-db")
+async def upload_db(
+    file: UploadFile,
+    x_admin_secret: str = Header(default=""),
+) -> dict[str, str]:
+    if not _ADMIN_SECRET:
+        raise HTTPException(status_code=503, detail="Admin endpoint disabled (ADMIN_SECRET not set)")
+    if x_admin_secret != _ADMIN_SECRET:
+        raise HTTPException(status_code=403, detail="Forbidden")
+    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+    tmp = DB_PATH.with_suffix(".tmp")
+    with tmp.open("wb") as f:
+        shutil.copyfileobj(file.file, f)
+    tmp.replace(DB_PATH)
+    return {"status": "ok", "path": str(DB_PATH)}
