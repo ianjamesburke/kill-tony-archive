@@ -49,17 +49,26 @@ batch LIMIT="5":
 
 # ── Deploy ────────────────────────────────────────────────────────────────────
 
-# Push to main → triggers Railway auto-deploy for both services
+# Deploy both services to Railway (uploads from local — no GitHub required)
 deploy:
-    git push origin main
+    cd backend && railway up --detach
+    cd frontend && railway up --detach
+
+# Deploy backend only
+deploy-backend:
+    cd backend && railway up --detach
+
+# Deploy frontend only
+deploy-frontend:
+    cd frontend && railway up --detach
 
 # Upload local SQLite DB to Railway via the admin endpoint.
-# Requires: RAILWAY_BACKEND_URL and ADMIN_SECRET env vars.
+# Requires: ADMIN_SECRET env var (copy from `just show-secrets`).
 upload-db:
     #!/usr/bin/env bash
     set -euo pipefail
-    : "${RAILWAY_BACKEND_URL:?Set RAILWAY_BACKEND_URL to the backend public URL}"
-    : "${ADMIN_SECRET:?Set ADMIN_SECRET to the backend admin secret}"
+    RAILWAY_BACKEND_URL="https://kill-tony-backend-production.up.railway.app"
+    : "${ADMIN_SECRET:?Set ADMIN_SECRET in your shell — run: just show-secrets}"
     echo "Uploading data/kill_tony.db → $RAILWAY_BACKEND_URL/admin/upload-db ..."
     curl -fS \
       -H "x-admin-secret: $ADMIN_SECRET" \
@@ -67,6 +76,13 @@ upload-db:
       "$RAILWAY_BACKEND_URL/admin/upload-db"
     echo ""
     echo "Done."
+
+# Show Railway env vars for both services
+show-secrets:
+    @echo "=== Backend ==="
+    cd backend && railway variable
+    @echo "=== Frontend ==="
+    cd frontend && railway variable
 
 # ── Railway logs ──────────────────────────────────────────────────────────────
 
