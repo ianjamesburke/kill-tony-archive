@@ -995,6 +995,7 @@ def main():
                         help="Backfill missing guest names from YouTube titles (no API needed)")
     parser.add_argument("--fix-golden-tickets", action="store_true",
                         help="Correct past GT winners: only first win keeps golden_ticket=True, rest become regulars")
+    parser.add_argument("--limit", type=int, help="Max number of episodes to process in this run")
     args = parser.parse_args()
 
     if args.status:
@@ -1038,6 +1039,8 @@ def main():
         key=lambda e: e["episode_number"],
         reverse=True
     )
+    if args.limit:
+        pending = pending[:args.limit]
     if not pending:
         log.info("No pending episodes to process.")
         show_status()
