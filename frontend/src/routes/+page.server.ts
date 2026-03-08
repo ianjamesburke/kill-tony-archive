@@ -3,16 +3,18 @@ import {
 	fetchEpisodes,
 	fetchSets,
 	fetchTopics,
+	fetchTopicTimeline,
 	fetchGuests
 } from '$lib/api';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
-	const [stats, episodes, topSets, topics, guests] = await Promise.all([
+	const [stats, episodes, topSets, topics, topicTimeline, guests] = await Promise.all([
 		fetchStats(),
 		fetchEpisodes(),
 		fetchSets({ sort: 'kill_score', order: 'desc', limit: 10 }),
 		fetchTopics(),
+		fetchTopicTimeline(),
 		fetchGuests()
 	]);
 
@@ -21,6 +23,7 @@ export const load: PageServerLoad = async () => {
 		episodes,
 		topSets: topSets.sets,
 		topics,
+		topicTimeline,
 		guests: guests.guests
 	};
 };

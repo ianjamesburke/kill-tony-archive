@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import KillScoreHistogram from '$lib/components/KillScoreHistogram.svelte';
 
 	let { data }: { data: PageData } = $props();
 
@@ -7,10 +8,20 @@
 
 	const eps = $derived(data.episodes);
 	const totalSets = $derived(eps.reduce((s, e) => s + (e.set_count ?? 0), 0));
+	const epScores = $derived(
+		eps.filter((e) => e.episode_kill_score != null).map((e) => e.episode_kill_score!)
+	);
 	const avgEpScore = $derived(
-		eps.length > 0
-			? (eps.reduce((s, e) => s + (e.episode_kill_score ?? 0), 0) / eps.length).toFixed(1)
+		epScores.length > 0
+			? (epScores.reduce((a, b) => a + b, 0) / epScores.length).toFixed(1)
 			: '—'
+	);
+	const bestEp = $derived(
+		eps.reduce(
+			(best, e) =>
+				(e.episode_kill_score ?? 0) > (best?.episode_kill_score ?? 0) ? e : best,
+			eps[0]
+		)
 	);
 	const epsWithLaugh = $derived(eps.filter((e) => e.laughter_pct != null && e.laughter_pct > 0));
 	const avgLaughPct = $derived(
@@ -24,28 +35,61 @@
 	<title>Episodes | Kill Tony Archive</title>
 </svelte:head>
 
+<!-- KILL SCORE DISTRIBUTION -->
 <div class="section">
 	<div class="s-header">
 		<div>
-			<div class="s-title">Episode Breakdown</div>
-			<div class="s-sub">Summary across {eps.length} episodes</div>
+			<div class="s-title">Kill Score Distribution</div>
+			<div class="s-sub">How scores spread across {epScores.length} episodes</div>
 		</div>
 	</div>
-	<div class="status-cards">
-		<div class="status-card">
-			<div class="sc-label">Total Episodes</div>
-			<div class="sc-count">{eps.length}</div>
-			<div class="sc-score">{totalSets} sets</div>
+	<KillScoreHistogram scores={epScores} maxValue={100} binSize={5} />
+</div>
+
+<!-- EPISODE BREAKDOWN -->
+<div class="section">
+	<div class="two-col">
+		<div>
+			<div class="s-header">
+				<div>
+					<div class="s-title">Episode Stats</div>
+					<div class="s-sub">Overview across all indexed episodes</div>
+				</div>
+			</div>
+			<div class="status-cards">
+				<div class="status-card">
+					<div class="sc-label">Total Episodes</div>
+					<div class="sc-count">{eps.length}</div>
+					<div class="sc-score">{totalSets} sets indexed</div>
+				</div>
+				<div class="status-card">
+					<div class="sc-label">Avg Episode Score</div>
+					<div class="sc-count">{avgEpScore}</div>
+					<div class="sc-score">across scored episodes</div>
+				</div>
+			</div>
 		</div>
-		<div class="status-card">
-			<div class="sc-label">Avg Episode Score</div>
-			<div class="sc-count">{avgEpScore}</div>
-			<div class="sc-score">across all episodes</div>
-		</div>
-		<div class="status-card">
-			<div class="sc-label">Avg Laugh %</div>
-			<div class="sc-count">{avgLaughPct}</div>
-			<div class="sc-score">{epsWithLaugh.length} episodes with audio</div>
+		<div>
+			<div class="s-header">
+				<div>
+					<div class="s-title">Audience Data</div>
+					<div class="s-sub">Laughter analysis from processed audio</div>
+				</div>
+			</div>
+			<div class="status-cards">
+				<div class="status-card">
+					<div class="sc-label">Avg Laugh %</div>
+					<div class="sc-count">{avgLaughPct}</div>
+					<div class="sc-score">{epsWithLaugh.length} episodes with audio</div>
+				</div>
+				{#if bestEp && bestEp.episode_kill_score != null}
+					<div class="status-card">
+						<div class="sc-label">Best Episode</div>
+						<div class="sc-count">#{bestEp.episode_number}</div>
+						<div class="sc-score">Score: {bestEp.episode_kill_score}</div>
+					</div>
+				{/if}
+			</div>
 		</div>
 	</div>
 </div>
@@ -117,6 +161,12 @@
 </div>
 
 <style>
+	.two-col {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 40px;
+	}
+
 	.status-cards {
 		display: flex;
 		gap: 16px;
@@ -307,6 +357,11 @@
 	}
 
 	@media (max-width: 768px) {
+		.two-col {
+			grid-template-columns: 1fr;
+			gap: 24px;
+		}
+
 		.status-cards {
 			flex-direction: column;
 		}

@@ -5,6 +5,7 @@ import type {
 	SetsResponse,
 	TopComedian,
 	TopicStat,
+	TopicTimelineEntry,
 	GuestDetail,
 	GuestsResponse,
 	CrowdReaction,
@@ -67,6 +68,10 @@ export async function fetchTopComedians(limit = 25): Promise<TopComedian[]> {
 
 export async function fetchTopics(): Promise<TopicStat[]> {
 	return get<TopicStat[]>('/topics');
+}
+
+export async function fetchTopicTimeline(): Promise<TopicTimelineEntry[]> {
+	return get<TopicTimelineEntry[]>('/topics/timeline');
 }
 
 export async function fetchGuests(): Promise<GuestsResponse> {

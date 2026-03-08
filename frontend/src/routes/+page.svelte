@@ -4,7 +4,7 @@
 	import EpisodePulse from '$lib/components/EpisodePulse.svelte';
 	import GuestLeaderboard from '$lib/components/GuestLeaderboard.svelte';
 	import SetCard from '$lib/components/SetCard.svelte';
-	import TopicCloud from '$lib/components/TopicCloud.svelte';
+	import TopicBubbleTimeline from '$lib/components/TopicBubbleTimeline.svelte';
 	import { fetchSets } from '$lib/api';
 	import { goto } from '$app/navigation';
 
@@ -135,11 +135,11 @@
 		<div class="mg-panel">
 			<div class="s-header">
 				<div>
-					<div class="s-title">Topic Frequency</div>
-					<div class="s-sub">Most common joke topics across all sets</div>
+					<div class="s-title">Topic Trends</div>
+					<div class="s-sub">How joke topics shift across episodes</div>
 				</div>
 			</div>
-			<TopicCloud topics={data.topics} />
+			<TopicBubbleTimeline timeline={data.topicTimeline} totals={data.topics} />
 		</div>
 
 		<div class="mg-panel">
@@ -177,9 +177,7 @@
 		{/each}
 	</div>
 	<div class="top-sets-list" class:loading>
-		{#if loading}
-			<div class="sets-loading">Loading...</div>
-		{:else if filteredSets.length === 0}
+		{#if filteredSets.length === 0 && !loading}
 			<div class="sets-empty">No sets found for this period.</div>
 		{:else}
 			{#each filteredSets as s, i}
@@ -305,6 +303,8 @@
 	.mg-panel {
 		background: var(--bg);
 		padding: 36px 40px;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.period-tabs {

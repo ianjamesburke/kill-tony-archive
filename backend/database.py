@@ -12,13 +12,36 @@ def _conn(db_path: Path) -> sqlite3.Connection:
     return conn
 
 
+def _ep_score_expr(e: str = "e", s: str = "s") -> str:
+    """SQL expression for episode kill score (0–100 scale).
+
+    Components:
+      55 pts — blend of avg and best set score (avg×0.5 + max×0.5), normalized to 0–29 range
+      25 pts — laughter percentage, capped at 20% of episode duration
+      16 pts — golden tickets (8 pts each, capped at 2 tickets)
+       4 pts — secret show invites (2 pts each, capped at 2 invites)
+    """
+    return f"""ROUND(
+                   ((COALESCE(AVG({s}.kill_score), 0) * 0.5 + COALESCE(MAX({s}.kill_score), 0) * 0.5) / 29.0) * 55
+                   + CASE WHEN COALESCE({e}.laughter_pct, 0) / 20.0 > 1.0
+                          THEN 25.0
+                          ELSE COALESCE({e}.laughter_pct, 0) / 20.0 * 25.0 END
+                   + CASE WHEN COALESCE(SUM(CASE WHEN {s}.golden_ticket      = 1 THEN 1 ELSE 0 END), 0) * 8.0 > 16.0
+                          THEN 16.0
+                          ELSE COALESCE(SUM(CASE WHEN {s}.golden_ticket      = 1 THEN 1 ELSE 0 END), 0) * 8.0 END
+                   + CASE WHEN COALESCE(SUM(CASE WHEN {s}.invited_secret_show = 1 THEN 1 ELSE 0 END), 0) * 2.0 > 4.0
+                          THEN 4.0
+                          ELSE COALESCE(SUM(CASE WHEN {s}.invited_secret_show = 1 THEN 1 ELSE 0 END), 0) * 2.0 END,
+               1)"""
+
+
 # ── Episodes ──
 
 
 def get_episodes(db_path: Path) -> list[dict[str, Any]]:
     with _conn(db_path) as conn:
         rows = conn.execute(
-            """
+            f"""
             SELECT *,
                    RANK() OVER (ORDER BY episode_kill_score DESC) AS episode_rank,
                    (SELECT COUNT(*) FROM episodes) AS total_episodes
@@ -26,10 +49,7 @@ def get_episodes(db_path: Path) -> list[dict[str, Any]]:
                 SELECT e.*,
                        COUNT(s.set_id) AS set_count,
                        ROUND(AVG(s.kill_score), 1) AS avg_kill_score,
-                       ROUND(
-                           (COALESCE(AVG(s.kill_score), 0) / 29.0) * 70
-                           + (COALESCE(e.laughter_pct, 0) / 100.0) * 30,
-                       1) AS episode_kill_score
+                       {_ep_score_expr()} AS episode_kill_score
                 FROM episodes e
                 LEFT JOIN sets s ON s.episode_number = e.episode_number
                 GROUP BY e.episode_number
@@ -43,20 +63,17 @@ def get_episodes(db_path: Path) -> list[dict[str, Any]]:
 def get_episode(db_path: Path, episode_number: int) -> Optional[dict[str, Any]]:
     with _conn(db_path) as conn:
         row = conn.execute(
-            """
+            f"""
             SELECT *
             FROM (
-                SELECT e2.*,
-                       COUNT(s2.set_id) AS set_count,
-                       ROUND(AVG(s2.kill_score), 1) AS avg_kill_score,
-                       ROUND(
-                           (COALESCE(AVG(s2.kill_score), 0) / 29.0) * 70
-                           + (COALESCE(e2.laughter_pct, 0) / 100.0) * 30,
-                       1) AS episode_kill_score
-                FROM episodes e2
-                LEFT JOIN sets s2 ON s2.episode_number = e2.episode_number
-                GROUP BY e2.episode_number
-            ) ranked
+                SELECT e.*,
+                       COUNT(s.set_id) AS set_count,
+                       ROUND(AVG(s.kill_score), 1) AS avg_kill_score,
+                       {_ep_score_expr()} AS episode_kill_score
+                FROM episodes e
+                LEFT JOIN sets s ON s.episode_number = e.episode_number
+                GROUP BY e.episode_number
+            )
             WHERE episode_number = ?
             """,
             (episode_number,),
@@ -64,23 +81,20 @@ def get_episode(db_path: Path, episode_number: int) -> Optional[dict[str, Any]]:
     if not row:
         return None
     d = _episode_row(row)
-    # Compute rank separately (need all episodes for ranking)
+    # Rank requires a separate query over all episodes
     with _conn(db_path) as conn:
         rank_row = conn.execute(
-            """
+            f"""
             SELECT COUNT(*) + 1 AS episode_rank,
                    (SELECT COUNT(*) FROM episodes) AS total_episodes
             FROM (
-                SELECT e2.episode_number,
-                       ROUND(
-                           (COALESCE(AVG(s2.kill_score), 0) / 29.0) * 70
-                           + (COALESCE(e2.laughter_pct, 0) / 100.0) * 30,
-                       1) AS episode_kill_score
-                FROM episodes e2
-                LEFT JOIN sets s2 ON s2.episode_number = e2.episode_number
-                GROUP BY e2.episode_number
-            ) all_eps
-            WHERE all_eps.episode_kill_score > ?
+                SELECT e.episode_number,
+                       {_ep_score_expr()} AS episode_kill_score
+                FROM episodes e
+                LEFT JOIN sets s ON s.episode_number = e.episode_number
+                GROUP BY e.episode_number
+            )
+            WHERE episode_kill_score > ?
             """,
             (d["episode_kill_score"],),
         ).fetchone()
@@ -148,22 +162,13 @@ def get_sets(
             SELECT s.*, e.guests, e.venue, e.date,
                    (SELECT COUNT(*) + 1 FROM sets s2
                     WHERE s2.kill_score > s.kill_score
-                       OR (s2.kill_score = s.kill_score AND (
-                           CASE s2.crowd_reaction
-                               WHEN 'roaring' THEN 4 WHEN 'big_laughs' THEN 3
-                               WHEN 'moderate' THEN 2 WHEN 'light' THEN 1 ELSE 0 END
-                           > CASE s.crowd_reaction
-                               WHEN 'roaring' THEN 4 WHEN 'big_laughs' THEN 3
-                               WHEN 'moderate' THEN 2 WHEN 'light' THEN 1 ELSE 0 END
-                       ))
-                       OR (s2.kill_score = s.kill_score AND (
-                           CASE s2.crowd_reaction
-                               WHEN 'roaring' THEN 4 WHEN 'big_laughs' THEN 3
-                               WHEN 'moderate' THEN 2 WHEN 'light' THEN 1 ELSE 0 END
-                           = CASE s.crowd_reaction
-                               WHEN 'roaring' THEN 4 WHEN 'big_laughs' THEN 3
-                               WHEN 'moderate' THEN 2 WHEN 'light' THEN 1 ELSE 0 END
-                       ) AND COALESCE(s2.joke_density, 0) > COALESCE(s.joke_density, 0))
+                       OR (s2.kill_score = s.kill_score
+                           AND CASE s2.crowd_reaction
+                                   WHEN 'roaring'    THEN 4 WHEN 'big_laughs' THEN 3
+                                   WHEN 'moderate'   THEN 2 WHEN 'light'      THEN 1 ELSE 0 END
+                             > CASE s.crowd_reaction
+                                   WHEN 'roaring'    THEN 4 WHEN 'big_laughs' THEN 3
+                                   WHEN 'moderate'   THEN 2 WHEN 'light'      THEN 1 ELSE 0 END)
                    ) AS set_rank,
                    (SELECT COUNT(*) FROM sets) AS total_sets
             FROM sets s
@@ -269,6 +274,44 @@ def get_topic_stats(db_path: Path) -> list[dict[str, Any]]:
         [{"topic": k, "count": v} for k, v in counts.items()],
         key=lambda x: x["count"],
         reverse=True,
+    )
+
+
+def get_topic_timeline(db_path: Path) -> list[dict[str, Any]]:
+    """Return topic counts per episode, sorted by episode number."""
+    with _conn(db_path) as conn:
+        rows = conn.execute(
+            """
+            SELECT s.episode_number, s.topic_tags
+            FROM sets s
+            WHERE s.topic_tags IS NOT NULL
+            ORDER BY s.episode_number
+            """
+        ).fetchall()
+        ep_dates = {
+            r["episode_number"]: r["date"]
+            for r in conn.execute(
+                "SELECT episode_number, date FROM episodes"
+            ).fetchall()
+        }
+
+    ep_topics: dict[int, dict[str, int]] = {}
+    for row in rows:
+        ep = row["episode_number"]
+        tags = json.loads(row["topic_tags"]) if row["topic_tags"] else []
+        if ep not in ep_topics:
+            ep_topics[ep] = {}
+        for tag in tags:
+            key = tag.strip().lower()
+            if key:
+                ep_topics[ep][key] = ep_topics[ep].get(key, 0) + 1
+
+    return sorted(
+        [
+            {"episode_number": ep, "date": ep_dates.get(ep), "topics": topics}
+            for ep, topics in ep_topics.items()
+        ],
+        key=lambda x: x["episode_number"],
     )
 
 

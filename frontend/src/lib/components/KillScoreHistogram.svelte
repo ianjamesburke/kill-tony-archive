@@ -2,20 +2,24 @@
 	let {
 		scores,
 		activeBin = null,
-		onBinClick
+		onBinClick,
+		maxValue = 30,
+		binSize = 2
 	}: {
 		scores: number[];
 		activeBin?: string | null;
 		onBinClick?: (label: string | null) => void;
+		maxValue?: number;
+		binSize?: number;
 	} = $props();
 
 	const bins = $derived(() => {
 		const buckets: { label: string; min: number; max: number; count: number }[] = [];
-		for (let i = 0; i <= 28; i += 2) {
-			buckets.push({ label: `${i}-${i + 2}`, min: i, max: i + 2, count: 0 });
+		for (let i = 0; i < maxValue; i += binSize) {
+			buckets.push({ label: `${i}-${i + binSize}`, min: i, max: i + binSize, count: 0 });
 		}
 		for (const score of scores) {
-			const idx = Math.min(Math.floor(score / 2), buckets.length - 1);
+			const idx = Math.min(Math.floor(score / binSize), buckets.length - 1);
 			buckets[idx].count++;
 		}
 		return buckets;
@@ -56,7 +60,7 @@
 		<div class="hist-avg-line">
 			Mean: <strong>{avgScore().toFixed(1)}</strong>
 		</div>
-		<div class="hist-note">Kill Score range: 0–29</div>
+		<div class="hist-note">Score range: 0–{maxValue}</div>
 	</div>
 </div>
 

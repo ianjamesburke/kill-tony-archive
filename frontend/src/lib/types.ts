@@ -119,6 +119,12 @@ export interface GuestDetail {
 	baseline_avg: number;
 }
 
+export interface TopicTimelineEntry {
+	episode_number: number;
+	date: string | null;
+	topics: Record<string, number>;
+}
+
 export interface CrowdReaction {
 	crowd_reaction: string;
 	count: number;

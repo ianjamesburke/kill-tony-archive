@@ -18,6 +18,7 @@ from database import (
     get_stats,
     get_top_comedians,
     get_topic_stats,
+    get_topic_timeline,
 )
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -116,6 +117,11 @@ def top_comedians(limit: int = Query(25, ge=1, le=100)) -> list[dict[str, Any]]:
 @app.get("/api/topics")
 def topic_stats() -> list[dict[str, Any]]:
     return get_topic_stats(DB_PATH)
+
+
+@app.get("/api/topics/timeline")
+def topic_timeline() -> list[dict[str, Any]]:
+    return get_topic_timeline(DB_PATH)
 
 
 @app.get("/api/guests")

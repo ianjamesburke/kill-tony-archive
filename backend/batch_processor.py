@@ -154,11 +154,12 @@ FIELD RULES:
   IMPORTANT: The regulars list above is NOT exhaustive. New regulars are added over time.
   Also mark status = "regular" if ANY of these signals are present:
     1. Tony introduces them AS a regular (e.g. "our newest regular", "one of our regulars")
-    2. Tony says "a brand new set from [name]" — this phrasing is ONLY used for regulars, never bucket pulls
+    2. Tony/Redban says "a brand new set from [name]" OR "a brand new minute from [name]" — this phrasing is ONLY used for regulars, never bucket pulls
     3. Their set runs significantly longer than 1 minute (regulars typically get 2-3 minutes; bucket pulls get exactly 1 minute)
     4. They are clearly not pulling from the bucket — no name being drawn, no "come on up" moment. For bucket pulls Tony will say things like "let's meet them together" or read the name off a slip of paper.
     5. Tony references them touring together, doing gigs together, or being part of the Kill Tony cast
     6. They close the show (the final set is almost always a regular)
+    7. They are introduced as a "golden ticket winner" who is "visiting", "popping in", or "stopping by" — past GT winners return as regulars; this means status="regular" and golden_ticket=FALSE (they are not winning a new ticket)
   Mark status = "special_request" when someone is brought up OUTSIDE the normal bucket draw or regular rotation:
     - Tony calls them up as a favor, special treat, or because someone on the show (a guest, regular, or bucket pull) mentioned them
     - A bucket pull says they came with a friend/relative and Tony brings that person up too
@@ -168,11 +169,17 @@ FIELD RULES:
     - Key signal: they did NOT pull their name from the bucket AND they are NOT a recognized regular
   If NONE of these signals are present and they are not on the known regulars list, status = "bucket_pull".
 - Boolean fields default to false. Only set to true when EXPLICITLY stated in the transcript:
-  - golden_ticket: Tony awards them a golden ticket
+  - golden_ticket: Tony awards them a golden ticket IN THIS SET. IMPORTANT: if they are merely introduced AS a past golden ticket winner ("one of our golden ticket winners", "our GT winner"), do NOT set this to true — that means they already won it previously and are returning as a regular.
   - sign_up_again: Tony tells them to keep signing up / come back
   - promoted_to_regular: Tony says "you're a regular now" or equivalent
   - invited_secret_show: Redban invites them to his secret show
-- tony_praise_level: 1=hated it, 2=not impressed, 3=neutral/okay, 4=liked it, 5=loved it. Base this on Tony's actual words and tone during the interview.
+- tony_praise_level: Rate 1-5 based ONLY on Tony's explicit reaction to the SET PERFORMANCE, not general interview warmth:
+  1 = Openly negative — "that was bad/rough/not good", "I don't understand that joke", "that's not how comedy works", dismisses them
+  2 = Unimpressed/disappointed — "eh", short dismissive answer, "you have some work to do", no laughs, no specific praise
+  3 = Neutral/polite — generic host comments ("nice to meet you", "where you from"), asks interview questions without complimenting the set, or gives mild encouragement with no specific praise ("keep working at it", "you'll get better")
+  4 = Genuinely positive — laughs at specific jokes, "I liked that", "that was funny", "good set", calls out a particular joke that worked, real enthusiasm
+  5 = High praise — "you killed it", "that was one of the best sets tonight", golden ticket, "you're ready for a special", calls out multiple killer moments, audience still cheering
+  DEFAULT TO 3 if Tony doesn't specifically comment on the quality of the set. Most sets are 2-4. Reserve 5 for truly exceptional sets where Tony is visibly impressed.
 - joke_book_size: Listen for Tony saying "big book", "small book", "no book" — this is a specific Kill Tony bit where Tony judges their joke notebook.
 - topic_tags: assign 3-5 tags per set. Choose from: [self_deprecation, politics, relationships, sex, race, crowd_work, observational, shock_humor, storytelling, absurdist, physical, meta, regional, drugs, religion, family, dating, disability, food, aging, lgbtq, crime, work, other]
 - set_transcript: copy their EXACT words from the comedian:<name> entries during their set
@@ -704,6 +711,61 @@ def compute_laughter_pct(transcript: list[dict]) -> float:
 # SQLite storage
 # ---------------------------------------------------------------------------
 
+
+def fix_golden_ticket_status():
+    """Correct golden ticket and status fields across the full sets table.
+
+    Two fixes, safe to run repeatedly:
+    1. If a comedian won the golden ticket in episode N, any later episode that also
+       has golden_ticket=True is a duplicate — clear it and relabel as regular.
+    2. If a comedian has ever appeared as 'regular', any later appearance as
+       'bucket_pull' is a mislabel — correct it to 'regular'. Once a regular,
+       always a regular.
+    """
+    with sqlite3.connect(DB_PATH) as conn:
+        # Fix 1: duplicate golden tickets — keep only the first win
+        conn.execute("""
+            UPDATE sets
+            SET golden_ticket = 0,
+                status        = 'regular',
+                kill_score    = MAX(0, kill_score - 10)
+            WHERE set_id IN (
+                SELECT set_id FROM (
+                    SELECT set_id,
+                           ROW_NUMBER() OVER (
+                               PARTITION BY comedian_name
+                               ORDER BY episode_number ASC
+                           ) AS rn
+                    FROM sets
+                    WHERE golden_ticket = 1
+                )
+                WHERE rn > 1
+            )
+        """)
+        fix1 = conn.execute("SELECT changes()").fetchone()[0]
+
+        # Fix 2: past regulars incorrectly labeled as bucket_pull in later episodes
+        conn.execute("""
+            UPDATE sets
+            SET status = 'regular'
+            WHERE status = 'bucket_pull'
+              AND EXISTS (
+                SELECT 1 FROM sets s2
+                WHERE s2.comedian_name = sets.comedian_name
+                  AND s2.status = 'regular'
+                  AND s2.episode_number < sets.episode_number
+              )
+        """)
+        fix2 = conn.execute("SELECT changes()").fetchone()[0]
+
+        conn.commit()
+
+    if fix1:
+        log.info(f"fix_golden_ticket_status: corrected {fix1} duplicate GT win(s)")
+    if fix2:
+        log.info(f"fix_golden_ticket_status: corrected {fix2} past-regular-as-bucket_pull mislabel(s)")
+
+
 def save_episode(yt_info: dict, transcript: list[dict], analysis: dict, guests: list[str]):
     episode_number = yt_info["episode_number"]
     ep_data = analysis.get("episode", {})
@@ -786,6 +848,7 @@ def save_episode(yt_info: dict, transcript: list[dict], analysis: dict, guests: 
         conn.commit()
 
     log.info(f"Saved episode #{episode_number}: {len(analysis.get('sets', []))} sets, {laugh_count} laughs")
+    fix_golden_ticket_status()
 
 
 # ---------------------------------------------------------------------------
@@ -930,6 +993,8 @@ def main():
     parser.add_argument("--status", action="store_true", help="Show processing status")
     parser.add_argument("--fix-guests", action="store_true",
                         help="Backfill missing guest names from YouTube titles (no API needed)")
+    parser.add_argument("--fix-golden-tickets", action="store_true",
+                        help="Correct past GT winners: only first win keeps golden_ticket=True, rest become regulars")
     args = parser.parse_args()
 
     if args.status:
@@ -938,6 +1003,11 @@ def main():
 
     if args.fix_guests:
         fix_missing_guests()
+        return
+
+    if args.fix_golden_tickets:
+        init_db()
+        fix_golden_ticket_status()
         return
 
     api_key = os.getenv("GEMINI_API_KEY")
