@@ -41,7 +41,9 @@ yarn-error.log*
 # *.csv
 # *.json
 # data/*.db
-backend/audio_cache/*
-data/whisperx_cache/*
-data/crowd_reactions/*
+backend/audio_cache/
+data/whisperx_cache/
+data/transcripts/
+data/*.log
+data/*.db
 

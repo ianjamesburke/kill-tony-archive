@@ -92,4 +92,15 @@
 		color: var(--dim);
 		text-align: right;
 	}
+
+	@media (max-width: 768px) {
+		.crowd-row {
+			grid-template-columns: 100px 1fr 32px 32px;
+			gap: 8px;
+		}
+
+		.crowd-label {
+			font-size: 10px;
+		}
+	}
 </style>

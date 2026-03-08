@@ -4,28 +4,23 @@
 
 	let { data }: { data: PageData } = $props();
 
-	const sortedByAppearances = $derived(
-		[...data.guests].sort((a, b) => b.episode_count - a.episode_count)
-	);
 </script>
 
 <svelte:head>
-	<title>Kill Tony DB</title>
+	<title>Guests | Kill Tony Archive</title>
 </svelte:head>
 
 <!-- GUEST IMPACT VISUALIZATION -->
 <div class="section">
 	<div class="s-header">
 		<div>
-			<div class="s-title">Guest Impact on Show Quality</div>
+			<div class="s-title">Guest Impact</div>
 			<div class="s-sub">
-				Do random bucket-pull comedians perform better with certain guests on the panel?
-				The baseline avg bucket-pull score is <strong>{data.baselineBucketAvg}</strong> — bars
-				show each guest's deviation from that.
+				How guests shift the episode's avg kill score vs. the overall average ({data.baselineAvg})
 			</div>
 		</div>
 	</div>
-	<GuestImpactChart guests={data.guests} baseline={data.baselineBucketAvg} />
+	<GuestImpactChart guests={data.guests} baseline={data.baselineAvg} />
 </div>
 
 <!-- GUEST DIRECTORY -->
@@ -37,36 +32,31 @@
 		</div>
 	</div>
 
-	<div class="guest-grid">
+	<div class="guest-list">
 		{#each data.guests as guest}
-			<a href="/guests/{encodeURIComponent(guest.guest_name)}" class="guest-card">
-				<div class="gc-top">
-					<div class="gc-name">{guest.guest_name}</div>
-					{#if guest.bucket_lift != null}
-						<div
-							class="gc-lift"
-							class:positive={guest.bucket_lift > 0}
-							class:negative={guest.bucket_lift < 0}
-						>
-							{guest.bucket_lift > 0 ? '+' : ''}{guest.bucket_lift}
+			<a href="/guests/{encodeURIComponent(guest.guest_name)}" class="guest-row">
+				<div class="guest-left">
+					<div class="guest-name">{guest.guest_name}</div>
+					<div class="guest-meta">
+						{guest.episode_count} appearance{guest.episode_count !== 1 ? 's' : ''}
+					</div>
+				</div>
+				<div class="guest-stats">
+					<div class="guest-stat">
+						<span class="guest-stat-label">Avg Score</span>
+						<span class="guest-stat-val score">{guest.avg_kill_score ?? '—'}</span>
+					</div>
+					{#if guest.score_lift != null}
+						<div class="guest-stat">
+							<span class="guest-stat-label">Impact</span>
+							<span class="guest-stat-val" class:pos={guest.score_lift > 0} class:neg={guest.score_lift < 0}>
+								{guest.score_lift > 0 ? '+' : ''}{guest.score_lift}
+							</span>
 						</div>
 					{/if}
-				</div>
-				<div class="gc-appearances">
-					{guest.episode_count} appearance{guest.episode_count !== 1 ? 's' : ''}
-				</div>
-				<div class="gc-metrics">
-					<div class="gc-metric">
-						<div class="gc-metric-val score">{guest.avg_kill_score ?? '—'}</div>
-						<div class="gc-metric-label">Avg Score</div>
-					</div>
-					<div class="gc-metric">
-						<div class="gc-metric-val">{guest.avg_bucket_score ?? '—'}</div>
-						<div class="gc-metric-label">Bucket Avg</div>
-					</div>
-					<div class="gc-metric">
-						<div class="gc-metric-val">{guest.total_laugh_count}</div>
-						<div class="gc-metric-label">Total Laughs</div>
+					<div class="guest-stat">
+						<span class="guest-stat-label">Laughs</span>
+						<span class="guest-stat-val">{guest.total_laugh_count.toLocaleString()}</span>
 					</div>
 				</div>
 			</a>
@@ -75,17 +65,21 @@
 </div>
 
 <style>
-	.guest-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-		gap: 8px;
+	.guest-list {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
 	}
 
-	.guest-card {
+	.guest-row {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		align-items: center;
+		gap: 20px;
+		padding: 18px 20px;
 		background: var(--card);
 		border: 1px solid var(--border);
-		border-radius: 8px;
-		padding: 20px 24px;
+		border-radius: 6px;
 		text-decoration: none;
 		color: var(--text);
 		transition:
@@ -93,88 +87,82 @@
 			background 0.15s;
 	}
 
-	.guest-card:hover {
+	.guest-row:hover {
 		border-color: var(--bh);
 		background: var(--raised);
 	}
 
-	.gc-top {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
-		gap: 8px;
+	.guest-left {
+		min-width: 0;
 	}
 
-	.gc-name {
+	.guest-name {
 		font-size: 16px;
-		font-weight: 600;
-		line-height: 1.2;
-	}
-
-	.gc-lift {
-		font-family: var(--mono);
-		font-size: 12px;
 		font-weight: 700;
-		padding: 3px 8px;
-		border-radius: 4px;
-		white-space: nowrap;
-		flex-shrink: 0;
+		letter-spacing: -0.5px;
 	}
 
-	.gc-lift.positive {
-		color: var(--green);
-		background: rgba(34, 197, 94, 0.1);
-		border: 1px solid rgba(34, 197, 94, 0.2);
-	}
-
-	.gc-lift.negative {
-		color: var(--red-s);
-		background: var(--red-d);
-		border: 1px solid rgba(220, 38, 38, 0.2);
-	}
-
-	.gc-appearances {
+	.guest-meta {
 		font-family: var(--mono);
 		font-size: 11px;
 		color: var(--muted);
 		margin-top: 4px;
-		margin-bottom: 14px;
-		letter-spacing: 0.3px;
 	}
 
-	.gc-metrics {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1px;
-		background: var(--border);
-		border-radius: 6px;
-		overflow: hidden;
-		border: 1px solid var(--border);
+	.guest-stats {
+		display: flex;
+		gap: 20px;
+		justify-content: flex-end;
 	}
 
-	.gc-metric {
-		background: var(--surface);
-		padding: 10px 12px;
-		text-align: center;
+	.guest-stat {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 2px;
 	}
 
-	.gc-metric-val {
+	.guest-stat-label {
 		font-family: var(--mono);
-		font-size: 16px;
-		font-weight: 700;
-		letter-spacing: -0.5px;
-		margin-bottom: 2px;
-	}
-
-	.gc-metric-val.score {
-		color: var(--red);
-	}
-
-	.gc-metric-label {
-		font-family: var(--mono);
-		font-size: 8px;
+		font-size: 9px;
 		letter-spacing: 1px;
 		text-transform: uppercase;
 		color: var(--muted);
+	}
+
+	.guest-stat-val {
+		font-family: var(--mono);
+		font-size: 18px;
+		font-weight: 700;
+		letter-spacing: -0.5px;
+	}
+
+	.guest-stat-val.score {
+		color: var(--red);
+	}
+
+	.guest-stat-val.pos {
+		color: var(--green);
+	}
+
+	.guest-stat-val.neg {
+		color: var(--red-s);
+	}
+
+	@media (max-width: 768px) {
+		.guest-row {
+			grid-template-columns: 1fr;
+			gap: 8px;
+			padding: 14px 16px;
+		}
+
+		.guest-stats {
+			gap: 12px;
+			flex-wrap: wrap;
+		}
+
+		.guest-stat-val {
+			font-size: 14px;
+		}
 	}
 </style>

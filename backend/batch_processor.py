@@ -111,36 +111,45 @@ Extract structured data for every comedian set you find. Return ONLY valid JSON 
   "episode": {{
     "episode_number": {episode_number},
     "guests": ["name", ...],
-    "venue": "string" | null
+    "venue": "string from KNOWN_VENUES list below" | null
   }},
   "sets": [
     {{
       "set_number": int,
       "comedian_name": "string",
-      "status": "bucket_pull | regular",
+      "status": "bucket_pull | regular | special_request",
       "set_transcript": "their full 1-minute set text, word for word from the transcript",
       "set_start_seconds": float,
       "set_end_seconds": float,
       "topic_tags": ["string"],
-      "joke_count": int | null,
       "crowd_reaction": "silence | light | moderate | big_laughs | roaring",
       "tony_praise_level": int (1-5) | null,
-      "guest_feedback_sentiment": "positive | negative | neutral | none",
       "golden_ticket": false,
       "sign_up_again": false,
       "promoted_to_regular": false,
       "invited_secret_show": false,
       "joke_book_size": "none | small | medium | large",
       "interview_summary": "brief summary of the post-set interview",
-      "inferred_gender": "string" | null,
-      "inferred_ethnicity": "string" | null,
-      "inferred_age": "string" | null
+      "disclosed_age": int | null,
+      "disclosed_occupation": "string" | null,
+      "disclosed_location": "string" | null,
+      "disclosed_relationship_status": "string" | null,
+      "disclosed_years_doing_comedy": int | null,
+      "fun_facts": ["string"]
     }}
   ]
 }}
 
 FIELD RULES:
-- status: ONLY two options: "regular" or "bucket_pull".
+- venue: Use ONLY one of these known venue names (pick the closest match):
+  "Comedy Mothership" (the home venue in Austin — also called "The Mothership", "Mothership"),
+  "Moody Center" (arena shows in Austin),
+  "Vulcan Gas Company" (previous Austin venue, eps ~300-500s),
+  "Antone's Nightclub" (brief Austin venue before Vulcan),
+  "The Comedy Store" (original LA venue, early episodes).
+  For tour episodes at other venues, use the actual venue name as stated.
+  If the venue cannot be determined, use null.
+- status: THREE options: "regular", "bucket_pull", or "special_request".
   KNOWN REGULARS (always mark as "regular"): Hans Kim, William Montgomery, David Lucas, Uncle Laser, Kam Patterson, Michael Lair, Ellis Aych, Aron Rhodes, Carlos Suarez.
   IMPORTANT: The regulars list above is NOT exhaustive. New regulars are added over time.
   Also mark status = "regular" if ANY of these signals are present:
@@ -150,6 +159,13 @@ FIELD RULES:
     4. They are clearly not pulling from the bucket — no name being drawn, no "come on up" moment. For bucket pulls Tony will say things like "let's meet them together" or read the name off a slip of paper.
     5. Tony references them touring together, doing gigs together, or being part of the Kill Tony cast
     6. They close the show (the final set is almost always a regular)
+  Mark status = "special_request" when someone is brought up OUTSIDE the normal bucket draw or regular rotation:
+    - Tony calls them up as a favor, special treat, or because someone on the show (a guest, regular, or bucket pull) mentioned them
+    - A bucket pull says they came with a friend/relative and Tony brings that person up too
+    - A regular's friend/girlfriend/family member gets called up by Tony
+    - A celebrity's friend or associate is invited up (e.g. "Woody Harrelson's stand-in")
+    - Tony says something like "special treat", "we have a special guest", "come on up" without a bucket draw
+    - Key signal: they did NOT pull their name from the bucket AND they are NOT a recognized regular
   If NONE of these signals are present and they are not on the known regulars list, status = "bucket_pull".
 - Boolean fields default to false. Only set to true when EXPLICITLY stated in the transcript:
   - golden_ticket: Tony awards them a golden ticket
@@ -161,10 +177,12 @@ FIELD RULES:
 - topic_tags: assign 3-5 tags per set. Choose from: [self_deprecation, politics, relationships, sex, race, crowd_work, observational, shock_humor, storytelling, absurdist, physical, meta, regional, drugs, religion, family, dating, disability, food, aging, lgbtq, crime, work, other]
 - set_transcript: copy their EXACT words from the comedian:<name> entries during their set
 - set_start_seconds / set_end_seconds: timestamps from the transcript for when their set begins and ends
-- inferred_gender: ONLY set if Tony or the comedian explicitly states gender (e.g. "this young lady", "as a woman"). null otherwise.
-- inferred_ethnicity: ONLY set if the comedian self-identifies their ethnicity (e.g. "I'm half black", "as a Latina"). null otherwise.
-- inferred_age: ONLY set if an age or age range is explicitly mentioned (e.g. "I'm 19", "as a 40-year-old", "this young kid"). Use a string like "19", "40s", "early 20s". null otherwise.
-
+- disclosed_age: integer age ONLY if explicitly stated (e.g. "I'm 23", Tony says "you're 19"). null otherwise.
+- disclosed_occupation: their day job or profession if mentioned (e.g. "I'm a nurse", "I work at Costco", "Woody Harrelson's stand-in"). null if not mentioned. This is NOT "comedian" — it's what they do outside comedy.
+- disclosed_location: where they live or are from if stated (e.g. "Austin", "I'm from Detroit", "I moved here from New York"). null if not mentioned.
+- disclosed_relationship_status: if mentioned (e.g. "single", "married", "divorced", "girlfriend"). null if not mentioned.
+- disclosed_years_doing_comedy: integer years if stated (e.g. "I've been doing this 3 years" → 3). null if not mentioned.
+- fun_facts: 0-3 memorable or entertaining details from the set/interview that stand out. Things like "is Woody Harrelson's stand-in", "brought their mom to the show", "got fired from their job last week". Only include genuinely interesting tidbits. Empty array [] if nothing stands out.
 TRANSCRIPT:
 {transcript}
 """
@@ -196,7 +214,7 @@ CREATE TABLE IF NOT EXISTS sets (
     episode_number INTEGER NOT NULL,
     set_number INTEGER NOT NULL,
     comedian_name TEXT NOT NULL,
-    status TEXT NOT NULL,            -- bucket_pull or regular
+    status TEXT NOT NULL,            -- bucket_pull, regular, or special_request
     set_transcript TEXT,
     set_start_seconds REAL,
     set_end_seconds REAL,
@@ -216,6 +234,14 @@ CREATE TABLE IF NOT EXISTS sets (
     interview_summary TEXT,
     kill_score REAL,
     joke_density REAL,
+    disclosed_age INTEGER,
+    disclosed_occupation TEXT,
+    disclosed_location TEXT,
+    disclosed_relationship_status TEXT,
+    disclosed_years_doing_comedy INTEGER,
+    disclosed_has_kids INTEGER,
+    self_disclosed_extra TEXT,           -- JSON object
+    fun_facts TEXT,                      -- JSON array
     FOREIGN KEY (episode_number) REFERENCES episodes(episode_number)
 );
 
@@ -229,6 +255,20 @@ def init_db():
     TRANSCRIPTS_DIR.mkdir(parents=True, exist_ok=True)
     with sqlite3.connect(DB_PATH) as conn:
         conn.executescript(SCHEMA_SQL)
+        # Migrate: add new columns if they don't exist yet
+        existing = {row[1] for row in conn.execute("PRAGMA table_info(sets)").fetchall()}
+        migrations = [
+            ("disclosed_age", "INTEGER"),
+            ("disclosed_occupation", "TEXT"),
+            ("disclosed_location", "TEXT"),
+            ("disclosed_relationship_status", "TEXT"),
+            ("disclosed_years_doing_comedy", "INTEGER"),
+            ("disclosed_has_kids", "INTEGER"),
+            ("self_disclosed_extra", "TEXT"),
+        ]
+        for col, dtype in migrations:
+            if col not in existing:
+                conn.execute(f"ALTER TABLE sets ADD COLUMN {col} {dtype}")
     log.info(f"Database ready at {DB_PATH}")
 
 
@@ -239,12 +279,16 @@ def init_db():
 def get_youtube_info(url: str) -> dict:
     """Extract metadata and stats from YouTube."""
     opts = {"skip_download": True, "quiet": True, "nocheckcertificate": True}
-    with YoutubeDL(opts) as ydl:
+    with YoutubeDL(opts) as ydl:  # type: ignore[arg-type]
         info = ydl.extract_info(url, download=False)
 
-    title = info.get("title", "")
-    ep_match = re.search(r'#(\d+)', title) or re.search(r'(?:episode|ep)\s*(\d+)', title, re.IGNORECASE)
-    episode_number = int(ep_match.group(1)) if ep_match else None
+    if not info:
+        return {"title": "", "episode_number": None, "duration": None,
+                "video_id": None, "view_count": None, "like_count": None,
+                "comment_count": None, "upload_date": None}
+
+    title = str(info.get("title", "") or "")
+    episode_number = extract_episode_number(title)
 
     return {
         "title": title,
@@ -274,13 +318,45 @@ Rules:
 Title: {title}"""
 
 
-def extract_guests_from_title(client: genai.Client, title: str) -> list[str]:
-    """Use a light Gemini pass on the YouTube title to extract guest names.
+def extract_episode_number(title: str) -> int | None:
+    """Extract episode number from title. Handles 'KT #758', 'Kill Tony #167', etc."""
+    m = re.search(r'#(\d+)', title) or re.search(r'(?:episode|ep)\s*(\d+)', title, re.IGNORECASE)
+    return int(m.group(1)) if m else None
 
-    Guests are derived EXCLUSIVELY from the episode title, never from
-    transcript content, to avoid false positives (e.g. a comedian being
-    mentioned in conversation but not actually on the panel).
+
+def is_valid_episode(title: str, duration_seconds: int | None) -> bool:
+    """Check if a video is a real Kill Tony episode (has ep #, is 1+ hour)."""
+    if extract_episode_number(title) is None:
+        return False
+    if duration_seconds is not None and duration_seconds < 3600:
+        return False
+    return True
+
+
+def extract_guests_from_title_regex(title: str) -> list[str]:
+    """Pure regex guest extraction from YouTube title — no API call needed.
+    Handles: 'KT #758 - NAME + NAME', 'Kill Tony #167 - NAME & NAME', etc.
     """
+    # Match everything after '#NNN - ' or '#NNN — ' etc.
+    match = re.search(r'#\d+\s*[-–—]\s*(.+)', title)
+    if match:
+        raw = match.group(1)
+        # Split on +, &, comma (the three delimiters used across eras)
+        names = re.split(r'\s*[+,&]\s*', raw)
+        return [n.strip().title() for n in names if n.strip()]
+    return []
+
+
+def extract_guests_from_title(client: genai.Client, title: str) -> list[str]:
+    """Extract guest names: try regex first, fall back to Gemini for weird titles."""
+    # Try regex first — cheap, handles 95% of titles
+    guests = extract_guests_from_title_regex(title)
+    if guests:
+        log.info(f"  Guests from title (regex): {guests}")
+        return guests
+
+    # Gemini fallback for unusual title formats
+    log.info("  Regex found no guests, trying Gemini...")
     prompt = GUEST_EXTRACT_PROMPT.format(title=title)
     try:
         resp = client.models.generate_content(
@@ -288,20 +364,17 @@ def extract_guests_from_title(client: genai.Client, title: str) -> list[str]:
             contents=prompt,
             config={"response_mime_type": "application/json"},
         )
-        guests = json.loads(resp.text)
-        if isinstance(guests, list):
-            log.info(f"  Guests from title: {guests}")
-            return [g.strip() for g in guests if isinstance(g, str) and g.strip()]
+        raw_text = resp.text
+        if raw_text is None:
+            raise ValueError("Empty response from Gemini")
+        parsed = json.loads(raw_text)
+        if isinstance(parsed, list):
+            guests = [g.strip() for g in parsed if isinstance(g, str) and g.strip()]
+            log.info(f"  Guests from title (Gemini): {guests}")
+            return guests
     except Exception as e:
-        log.warning(f"  Guest extraction from title failed: {e}")
+        log.warning(f"  Guest extraction failed (both regex + Gemini): {e}")
 
-    # Fallback: simple regex split on + / , delimiters after the episode number
-    log.info("  Falling back to regex guest extraction from title")
-    match = re.search(r'#\d+\s*[-–—]\s*(.+)', title)
-    if match:
-        raw = match.group(1)
-        names = re.split(r'\s*[+,]\s*', raw)
-        return [n.strip().title() for n in names if n.strip()]
     return []
 
 
@@ -335,7 +408,7 @@ def get_audio_chunks(url: str, episode_number: int) -> tuple[list[Path], list[in
         }
 
         log.info("Downloading audio...")
-        with YoutubeDL(opts) as ydl:
+        with YoutubeDL(opts) as ydl:  # type: ignore[arg-type]
             ydl.extract_info(url, download=True)
 
         downloaded = list(tmp_path.glob("audio.*"))
@@ -389,7 +462,7 @@ def get_audio_chunks(url: str, episode_number: int) -> tuple[list[Path], list[in
 def upload_and_wait(client: genai.Client, audio_path: Path):
     uploaded = client.files.upload(file=audio_path)
     for _ in range(120):
-        info = client.files.get(name=uploaded.name)
+        info = client.files.get(name=uploaded.name or "")
         if info.state == "ACTIVE":
             return uploaded
         time.sleep(1)
@@ -522,12 +595,12 @@ def pass1_transcribe(client: genai.Client, chunk_paths: list[Path], chunk_offset
                 contents=[prompt, uploaded],
                 config={"http_options": {"timeout": 600000}},
             )
-            entries = _parse_json_array(response.text.strip())
+            entries = _parse_json_array((response.text or "").strip())
             log.info(f"    Got {len(entries)} entries")
             all_entries.extend(entries)
         finally:
             try:
-                client.files.delete(name=uploaded.name)
+                client.files.delete(name=uploaded.name or "")
             except Exception:
                 pass
 
@@ -564,11 +637,14 @@ def pass2_analyze(client: genai.Client, transcript: list[dict], episode_number: 
         config={"response_mime_type": "application/json"},
     )
 
-    data = json.loads(response.text.strip())
+    raw_text = (response.text or "").strip()
+    data = json.loads(raw_text)
     if isinstance(data, list) and len(data) == 1:
         data = data[0]
 
     rate_limit()
+    if not isinstance(data, dict):
+        raise ValueError(f"Expected dict from Pass 2, got {type(data).__name__}")
     return data
 
 
@@ -666,22 +742,19 @@ def save_episode(yt_info: dict, transcript: list[dict], analysis: dict, guests: 
             set_number = s.get("set_number", 0)
             set_id = f"{episode_number}_{set_number}"
             kill_score = compute_kill_score(s)
-
-            # Compute joke density
-            joke_density = None
             start = s.get("set_start_seconds")
             end = s.get("set_end_seconds")
-            joke_count = s.get("joke_count")
-            if start and end and joke_count and (end - start) > 0:
-                joke_density = joke_count / (end - start)
 
             conn.execute("""
                 INSERT OR REPLACE INTO sets
                 (set_id, episode_number, set_number, comedian_name, status, set_transcript,
-                 set_start_seconds, set_end_seconds, inferred_gender, inferred_ethnicity, inferred_age,
-                 topic_tags, joke_count, crowd_reaction, tony_praise_level,
-                 guest_feedback_sentiment, golden_ticket, sign_up_again, promoted_to_regular,
-                 invited_secret_show, joke_book_size, interview_summary, kill_score, joke_density)
+                 set_start_seconds, set_end_seconds,
+                 topic_tags, crowd_reaction, tony_praise_level,
+                 golden_ticket, sign_up_again, promoted_to_regular,
+                 invited_secret_show, joke_book_size, interview_summary, kill_score,
+                 disclosed_age, disclosed_occupation, disclosed_location,
+                 disclosed_relationship_status, disclosed_years_doing_comedy,
+                 fun_facts)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """, (
                 set_id,
@@ -692,14 +765,9 @@ def save_episode(yt_info: dict, transcript: list[dict], analysis: dict, guests: 
                 s.get("set_transcript"),
                 start,
                 end,
-                s.get("inferred_gender"),
-                s.get("inferred_ethnicity"),
-                s.get("inferred_age"),
                 json.dumps(s.get("topic_tags", [])),
-                joke_count,
                 s.get("crowd_reaction"),
                 s.get("tony_praise_level"),
-                s.get("guest_feedback_sentiment"),
                 1 if s.get("golden_ticket") else 0,
                 1 if s.get("sign_up_again") else 0,
                 1 if s.get("promoted_to_regular") else 0,
@@ -707,7 +775,12 @@ def save_episode(yt_info: dict, transcript: list[dict], analysis: dict, guests: 
                 s.get("joke_book_size"),
                 s.get("interview_summary"),
                 kill_score,
-                joke_density,
+                s.get("disclosed_age"),
+                s.get("disclosed_occupation"),
+                s.get("disclosed_location"),
+                s.get("disclosed_relationship_status"),
+                s.get("disclosed_years_doing_comedy"),
+                json.dumps(s.get("fun_facts", [])),
             ))
 
         conn.commit()
@@ -724,7 +797,7 @@ def load_episodes() -> list[dict]:
         return json.load(f)["episodes"]
 
 
-def update_episode_status(episode_number: int, status: str, error: str = None):
+def update_episode_status(episode_number: int, status: str, error: str | None = None):
     with open(EPISODES_JSON) as f:
         data = json.load(f)
 
@@ -752,6 +825,14 @@ def process_episode(client: genai.Client, ep: dict):
     log.info(f"Processing episode #{episode_number}: {ep['title']}")
     log.info(f"{'='*60}")
 
+    # Validate before processing
+    title = ep.get("title", "")
+    duration = ep.get("duration_seconds")
+    if not is_valid_episode(title, duration):
+        log.warning(f"  Skipping: not a valid episode (no ep# or under 1hr). Title: '{title}', Duration: {duration}s")
+        update_episode_status(episode_number, "skipped")
+        return
+
     update_episode_status(episode_number, "processing")
 
     # Get YouTube stats
@@ -759,7 +840,7 @@ def process_episode(client: genai.Client, ep: dict):
     yt_info = get_youtube_info(url)
     log.info(f"  Views: {yt_info.get('view_count', 'N/A'):,} | Likes: {yt_info.get('like_count', 'N/A'):,} | Comments: {yt_info.get('comment_count', 'N/A'):,}")
 
-    # Extract guests from YouTube title (NOT from transcript content)
+    # Extract guests from YouTube title
     log.info("Extracting guests from title...")
     guests = extract_guests_from_title(client, ep.get("title", ""))
 
@@ -784,6 +865,13 @@ def process_episode(client: genai.Client, ep: dict):
 
     update_episode_status(episode_number, "done")
 
+    # Clean up audio chunks to save disk space (transcript is kept for reprocess_pass2)
+    audio_dir = AUDIO_CACHE_DIR / f"ep_{episode_number}"
+    if audio_dir.exists():
+        import shutil
+        shutil.rmtree(audio_dir)
+        log.info(f"Cleaned up audio cache for episode #{episode_number}")
+
 
 def show_status():
     episodes = load_episodes()
@@ -804,14 +892,52 @@ def show_status():
         print(f"Database: {ep_count} episodes, {set_count} sets")
 
 
+def fix_missing_guests():
+    """Backfill empty guest lists from YouTube titles using regex (no API call)."""
+    episodes = load_episodes()
+    title_map = {ep["episode_number"]: ep.get("title", "") for ep in episodes}
+
+    init_db()
+    with sqlite3.connect(DB_PATH) as conn:
+        conn.row_factory = sqlite3.Row
+        rows = conn.execute("SELECT episode_number, guests FROM episodes").fetchall()
+
+    fixed = 0
+    for row in rows:
+        ep_num = row["episode_number"]
+        current_guests = json.loads(row["guests"]) if row["guests"] else []
+        if current_guests:
+            continue
+        title = title_map.get(ep_num, "")
+        if not title:
+            continue
+        new_guests = extract_guests_from_title_regex(title)
+        if new_guests:
+            with sqlite3.connect(DB_PATH) as conn:
+                conn.execute("UPDATE episodes SET guests = ? WHERE episode_number = ?",
+                             (json.dumps(new_guests), ep_num))
+            print(f"  Fixed ep #{ep_num}: {new_guests}")
+            fixed += 1
+        else:
+            print(f"  Skipped ep #{ep_num}: no guests found in title '{title}'")
+
+    print(f"\nFixed {fixed} episode(s)")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Kill Tony batch processor")
     parser.add_argument("--episode", type=int, help="Process a specific episode number")
     parser.add_argument("--status", action="store_true", help="Show processing status")
+    parser.add_argument("--fix-guests", action="store_true",
+                        help="Backfill missing guest names from YouTube titles (no API needed)")
     args = parser.parse_args()
 
     if args.status:
         show_status()
+        return
+
+    if args.fix_guests:
+        fix_missing_guests()
         return
 
     api_key = os.getenv("GEMINI_API_KEY")
@@ -836,8 +962,12 @@ def main():
             raise
         return
 
-    # Process all pending episodes
-    pending = [e for e in episodes if e.get("status") == "pending"]
+    # Process all pending episodes, newest first
+    pending = sorted(
+        [e for e in episodes if e.get("status") == "pending"],
+        key=lambda e: e["episode_number"],
+        reverse=True
+    )
     if not pending:
         log.info("No pending episodes to process.")
         show_status()

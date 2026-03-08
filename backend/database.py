@@ -207,6 +207,7 @@ def _set_row(row: sqlite3.Row) -> dict[str, Any]:
     d["sign_up_again"] = bool(d.get("sign_up_again"))
     d["promoted_to_regular"] = bool(d.get("promoted_to_regular"))
     d["invited_secret_show"] = bool(d.get("invited_secret_show"))
+    d["fun_facts"] = json.loads(d["fun_facts"]) if d.get("fun_facts") else []
     return d
 
 
@@ -273,11 +274,11 @@ def get_topic_stats(db_path: Path) -> list[dict[str, Any]]:
 
 def get_guest_stats(db_path: Path) -> dict[str, Any]:
     with _conn(db_path) as conn:
-        # Get overall bucket-pull average for comparison baseline
+        # Get overall average kill score across all sets for comparison baseline
         baseline_row = conn.execute(
-            "SELECT ROUND(AVG(kill_score), 1) AS avg FROM sets WHERE status = 'bucket_pull'"
+            "SELECT ROUND(AVG(kill_score), 1) AS avg FROM sets"
         ).fetchone()
-        baseline_bucket_avg = baseline_row["avg"] if baseline_row else 0
+        baseline_avg = baseline_row["avg"] if baseline_row else 0
 
         episodes = conn.execute(
             """
@@ -323,16 +324,16 @@ def get_guest_stats(db_path: Path) -> dict[str, Any]:
         g["avg_bucket_score"] = (
             round(sum(bucket_scores) / len(bucket_scores), 1) if bucket_scores else None
         )
-        g["bucket_lift"] = (
-            round(g["avg_bucket_score"] - baseline_bucket_avg, 1)
-            if g["avg_bucket_score"] is not None and baseline_bucket_avg
+        g["score_lift"] = (
+            round(g["avg_kill_score"] - baseline_avg, 1)
+            if g["avg_kill_score"] is not None and baseline_avg
             else None
         )
         result.append(g)
 
     return {
         "guests": sorted(result, key=lambda x: x.get("avg_kill_score") or 0, reverse=True),
-        "baseline_bucket_avg": baseline_bucket_avg,
+        "baseline_avg": baseline_avg,
     }
 
 
@@ -354,7 +355,7 @@ def get_guest_detail(db_path: Path, guest_name: str) -> Optional[dict[str, Any]]
         ).fetchall()
 
         baseline_row = conn.execute(
-            "SELECT ROUND(AVG(kill_score), 1) AS avg FROM sets WHERE status = 'bucket_pull'"
+            "SELECT ROUND(AVG(kill_score), 1) AS avg FROM sets"
         ).fetchone()
         baseline = baseline_row["avg"] if baseline_row else 0
 
@@ -389,7 +390,7 @@ def get_guest_detail(db_path: Path, guest_name: str) -> Optional[dict[str, Any]]
         "avg_bucket_score": round(sum(bucket_scores) / len(bucket_scores), 1) if bucket_scores else None,
         "avg_laugh_count": round(sum(laughs) / len(laughs), 1) if laughs else None,
         "total_laugh_count": sum(laughs),
-        "baseline_bucket_avg": baseline,
+        "baseline_avg": baseline,
     }
 
 

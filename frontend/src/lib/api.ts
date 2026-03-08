@@ -11,7 +11,7 @@ import type {
 	LaughterTimeline
 } from './types';
 
-const API_BASE = 'http://localhost:8000/api';
+const API_BASE = import.meta.env.VITE_API_BASE ?? 'http://localhost:8000/api';
 
 async function get<T>(path: string): Promise<T> {
 	const res = await fetch(`${API_BASE}${path}`);

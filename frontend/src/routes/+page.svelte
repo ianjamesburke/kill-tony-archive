@@ -85,7 +85,7 @@
 <!-- HERO -->
 <div class="hero">
 	<div>
-		<h1 class="hero-title">Kill Tony<br /><span class="thin">Database</span></h1>
+		<h1 class="hero-title">Kill Tony<br /><span class="thin">Archive</span></h1>
 		<p class="hero-desc">
 			Every 1-minute set from {data.stats.episode_count} episodes, scored, transcribed, and analyzed.
 			The complete record of what makes a crowd erupt — and what falls flat.
@@ -232,7 +232,7 @@
 	}
 
 	.hero-title {
-		font-size: clamp(36px, 5vw, 56px);
+		font-size: clamp(56px, 8vw, 96px);
 		font-weight: 700;
 		line-height: 1.05;
 		letter-spacing: -1.5px;
@@ -359,5 +359,61 @@
 		color: var(--muted);
 		text-align: center;
 		padding: 40px 0;
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			grid-template-columns: 1fr;
+			padding: 32px 16px;
+			gap: 24px;
+		}
+
+		.hero-title {
+			font-size: clamp(36px, 12vw, 56px);
+		}
+
+		.hero-metrics {
+			border-left: none;
+			border-top: 1px solid var(--border);
+			padding-left: 0;
+			padding-top: 20px;
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 0;
+		}
+
+		.hm-row {
+			flex: 1;
+			min-width: 50%;
+			padding: 10px 0;
+			border-bottom: none;
+			border-right: 1px solid var(--border);
+		}
+
+		.hm-row:nth-child(even) {
+			border-right: none;
+			padding-left: 16px;
+		}
+
+		.hm-row:last-child {
+			border-right: none;
+		}
+
+		.hm-val {
+			font-size: 22px;
+		}
+
+		.main-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.period-tabs {
+			flex-wrap: wrap;
+		}
+
+		.period-tab {
+			font-size: 10px;
+			padding: 6px 10px;
+		}
 	}
 </style>

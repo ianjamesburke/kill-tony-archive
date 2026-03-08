@@ -127,3 +127,15 @@ body {
 .crowd-low {
 	color: var(--muted);
 }
+
+/* ── Mobile responsive ── */
+@media (max-width: 768px) {
+	.section {
+		padding: 24px 16px;
+	}
+
+	.s-header {
+		flex-direction: column;
+		gap: 8px;
+	}
+}

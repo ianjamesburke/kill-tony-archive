@@ -126,7 +126,7 @@ def run_whisperx(audio_path: str, offset_seconds: int = 0) -> list[dict]:
     return segments
 
 
-def label_speakers(segments: list[dict], episode_number: int, chunk_num: int, offset_seconds: int, model: str = None) -> list[dict]:
+def label_speakers(segments: list[dict], episode_number: int, chunk_num: int, offset_seconds: int, model: str | None = None) -> list[dict]:
     """Use Gemini to add speaker labels to WhisperX segments."""
     from google import genai
 
@@ -158,9 +158,11 @@ def label_speakers(segments: list[dict], episode_number: int, chunk_num: int, of
                 contents=[{"role": "user", "parts": [{"text": prompt}]}],
                 config={"response_mime_type": "application/json"},
             )
-            data = json.loads(response.text.strip())
+            data = json.loads((response.text or "").strip())
             if isinstance(data, dict) and "segments" in data:
                 data = data["segments"]
+            if not isinstance(data, list):
+                raise ValueError(f"Expected list of segments, got {type(data).__name__}")
             print(f"Got {len(data)} labeled segments from {m}")
             return data
         except Exception as e:

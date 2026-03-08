@@ -75,4 +75,15 @@
 		color: var(--muted);
 		text-align: right;
 	}
+
+	@media (max-width: 768px) {
+		.topic-row {
+			grid-template-columns: 100px 1fr 32px;
+			gap: 8px;
+		}
+
+		.topic-label {
+			font-size: 10px;
+		}
+	}
 </style>

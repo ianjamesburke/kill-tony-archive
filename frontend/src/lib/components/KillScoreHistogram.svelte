@@ -1,33 +1,22 @@
 <script lang="ts">
-	import type { ComedySet } from '$lib/types';
-
 	let {
-		sets,
+		scores,
 		activeBin = null,
 		onBinClick
 	}: {
-		sets: ComedySet[];
+		scores: number[];
 		activeBin?: string | null;
 		onBinClick?: (label: string | null) => void;
 	} = $props();
 
 	const bins = $derived(() => {
-		const buckets: { label: string; min: number; max: number; count: number; sets: ComedySet[] }[] =
-			[];
+		const buckets: { label: string; min: number; max: number; count: number }[] = [];
 		for (let i = 0; i <= 28; i += 2) {
-			buckets.push({
-				label: `${i}-${i + 2}`,
-				min: i,
-				max: i + 2,
-				count: 0,
-				sets: []
-			});
+			buckets.push({ label: `${i}-${i + 2}`, min: i, max: i + 2, count: 0 });
 		}
-		for (const s of sets) {
-			const score = s.kill_score ?? 0;
+		for (const score of scores) {
 			const idx = Math.min(Math.floor(score / 2), buckets.length - 1);
 			buckets[idx].count++;
-			buckets[idx].sets.push(s);
 		}
 		return buckets;
 	});
@@ -35,7 +24,6 @@
 	const maxCount = $derived(Math.max(...bins().map((b) => b.count), 1));
 
 	const avgScore = $derived(() => {
-		const scores = sets.filter((s) => s.kill_score != null).map((s) => s.kill_score!);
 		return scores.length > 0 ? scores.reduce((a, b) => a + b, 0) / scores.length : 0;
 	});
 </script>
@@ -47,7 +35,7 @@
 				class="hist-col"
 				class:active={activeBin === bin.label}
 				class:clickable={!!onBinClick && bin.count > 0}
-				title="{bin.label}: {bin.count} sets"
+				title="{bin.label}: {bin.count}"
 				onclick={() => {
 					if (onBinClick && bin.count > 0) {
 						onBinClick(activeBin === bin.label ? null : bin.label);

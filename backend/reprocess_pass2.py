@@ -64,10 +64,12 @@ def pass2_analyze(client: genai.Client, transcript: list[dict], episode_number: 
         config={"response_mime_type": "application/json"},
     )
 
-    data = json.loads(response.text.strip())
+    data = json.loads((response.text or "").strip())
     if isinstance(data, list) and len(data) == 1:
         data = data[0]
 
+    if not isinstance(data, dict):
+        raise ValueError(f"Expected dict from Pass 2, got {type(data).__name__}")
     return data
 
 
@@ -137,7 +139,7 @@ def main():
     client = genai.Client(api_key=api_key)
 
     models_to_try = [args.model] if args.model else MODELS
-    analysis = None
+    analysis: dict | None = None
     for model in models_to_try:
         try:
             analysis = pass2_analyze(client, transcript, args.episode, model)
@@ -150,6 +152,10 @@ def main():
             else:
                 print("All models failed.")
                 sys.exit(1)
+
+    if analysis is None:
+        print("No analysis produced.")
+        sys.exit(1)
 
     # Save raw output for inspection
     output_path = ROOT / "data" / f"reprocess_ep{args.episode}_pass2.json"

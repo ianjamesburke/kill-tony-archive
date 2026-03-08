@@ -11,7 +11,7 @@
 
 <div class="guest-list">
 	{#each topGuests as guest, i}
-		<div class="guest-row">
+		<a href="/guests/{encodeURIComponent(guest.guest_name)}" class="guest-row">
 			<div class="g-rank" class:gold={i === 0} class:silver={i === 1}>
 				{i + 1}
 			</div>
@@ -30,7 +30,7 @@
 					></div>
 				</div>
 			</div>
-		</div>
+		</a>
 	{/each}
 </div>
 
@@ -51,6 +51,8 @@
 		cursor: pointer;
 		transition: background 0.1s;
 		border-radius: 4px;
+		text-decoration: none;
+		color: var(--text);
 	}
 
 	.guest-row:last-child {

@@ -41,13 +41,21 @@
 	function statusLabel(status: string): string {
 		if (status === 'bucket_pull') return 'Bucket Pull';
 		if (status === 'regular') return 'Regular';
+		if (status === 'special_request') return 'Special Request';
 		return status;
 	}
 
 	function shortStatus(status: string): string {
 		if (status === 'bucket_pull') return 'Bucket';
 		if (status === 'regular') return 'Regular';
+		if (status === 'special_request') return 'Special';
 		return status;
+	}
+
+	function formatYears(yrs: number | null): string {
+		if (yrs == null) return 'N/A';
+		if (yrs === 0) return 'First time';
+		return `${yrs} yr${yrs !== 1 ? 's' : ''}`;
 	}
 
 	const scoreBarWidth = $derived(((set.kill_score ?? 0) / 29) * 100);
@@ -57,14 +65,18 @@
 	<button class="set-header" class:has-timecode={showTimecode} onclick={() => (expanded = !expanded)}>
 		<div class="set-rank">{rank}</div>
 		{#if showTimecode}
-			<button
+			<!-- svelte-ignore a11y_no_static_element_interactions -->
+			<span
 				class="set-timecode"
 				class:clickable={!!onJumpTo}
 				onclick={(e) => { e.stopPropagation(); onJumpTo?.(); }}
+				onkeydown={(e) => { if (e.key === 'Enter') { e.stopPropagation(); onJumpTo?.(); } }}
+				role={onJumpTo ? 'button' : undefined}
+				tabindex={onJumpTo ? 0 : undefined}
 			>
 				{#if onJumpTo}<svg class="play-icon" viewBox="0 0 10 12" fill="currentColor"><polygon points="0,0 10,6 0,12"/></svg>{/if}
 				{formatTime(set.set_start_seconds)}
-			</button>
+			</span>
 		{/if}
 		<div class="set-info">
 			<div class="set-name">
@@ -109,8 +121,9 @@
 
 	{#if expanded}
 		<div class="set-detail">
-			{#if (!showTimecode && (onJumpTo || set.set_start_seconds != null)) || set.date}
-				<div class="detail-top-row">
+			<!-- Top row: timecode + badges -->
+			<div class="detail-top-row">
+				<div class="top-left">
 					{#if !showTimecode && onJumpTo}
 						<button class="jump-btn" onclick={(e) => { e.stopPropagation(); onJumpTo?.(); }}>
 							<svg class="play-icon" viewBox="0 0 10 12" fill="currentColor"><polygon points="0,0 10,6 0,12"/></svg>
@@ -123,34 +136,59 @@
 						<div class="detail-date">{set.date}</div>
 					{/if}
 				</div>
-			{/if}
-
-			<div class="detail-grid">
-				<div class="detail-col">
-					<div class="detail-label">Tony Praise</div>
-					<div class="detail-val">{set.tony_praise_level ?? '—'}/5</div>
-				</div>
-				<div class="detail-col">
-					<div class="detail-label">Joke Density</div>
-					<div class="detail-val">{set.joke_density ?? '—'}</div>
-				</div>
-				<div class="detail-col">
-					<div class="detail-label">Joke Book</div>
-					<div class="detail-val">{set.joke_book_size ?? '—'}</div>
-				</div>
-				<div class="detail-col">
-					<div class="detail-label">Status</div>
-					<div class="detail-val">{statusLabel(set.status)}</div>
+				<div class="detail-badges">
+					{#if set.golden_ticket}<span class="badge gold">Golden Ticket</span>{/if}
+					{#if set.sign_up_again}<span class="badge">Sign Up Again</span>{/if}
+					{#if set.promoted_to_regular}<span class="badge promo">Promoted to Regular</span>{/if}
+					{#if set.invited_secret_show}<span class="badge secret">Secret Show</span>{/if}
 				</div>
 			</div>
 
-			{#if set.interview_summary}
-				<div class="detail-section">
-					<div class="detail-label">Interview Summary</div>
-					<p class="detail-text">{set.interview_summary}</p>
+			<!-- Comedian profile: always show 5 core fields -->
+			<div class="profile-strip">
+				<div class="profile-field">
+					<span class="pf-label">Age</span>
+					<span class="pf-val" class:na={set.disclosed_age == null}>{set.disclosed_age ?? 'N/A'}</span>
 				</div>
-			{/if}
+				<div class="profile-field">
+					<span class="pf-label">Occupation</span>
+					<span class="pf-val" class:na={!set.disclosed_occupation}>{set.disclosed_occupation ?? 'N/A'}</span>
+				</div>
+				<div class="profile-field">
+					<span class="pf-label">From</span>
+					<span class="pf-val" class:na={!set.disclosed_location}>{set.disclosed_location ?? 'N/A'}</span>
+				</div>
+				<div class="profile-field">
+					<span class="pf-label">Relationship</span>
+					<span class="pf-val" class:na={!set.disclosed_relationship_status}>{set.disclosed_relationship_status ?? 'N/A'}</span>
+				</div>
+				<div class="profile-field">
+					<span class="pf-label">Experience</span>
+					<span class="pf-val" class:na={set.disclosed_years_doing_comedy == null}>{formatYears(set.disclosed_years_doing_comedy)}</span>
+				</div>
+			</div>
 
+			<!-- Score breakdown row -->
+			<div class="scores-row">
+				<div class="score-item">
+					<span class="score-label">Tony</span>
+					<span class="score-value">{set.tony_praise_level ?? '—'}<span class="score-dim">/5</span></span>
+				</div>
+				<div class="score-item">
+					<span class="score-label">Crowd</span>
+					<span class="score-value crowd-val {crowdClass(set.crowd_reaction)}">{formatReaction(set.crowd_reaction)}</span>
+				</div>
+				<div class="score-item">
+					<span class="score-label">Joke Book</span>
+					<span class="score-value">{set.joke_book_size ?? '—'}</span>
+				</div>
+				<div class="score-item">
+					<span class="score-label">Status</span>
+					<span class="score-value">{statusLabel(set.status)}</span>
+				</div>
+			</div>
+
+			<!-- Set transcript -->
 			{#if set.set_transcript}
 				<div class="detail-section">
 					<div class="detail-label">Set Transcript</div>
@@ -158,12 +196,14 @@
 				</div>
 			{/if}
 
-			<div class="detail-badges">
-				{#if set.golden_ticket}<span class="badge gold">Golden Ticket</span>{/if}
-				{#if set.sign_up_again}<span class="badge">Sign Up Again</span>{/if}
-				{#if set.promoted_to_regular}<span class="badge">Promoted to Regular</span>{/if}
-				{#if set.invited_secret_show}<span class="badge">Secret Show Invite</span>{/if}
-			</div>
+			<!-- Interview summary -->
+			{#if set.interview_summary}
+				<div class="detail-section">
+					<div class="detail-label">Interview Summary</div>
+					<p class="detail-text">{set.interview_summary}</p>
+				</div>
+			{/if}
+
 		</div>
 	{/if}
 </div>
@@ -314,7 +354,6 @@
 		text-align: center;
 	}
 
-	/* Score column with bar */
 	.set-score-col {
 		display: flex;
 		flex-direction: column;
@@ -366,7 +405,7 @@
 		text-align: center;
 	}
 
-	/* Expanded detail */
+	/* ── Expanded detail ── */
 	.set-detail {
 		padding: 0 20px 20px 72px;
 		border-top: 1px solid var(--border);
@@ -375,8 +414,14 @@
 	.detail-top-row {
 		display: flex;
 		align-items: center;
+		justify-content: space-between;
+		padding: 14px 0 0;
+	}
+
+	.top-left {
+		display: flex;
+		align-items: center;
 		gap: 16px;
-		padding: 16px 0 0;
 	}
 
 	.jump-btn {
@@ -418,17 +463,131 @@
 		color: var(--dim);
 	}
 
-	.detail-grid {
-		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		gap: 20px;
-		padding: 16px 0;
+	.detail-badges {
+		display: flex;
+		gap: 6px;
+		flex-wrap: wrap;
 	}
 
-	.detail-col {
+	.badge {
+		font-family: var(--mono);
+		font-size: 9px;
+		font-weight: 600;
+		letter-spacing: 0.5px;
+		text-transform: uppercase;
+		padding: 3px 8px;
+		border-radius: 3px;
+		color: var(--t2);
+		background: var(--raised);
+		border: 1px solid var(--border);
+	}
+
+	.badge.gold {
+		color: var(--amber);
+		background: rgba(245, 158, 11, 0.1);
+		border-color: rgba(245, 158, 11, 0.2);
+	}
+
+	.badge.promo {
+		color: #22c55e;
+		background: rgba(34, 197, 94, 0.08);
+		border-color: rgba(34, 197, 94, 0.2);
+	}
+
+	.badge.secret {
+		color: #a78bfa;
+		background: rgba(167, 139, 250, 0.08);
+		border-color: rgba(167, 139, 250, 0.2);
+	}
+
+	/* ── Profile strip: 5 core fields ── */
+	.profile-strip {
+		display: grid;
+		grid-template-columns: 60px 1fr 1fr 1fr 100px;
+		gap: 0;
+		margin-top: 14px;
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: 6px;
+		overflow: hidden;
+	}
+
+	.profile-field {
 		display: flex;
 		flex-direction: column;
-		gap: 4px;
+		gap: 3px;
+		padding: 10px 14px;
+		border-right: 1px solid var(--border);
+	}
+
+	.profile-field:last-child {
+		border-right: none;
+	}
+
+	.pf-label {
+		font-family: var(--mono);
+		font-size: 8px;
+		letter-spacing: 1.5px;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+
+	.pf-val {
+		font-size: 13px;
+		font-weight: 600;
+		color: var(--text);
+		line-height: 1.3;
+	}
+
+	.pf-val.na {
+		color: var(--dim);
+		font-weight: 400;
+		font-style: italic;
+	}
+
+	/* ── Score breakdown row ── */
+	.scores-row {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 0;
+		margin-top: 10px;
+	}
+
+	.score-item {
+		display: flex;
+		align-items: baseline;
+		gap: 8px;
+		padding: 8px 0;
+	}
+
+	.score-label {
+		font-family: var(--mono);
+		font-size: 9px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+
+	.score-value {
+		font-family: var(--mono);
+		font-size: 13px;
+		font-weight: 600;
+		color: var(--t2);
+	}
+
+	.score-dim {
+		font-weight: 400;
+		color: var(--muted);
+		font-size: 11px;
+	}
+
+	.crowd-val {
+		text-transform: capitalize;
+	}
+
+	/* ── Sections (transcript, interview) ── */
+	.detail-section {
+		margin-top: 16px;
 	}
 
 	.detail-label {
@@ -437,17 +596,6 @@
 		letter-spacing: 1.5px;
 		text-transform: uppercase;
 		color: var(--muted);
-	}
-
-	.detail-val {
-		font-family: var(--mono);
-		font-size: 14px;
-		font-weight: 600;
-		color: var(--t2);
-	}
-
-	.detail-section {
-		margin-top: 16px;
 	}
 
 	.detail-text {
@@ -473,28 +621,43 @@
 		overflow-y: auto;
 	}
 
-	.detail-badges {
-		display: flex;
-		gap: 8px;
-		margin-top: 16px;
-		flex-wrap: wrap;
-	}
+	@media (max-width: 768px) {
+		.set-header {
+			grid-template-columns: 30px 1fr auto 30px;
+			gap: 8px;
+			padding: 10px 12px;
+		}
 
-	.badge {
-		font-family: var(--mono);
-		font-size: 10px;
-		letter-spacing: 0.5px;
-		text-transform: uppercase;
-		padding: 4px 10px;
-		border-radius: 4px;
-		color: var(--t2);
-		background: var(--raised);
-		border: 1px solid var(--border);
-	}
+		.set-header.has-timecode {
+			grid-template-columns: 30px auto 1fr auto 30px;
+		}
 
-	.badge.gold {
-		color: var(--amber);
-		background: rgba(245, 158, 11, 0.1);
-		border-color: rgba(245, 158, 11, 0.2);
+		.set-crowd {
+			display: none;
+		}
+
+		.set-detail {
+			padding: 0 12px 16px 12px;
+		}
+
+		.profile-strip {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		.scores-row {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.score-bar-bg {
+			width: 30px;
+		}
+
+		.set-name {
+			font-size: 13px;
+		}
+
+		.score-num {
+			font-size: 14px;
+		}
 	}
 </style>

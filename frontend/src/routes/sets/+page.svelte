@@ -47,7 +47,7 @@
 </script>
 
 <svelte:head>
-	<title>Kill Tony DB</title>
+	<title>Sets | Kill Tony Archive</title>
 </svelte:head>
 
 <!-- KILL SCORE DISTRIBUTION -->
@@ -59,7 +59,7 @@
 		</div>
 	</div>
 	<KillScoreHistogram
-		sets={data.sets}
+		scores={data.sets.filter((s) => s.kill_score != null).map((s) => s.kill_score!)}
 		activeBin={scoreRangeBin}
 		onBinClick={(label) => { scoreRangeBin = label; }}
 	/>
@@ -259,5 +259,25 @@
 
 	.clear-filter:hover {
 		opacity: 1;
+	}
+
+	@media (max-width: 768px) {
+		.two-col {
+			grid-template-columns: 1fr;
+			gap: 0;
+		}
+
+		.filter-bar {
+			flex-direction: column;
+			width: 100%;
+		}
+
+		.filter-input {
+			width: 100%;
+		}
+
+		.status-cards {
+			flex-direction: column;
+		}
 	}
 </style>

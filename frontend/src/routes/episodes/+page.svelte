@@ -3,17 +3,52 @@
 
 	let { data }: { data: PageData } = $props();
 
-	function formatViews(n: number | null): string {
-		if (n == null) return '—';
-		if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + 'M';
-		if (n >= 1_000) return (n / 1_000).toFixed(0) + 'K';
-		return n.toLocaleString();
-	}
+	const maxKillScore = $derived(Math.max(...data.episodes.map((e) => e.episode_kill_score ?? 0), 1));
+
+	const eps = $derived(data.episodes);
+	const totalSets = $derived(eps.reduce((s, e) => s + (e.set_count ?? 0), 0));
+	const avgEpScore = $derived(
+		eps.length > 0
+			? (eps.reduce((s, e) => s + (e.episode_kill_score ?? 0), 0) / eps.length).toFixed(1)
+			: '—'
+	);
+	const epsWithLaugh = $derived(eps.filter((e) => e.laughter_pct != null && e.laughter_pct > 0));
+	const avgLaughPct = $derived(
+		epsWithLaugh.length > 0
+			? (epsWithLaugh.reduce((s, e) => s + e.laughter_pct, 0) / epsWithLaugh.length).toFixed(1) + '%'
+			: '—'
+	);
 </script>
 
 <svelte:head>
-	<title>Kill Tony DB</title>
+	<title>Episodes | Kill Tony Archive</title>
 </svelte:head>
+
+<div class="section">
+	<div class="s-header">
+		<div>
+			<div class="s-title">Episode Breakdown</div>
+			<div class="s-sub">Summary across {eps.length} episodes</div>
+		</div>
+	</div>
+	<div class="status-cards">
+		<div class="status-card">
+			<div class="sc-label">Total Episodes</div>
+			<div class="sc-count">{eps.length}</div>
+			<div class="sc-score">{totalSets} sets</div>
+		</div>
+		<div class="status-card">
+			<div class="sc-label">Avg Episode Score</div>
+			<div class="sc-count">{avgEpScore}</div>
+			<div class="sc-score">across all episodes</div>
+		</div>
+		<div class="status-card">
+			<div class="sc-label">Avg Laugh %</div>
+			<div class="sc-count">{avgLaughPct}</div>
+			<div class="sc-score">{epsWithLaugh.length} episodes with audio</div>
+		</div>
+	</div>
+</div>
 
 <div class="section">
 	<div class="s-header">
@@ -30,29 +65,36 @@
 					{#if ep.episode_rank != null}
 						<div class="ep-rank">#{ep.episode_rank}</div>
 					{/if}
-					<div class="ep-num">#{ep.episode_number}</div>
-				</div>
-				<div class="ep-info">
-					<div class="ep-info-top">
-						{#if ep.date}
-							<span class="ep-date">{ep.date}</span>
-						{/if}
-						{#if ep.venue}
-							<span class="ep-venue">{ep.venue}</span>
-						{/if}
-					</div>
-					{#if ep.guests.length > 0}
-						<div class="ep-guests">
-							{#each ep.guests as guest}
-								<span class="guest-chip">{guest}</span>
-							{/each}
+					<div class="ep-title-block">
+						<div class="ep-title">
+							<span class="ep-num">#{ep.episode_number}</span>
+							{#if ep.guests.length > 0}
+								<span class="ep-dash">—</span>
+								<span class="ep-guest-names">{ep.guests.join(', ')}</span>
+							{/if}
 						</div>
-					{/if}
+						<div class="ep-meta">
+							{#if ep.date}
+								<span class="ep-date">{ep.date}</span>
+							{/if}
+							{#if ep.venue}
+								<span class="ep-venue">{ep.venue}</span>
+							{/if}
+						</div>
+					</div>
 				</div>
 				<div class="ep-stats">
-					<div class="ep-stat">
+					<div class="ep-stat ep-stat-score">
 						<span class="ep-stat-label">Kill Score</span>
-						<span class="ep-stat-val score">{ep.episode_kill_score ?? '—'}</span>
+						<div class="ep-score-row">
+							<div class="ep-score-bar-bg">
+								<div
+									class="ep-score-bar-fill"
+									style="width: {(((ep.episode_kill_score ?? 0) / maxKillScore) * 100).toFixed(0)}%"
+								></div>
+							</div>
+							<span class="ep-stat-val score">{ep.episode_kill_score ?? '—'}</span>
+						</div>
 					</div>
 					<div class="ep-stat">
 						<span class="ep-stat-label">Sets</span>
@@ -68,12 +110,6 @@
 							<span class="ep-stat-val">{ep.laughter_pct.toFixed(1)}%</span>
 						</div>
 					{/if}
-					{#if ep.view_count}
-						<div class="ep-stat">
-							<span class="ep-stat-label">Views</span>
-							<span class="ep-stat-val">{formatViews(ep.view_count)}</span>
-						</div>
-					{/if}
 				</div>
 			</a>
 		{/each}
@@ -81,6 +117,43 @@
 </div>
 
 <style>
+	.status-cards {
+		display: flex;
+		gap: 16px;
+	}
+
+	.status-card {
+		flex: 1;
+		background: var(--card);
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		padding: 24px;
+	}
+
+	.sc-label {
+		font-family: var(--mono);
+		font-size: 10px;
+		letter-spacing: 1.5px;
+		text-transform: uppercase;
+		color: var(--muted);
+		margin-bottom: 8px;
+	}
+
+	.sc-count {
+		font-family: var(--mono);
+		font-size: 36px;
+		font-weight: 700;
+		letter-spacing: -1.5px;
+		line-height: 1;
+		margin-bottom: 8px;
+	}
+
+	.sc-score {
+		font-family: var(--mono);
+		font-size: 12px;
+		color: var(--red);
+	}
+
 	.ep-list {
 		display: flex;
 		flex-direction: column;
@@ -89,7 +162,7 @@
 
 	.ep-row {
 		display: grid;
-		grid-template-columns: 100px 1fr auto;
+		grid-template-columns: 1fr auto;
 		align-items: center;
 		gap: 20px;
 		padding: 18px 20px;
@@ -110,62 +183,68 @@
 
 	.ep-left {
 		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 2px;
+		flex-direction: row;
+		align-items: baseline;
+		gap: 10px;
+		min-width: 0;
 	}
 
 	.ep-rank {
 		font-family: var(--mono);
-		font-size: 10px;
+		font-size: 11px;
 		font-weight: 600;
 		color: var(--red);
 		letter-spacing: 0.5px;
+		flex-shrink: 0;
+	}
+
+	.ep-title-block {
+		min-width: 0;
+	}
+
+	.ep-title {
+		display: flex;
+		align-items: baseline;
+		gap: 0;
+		flex-wrap: wrap;
 	}
 
 	.ep-num {
 		font-family: var(--mono);
-		font-size: 20px;
+		font-size: 16px;
 		font-weight: 700;
 		letter-spacing: -0.5px;
+		flex-shrink: 0;
 	}
 
-	.ep-info {
-		min-width: 0;
+	.ep-dash {
+		margin: 0 8px;
+		color: var(--muted);
+		font-weight: 400;
 	}
 
-	.ep-info-top {
+	.ep-guest-names {
+		font-size: 15px;
+		font-weight: 500;
+		color: var(--t2);
+	}
+
+	.ep-meta {
 		display: flex;
 		align-items: center;
 		gap: 12px;
+		margin-top: 4px;
 	}
 
 	.ep-date {
 		font-family: var(--mono);
-		font-size: 12px;
+		font-size: 11px;
 		color: var(--muted);
 	}
 
 	.ep-venue {
-		font-size: 13px;
-		color: var(--t2);
-	}
-
-	.ep-guests {
-		display: flex;
-		gap: 6px;
-		margin-top: 6px;
-		flex-wrap: wrap;
-	}
-
-	.guest-chip {
-		font-family: var(--mono);
-		font-size: 10px;
-		color: var(--t2);
-		background: var(--raised);
-		border: 1px solid var(--border);
-		padding: 3px 8px;
-		border-radius: 4px;
+		font-size: 12px;
+		color: var(--dim);
 	}
 
 	.ep-stats {
@@ -198,5 +277,74 @@
 
 	.ep-stat-val.score {
 		color: var(--red);
+	}
+
+	.ep-stat-score {
+		min-width: 120px;
+	}
+
+	.ep-score-row {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+
+	.ep-score-bar-bg {
+		flex: 1;
+		height: 4px;
+		background: var(--border);
+		border-radius: 2px;
+		overflow: hidden;
+		min-width: 60px;
+	}
+
+	.ep-score-bar-fill {
+		height: 100%;
+		background: var(--red);
+		border-radius: 2px;
+		opacity: 0.7;
+		transition: width 0.3s ease;
+	}
+
+	@media (max-width: 768px) {
+		.status-cards {
+			flex-direction: column;
+		}
+
+		.ep-row {
+			grid-template-columns: 1fr;
+			gap: 8px;
+			padding: 14px 16px;
+		}
+
+		.ep-title {
+			flex-direction: column;
+			gap: 2px;
+		}
+
+		.ep-dash {
+			display: none;
+		}
+
+		.ep-guest-names {
+			font-size: 13px;
+		}
+
+		.ep-stats {
+			gap: 12px;
+			flex-wrap: wrap;
+		}
+
+		.ep-stat-score {
+			min-width: auto;
+		}
+
+		.ep-stat-val {
+			font-size: 14px;
+		}
+
+		.ep-score-bar-bg {
+			min-width: 40px;
+		}
 	}
 </style>

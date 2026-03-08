@@ -2,7 +2,8 @@
 	import type { PageData } from './$types';
 	import SetCard from '$lib/components/SetCard.svelte';
 	import LaughterTimeline from '$lib/components/LaughterTimeline.svelte';
-	import { onMount, tick } from 'svelte';
+	import { tick } from 'svelte';
+	import { afterNavigate } from '$app/navigation';
 
 	let { data }: { data: PageData } = $props();
 
@@ -12,12 +13,14 @@
 
 	let videoStart = $state(0);
 
-	onMount(async () => {
+	afterNavigate(async () => {
 		const match = window.location.hash.match(/t=(\d+)/);
 		if (match) {
 			videoStart = parseInt(match[1], 10);
 			await tick();
-			document.getElementById('video-section')?.scrollIntoView({ behavior: 'smooth' });
+			requestAnimationFrame(() => {
+				document.getElementById('video-section')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+			});
 		}
 	});
 
@@ -29,7 +32,7 @@
 
 	function jumpTo(seconds: number) {
 		videoStart = seconds;
-		document.getElementById('video-section')?.scrollIntoView({ behavior: 'smooth' });
+		document.getElementById('video-section')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
 	}
 
 	function formatTime(seconds: number | null): string {
@@ -43,7 +46,7 @@
 </script>
 
 <svelte:head>
-	<title>Kill Tony DB</title>
+	<title>Ep #{ep.episode_number} | Kill Tony Archive</title>
 </svelte:head>
 
 <div class="ep-hero">
@@ -379,5 +382,41 @@
 		display: flex;
 		flex-direction: column;
 		gap: 2px;
+	}
+
+	@media (max-width: 768px) {
+		.ep-hero {
+			grid-template-columns: 1fr;
+			padding: 24px 16px;
+			gap: 24px;
+		}
+
+		.ep-number {
+			font-size: clamp(36px, 10vw, 56px);
+		}
+
+		.ep-hero-stats {
+			border-left: none;
+			border-top: 1px solid var(--border);
+			padding-left: 0;
+			padding-top: 20px;
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 0;
+		}
+
+		.stat-row {
+			flex: 1;
+			min-width: 50%;
+			padding: 10px 0;
+		}
+
+		.stat-val {
+			font-size: 22px;
+		}
+
+		.rank-num {
+			font-size: 24px;
+		}
 	}
 </style>

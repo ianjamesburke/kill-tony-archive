@@ -42,16 +42,17 @@ export interface ComedySet {
 	crowd_reaction: string | null;
 	tony_praise_level: number | null;
 	kill_score: number | null;
-	joke_density: number | null;
 	golden_ticket: boolean;
 	sign_up_again: boolean;
 	promoted_to_regular: boolean;
 	invited_secret_show: boolean;
 	joke_book_size: string | null;
 	interview_summary: string | null;
-	inferred_gender: string | null;
-	inferred_ethnicity: string | null;
-	inferred_age: string | null;
+	disclosed_age: number | null;
+	disclosed_occupation: string | null;
+	disclosed_location: string | null;
+	disclosed_relationship_status: string | null;
+	disclosed_years_doing_comedy: number | null;
 	guests: string[];
 	venue: string | null;
 	date: string | null;
@@ -86,13 +87,13 @@ export interface GuestStat {
 	episode_count: number;
 	avg_kill_score: number | null;
 	avg_bucket_score: number | null;
-	bucket_lift: number | null;
+	score_lift: number | null;
 	total_laugh_count: number;
 }
 
 export interface GuestsResponse {
 	guests: GuestStat[];
-	baseline_bucket_avg: number;
+	baseline_avg: number;
 }
 
 export interface GuestEpisode {
@@ -115,7 +116,7 @@ export interface GuestDetail {
 	avg_bucket_score: number | null;
 	avg_laugh_count: number | null;
 	total_laugh_count: number;
-	baseline_bucket_avg: number;
+	baseline_avg: number;
 }
 
 export interface CrowdReaction {

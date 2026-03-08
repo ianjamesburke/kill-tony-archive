@@ -3,136 +3,161 @@
 
 	let { guests, baseline }: { guests: GuestStat[]; baseline: number } = $props();
 
+	const N = 5;
+
 	const sorted = $derived(
 		[...guests]
-			.filter((g) => g.bucket_lift != null)
-			.sort((a, b) => (b.bucket_lift ?? 0) - (a.bucket_lift ?? 0))
+			.filter((g) => g.score_lift != null)
+			.sort((a, b) => (b.score_lift ?? 0) - (a.score_lift ?? 0))
 	);
 
-	const maxLift = $derived(Math.max(...sorted.map((g) => Math.abs(g.bucket_lift ?? 0)), 0.1));
+	const top = $derived(sorted.filter((g) => (g.score_lift ?? 0) > 0).slice(0, N));
+	const bottom = $derived(sorted.filter((g) => (g.score_lift ?? 0) < 0).slice(-N));
+	const visible = $derived([...top, ...bottom]);
 
-	// Chart dimensions
-	const chartWidth = 600;
-	const barHeight = 36;
-	const nameWidth = 160;
-	const valueWidth = 50;
-	const barAreaWidth = chartWidth - nameWidth - valueWidth;
-	const midPoint = barAreaWidth / 2;
+	const maxAbs = $derived(
+		Math.max(...visible.map((g) => Math.abs(g.score_lift ?? 0)), 0.1)
+	);
 </script>
 
-<div class="impact-chart">
-	<svg
-		width="100%"
-		viewBox="0 0 {chartWidth} {sorted.length * barHeight + 40}"
-		preserveAspectRatio="xMidYMid meet"
-	>
-		<!-- Baseline line -->
-		<line
-			x1={nameWidth + midPoint}
-			y1="0"
-			x2={nameWidth + midPoint}
-			y2={sorted.length * barHeight + 20}
-			stroke="var(--dim)"
-			stroke-width="1"
-			stroke-dasharray="4,4"
-		/>
-
-		<!-- Baseline label -->
-		<text
-			x={nameWidth + midPoint}
-			y={sorted.length * barHeight + 34}
-			text-anchor="middle"
-			fill="var(--dim)"
-			font-family="var(--mono)"
-			font-size="9"
-		>
-			BASELINE ({baseline})
-		</text>
-
-		{#each sorted as guest, i}
-			{@const lift = guest.bucket_lift ?? 0}
-			{@const barW = (Math.abs(lift) / maxLift) * (midPoint - 10)}
-			{@const isPositive = lift >= 0}
-			{@const y = i * barHeight + 8}
-
-			<!-- Guest name -->
-			<text
-				x={nameWidth - 10}
-				y={y + barHeight / 2 - 2}
-				text-anchor="end"
-				fill="var(--t2)"
-				font-family="var(--sans)"
-				font-size="13"
-				font-weight="600"
-			>
-				{guest.guest_name}
-			</text>
-
-			<!-- Bar -->
-			<rect
-				x={isPositive ? nameWidth + midPoint : nameWidth + midPoint - barW}
-				y={y + 4}
-				width={barW}
-				height={barHeight - 12}
-				rx="3"
-				fill={isPositive ? 'var(--green)' : 'var(--red)'}
-				opacity="0.8"
-			/>
-
-			<!-- Value label -->
-			<text
-				x={isPositive
-					? nameWidth + midPoint + barW + 8
-					: nameWidth + midPoint - barW - 8}
-				y={y + barHeight / 2 - 2}
-				text-anchor={isPositive ? 'start' : 'end'}
-				fill={isPositive ? 'var(--green)' : 'var(--red-s)'}
-				font-family="var(--mono)"
-				font-size="12"
-				font-weight="700"
-			>
-				{lift > 0 ? '+' : ''}{lift}
-			</text>
-		{/each}
-	</svg>
-</div>
-
-<div class="impact-legend">
-	<div class="impact-leg-item">
-		<div class="impact-swatch" style="background: var(--green)"></div>
-		Bucket pulls scored above average with this guest
-	</div>
-	<div class="impact-leg-item">
-		<div class="impact-swatch" style="background: var(--red)"></div>
-		Bucket pulls scored below average with this guest
-	</div>
+<div class="impact-list">
+	{#each visible as guest, i}
+		{@const lift = guest.score_lift ?? 0}
+		{@const pct = (Math.abs(lift) / maxAbs) * 50}
+		{@const positive = lift >= 0}
+		{#if i === top.length && top.length > 0 && bottom.length > 0}
+			<div class="impact-divider"></div>
+		{/if}
+		<a href="/guests/{encodeURIComponent(guest.guest_name)}" class="impact-row">
+			<span class="impact-name">{guest.guest_name}</span>
+			<div class="impact-bar-wrap">
+				{#if positive}
+					<div class="impact-bar-half left"></div>
+					<div class="impact-bar-half right">
+						<div class="impact-bar-fill pos" style="width: {pct}%"></div>
+					</div>
+				{:else}
+					<div class="impact-bar-half left">
+						<div class="impact-bar-fill neg" style="width: {pct}%"></div>
+					</div>
+					<div class="impact-bar-half right"></div>
+				{/if}
+				<div class="impact-center-line"></div>
+			</div>
+			<span class="impact-val" class:pos={positive} class:neg={!positive}>
+				{positive ? '+' : ''}{lift}
+			</span>
+		</a>
+	{/each}
 </div>
 
 <style>
-	.impact-chart {
-		max-width: 700px;
-		margin: 0 auto;
+	.impact-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1px;
+		background: var(--border);
+		border: 1px solid var(--border);
+		border-radius: 6px;
+		overflow: hidden;
 	}
 
-	.impact-legend {
-		display: flex;
-		gap: 24px;
-		margin-top: 16px;
-		justify-content: center;
+	.impact-divider {
+		height: 3px;
+		background: var(--border);
 	}
 
-	.impact-leg-item {
-		display: flex;
+	.impact-row {
+		display: grid;
+		grid-template-columns: 140px 1fr 48px;
 		align-items: center;
 		gap: 8px;
-		font-family: var(--mono);
-		font-size: 10px;
-		color: var(--muted);
+		padding: 6px 12px;
+		background: var(--bg);
+		text-decoration: none;
+		color: var(--text);
+		transition: background 0.1s;
 	}
 
-	.impact-swatch {
-		width: 14px;
-		height: 6px;
-		border-radius: 3px;
+	.impact-row:hover {
+		background: var(--raised);
+	}
+
+	.impact-name {
+		font-size: 12px;
+		font-weight: 600;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.impact-bar-wrap {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		height: 10px;
+		position: relative;
+	}
+
+	.impact-bar-half {
+		display: flex;
+		overflow: hidden;
+	}
+
+	.impact-bar-half.left {
+		justify-content: flex-end;
+	}
+
+	.impact-bar-half.right {
+		justify-content: flex-start;
+	}
+
+	.impact-bar-fill {
+		height: 100%;
+		border-radius: 2px;
+	}
+
+	.impact-bar-fill.pos {
+		background: var(--green);
+		opacity: 0.7;
+	}
+
+	.impact-bar-fill.neg {
+		background: var(--red);
+		opacity: 0.7;
+	}
+
+	.impact-center-line {
+		position: absolute;
+		left: 50%;
+		top: -2px;
+		bottom: -2px;
+		width: 1px;
+		background: var(--border);
+	}
+
+	.impact-val {
+		font-family: var(--mono);
+		font-size: 11px;
+		font-weight: 700;
+		text-align: right;
+	}
+
+	.impact-val.pos {
+		color: var(--green);
+	}
+
+	.impact-val.neg {
+		color: var(--red-s);
+	}
+
+	@media (max-width: 768px) {
+		.impact-row {
+			grid-template-columns: 110px 1fr 42px;
+			padding: 5px 10px;
+		}
+
+		.impact-name {
+			font-size: 11px;
+		}
 	}
 </style>
