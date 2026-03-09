@@ -1,5 +1,7 @@
 # Kill Tony Data Project — Dev Log
 
+> This file is an AI context document. It records architectural decisions, approach changes, and key findings over the life of the project — so that future AI sessions (and future-you) can understand why things work the way they do without re-reading every file. Consult it before making architectural changes.
+
 ---
 
 ## 2026-03-09 — Split models for pipeline, daily processor cron job
@@ -77,5 +79,37 @@ Hardcoded regulars list was insufficient — new regulars get added over time an
 ## 2026-03-06 — Time period filters, YouTube timestamp autoplay, homepage cleanup
 
 Added time period filters (All Time / This Year / Last 6 Months) to the Top Sets page. Fixed YouTube embed autoplay via `start=` parameter in URL. Minor homepage layout cleanup.
+
+---
+
+## 2026-03-08/09 — Laughter detection research & production switch
+
+Explored multiple laughter detection approaches and benchmarked them against a 6-minute hand-labeled ground truth clip (ep 738, 21.3% laughter).
+
+**Methods tested:** Gemini event-based, Gemini 5s/2s/1s windows, YAMNet (TF Hub, 0.48s frames), HuggingFace AST, hybrid combinations.
+
+**Results summary:**
+
+| Method | F1 | F1±1s | Active% |
+|--------|-----|-------|---------|
+| gemini_events | 54% | 64% | 22.4% |
+| yamnet_loose (0.05) | 62% | 73% | 12.0% |
+| hybrid_ym_boost | 62% | 74% | 31.7% |
+| gemini_5s (old prod) | 43% | 54% | 60.1% |
+
+**Key findings:**
+- `gemini_5s` (old production) massively over-flagged — 60% active vs 21% truth, poor precision
+- `gemini_events` won on strict F1 and closest active% to ground truth — best overall
+- YAMNet ultra-precise (95%) but low recall (24%) at default threshold 0.15; loosening to 0.05 improves recall but still misses edge cases
+- All Gemini methods hallucinate laughter in a silent section at minute 5; local models stay quiet
+- `gillesdami/laughter-detection` HuggingFace model is private/removed — dead end
+
+**Production changes made:**
+- Switched to event-based laughter detection (start/end timestamps per reaction, not fixed grid)
+- Chunks reduced 30min → 15min to reduce timestamp drift
+- Added `pipeline_version` column to episodes table (v2 = events-based)
+- Seeded all 489 pending episodes into DB with status/version tracking
+
+**Still blocked:** Per-set laughter attribution requires accurate set boundary timestamps. WhisperX timestamp drift (1–2+ min) causes misattribution. Revisit once WhisperX is integrated for Pass 1.
 
 ---
