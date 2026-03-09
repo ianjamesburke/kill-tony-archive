@@ -25,7 +25,7 @@ python3 backend/daily_processor.py --backfill
 ```bash
 crontab -e
 # Hourly, 8am-midnight Mountain Time (adjust TZ for your server)
-0 8-23 * * * cd /path/to/kill-tony-data-project-v1/backend && /usr/bin/python3 daily_processor.py >> /var/log/killtony.log 2>&1
+0 8-23 * * * cd /path/to/kill-tony-archive/backend && /usr/bin/python3 daily_processor.py >> /var/log/killtony.log 2>&1
 ```
 
 ## Systemd Timer (recommended for servers)

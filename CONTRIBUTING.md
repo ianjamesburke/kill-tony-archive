@@ -10,8 +10,8 @@
 ## Setup
 
 ```bash
-git clone https://github.com/ianjamesburke/kill-tony-data-project-v1
-cd kill-tony-data-project-v1
+git clone https://github.com/ianjamesburke/kill-tony-archive
+cd kill-tony-archive
 
 # Copy env template and fill in your keys
 cp .env.example .env
