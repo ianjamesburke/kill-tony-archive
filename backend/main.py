@@ -63,8 +63,8 @@ def stats() -> dict[str, Any]:
 
 
 @app.get("/api/episodes")
-def episodes_list() -> list[dict[str, Any]]:
-    return get_episodes(DB_PATH)
+def episodes_list(with_data: bool = Query(False, description="Only return episodes with processed sets")) -> list[dict[str, Any]]:
+    return get_episodes(DB_PATH, with_data_only=with_data)
 
 
 @app.get("/api/episodes/{episode_number}")

@@ -26,8 +26,8 @@ export async function fetchStats(): Promise<Stats> {
 	return get<Stats>('/stats');
 }
 
-export async function fetchEpisodes(): Promise<Episode[]> {
-	return get<Episode[]>('/episodes');
+export async function fetchEpisodes(withDataOnly = true): Promise<Episode[]> {
+	return get<Episode[]>(`/episodes?with_data=${withDataOnly}`);
 }
 
 export async function fetchEpisode(

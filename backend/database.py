@@ -38,7 +38,8 @@ def _ep_score_expr(e: str = "e", s: str = "s") -> str:
 # ── Episodes ──
 
 
-def get_episodes(db_path: Path) -> list[dict[str, Any]]:
+def get_episodes(db_path: Path, *, with_data_only: bool = False) -> list[dict[str, Any]]:
+    having = "HAVING COUNT(s.set_id) > 0" if with_data_only else ""
     with _conn(db_path) as conn:
         rows = conn.execute(
             f"""
@@ -53,6 +54,7 @@ def get_episodes(db_path: Path) -> list[dict[str, Any]]:
                 FROM episodes e
                 LEFT JOIN sets s ON s.episode_number = e.episode_number
                 GROUP BY e.episode_number
+                {having}
             )
             ORDER BY episode_number DESC
             """

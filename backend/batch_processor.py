@@ -33,9 +33,9 @@ from yt_dlp import YoutubeDL
 ROOT = Path(__file__).parent.parent
 load_dotenv(ROOT / ".env")
 
-MODEL = "gemini-3-flash-preview"
+MODEL = "gemini-2.5-flash"
 GUEST_MODEL = "gemini-3.1-flash-lite-preview"  # cheap model for title parsing
-LAUGHTER_MODEL = "gemini-3-flash-preview"  # chunked laughter detection (1500 RPD vs Pro's 50)
+LAUGHTER_MODEL = "gemini-2.5-flash"  # chunked laughter detection
 LAUGHTER_WINDOW_SIZE = 1  # per-second resolution for event-based detection
 PIPELINE_VERSION = 2  # bump when pipeline changes warrant reprocessing (v1=5s windows, v2=events)
 CHUNK_MINUTES = 20
@@ -43,12 +43,11 @@ OVERLAP_MINUTES = 3
 AUDIO_CACHE_DIR = Path(__file__).parent / "audio_cache"
 DB_PATH = ROOT / "data" / "kill_tony.db"
 TRANSCRIPTS_DIR = ROOT / "data" / "transcripts"
-EPISODES_JSON = Path(__file__).parent / "episodes.json"
 
-# Rate limiting — Flash free tier is 15 RPM / 1500 RPD
-# We use 10s between API calls (safe margin under 15 RPM)
+# Rate limiting — 2.5 Flash free tier is 10 RPM / 250 RPD
+# We use 10s between API calls (safe margin under 10 RPM)
 API_DELAY_SECONDS = 10
-# Flash free tier: 15 RPM / 1500 RPD — short backoff on rate limit errors
+# 2.5 Flash free tier: 10 RPM / 250 RPD — short backoff on rate limit errors
 LAUGHTER_RATE_LIMIT_BACKOFF = 60  # 1 minute between retries on 429
 
 # ---------------------------------------------------------------------------
@@ -326,24 +325,6 @@ def init_db():
             if col_name not in ep_cols:
                 conn.execute(f"ALTER TABLE episodes ADD COLUMN {col} {dtype}")
 
-        # Seed episodes from episodes.json into DB as pending (skip existing)
-        if EPISODES_JSON.exists():
-            with open(EPISODES_JSON) as f:
-                all_episodes = json.load(f).get("episodes", [])
-            existing_eps = {row[0] for row in conn.execute("SELECT episode_number FROM episodes").fetchall()}
-            seeded = 0
-            for ep in all_episodes:
-                ep_num = ep.get("episode_number")
-                if ep_num and ep_num not in existing_eps:
-                    conn.execute(
-                        "INSERT INTO episodes (episode_number, title, youtube_url, video_id, guests, status, pipeline_version, processed_at) VALUES (?, ?, ?, ?, '[]', 'pending', 0, '')",
-                        (ep_num, ep.get("title", ""), ep.get("url", ""), ep.get("video_id", "")),
-                    )
-                    seeded += 1
-            if seeded:
-                conn.commit()
-                log.info(f"Seeded {seeded} episodes from episodes.json")
-
     log.info(f"Database ready at {DB_PATH}")
 
 
@@ -356,13 +337,20 @@ def _yt_cookie_opts() -> dict:
     cookie_file = ROOT / "cookies.txt"
     if cookie_file.exists():
         return {"cookiefile": str(cookie_file)}
-    # Try chromium cookies (works on Linux with keyring access)
+    # Try Chrome on macOS, then Chromium on Linux
+    if sys.platform == "darwin":
+        return {"cookiesfrombrowser": ("chrome",)}
     return {"cookiesfrombrowser": ("chromium",)}
+
+
+def _yt_base_opts() -> dict:
+    """Base yt-dlp options including cookies. JS runtime auto-detected by yt-dlp."""
+    return {"nocheckcertificate": True, **_yt_cookie_opts()}
 
 
 def get_youtube_info(url: str) -> dict:
     """Extract metadata and stats from YouTube."""
-    opts = {"skip_download": True, "quiet": True, "nocheckcertificate": True, **_yt_cookie_opts()}
+    opts = {"skip_download": True, "quiet": True, **_yt_base_opts()}
     with YoutubeDL(opts) as ydl:  # type: ignore[arg-type]
         info = ydl.extract_info(url, download=False)
 
@@ -487,10 +475,9 @@ def download_audio(url: str, episode_number: int) -> Path:
         opts = {
             "format": "251/bestaudio/best",
             "quiet": True,
-            "nocheckcertificate": True,
             "noplaylist": True,
             "outtmpl": outtmpl,
-            **_yt_cookie_opts(),
+            **_yt_base_opts(),
         }
 
         log.info("Downloading audio...")
@@ -721,6 +708,7 @@ def pass1_transcribe(client: genai.Client, chunk_paths: list[Path], chunk_offset
                         contents=[prompt, uploaded],
                         config={"http_options": {"timeout": 600000}},
                     )
+                    entries = _parse_json_array((response.text or "").strip())
                     break
                 except Exception as api_err:
                     if attempt < 2:
@@ -729,7 +717,6 @@ def pass1_transcribe(client: genai.Client, chunk_paths: list[Path], chunk_offset
                         time.sleep(wait)
                     else:
                         raise
-            entries = _parse_json_array((response.text or "").strip())
             log.info(f"    Got {len(entries)} entries")
             all_entries.extend(entries)
         finally:
@@ -1157,40 +1144,28 @@ def save_episode(yt_info: dict, transcript: list[dict], analysis: dict, guests: 
 # ---------------------------------------------------------------------------
 
 def load_episodes() -> list[dict]:
-    with open(EPISODES_JSON) as f:
-        return json.load(f)["episodes"]
+    """Load all episodes from the SQLite database."""
+    with sqlite3.connect(DB_PATH) as conn:
+        conn.row_factory = sqlite3.Row
+        rows = conn.execute(
+            "SELECT episode_number, title, youtube_url AS url, video_id, status FROM episodes ORDER BY episode_number"
+        ).fetchall()
+        return [dict(r) for r in rows]
 
 
 def update_episode_status(episode_number: int, status: str, error: str | None = None):
-    # Update episodes.json (legacy, kept for compatibility)
-    with open(EPISODES_JSON) as f:
-        data = json.load(f)
-
-    for ep in data["episodes"]:
-        if ep["episode_number"] == episode_number:
-            ep["status"] = status
-            if error:
-                ep["error"] = error
-            elif "error" in ep:
-                del ep["error"]
-            break
-
-    with open(EPISODES_JSON, "w") as f:
-        json.dump(data, f, indent=2)
-
-    # Update DB status
-    if DB_PATH.exists():
-        with sqlite3.connect(DB_PATH) as conn:
-            if status == "done":
-                conn.execute(
-                    "UPDATE episodes SET status = ?, pipeline_version = ? WHERE episode_number = ?",
-                    (status, PIPELINE_VERSION, episode_number),
-                )
-            else:
-                conn.execute(
-                    "UPDATE episodes SET status = ? WHERE episode_number = ?",
-                    (status, episode_number),
-                )
+    """Update episode status in the database."""
+    with sqlite3.connect(DB_PATH) as conn:
+        if status == "done":
+            conn.execute(
+                "UPDATE episodes SET status = ?, pipeline_version = ? WHERE episode_number = ?",
+                (status, PIPELINE_VERSION, episode_number),
+            )
+        else:
+            conn.execute(
+                "UPDATE episodes SET status = ? WHERE episode_number = ?",
+                (status, episode_number),
+            )
 
 
 # ---------------------------------------------------------------------------
@@ -1257,7 +1232,14 @@ def process_episode(client: genai.Client, ep: dict):
     guests = extract_guests_from_title(client, ep.get("title", ""))
 
     # Download audio and split into chunks
-    audio_path = download_audio(url, episode_number)
+    try:
+        audio_path = download_audio(url, episode_number)
+    except Exception as e:
+        if "Sign in to confirm your age" in str(e) or "age" in str(e).lower():
+            log.warning(f"  Skipping age-restricted episode #{episode_number}")
+            update_episode_status(episode_number, "skipped")
+            return
+        raise
     chunk_paths, chunk_offsets = split_into_chunks(audio_path, episode_number)
 
     # Pass 1: Transcribe (chunked)
@@ -1301,7 +1283,8 @@ def show_status():
     for ep in episodes:
         status = ep.get("status", "pending")
         marker = {"pending": "  ", "processing": ">>", "done": "OK", "error": "!!"}
-        print(f"{marker.get(status, '  ')} {ep['episode_number']:<6} {status:<12} {ep['title'][:50]}")
+        title = ep.get('title') or ''
+        print(f"{marker.get(status, '  ')} {ep['episode_number']:<6} {status:<12} {title[:50]}")
 
     done = sum(1 for ep in episodes if ep.get("status") == "done")
     print(f"\n{done}/{len(episodes)} episodes processed")
@@ -1354,6 +1337,8 @@ def main():
     parser.add_argument("--fix-golden-tickets", action="store_true",
                         help="Correct past GT winners: only first win keeps golden_ticket=True, rest become regulars")
     parser.add_argument("--limit", type=int, help="Max number of episodes to process in this run")
+    parser.add_argument("--batch", type=int, help="Batch number (1-indexed) for parallel processing")
+    parser.add_argument("--batches", type=int, default=1, help="Total number of parallel batches")
     parser.add_argument("--laughter-only", action="store_true",
                         help="Run laughter detection only on already-processed episodes (requires cached audio)")
     args = parser.parse_args()
@@ -1416,7 +1401,7 @@ def main():
     if args.episode:
         ep = next((e for e in episodes if e["episode_number"] == args.episode), None)
         if not ep:
-            log.error(f"Episode #{args.episode} not found in episodes.json")
+            log.error(f"Episode #{args.episode} not found in database")
             sys.exit(1)
         try:
             process_episode(client, ep)
@@ -1428,10 +1413,17 @@ def main():
 
     # Process all pending episodes, newest first
     pending = sorted(
-        [e for e in episodes if e.get("status") == "pending"],
+        [e for e in episodes if e.get("status") in ("pending", "error")],
         key=lambda e: e["episode_number"],
         reverse=True
     )
+
+    # Parallel batch splitting: --batch N --batches M
+    if args.batch and args.batches > 1:
+        batch_idx = args.batch - 1  # 0-indexed
+        pending = [ep for i, ep in enumerate(pending) if i % args.batches == batch_idx]
+        log.info(f"Batch {args.batch}/{args.batches}: {len(pending)} episodes assigned")
+
     if args.limit:
         pending = pending[:args.limit]
     if not pending:
@@ -1439,9 +1431,7 @@ def main():
         show_status()
         return
 
-    total_chunks_est = sum(max(1, e["duration_seconds"] // (CHUNK_MINUTES * 60 - OVERLAP_MINUTES * 60) + 1) for e in pending)
-    total_calls_est = total_chunks_est + len(pending) * 2  # chunks + 1 pass2 + 1 laughter per episode
-    log.info(f"Processing {len(pending)} episodes (~{total_calls_est} API calls, ~{total_calls_est * API_DELAY_SECONDS // 60} min)")
+    log.info(f"Processing {len(pending)} episodes")
 
     for i, ep in enumerate(pending):
         log.info(f"\n[{i+1}/{len(pending)}]")
