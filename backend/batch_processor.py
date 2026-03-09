@@ -35,8 +35,26 @@ load_dotenv(ROOT / ".env")
 
 # Ensure deno is in PATH for yt-dlp JS challenge solving
 _deno_bin = Path.home() / ".deno" / "bin"
-if _deno_bin.is_dir() and str(_deno_bin) not in os.environ.get("PATH", ""):
+if _deno_bin.is_dir():
     os.environ["PATH"] = f"{_deno_bin}:{os.environ.get('PATH', '')}"
+
+# Multi-key rotation for free tier usage
+API_KEYS = [
+    os.getenv("GEMINI_API_KEY", ""),
+    os.getenv("GEMINI_API_KEY_2", ""),
+    os.getenv("GEMINI_API_KEY_3", ""),
+]
+API_KEYS = [k for k in API_KEYS if k]  # Filter out empty keys
+_current_key_idx = 0
+
+def get_next_api_key() -> str:
+    """Rotate through available API keys for free tier load distribution."""
+    global _current_key_idx
+    if not API_KEYS:
+        raise ValueError("No API keys configured")
+    key = API_KEYS[_current_key_idx % len(API_KEYS)]
+    _current_key_idx += 1
+    return key
 
 PASS1_MODEL = "gemini-2.5-flash"            # audio transcription (4x more granular than flash-3)
 PASS2_MODEL = "gemini-3.1-flash-lite-preview"  # text-only set extraction (1000 RPD free tier)
@@ -346,17 +364,29 @@ def _yt_cookie_opts() -> dict:
     # Try Chrome on macOS, then Chromium on Linux
     if sys.platform == "darwin":
         return {"cookiesfrombrowser": ("chrome",)}
-    return {"cookiesfrombrowser": ("chromium",)}
+    # Use "Profile 1" (Ian's profile with Google login)
+    return {"cookiesfrombrowser": ("chromium", "Profile 1")}
 
 
 def _yt_base_opts() -> dict:
     """Base yt-dlp options including cookies. JS runtime auto-detected by yt-dlp."""
-    return {"nocheckcertificate": True, **_yt_cookie_opts()}
+    return {
+        "nocheckcertificate": True,
+        "no_warnings": False,  # Log warnings but don't fail
+        "ignoreerrors": False,  # Fail on actual errors
+        **_yt_cookie_opts()
+    }
 
 
 def get_youtube_info(url: str) -> dict:
     """Extract metadata and stats from YouTube."""
-    opts = {"skip_download": True, "quiet": True, **_yt_base_opts()}
+    opts = {
+        "skip_download": True,
+        "quiet": False,  # Show warnings
+        "extract_flat": False,
+        "format": "bestaudio/best",  # Ensure format is available
+        **_yt_base_opts()
+    }
     with YoutubeDL(opts) as ydl:  # type: ignore[arg-type]
         info = ydl.extract_info(url, download=False)
 
@@ -479,10 +509,12 @@ def download_audio(url: str, episode_number: int) -> Path:
         tmp_path = Path(tmpdir)
         outtmpl = str(tmp_path / "audio.%(ext)s")
         opts = {
-            "format": "251/bestaudio/best",
+            "format": "bestaudio/best",  # More permissive format selection
             "quiet": True,
             "noplaylist": True,
             "outtmpl": outtmpl,
+            "extract_audio": True,
+            "ignoreerrors": False,
             **_yt_base_opts(),
         }
 
@@ -688,9 +720,10 @@ def normalize_speaker(speaker: str) -> str:
 # Two-pass pipeline
 # ---------------------------------------------------------------------------
 
-def pass1_transcribe(client: genai.Client, chunk_paths: list[Path], chunk_offsets: list[int]) -> list[dict]:
+def pass1_transcribe(client: genai.Client, chunk_paths: list[Path], chunk_offsets: list[int], model: str | None = None) -> list[dict]:
     """Transcribe episode audio using overlapping chunks."""
-    log.info(f"PASS 1: Transcribing {len(chunk_paths)} chunks")
+    transcribe_model = model or PASS1_MODEL
+    log.info(f"PASS 1: Transcribing {len(chunk_paths)} chunks (model: {transcribe_model})")
     all_entries = []
 
     for i, chunk_path in enumerate(chunk_paths):
@@ -710,7 +743,7 @@ def pass1_transcribe(client: genai.Client, chunk_paths: list[Path], chunk_offset
             for attempt in range(6):
                 try:
                     response = client.models.generate_content(
-                        model=PASS1_MODEL,
+                        model=transcribe_model,
                         contents=[prompt, uploaded],
                         config={"http_options": {"timeout": 600000}},
                     )
@@ -1059,11 +1092,50 @@ def fix_golden_ticket_status():
         log.info(f"fix_golden_ticket_status: corrected {fix2} past-regular-as-bucket_pull mislabel(s)")
 
 
+def generate_episode_summary(analysis: dict, guests: list[str], yt_info: dict) -> str:
+    """Generate a brief episode summary from the analysis data."""
+    sets = analysis.get("sets", [])
+    ep_num = yt_info.get("episode_number", "?")
+    
+    if not sets:
+        guest_str = ", ".join(guests) if guests else "special guests"
+        return f"Episode #{ep_num} with {guest_str}."
+    
+    # Count bucket pulls vs regulars
+    bucket_pulls = sum(1 for s in sets if s.get("status") == "bucket_pull")
+    regulars = sum(1 for s in sets if s.get("status") == "regular")
+    
+    # Find standout sets (golden tickets, high praise)
+    standouts = [s for s in sets if s.get("golden_ticket") or (s.get("tony_praise_level") or 0) >= 4]
+    
+    parts = []
+    guest_str = ", ".join(guests) if guests else "special guests"
+    parts.append(f"Episode #{ep_num} with {guest_str}.")
+    
+    if bucket_pulls > 0:
+        parts.append(f"{bucket_pulls} bucket pull{'s' if bucket_pulls != 1 else ''}")
+    if regulars > 0:
+        parts.append(f"{regulars} regular{'s' if regulars != 1 else ''}")
+    
+    if standouts:
+        if len(standouts) == 1:
+            name = standouts[0].get("comedian_name", "a comedian")
+            if standouts[0].get("golden_ticket"):
+                parts.append(f"Golden ticket awarded to {name}.")
+            else:
+                parts.append(f"Standout set from {name}.")
+        else:
+            parts.append(f"{len(standouts)} standout performances.")
+    
+    return " ".join(parts)
+
+
 def save_episode(yt_info: dict, transcript: list[dict], analysis: dict, guests: list[str]):
     episode_number = yt_info["episode_number"]
     ep_data = analysis.get("episode", {})
     laugh_count = compute_laugh_count(transcript)
     laughter_pct = compute_laughter_pct(transcript)
+    episode_summary = generate_episode_summary(analysis, guests, yt_info)
 
     # Save full transcript to flat JSON file (gitignored, for reprocessing only)
     transcript_path = TRANSCRIPTS_DIR / f"ep_{episode_number}.json"
@@ -1075,8 +1147,8 @@ def save_episode(yt_info: dict, transcript: list[dict], analysis: dict, guests: 
             INSERT OR REPLACE INTO episodes
             (episode_number, title, date, venue, youtube_url, video_id, guests,
              status, pipeline_version,
-             laugh_count, laughter_pct, view_count, like_count, comment_count, upload_date, processed_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, 'done', ?, ?, ?, ?, ?, ?, ?, ?)
+             laugh_count, laughter_pct, view_count, like_count, comment_count, upload_date, processed_at, episode_summary)
+            VALUES (?, ?, ?, ?, ?, ?, ?, 'done', ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             episode_number,
             yt_info.get("title", ""),
@@ -1093,6 +1165,7 @@ def save_episode(yt_info: dict, transcript: list[dict], analysis: dict, guests: 
             yt_info.get("comment_count"),
             yt_info.get("upload_date"),
             datetime.now(timezone.utc).isoformat(),
+            episode_summary,
         ))
 
         # Save sets
@@ -1213,7 +1286,7 @@ def sync_db_to_railway():
         log.warning(f"Railway sync failed (non-fatal): {e}")
 
 
-def process_episode(client: genai.Client, ep: dict):
+def process_episode(client: genai.Client, ep: dict, model_override: str | None = None):
     episode_number = ep["episode_number"]
     url = ep["url"]
     log.info(f"{'='*60}")
@@ -1251,7 +1324,7 @@ def process_episode(client: genai.Client, ep: dict):
     chunk_paths, chunk_offsets = split_into_chunks(audio_path, episode_number)
 
     # Pass 1: Transcribe (chunked)
-    transcript = pass1_transcribe(client, chunk_paths, chunk_offsets)
+    transcript = pass1_transcribe(client, chunk_paths, chunk_offsets, model=model_override)
 
     # Pass 2: Analyze
     analysis = pass2_analyze(client, transcript, episode_number)
@@ -1349,6 +1422,7 @@ def main():
     parser.add_argument("--batches", type=int, default=1, help="Total number of parallel batches")
     parser.add_argument("--laughter-only", action="store_true",
                         help="Run laughter detection only on already-processed episodes (requires cached audio)")
+    parser.add_argument("--model", type=str, help="Override Pass 1 transcription model (e.g., 'gemini-3.1-flash-preview')")
     args = parser.parse_args()
 
     if args.status:
@@ -1364,16 +1438,17 @@ def main():
         fix_golden_ticket_status()
         return
 
-    api_key = os.getenv("GEMINI_API_KEY")
-    if not api_key:
-        log.error("GEMINI_API_KEY not found in .env")
+    if not API_KEYS:
+        log.error("No GEMINI_API_KEY configured in .env")
         sys.exit(1)
 
     init_db()
-    client = genai.Client(api_key=api_key)
+    log.info(f"Loaded {len(API_KEYS)} API key(s) for rotation")
     episodes = load_episodes()
 
     if args.laughter_only:
+        # Laughter detection — use a single client
+        client = genai.Client(api_key=get_next_api_key())
         done_eps = sorted(
             [e for e in episodes if e.get("status") == "done"],
             key=lambda e: e["episode_number"],
@@ -1407,12 +1482,14 @@ def main():
         return
 
     if args.episode:
+        # Single episode — use next key
+        client = genai.Client(api_key=get_next_api_key())
         ep = next((e for e in episodes if e["episode_number"] == args.episode), None)
         if not ep:
             log.error(f"Episode #{args.episode} not found in database")
             sys.exit(1)
         try:
-            process_episode(client, ep)
+            process_episode(client, ep, model_override=args.model)
         except Exception as e:
             log.error(f"Episode #{args.episode} failed: {e}")
             update_episode_status(args.episode, "error", str(e))
@@ -1443,8 +1520,10 @@ def main():
 
     for i, ep in enumerate(pending):
         log.info(f"\n[{i+1}/{len(pending)}]")
+        # Rotate to next API key for each episode to spread load
+        client = genai.Client(api_key=get_next_api_key())
         try:
-            process_episode(client, ep)
+            process_episode(client, ep, model_override=args.model)
         except Exception as e:
             log.error(f"Episode #{ep['episode_number']} failed: {e}")
             update_episode_status(ep["episode_number"], "error", str(e))

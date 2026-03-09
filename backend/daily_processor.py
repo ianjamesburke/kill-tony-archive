@@ -232,9 +232,14 @@ def main():
     try:
         process_episode(client, target)
     except Exception as e:
-        log.error(f"Episode #{target['episode_number']} failed: {e}")
-        update_episode_status(target["episode_number"], "error", str(e))
-        sys.exit(1)
+        err_str = str(e)
+        if "Sign in to confirm your age" in err_str or "age" in err_str.lower() and "youtube" in err_str.lower():
+            log.warning(f"Episode #{target['episode_number']} is age-restricted — marking skipped")
+            update_episode_status(target["episode_number"], "skipped")
+        else:
+            log.error(f"Episode #{target['episode_number']} failed: {e}")
+            update_episode_status(target["episode_number"], "error", str(e))
+            sys.exit(1)
 
     log.info("Processing complete!")
 
