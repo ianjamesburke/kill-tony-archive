@@ -1,0 +1,332 @@
+[
+  {
+    "start_seconds": 46,
+    "end_seconds": 49,
+    "type": "laughter",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 105,
+    "end_seconds": 106,
+    "type": "cheering",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 117,
+    "end_seconds": 118,
+    "type": "cheering",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 125,
+    "end_seconds": 126,
+    "type": "cheering",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 127,
+    "end_seconds": 129,
+    "type": "applause",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 136,
+    "end_seconds": 137,
+    "type": "applause",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 147,
+    "end_seconds": 148,
+    "type": "cheering",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 187,
+    "end_seconds": 189,
+    "type": "cheering",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 218,
+    "end_seconds": 219,
+    "type": "cheering",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 246,
+    "end_seconds": 248,
+    "type": "cheering",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 322,
+    "end_seconds": 323,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 332,
+    "end_seconds": 332,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 337,
+    "end_seconds": 338,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 379,
+    "end_seconds": 381,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 398,
+    "end_seconds": 399,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 431,
+    "end_seconds": 432,
+    "type": "cheering",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 458,
+    "end_seconds": 460,
+    "type": "applause",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 513,
+    "end_seconds": 514,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 531,
+    "end_seconds": 532,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 540,
+    "end_seconds": 542,
+    "type": "laughter",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 547,
+    "end_seconds": 548,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 555,
+    "end_seconds": 556,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 559,
+    "end_seconds": 560,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 609,
+    "end_seconds": 612,
+    "type": "applause",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 634,
+    "end_seconds": 635,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 643,
+    "end_seconds": 645,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 703,
+    "end_seconds": 705,
+    "type": "applause",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 711,
+    "end_seconds": 712,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 730,
+    "end_seconds": 731,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 816,
+    "end_seconds": 819,
+    "type": "laughter",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 847,
+    "end_seconds": 849,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 899,
+    "end_seconds": 901,
+    "type": "laughter",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 911,
+    "end_seconds": 912,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 997,
+    "end_seconds": 998,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 1003,
+    "end_seconds": 1004,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 1060,
+    "end_seconds": 1061,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 1109,
+    "end_seconds": 1110,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 1201,
+    "end_seconds": 1202,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 1302,
+    "end_seconds": 1303,
+    "type": "laughter",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 1345,
+    "end_seconds": 1347,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 1386,
+    "end_seconds": 1387,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 1399,
+    "end_seconds": 1401,
+    "type": "applause",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 1424,
+    "end_seconds": 1425,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 1506,
+    "end_seconds": 1507,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 1509,
+    "end_seconds": 1512,
+    "type": "laughter",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 1530,
+    "end_seconds": 1532,
+    "type": "applause",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 1609,
+    "end_seconds": 1610,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 1621,
+    "end_seconds": 1623,
+    "type": "applause",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 1634,
+    "end_seconds": 1635,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 1656,
+    "end_seconds": 1657,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 1700,
+    "end_seconds": 1701,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 1820,
+    "end_seconds": 1821,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 1907,
+    "end_seconds": 1908,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 1913,
+    "end_seconds": 1914,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 1943,
+    "end_seconds": 1944,
+    "type": "laughter",
+    "intensity": "light"
+  }
+]

@@ -3,6 +3,7 @@ import type {
 	Episode,
 	ComedySet,
 	SetsResponse,
+	SetsStats,
 	TopComedian,
 	TopicStat,
 	TopicTimelineEntry,
@@ -56,6 +57,22 @@ export async function fetchSets(params?: {
 	}
 	const qs = query.toString();
 	return get<SetsResponse>(`/sets${qs ? `?${qs}` : ''}`);
+}
+
+export async function fetchSetsStats(params?: {
+	since?: string;
+	episode?: number;
+}): Promise<SetsStats> {
+	const query = new URLSearchParams();
+	if (params) {
+		for (const [key, val] of Object.entries(params)) {
+			if (val !== undefined && val !== null) {
+				query.set(key, String(val));
+			}
+		}
+	}
+	const qs = query.toString();
+	return get<SetsStats>(`/sets/stats${qs ? `?${qs}` : ''}`);
 }
 
 export async function fetchSet(setId: string): Promise<ComedySet> {

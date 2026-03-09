@@ -206,6 +206,70 @@ def get_set(db_path: Path, set_id: str) -> Optional[dict[str, Any]]:
     return _set_row(row)
 
 
+def get_sets_stats(
+    db_path: Path,
+    *,
+    since: Optional[str] = None,
+    episode_number: Optional[int] = None,
+) -> dict[str, Any]:
+    where_clauses: list[str] = []
+    params: list[Any] = []
+    if episode_number is not None:
+        where_clauses.append("s.episode_number = ?")
+        params.append(episode_number)
+    if since is not None:
+        where_clauses.append("e.date >= ?")
+        params.append(since)
+    where = ("WHERE " + " AND ".join(where_clauses)) if where_clauses else ""
+
+    with _conn(db_path) as conn:
+        rows = conn.execute(
+            f"""
+            SELECT s.kill_score, s.crowd_reaction, s.status
+            FROM sets s
+            JOIN episodes e ON e.episode_number = s.episode_number
+            {where}
+            """,
+            params,
+        ).fetchall()
+        latest_ep = conn.execute("SELECT MAX(episode_number) FROM episodes").fetchone()[0]
+
+    scores = [r["kill_score"] for r in rows if r["kill_score"] is not None]
+    crowd_counts: dict[str, int] = {}
+    bucket_scores: list[float] = []
+    regular_scores: list[float] = []
+    bucket_count = 0
+    regular_count = 0
+
+    for r in rows:
+        if r["crowd_reaction"]:
+            crowd_counts[r["crowd_reaction"]] = crowd_counts.get(r["crowd_reaction"], 0) + 1
+        if r["status"] == "bucket_pull":
+            bucket_count += 1
+            if r["kill_score"] is not None:
+                bucket_scores.append(r["kill_score"])
+        elif r["status"] == "regular":
+            regular_count += 1
+            if r["kill_score"] is not None:
+                regular_scores.append(r["kill_score"])
+
+    crowd_reactions = [
+        {"crowd_reaction": k, "count": v}
+        for k, v in sorted(crowd_counts.items(), key=lambda x: -x[1])
+    ]
+
+    return {
+        "scores": scores,
+        "crowd_reactions": crowd_reactions,
+        "bucket_count": bucket_count,
+        "regular_count": regular_count,
+        "bucket_avg": round(sum(bucket_scores) / len(bucket_scores), 1) if bucket_scores else None,
+        "regular_avg": round(sum(regular_scores) / len(regular_scores), 1) if regular_scores else None,
+        "total": len(rows),
+        "latest_episode": latest_ep,
+    }
+
+
 def _set_row(row: sqlite3.Row) -> dict[str, Any]:
     d = dict(row)
     d["topic_tags"] = json.loads(d["topic_tags"]) if d.get("topic_tags") else []

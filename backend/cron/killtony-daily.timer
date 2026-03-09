@@ -1,0 +1,9 @@
+[Unit]
+Description=Run Kill Tony processor hourly (8am-midnight MT)
+
+[Timer]
+OnCalendar=*-*-* 08..23:00:00 America/Denver
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -18,10 +18,16 @@ default:
 
 # Start backend dev server
 dev-backend:
+    #!/usr/bin/env bash
+    lsof -i :8000 | grep LISTEN | awk '{print $2}' | xargs -r kill -9 2>/dev/null || true
+    sleep 0.5
     cd backend && .venv/bin/uvicorn main:app --reload --port 8000
 
 # Start frontend dev server
 dev-frontend:
+    #!/usr/bin/env bash
+    lsof -i :5173 | grep LISTEN | awk '{print $2}' | xargs -r kill -9 2>/dev/null || true
+    sleep 0.5
     cd frontend && npm run dev
 
 # Start both (requires: brew install tmux)

@@ -33,9 +33,15 @@ from yt_dlp import YoutubeDL
 ROOT = Path(__file__).parent.parent
 load_dotenv(ROOT / ".env")
 
-MODEL = "gemini-2.5-flash"
+# Ensure deno is in PATH for yt-dlp JS challenge solving
+_deno_bin = Path.home() / ".deno" / "bin"
+if _deno_bin.is_dir() and str(_deno_bin) not in os.environ.get("PATH", ""):
+    os.environ["PATH"] = f"{_deno_bin}:{os.environ.get('PATH', '')}"
+
+PASS1_MODEL = "gemini-2.5-flash"            # audio transcription (4x more granular than flash-3)
+PASS2_MODEL = "gemini-3.1-flash-lite-preview"  # text-only set extraction (1000 RPD free tier)
 GUEST_MODEL = "gemini-3.1-flash-lite-preview"  # cheap model for title parsing
-LAUGHTER_MODEL = "gemini-2.5-flash"  # chunked laughter detection
+LAUGHTER_MODEL = "gemini-3.1-flash-lite-preview"  # chunked laughter detection (1000 RPD free tier)
 LAUGHTER_WINDOW_SIZE = 1  # per-second resolution for event-based detection
 PIPELINE_VERSION = 2  # bump when pipeline changes warrant reprocessing (v1=5s windows, v2=events)
 CHUNK_MINUTES = 20
@@ -44,10 +50,9 @@ AUDIO_CACHE_DIR = Path(__file__).parent / "audio_cache"
 DB_PATH = ROOT / "data" / "kill_tony.db"
 TRANSCRIPTS_DIR = ROOT / "data" / "transcripts"
 
-# Rate limiting — 2.5 Flash free tier is 10 RPM / 250 RPD
-# We use 10s between API calls (safe margin under 10 RPM)
+# Rate limiting — 2.5-flash: 10 RPM / 250 RPD, flash-lite: 15 RPM / 1000 RPD
+# 10s between API calls keeps us under the lowest RPM limit
 API_DELAY_SECONDS = 10
-# 2.5 Flash free tier: 10 RPM / 250 RPD — short backoff on rate limit errors
 LAUGHTER_RATE_LIMIT_BACKOFF = 60  # 1 minute between retries on 429
 
 # ---------------------------------------------------------------------------
@@ -290,6 +295,7 @@ CREATE TABLE IF NOT EXISTS sets (
 
 CREATE INDEX IF NOT EXISTS idx_sets_episode ON sets(episode_number);
 CREATE INDEX IF NOT EXISTS idx_sets_comedian ON sets(comedian_name);
+CREATE INDEX IF NOT EXISTS idx_sets_kill_score ON sets(kill_score);
 """
 
 
@@ -701,18 +707,20 @@ def pass1_transcribe(client: genai.Client, chunk_paths: list[Path], chunk_offset
                 offset_seconds=offset_seconds,
                 offset_str=offset_str,
             )
-            for attempt in range(3):
+            for attempt in range(6):
                 try:
                     response = client.models.generate_content(
-                        model=MODEL,
+                        model=PASS1_MODEL,
                         contents=[prompt, uploaded],
                         config={"http_options": {"timeout": 600000}},
                     )
                     entries = _parse_json_array((response.text or "").strip())
                     break
                 except Exception as api_err:
-                    if attempt < 2:
-                        wait = 30 * (attempt + 1)
+                    err_str = str(api_err)
+                    is_503 = "503" in err_str or "UNAVAILABLE" in err_str
+                    if attempt < 5:
+                        wait = 60 * (attempt + 1) if is_503 else 30 * (attempt + 1)
                         log.warning(f"    Chunk {chunk_num} attempt {attempt+1} failed ({api_err}), retrying in {wait}s")
                         time.sleep(wait)
                     else:
@@ -755,7 +763,7 @@ def pass2_analyze(client: genai.Client, transcript: list[dict], episode_number: 
     for attempt in range(3):
         try:
             response = client.models.generate_content(
-                model=MODEL,
+                model=PASS2_MODEL,
                 contents=[{"role": "user", "parts": [{"text": prompt}]}],
                 config={"response_mime_type": "application/json", "http_options": {"timeout": 600000}},
             )
@@ -1148,7 +1156,7 @@ def load_episodes() -> list[dict]:
     with sqlite3.connect(DB_PATH) as conn:
         conn.row_factory = sqlite3.Row
         rows = conn.execute(
-            "SELECT episode_number, title, youtube_url AS url, video_id, status FROM episodes ORDER BY episode_number"
+            "SELECT episode_number, title, youtube_url AS url, video_id, status, pipeline_version FROM episodes ORDER BY episode_number"
         ).fetchall()
         return [dict(r) for r in rows]
 

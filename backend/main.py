@@ -17,6 +17,7 @@ from database import (
     get_laughter_timeline,
     get_set,
     get_sets,
+    get_sets_stats,
     get_stats,
     get_top_comedians,
     get_topic_stats,
@@ -101,6 +102,14 @@ def sets_list(
         limit=limit,
         offset=offset,
     )
+
+
+@app.get("/api/sets/stats")
+def sets_stats(
+    since: Optional[str] = Query(None, description="Filter by episode date >= YYYYMMDD"),
+    episode: Optional[int] = Query(None, description="Filter by episode number"),
+) -> dict[str, Any]:
+    return get_sets_stats(DB_PATH, since=since, episode_number=episode)
 
 
 @app.get("/api/sets/{set_id}")

@@ -1,0 +1,326 @@
+[
+  {
+    "start_seconds": 0.0,
+    "end_seconds": 58.0,
+    "speaker": "music",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 58.0,
+    "end_seconds": 105.0,
+    "speaker": "comedian:uncle_lazer",
+    "text": "Hey, this is Redban, coming to you live from the comedy mothership here in Austin, Texas. For a brand new episode of Kill Tony. Get it for Tony. It's kill!"
+  },
+  {
+    "start_seconds": 105.0,
+    "end_seconds": 106.0,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 106.0,
+    "end_seconds": 114.0,
+    "speaker": "music",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 114.0,
+    "end_seconds": 117.0,
+    "speaker": "comedian:uncle_lazer",
+    "text": "Who's ready for the best fucking night of their lives, huh?"
+  },
+  {
+    "start_seconds": 117.0,
+    "end_seconds": 119.0,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 119.0,
+    "end_seconds": 125.0,
+    "speaker": "music",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 125.0,
+    "end_seconds": 126.0,
+    "speaker": "comedian:uncle_lazer",
+    "text": "Yee-haw!"
+  },
+  {
+    "start_seconds": 126.0,
+    "end_seconds": 129.0,
+    "speaker": "comedian:uncle_lazer",
+    "text": "Thanks tonight for Brian Redban, ladies and gentlemen."
+  },
+  {
+    "start_seconds": 129.0,
+    "end_seconds": 130.0,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 130.0,
+    "end_seconds": 136.0,
+    "speaker": "comedian:uncle_lazer",
+    "text": "And that is the best damn band in all of the land, everybody!"
+  },
+  {
+    "start_seconds": 136.0,
+    "end_seconds": 137.0,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 137.0,
+    "end_seconds": 144.0,
+    "speaker": "tony",
+    "text": "You made it, you're here. You're at the number one live podcast in the world brought to you by Blue Chew, Talk Space and Shopify."
+  },
+  {
+    "start_seconds": 144.0,
+    "end_seconds": 146.0,
+    "speaker": "tony",
+    "text": "We got a little whoot nanny in store for you. How you guys feeling tonight, good?"
+  },
+  {
+    "start_seconds": 146.0,
+    "end_seconds": 147.0,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 147.0,
+    "end_seconds": 153.0,
+    "speaker": "tony",
+    "text": "Before we get started, here's a little bit more from the amazing sponsors that made it all possible."
+  },
+  {
+    "start_seconds": 153.0,
+    "end_seconds": 154.0,
+    "speaker": "music",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 154.0,
+    "end_seconds": 204.0,
+    "speaker": "announcer",
+    "text": "We live in Austin, Texas, but we are jumping in a tour bus, ladies and gentlemen, and we are taking the actual Kill Tony show to Houston, Texas, February 28th and Dallas, March 28th. Go to tonyhinchcliffe.com for tickets right now. Come see an actual Kill Tony show in the great state of Texas. One in Houston, February 28th, one in Grand Prairie, March 28th. tonyhinchcliffe.com, get tickets now."
+  },
+  {
+    "start_seconds": 204.0,
+    "end_seconds": 207.0,
+    "speaker": "tony",
+    "text": "Who's ready to start tonight's show, huh?"
+  },
+  {
+    "start_seconds": 207.0,
+    "end_seconds": 208.0,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 208.0,
+    "end_seconds": 230.0,
+    "speaker": "tony",
+    "text": "Guys, every single week, I book one or two of the world's funniest human beings. One of the biggest comedians on planet Earth is with us tonight. One of my favorite humans, a guy who I can say, I've literally basically watched grow up over the past decade and a half and now he is a phenom."
+  },
+  {
+    "start_seconds": 230.0,
+    "end_seconds": 242.0,
+    "speaker": "tony",
+    "text": "One of the biggest in the world. One of the best in the world. One of my favorites. Make some fucking noise for the one and only Matt Rife!"
+  },
+  {
+    "start_seconds": 242.0,
+    "end_seconds": 243.0,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 243.0,
+    "end_seconds": 246.0,
+    "speaker": "music",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 246.0,
+    "end_seconds": 257.0,
+    "speaker": "tony",
+    "text": "Oh, yeah, baby. Woo. The man, the myth, the legend is with us. Matt motherfucking Rife on a Monday evening in Austin, Texas."
+  },
+  {
+    "start_seconds": 257.0,
+    "end_seconds": 260.0,
+    "speaker": "tony",
+    "text": "Oh, yeah."
+  },
+  {
+    "start_seconds": 260.0,
+    "end_seconds": 266.0,
+    "speaker": "tony",
+    "text": "Matt does arenas. He's doing Jacksonville, Louisville, all over Matt Rifeofficial.com."
+  },
+  {
+    "start_seconds": 266.0,
+    "end_seconds": 269.0,
+    "speaker": "tony",
+    "text": "Uh, how's it going, buddy?"
+  },
+  {
+    "start_seconds": 269.0,
+    "end_seconds": 273.0,
+    "speaker": "guest:matt_rife",
+    "text": "Dude, good man, happy to be back in Austin. It's been 48 hours. Thanks for having me."
+  },
+  {
+    "start_seconds": 273.0,
+    "end_seconds": 274.0,
+    "speaker": "tony",
+    "text": "You're such a relief on my eyes. I'm used to"
+  },
+  {
+    "start_seconds": 274.0,
+    "end_seconds": 279.0,
+    "speaker": "tony",
+    "text": "I'm used to looking at Redban and I get to look at you, are just a specimen. Stop, stop."
+  },
+  {
+    "start_seconds": 279.0,
+    "end_seconds": 282.0,
+    "speaker": "tony",
+    "text": "Charming, good looking. I mean, absolutely incredible."
+  },
+  {
+    "start_seconds": 282.0,
+    "end_seconds": 284.0,
+    "speaker": "tony",
+    "text": "I'm in heaven here tonight."
+  },
+  {
+    "start_seconds": 284.0,
+    "end_seconds": 284.0,
+    "speaker": "guest:matt_rife",
+    "text": "Thank you."
+  },
+  {
+    "start_seconds": 284.0,
+    "end_seconds": 285.0,
+    "speaker": "tony",
+    "text": "Uh,"
+  },
+  {
+    "start_seconds": 285.0,
+    "end_seconds": 286.0,
+    "speaker": "guest:matt_rife",
+    "text": "This hospitality, I love this."
+  },
+  {
+    "start_seconds": 286.0,
+    "end_seconds": 288.0,
+    "speaker": "tony",
+    "text": "You're damn right. Always. We've had so much fun in the past."
+  },
+  {
+    "start_seconds": 288.0,
+    "end_seconds": 294.0,
+    "speaker": "tony",
+    "text": "You know how the show works, Matt. I have a bucket with about 300 comedians names in it. It's absolutely incredible."
+  },
+  {
+    "start_seconds": 294.0,
+    "end_seconds": 303.0,
+    "speaker": "tony",
+    "text": "I'm going to let uh, I'm going to let this uh, going to let this woman whose mother got kidnapped a couple weeks ago, uh, pick the first name out of the bucket."
+  },
+  {
+    "start_seconds": 303.0,
+    "end_seconds": 304.0,
+    "speaker": "tony",
+    "text": "Good for you."
+  },
+  {
+    "start_seconds": 304.0,
+    "end_seconds": 308.0,
+    "speaker": "tony",
+    "text": "A little special treat, you're getting away from all the stress, having a night out of laughter."
+  },
+  {
+    "start_seconds": 308.0,
+    "end_seconds": 311.0,
+    "speaker": "tony",
+    "text": "Um, good luck with all that, by the way."
+  },
+  {
+    "start_seconds": 311.0,
+    "end_seconds": 317.0,
+    "speaker": "tony",
+    "text": "If your name gets pulled out of the bucket, you know how it works, they get 60 seconds uninterrupted."
+  },
+  {
+    "start_seconds": 317.0,
+    "end_seconds": 321.0,
+    "speaker": "tony",
+    "text": "That means their time is up when you hear the sound of a kitten."
+  },
+  {
+    "start_seconds": 321.0,
+    "end_seconds": 326.0,
+    "speaker": "tony",
+    "text": "You have to wrap it up then, or else you bring out the angry boss, Hollywood bear, which just loudly interrupts their set."
+  },
+  {
+    "start_seconds": 326.0,
+    "end_seconds": 331.0,
+    "speaker": "tony",
+    "text": "And then I conduct an interview, anything can happen, the entire thing is improvised."
+  },
+  {
+    "start_seconds": 331.0,
+    "end_seconds": 334.0,
+    "speaker": "tony",
+    "text": "You guys ready to start tonight's fucking show, or what?"
+  },
+  {
+    "start_seconds": 334.0,
+    "end_seconds": 336.0,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 336.0,
+    "end_seconds": 341.0,
+    "speaker": "tony",
+    "text": "Well, we have a special treat for you guys. Normally, this guy would close the show."
+  },
+  {
+    "start_seconds": 341.0,
+    "end_seconds": 345.0,
+    "speaker": "tony",
+    "text": "But tonight he is opening the show."
+  },
+  {
+    "start_seconds": 345.0,
+    "end_seconds": 356.0,
+    "speaker": "tony",
+    "text": "He is the record holder for all-time appearances on this show, all-time interviews. What a way to get things started. Some people call him the Vanilla Gorilla, the Memphis Strangler, the Big Red Machine."
+  },
+  {
+    "start_seconds": 356.0,
+    "end_seconds": 359.0,
+    "speaker": "tony",
+    "text": "This is indeed the one and only William Montgomery."
+  },
+  {
+    "start_seconds": 359.0,
+    "end_seconds": 361.0,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 361.0,
+    "end_seconds": 364.0,
+    "speaker": "music",
+    "text": "[music]"
+  }
+]

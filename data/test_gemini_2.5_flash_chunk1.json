@@ -1,0 +1,4838 @@
+[
+  {
+    "start_seconds": 0.0,
+    "end_seconds": 36.52,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 36.52,
+    "end_seconds": 46.12,
+    "speaker": "redban",
+    "text": "This is Redban coming to you live from the Comedy Mothership here in Austin, Texas for a brand new episode of Kill Tony. Give it up for Tony Hinchcliffe!"
+  },
+  {
+    "start_seconds": 46.12,
+    "end_seconds": 55.75,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 55.75,
+    "end_seconds": 59.13,
+    "speaker": "tony",
+    "text": "Who's ready for the best fucking night of their lives, huh?"
+  },
+  {
+    "start_seconds": 59.13,
+    "end_seconds": 107.03,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 107.03,
+    "end_seconds": 107.72,
+    "speaker": "tony",
+    "text": "Woo!"
+  },
+  {
+    "start_seconds": 107.72,
+    "end_seconds": 107.97,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 107.97,
+    "end_seconds": 113.38,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 113.38,
+    "end_seconds": 128.08,
+    "speaker": "tony",
+    "text": "Brian Redban! The best damn band in the land, ladies and gentlemen. Wow! Unbelievable. That's the great Fernando Castillo, Raul Vallejo, and uh, Carlos Sosa."
+  },
+  {
+    "start_seconds": 128.08,
+    "end_seconds": 130.93,
+    "speaker": "tony",
+    "text": "How we doing, everybody? It was good. We just lost you there. Got real quiet."
+  },
+  {
+    "start_seconds": 130.93,
+    "end_seconds": 132.89,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 133.02,
+    "end_seconds": 134.49,
+    "speaker": "tony",
+    "text": "You guys happy to be here?"
+  },
+  {
+    "start_seconds": 134.49,
+    "end_seconds": 135.25,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 135.25,
+    "end_seconds": 140.75,
+    "speaker": "tony",
+    "text": "Almost seems like something happened with the audio or something that threw everybody off or something. Did you notice that?"
+  },
+  {
+    "start_seconds": 140.75,
+    "end_seconds": 142.18,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 142.18,
+    "end_seconds": 144.15,
+    "speaker": "tony",
+    "text": "I guess I'm the only one paying attention. No, we're good."
+  },
+  {
+    "start_seconds": 144.15,
+    "end_seconds": 146.49,
+    "speaker": "redban",
+    "text": "No, don't, don't worry, don't worry about a thing, Redban."
+  },
+  {
+    "start_seconds": 146.49,
+    "end_seconds": 149.33,
+    "speaker": "tony",
+    "text": "How about a hand for Michael Gonzalez, everybody!"
+  },
+  {
+    "start_seconds": 149.33,
+    "end_seconds": 150.14,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 150.14,
+    "end_seconds": 158.46,
+    "speaker": "tony",
+    "text": "This is the great Matt Muling on the electric guitar, John Dees on the keys, and that's D Madness on the bass guitar."
+  },
+  {
+    "start_seconds": 158.46,
+    "end_seconds": 159.26,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 159.26,
+    "end_seconds": 204.99,
+    "speaker": "announcer",
+    "text": "This episode is brought to you by Talkspace. You are here at the number one live podcast in the world, Kill Tony."
+  },
+  {
+    "start_seconds": 204.99,
+    "end_seconds": 210.63,
+    "speaker": "tony",
+    "text": "And before we get started, here's a little bit more from the amazing sponsors that made it all possible."
+  },
+  {
+    "start_seconds": 210.63,
+    "end_seconds": 211.39,
+    "speaker": "redban",
+    "text": "[silence]"
+  },
+  {
+    "start_seconds": 211.39,
+    "end_seconds": 213.68,
+    "speaker": "tony",
+    "text": "And now we're on our first commercial break."
+  },
+  {
+    "start_seconds": 213.68,
+    "end_seconds": 214.73,
+    "speaker": "redban",
+    "text": "What happened with the audios?"
+  },
+  {
+    "start_seconds": 214.73,
+    "end_seconds": 218.44,
+    "speaker": "tony",
+    "text": "The audio on Mike One wasn't on upon arrival. Yeah,"
+  },
+  {
+    "start_seconds": 218.44,
+    "end_seconds": 220.17,
+    "speaker": "sam",
+    "text": "Oh, really?"
+  },
+  {
+    "start_seconds": 220.17,
+    "end_seconds": 223.73,
+    "speaker": "tony",
+    "text": "do you have a spotlight for yourself so that you can light yourself up right now?"
+  },
+  {
+    "start_seconds": 223.73,
+    "end_seconds": 235.39,
+    "speaker": "band",
+    "text": "[music] [sound of firecrackers]"
+  },
+  {
+    "start_seconds": 235.39,
+    "end_seconds": 237.52,
+    "speaker": "tony",
+    "text": "You guys ready to start tonight's fucking show or what?"
+  },
+  {
+    "start_seconds": 237.52,
+    "end_seconds": 238.64,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 238.64,
+    "end_seconds": 240.28,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 240.28,
+    "end_seconds": 240.92,
+    "speaker": "tony",
+    "text": "Anything can happen."
+  },
+  {
+    "start_seconds": 240.92,
+    "end_seconds": 250.68,
+    "speaker": "tony",
+    "text": "This is the greatest live show in the world. I pride myself on being an unbelievable booker of guests and this week, it is the motherfucking boys."
+  },
+  {
+    "start_seconds": 250.68,
+    "end_seconds": 255.43,
+    "speaker": "tony",
+    "text": "One is uh, they're both two of the greatest standups in the world."
+  },
+  {
+    "start_seconds": 255.43,
+    "end_seconds": 304.09,
+    "speaker": "tony",
+    "text": "One got my fucking career started at the Comedy Store eighteen and a half years ago by taking me on the road, showing me how the fuck it's done. One of my first ever favorite comedians in the world and he is in Austin, Texas."
+  },
+  {
+    "start_seconds": 304.09,
+    "end_seconds": 309.58,
+    "speaker": "tony",
+    "text": "The other one lives in Austin, one of the most powerful comedians moved here. We love him."
+  },
+  {
+    "start_seconds": 309.58,
+    "end_seconds": 313.91,
+    "speaker": "tony",
+    "text": "Make some fucking noise for the great Sam Tripley and Tim Butterly, everybody!"
+  },
+  {
+    "start_seconds": 313.91,
+    "end_seconds": 321.43,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 321.43,
+    "end_seconds": 323.77,
+    "speaker": "tony",
+    "text": "Sam Tripley is back!"
+  },
+  {
+    "start_seconds": 323.77,
+    "end_seconds": 325.86,
+    "speaker": "tim",
+    "text": "Tim Butterly is back!"
+  },
+  {
+    "start_seconds": 325.86,
+    "end_seconds": 328.78,
+    "speaker": "tony",
+    "text": "Oh, boy!"
+  },
+  {
+    "start_seconds": 328.78,
+    "end_seconds": 332.9,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 332.9,
+    "end_seconds": 346.06,
+    "speaker": "tony",
+    "text": "Sam Tripley is on tour, the Tin Foil Hat Podcast, the Broken Simulations Podcast, the Deep Waters Podcast. A lot of conspiracy podcasts going on with the great Sam Tripley. Sam, how are you?"
+  },
+  {
+    "start_seconds": 346.06,
+    "end_seconds": 349.33,
+    "speaker": "guest:sam_tripoli",
+    "text": "I'm doing great. I love your sweet voice, brother. I love your sweet, sweet voice."
+  },
+  {
+    "start_seconds": 349.33,
+    "end_seconds": 350.53,
+    "speaker": "tony",
+    "text": "Thank you. It's good to be able to hear."
+  },
+  {
+    "start_seconds": 350.53,
+    "end_seconds": 351.48,
+    "speaker": "guest:tim_butterly",
+    "text": "Turn off his mic."
+  },
+  {
+    "start_seconds": 351.48,
+    "end_seconds": 352.05,
+    "speaker": "tony",
+    "text": "That's right."
+  },
+  {
+    "start_seconds": 352.05,
+    "end_seconds": 353.94,
+    "speaker": "guest:tim_butterly",
+    "text": "It's good to hear it."
+  },
+  {
+    "start_seconds": 354.29,
+    "end_seconds": 357.5,
+    "speaker": "tony",
+    "text": "Uh, how about a hand for the great Tim Butterly, everybody? Tim Butterly."
+  },
+  {
+    "start_seconds": 357.5,
+    "end_seconds": 358.33,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 358.33,
+    "end_seconds": 361.37,
+    "speaker": "tony",
+    "text": "Has dad me. This is his podcast."
+  },
+  {
+    "start_seconds": 361.37,
+    "end_seconds": 363.59,
+    "speaker": "guest:tim_butterly",
+    "text": "And the Tim Butterly show. He's on tour as well."
+  },
+  {
+    "start_seconds": 363.59,
+    "end_seconds": 364.55,
+    "speaker": "tony",
+    "text": "Tim Butterly dot com."
+  },
+  {
+    "start_seconds": 364.55,
+    "end_seconds": 365.04,
+    "speaker": "guest:tim_butterly",
+    "text": "Hi, Tim."
+  },
+  {
+    "start_seconds": 366.4,
+    "end_seconds": 367.0,
+    "speaker": "guest:tim_butterly",
+    "text": "[silence]"
+  },
+  {
+    "start_seconds": 367.0,
+    "end_seconds": 367.5,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 367.5,
+    "end_seconds": 372.04,
+    "speaker": "guest:tim_butterly",
+    "text": "I was just playing. It's working. No, I'm just kidding. Don't, oh, now, I'm just. I thought it would be so funny if Tony had a second bitch meltdown."
+  },
+  {
+    "start_seconds": 372.04,
+    "end_seconds": 376.54,
+    "speaker": "tony",
+    "text": "Yes! How dare you, Keno? How dare you?"
+  },
+  {
+    "start_seconds": 376.54,
+    "end_seconds": 381.1,
+    "speaker": "guest:sam_tripoli",
+    "text": "I wanted to steal that so badly when he said it and I'm like, oh, I'm gonna let him do it."
+  },
+  {
+    "start_seconds": 381.1,
+    "end_seconds": 382.47,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 382.47,
+    "end_seconds": 383.9,
+    "speaker": "guest:sam_tripoli",
+    "text": "That's very sweet of you. Thank you, Sam."
+  },
+  {
+    "start_seconds": 383.9,
+    "end_seconds": 388.94,
+    "speaker": "tony",
+    "text": "We're going to have a blast. You guys have been on the show numerous times. Sam was one of the first guests ever on the show."
+  },
+  {
+    "start_seconds": 388.94,
+    "end_seconds": 396.65,
+    "speaker": "tony",
+    "text": "Thirteen and a half years ago. Tonight, over 300 human beings signed up. They are crammed in together at a bar next door."
+  },
+  {
+    "start_seconds": 396.65,
+    "end_seconds": 403.4,
+    "speaker": "tony",
+    "text": "Hoping and praying that their name gets pulled out of this bucket. If they do, they get sixty seconds uninterrupted."
+  },
+  {
+    "start_seconds": 403.4,
+    "end_seconds": 405.34,
+    "speaker": "tony",
+    "text": "You know their time is up when you hear the sound of a kitten."
+  },
+  {
+    "start_seconds": 405.34,
+    "end_seconds": 406.87,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 406.87,
+    "end_seconds": 412.02,
+    "speaker": "tony",
+    "text": "Okay, the joke, guys. I mean, you're all fucking, you're all literally hacks right now."
+  },
+  {
+    "start_seconds": 412.02,
+    "end_seconds": 414.07,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 414.07,
+    "end_seconds": 420.08,
+    "speaker": "tony",
+    "text": "By the way, it was on a fucking commercial break. Nobody knows what jokes you're fucking making. Nobody knows."
+  },
+  {
+    "start_seconds": 420.08,
+    "end_seconds": 421.3,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 421.3,
+    "end_seconds": 426.68,
+    "speaker": "tony",
+    "text": "You're playing for the stupid 250 people instead of four million, you fucking retards!"
+  },
+  {
+    "start_seconds": 426.68,
+    "end_seconds": 427.52,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 427.52,
+    "end_seconds": 429.35,
+    "speaker": "tony",
+    "text": "Jesus Christ!"
+  },
+  {
+    "start_seconds": 429.35,
+    "end_seconds": 431.13,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 431.13,
+    "end_seconds": 432.25,
+    "speaker": "tony",
+    "text": "God!"
+  },
+  {
+    "start_seconds": 432.25,
+    "end_seconds": 433.8,
+    "speaker": "guest:tim_butterly",
+    "text": "I'm on your side, dude."
+  },
+  {
+    "start_seconds": 433.8,
+    "end_seconds": 434.39,
+    "speaker": "tony",
+    "text": "Fuck!"
+  },
+  {
+    "start_seconds": 434.39,
+    "end_seconds": 435.53,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 435.53,
+    "end_seconds": 437.38,
+    "speaker": "tony",
+    "text": "All right."
+  },
+  {
+    "start_seconds": 437.38,
+    "end_seconds": 439.46,
+    "speaker": "redban",
+    "text": "You hear the sound of the kitten wrapping it up, then we'll spring up to Andrew with the drum."
+  },
+  {
+    "start_seconds": 439.46,
+    "end_seconds": 440.0,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 440.0,
+    "end_seconds": 441.79,
+    "speaker": "redban",
+    "text_original": "Very good. Alright."
+  },
+  {
+    "start_seconds": 441.79,
+    "end_seconds": 442.29,
+    "speaker": "tony",
+    "text": "Very good. All right."
+  },
+  {
+    "start_seconds": 442.29,
+    "end_seconds": 445.05,
+    "speaker": "tony",
+    "text": "I'm going to let this pedophile pick the first name."
+  },
+  {
+    "start_seconds": 445.05,
+    "end_seconds": 447.88,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 447.88,
+    "end_seconds": 450.41,
+    "speaker": "tony",
+    "text": "The blatant pedo in my front."
+  },
+  {
+    "start_seconds": 450.41,
+    "end_seconds": 451.98,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 451.98,
+    "end_seconds": 453.69,
+    "speaker": "tony",
+    "text": "All right. Send it."
+  },
+  {
+    "start_seconds": 453.69,
+    "end_seconds": 454.49,
+    "speaker": "redban",
+    "text": "Ooh,"
+  },
+  {
+    "start_seconds": 454.49,
+    "end_seconds": 455.51,
+    "speaker": "tony",
+    "text": "a one-word name."
+  },
+  {
+    "start_seconds": 455.51,
+    "end_seconds": 456.09,
+    "speaker": "redban",
+    "text": "That's going to be fun."
+  },
+  {
+    "start_seconds": 456.09,
+    "end_seconds": 457.86,
+    "speaker": "tony",
+    "text": "Well, we go wrangle that comedian,"
+  },
+  {
+    "start_seconds": 457.86,
+    "end_seconds": 458.74,
+    "speaker": "redban",
+    "text": "ladies and gentlemen,"
+  },
+  {
+    "start_seconds": 458.74,
+    "end_seconds": 465.73,
+    "speaker": "tony",
+    "text": "we have one of the great Golden Ticket winners. Literally what many say, including myself, the greatest Kill Tony Golden Ticket winner of all time."
+  },
+  {
+    "start_seconds": 465.73,
+    "end_seconds": 472.28,
+    "speaker": "tony",
+    "text": "Ladies and gentlemen, this is a brand new minute from the super powerful Martin Phillips, everybody!"
+  },
+  {
+    "start_seconds": 472.28,
+    "end_seconds": 473.19,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 473.19,
+    "end_seconds": 473.65,
+    "speaker": "tony",
+    "text": "And here we go!"
+  },
+  {
+    "start_seconds": 473.65,
+    "end_seconds": 474.92,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 474.92,
+    "end_seconds": 475.29,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 475.29,
+    "end_seconds": 476.51,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 476.51,
+    "end_seconds": 477.16,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 477.16,
+    "end_seconds": 477.67,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 477.67,
+    "end_seconds": 478.27,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 478.27,
+    "end_seconds": 478.77,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 478.77,
+    "end_seconds": 479.25,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 479.25,
+    "end_seconds": 480.0,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 480.0,
+    "end_seconds": 480.6,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 480.6,
+    "end_seconds": 482.02,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 482.02,
+    "end_seconds": 482.72,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 482.72,
+    "end_seconds": 483.21,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 483.21,
+    "end_seconds": 483.74,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 483.74,
+    "end_seconds": 484.09,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 484.09,
+    "end_seconds": 484.6,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 484.6,
+    "end_seconds": 485.03,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 485.03,
+    "end_seconds": 485.69,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 485.69,
+    "end_seconds": 486.23,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 486.23,
+    "end_seconds": 486.72,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 486.72,
+    "end_seconds": 487.27,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 487.27,
+    "end_seconds": 487.89,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 487.89,
+    "end_seconds": 488.42,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 488.42,
+    "end_seconds": 489.28,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 489.28,
+    "end_seconds": 489.6,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 489.6,
+    "end_seconds": 490.1,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 490.1,
+    "end_seconds": 490.58,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 490.58,
+    "end_seconds": 491.07,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 491.07,
+    "end_seconds": 491.56,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 491.56,
+    "end_seconds": 492.21,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 492.21,
+    "end_seconds": 492.68,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 492.68,
+    "end_seconds": 493.3,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 493.3,
+    "end_seconds": 493.73,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 493.73,
+    "end_seconds": 494.39,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 494.39,
+    "end_seconds": 494.94,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 494.94,
+    "end_seconds": 495.69,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 495.69,
+    "end_seconds": 496.16,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 496.16,
+    "end_seconds": 496.65,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 496.65,
+    "end_seconds": 497.16,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 497.16,
+    "end_seconds": 497.66,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 497.66,
+    "end_seconds": 498.05,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 498.05,
+    "end_seconds": 498.81,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 498.81,
+    "end_seconds": 499.23,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 499.23,
+    "end_seconds": 499.74,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 499.74,
+    "end_seconds": 500.2,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 500.2,
+    "end_seconds": 500.73,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 500.73,
+    "end_seconds": 501.24,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 501.24,
+    "end_seconds": 502.0,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 502.0,
+    "end_seconds": 502.57,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 502.57,
+    "end_seconds": 503.25,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 503.25,
+    "end_seconds": 503.65,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 503.65,
+    "end_seconds": 504.22,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 504.22,
+    "end_seconds": 504.66,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 504.66,
+    "end_seconds": 505.32,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 505.32,
+    "end_seconds": 506.01,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 506.01,
+    "end_seconds": 506.76,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 506.76,
+    "end_seconds": 507.24,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 507.24,
+    "end_seconds": 507.72,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 507.72,
+    "end_seconds": 508.06,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 508.06,
+    "end_seconds": 509.32,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 509.32,
+    "end_seconds": 509.77,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 509.77,
+    "end_seconds": 510.37,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 510.37,
+    "end_seconds": 510.74,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 510.74,
+    "end_seconds": 511.41,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 511.41,
+    "end_seconds": 512.01,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 512.01,
+    "end_seconds": 512.56,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 512.56,
+    "end_seconds": 513.1,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 513.1,
+    "end_seconds": 513.73,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 513.73,
+    "end_seconds": 514.24,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 514.24,
+    "end_seconds": 514.7,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 514.7,
+    "end_seconds": 515.19,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 515.19,
+    "end_seconds": 515.54,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 515.54,
+    "end_seconds": 516.14,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 516.14,
+    "end_seconds": 517.07,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 517.07,
+    "end_seconds": 517.51,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 517.51,
+    "end_seconds": 518.25,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 518.25,
+    "end_seconds": 518.66,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 518.66,
+    "end_seconds": 519.34,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 519.34,
+    "end_seconds": 519.67,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 519.67,
+    "end_seconds": 520.35,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 520.35,
+    "end_seconds": 520.73,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 520.73,
+    "end_seconds": 521.13,
+    "speaker": "comedian:martin_phillips",
+    "text": "Go, go, go."
+  },
+  {
+    "start_seconds": 521.13,
+    "end_seconds": 522.09,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 522.09,
+    "end_seconds": 523.23,
+    "speaker": "comedian:martin_phillips",
+    "text": "Bleh, bleh."
+  },
+  {
+    "start_seconds": 523.23,
+    "end_seconds": 523.47,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 523.47,
+    "end_seconds": 523.77,
+    "speaker": "comedian:martin_phillips",
+    "text": "Bleh."
+  },
+  {
+    "start_seconds": 523.77,
+    "end_seconds": 524.38,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 524.38,
+    "end_seconds": 524.62,
+    "speaker": "comedian:martin_phillips",
+    "text": "Ugh!"
+  },
+  {
+    "start_seconds": 524.62,
+    "end_seconds": 525.13,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 525.13,
+    "end_seconds": 525.43,
+    "speaker": "comedian:martin_phillips",
+    "text": "I like."
+  },
+  {
+    "start_seconds": 525.43,
+    "end_seconds": 525.75,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 525.75,
+    "end_seconds": 526.4,
+    "speaker": "comedian:martin_phillips",
+    "text": "It's good to know."
+  },
+  {
+    "start_seconds": 526.4,
+    "end_seconds": 527.27,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 527.27,
+    "end_seconds": 527.65,
+    "speaker": "comedian:martin_phillips",
+    "text": "I'm drunk."
+  },
+  {
+    "start_seconds": 527.65,
+    "end_seconds": 528.23,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 528.23,
+    "end_seconds": 529.08,
+    "speaker": "comedian:martin_phillips",
+    "text": "Okay. Oh!"
+  },
+  {
+    "start_seconds": 529.08,
+    "end_seconds": 530.08,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 530.08,
+    "end_seconds": 532.55,
+    "speaker": "comedian:martin_phillips",
+    "text": "I make my own candy in the bathtub,"
+  },
+  {
+    "start_seconds": 532.55,
+    "end_seconds": 533.2,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 533.2,
+    "end_seconds": 537.45,
+    "speaker": "comedian:martin_phillips",
+    "text": "cuz it's creative and it's way easier to put razor blades in."
+  },
+  {
+    "start_seconds": 537.45,
+    "end_seconds": 539.19,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 539.19,
+    "end_seconds": 540.35,
+    "speaker": "comedian:martin_phillips",
+    "text": "Oh, okay."
+  },
+  {
+    "start_seconds": 540.35,
+    "end_seconds": 541.33,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 541.33,
+    "end_seconds": 546.12,
+    "speaker": "comedian:martin_phillips",
+    "text": "I saw this apple juice. It was called eve apple juice."
+  },
+  {
+    "start_seconds": 546.12,
+    "end_seconds": 547.01,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 547.01,
+    "end_seconds": 551.48,
+    "speaker": "comedian:martin_phillips",
+    "text": "And I was like, not falling for that one. Don't break me down with you."
+  },
+  {
+    "start_seconds": 551.48,
+    "end_seconds": 553.4,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 553.4,
+    "end_seconds": 554.02,
+    "speaker": "comedian:martin_phillips",
+    "text": "Uh."
+  },
+  {
+    "start_seconds": 554.02,
+    "end_seconds": 554.75,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 554.75,
+    "end_seconds": 556.28,
+    "speaker": "comedian:martin_phillips",
+    "text": "Okay. Anyway,"
+  },
+  {
+    "start_seconds": 556.28,
+    "end_seconds": 557.7,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 557.7,
+    "end_seconds": 562.92,
+    "speaker": "comedian:martin_phillips",
+    "text": "speaking of uh, removing a rib, we, we all know."
+  },
+  {
+    "start_seconds": 562.92,
+    "end_seconds": 563.85,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 563.85,
+    "end_seconds": 566.25,
+    "speaker": "comedian:martin_phillips",
+    "text": "Exactly. We all know."
+  },
+  {
+    "start_seconds": 566.25,
+    "end_seconds": 567.89,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 567.89,
+    "end_seconds": 571.97,
+    "speaker": "comedian:martin_phillips",
+    "text": "If I take out a rib, I can suck my own dick."
+  },
+  {
+    "start_seconds": 571.97,
+    "end_seconds": 573.06,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 573.06,
+    "end_seconds": 577.85,
+    "speaker": "comedian:martin_phillips",
+    "text": "But, but what I do, I take out another rib so I can eat my own ass, you know?"
+  },
+  {
+    "start_seconds": 577.85,
+    "end_seconds": 579.08,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 579.08,
+    "end_seconds": 583.47,
+    "speaker": "comedian:martin_phillips",
+    "text": "Like why, why stop at the dick? Keep, keep going!"
+  },
+  {
+    "start_seconds": 583.47,
+    "end_seconds": 584.8,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 584.8,
+    "end_seconds": 586.29,
+    "speaker": "comedian:martin_phillips",
+    "text": "I want to, I want to lick my back, you know?"
+  },
+  {
+    "start_seconds": 586.29,
+    "end_seconds": 587.35,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 587.35,
+    "end_seconds": 593.65,
+    "speaker": "comedian:martin_phillips",
+    "text": "And people get frustrated with me, like, they're like, your, is your head up your ass? And I'm like,"
+  },
+  {
+    "start_seconds": 593.65,
+    "end_seconds": 595.66,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 595.66,
+    "end_seconds": 597.55,
+    "speaker": "comedian:martin_phillips",
+    "text": "I'm trying! Give me time."
+  },
+  {
+    "start_seconds": 597.55,
+    "end_seconds": 598.66,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 598.66,
+    "end_seconds": 599.18,
+    "speaker": "comedian:martin_phillips",
+    "text": "Okay."
+  },
+  {
+    "start_seconds": 599.18,
+    "end_seconds": 599.41,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 599.41,
+    "end_seconds": 599.78,
+    "speaker": "comedian:martin_phillips",
+    "text": "That's it."
+  },
+  {
+    "start_seconds": 599.78,
+    "end_seconds": 599.96,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 599.96,
+    "end_seconds": 1000.41,
+    "speaker": "tony",
+    "text": "Okay."
+  },
+  {
+    "start_seconds": 1000.41,
+    "end_seconds": 1002.32,
+    "speaker": "tony",
+    "text": "Martin Phillips!"
+  },
+  {
+    "start_seconds": 1002.32,
+    "end_seconds": 1003.88,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1003.88,
+    "end_seconds": 1004.82,
+    "speaker": "tony",
+    "text": "Hi, Martin."
+  },
+  {
+    "start_seconds": 1004.82,
+    "end_seconds": 1005.62,
+    "speaker": "comedian:martin_phillips",
+    "text": "What's up?"
+  },
+  {
+    "start_seconds": 1005.62,
+    "end_seconds": 1006.55,
+    "speaker": "tony",
+    "text": "How are you today?"
+  },
+  {
+    "start_seconds": 1006.55,
+    "end_seconds": 1007.47,
+    "speaker": "comedian:martin_phillips",
+    "text": "I'm good."
+  },
+  {
+    "start_seconds": 1007.47,
+    "end_seconds": 1008.76,
+    "speaker": "tony",
+    "text": "That's good. What's been going on, buddy?"
+  },
+  {
+    "start_seconds": 1008.76,
+    "end_seconds": 1010.51,
+    "speaker": "tony",
+    "text": "You're making, you're on tour."
+  },
+  {
+    "start_seconds": 1010.51,
+    "end_seconds": 1012.87,
+    "speaker": "tony",
+    "text": "You're out everywhere, wobbling around."
+  },
+  {
+    "start_seconds": 1012.87,
+    "end_seconds": 1013.43,
+    "speaker": "comedian:martin_phillips",
+    "text": "Yeah."
+  },
+  {
+    "start_seconds": 1013.43,
+    "end_seconds": 1014.18,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1014.18,
+    "end_seconds": 1019.23,
+    "speaker": "comedian:martin_phillips",
+    "text": "Help me stop her from the front of the gate and just as wobbling around."
+  },
+  {
+    "start_seconds": 1019.23,
+    "end_seconds": 1020.24,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1020.24,
+    "end_seconds": 1021.28,
+    "speaker": "comedian:martin_phillips",
+    "text": "Yeah."
+  },
+  {
+    "start_seconds": 1021.28,
+    "end_seconds": 1022.25,
+    "speaker": "tony",
+    "text": "What's been going on?"
+  },
+  {
+    "start_seconds": 1022.25,
+    "end_seconds": 1023.63,
+    "speaker": "tony",
+    "text": "What are your favorite cities you've been to?"
+  },
+  {
+    "start_seconds": 1023.63,
+    "end_seconds": 1027.67,
+    "speaker": "comedian:martin_phillips",
+    "text": "You know, after a while, you all kind of blend together."
+  },
+  {
+    "start_seconds": 1027.67,
+    "end_seconds": 1031.5,
+    "speaker": "comedian:martin_phillips",
+    "text": "I don't know, it's like same thing, same shit, you know."
+  },
+  {
+    "start_seconds": 1031.5,
+    "end_seconds": 1032.54,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1032.54,
+    "end_seconds": 1033.45,
+    "speaker": "comedian:martin_phillips",
+    "text": "But uh,"
+  },
+  {
+    "start_seconds": 1033.45,
+    "end_seconds": 1034.33,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1034.33,
+    "end_seconds": 1039.56,
+    "speaker": "comedian:martin_phillips",
+    "text": "I, you know, I know first of all, half the shit already said is didn't happen."
+  },
+  {
+    "start_seconds": 1039.56,
+    "end_seconds": 1040.66,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1040.66,
+    "end_seconds": 1042.06,
+    "speaker": "comedian:martin_phillips",
+    "text": "He's taking me out the day."
+  },
+  {
+    "start_seconds": 1042.06,
+    "end_seconds": 1043.23,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1043.23,
+    "end_seconds": 1049.25,
+    "speaker": "comedian:martin_phillips",
+    "text": "Uh, we have our gate had been changed so he had to push me in a wheelchair."
+  },
+  {
+    "start_seconds": 1049.25,
+    "end_seconds": 1050.6,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1050.6,
+    "end_seconds": 1051.05,
+    "speaker": "tony",
+    "text": "Wow!"
+  },
+  {
+    "start_seconds": 1051.05,
+    "end_seconds": 1051.75,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1051.75,
+    "end_seconds": 1052.27,
+    "speaker": "comedian:martin_phillips",
+    "text": "Around the airport."
+  },
+  {
+    "start_seconds": 1052.27,
+    "end_seconds": 1052.93,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1052.93,
+    "end_seconds": 1058.48,
+    "speaker": "comedian:martin_phillips",
+    "text": "And of course he is just like, oh, I'm gonna get so much pussy off of this."
+  },
+  {
+    "start_seconds": 1058.48,
+    "end_seconds": 1059.9,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1059.9,
+    "end_seconds": 1104.09,
+    "speaker": "comedian:martin_phillips",
+    "text": "I was like, save some for me, dude. I love it. I'm telling, but, but sometimes I bring my dog with me so if he pushes me in the wheelchair with the dog, we're unstoppable."
+  },
+  {
+    "start_seconds": 1104.09,
+    "end_seconds": 1104.76,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1104.76,
+    "end_seconds": 1105.07,
+    "speaker": "tony",
+    "text": "Yeah."
+  },
+  {
+    "start_seconds": 1105.07,
+    "end_seconds": 1106.67,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1106.67,
+    "end_seconds": 1108.57,
+    "speaker": "tony",
+    "text": "That is incredible. Sam Tripley."
+  },
+  {
+    "start_seconds": 1108.57,
+    "end_seconds": 1109.81,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1109.81,
+    "end_seconds": 1111.45,
+    "speaker": "guest:sam_tripoli",
+    "text": "Do you have groupies, dude?"
+  },
+  {
+    "start_seconds": 1111.45,
+    "end_seconds": 1112.55,
+    "speaker": "guest:sam_tripoli",
+    "text": "Do you have groupies?"
+  },
+  {
+    "start_seconds": 1112.55,
+    "end_seconds": 1113.62,
+    "speaker": "comedian:martin_phillips",
+    "text": "Oh, not too much."
+  },
+  {
+    "start_seconds": 1113.62,
+    "end_seconds": 1114.7,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1114.7,
+    "end_seconds": 1115.54,
+    "speaker": "comedian:martin_phillips",
+    "text": "But you were."
+  },
+  {
+    "start_seconds": 1115.54,
+    "end_seconds": 1116.59,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1116.59,
+    "end_seconds": 1119.53,
+    "speaker": "guest:sam_tripoli",
+    "text": "I want to watch you make love so badly, dude."
+  },
+  {
+    "start_seconds": 1119.53,
+    "end_seconds": 1120.31,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1120.31,
+    "end_seconds": 1121.28,
+    "speaker": "guest:sam_tripoli",
+    "text": "I want to watch you fuck one time."
+  },
+  {
+    "start_seconds": 1121.28,
+    "end_seconds": 1123.63,
+    "speaker": "comedian:martin_phillips",
+    "text": "I'm so happy somebody wants to watch me."
+  },
+  {
+    "start_seconds": 1123.63,
+    "end_seconds": 1124.77,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1124.77,
+    "end_seconds": 1125.79,
+    "speaker": "tony",
+    "text": "fuck."
+  },
+  {
+    "start_seconds": 1125.79,
+    "end_seconds": 1126.85,
+    "speaker": "guest:sam_tripoli",
+    "text": "I'll pay for it, dude."
+  },
+  {
+    "start_seconds": 1126.85,
+    "end_seconds": 1128.02,
+    "speaker": "guest:sam_tripoli",
+    "text": "I'll pay for it."
+  },
+  {
+    "start_seconds": 1128.02,
+    "end_seconds": 1128.84,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1128.84,
+    "end_seconds": 1129.58,
+    "speaker": "comedian:martin_phillips",
+    "text": "Okay."
+  },
+  {
+    "start_seconds": 1129.58,
+    "end_seconds": 1131.06,
+    "speaker": "guest:sam_tripoli",
+    "text": "Who gets a top-shelf hooker? I just wanna watch you go to town."
+  },
+  {
+    "start_seconds": 1131.06,
+    "end_seconds": 1131.43,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1131.43,
+    "end_seconds": 1134.42,
+    "speaker": "comedian:martin_phillips",
+    "text": "Porn name, Meaty Marty."
+  },
+  {
+    "start_seconds": 1134.42,
+    "end_seconds": 1135.25,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1135.25,
+    "end_seconds": 1136.57,
+    "speaker": "tony",
+    "text": "Ooh, Meaty Marty."
+  },
+  {
+    "start_seconds": 1136.57,
+    "end_seconds": 1137.37,
+    "speaker": "tony",
+    "text": "Hello!"
+  },
+  {
+    "start_seconds": 1137.37,
+    "end_seconds": 1137.93,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1137.93,
+    "end_seconds": 1138.41,
+    "speaker": "tony",
+    "text": "I'm hard."
+  },
+  {
+    "start_seconds": 1138.41,
+    "end_seconds": 1139.75,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1139.75,
+    "end_seconds": 1142.19,
+    "speaker": "tony",
+    "text": "Yeah, what would one expect from watching a sex tape with the great Martin Phillips?"
+  },
+  {
+    "start_seconds": 1142.19,
+    "end_seconds": 1142.92,
+    "speaker": "comedian:martin_phillips",
+    "text": "I don't know."
+  },
+  {
+    "start_seconds": 1142.92,
+    "end_seconds": 1143.25,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1143.25,
+    "end_seconds": 1145.42,
+    "speaker": "comedian:martin_phillips",
+    "text_original": "Ah."
+  },
+  {
+    "start_seconds": 1145.42,
+    "end_seconds": 1146.47,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1146.47,
+    "end_seconds": 1147.93,
+    "speaker": "guest:sam_tripoli",
+    "text": "How would you describe your rhythm when you make love?"
+  },
+  {
+    "start_seconds": 1147.93,
+    "end_seconds": 1148.84,
+    "speaker": "guest:sam_tripoli",
+    "text": "Is it?"
+  },
+  {
+    "start_seconds": 1148.84,
+    "end_seconds": 1150.18,
+    "speaker": "guest:sam_tripoli",
+    "text": "Broken robot type? What?"
+  },
+  {
+    "start_seconds": 1150.18,
+    "end_seconds": 1150.77,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1150.77,
+    "end_seconds": 1154.51,
+    "speaker": "comedian:martin_phillips",
+    "text": "Uh, just going with like I said, the ocean. I don't know."
+  },
+  {
+    "start_seconds": 1154.51,
+    "end_seconds": 1156.09,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1156.09,
+    "end_seconds": 1157.09,
+    "speaker": "tony",
+    "text": "Hell yeah."
+  },
+  {
+    "start_seconds": 1157.09,
+    "end_seconds": 1158.05,
+    "speaker": "comedian:martin_phillips",
+    "text": "Oh."
+  },
+  {
+    "start_seconds": 1158.05,
+    "end_seconds": 1159.45,
+    "speaker": "tony",
+    "text": "It's got to be dynamite pussy."
+  },
+  {
+    "start_seconds": 1159.45,
+    "end_seconds": 1159.81,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1159.81,
+    "end_seconds": 1159.94,
+    "speaker": "comedian:martin_phillips",
+    "text": "Oh."
+  },
+  {
+    "start_seconds": 1159.94,
+    "end_seconds": 1160.77,
+    "speaker": "tony",
+    "text": "Oh yeah."
+  },
+  {
+    "start_seconds": 1160.77,
+    "end_seconds": 1161.0,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1161.0,
+    "end_seconds": 1161.76,
+    "speaker": "comedian:martin_phillips",
+    "text": "Oh."
+  },
+  {
+    "start_seconds": 1161.76,
+    "end_seconds": 1162.3,
+    "speaker": "tony",
+    "text": "Oh yeah, for sure."
+  },
+  {
+    "start_seconds": 1162.3,
+    "end_seconds": 1163.56,
+    "speaker": "guest:sam_tripoli",
+    "text": "Is it human Zibian?"
+  },
+  {
+    "start_seconds": 1163.56,
+    "end_seconds": 1164.38,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1164.38,
+    "end_seconds": 1164.84,
+    "speaker": "tony",
+    "text": "Yeah."
+  },
+  {
+    "start_seconds": 1164.84,
+    "end_seconds": 1165.74,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1165.74,
+    "end_seconds": 1166.7,
+    "speaker": "comedian:martin_phillips",
+    "text": "Good."
+  },
+  {
+    "start_seconds": 1166.7,
+    "end_seconds": 1167.31,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1167.31,
+    "end_seconds": 1167.92,
+    "speaker": "comedian:martin_phillips",
+    "text": "For sure."
+  },
+  {
+    "start_seconds": 1167.92,
+    "end_seconds": 1169.57,
+    "speaker": "tony",
+    "text": "What's the longest you've ever lasted while having sexual intercourse with a woman?"
+  },
+  {
+    "start_seconds": 1169.57,
+    "end_seconds": 1172.93,
+    "speaker": "comedian:martin_phillips",
+    "text": "Uh, I've never really timed it."
+  },
+  {
+    "start_seconds": 1172.93,
+    "end_seconds": 1173.81,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1173.81,
+    "end_seconds": 1175.76,
+    "speaker": "tony",
+    "text": "If you had to give it a ballpark."
+  },
+  {
+    "start_seconds": 1175.76,
+    "end_seconds": 1178.69,
+    "speaker": "comedian:martin_phillips",
+    "text": "It felt like an eternity to me."
+  },
+  {
+    "start_seconds": 1178.69,
+    "end_seconds": 1179.79,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1179.79,
+    "end_seconds": 1180.93,
+    "speaker": "comedian:martin_phillips",
+    "text": "I don't know, it's really good."
+  },
+  {
+    "start_seconds": 1180.93,
+    "end_seconds": 1182.26,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1182.26,
+    "end_seconds": 1183.56,
+    "speaker": "guest:sam_tripoli",
+    "text": "Imagine how she feels."
+  },
+  {
+    "start_seconds": 1183.56,
+    "end_seconds": 1184.22,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1184.22,
+    "end_seconds": 1186.29,
+    "speaker": "comedian:martin_phillips",
+    "text": "Ah!"
+  },
+  {
+    "start_seconds": 1186.29,
+    "end_seconds": 1187.69,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1187.69,
+    "end_seconds": 1188.47,
+    "speaker": "tony",
+    "text": "I love it."
+  },
+  {
+    "start_seconds": 1188.47,
+    "end_seconds": 1189.92,
+    "speaker": "tony",
+    "text": "What else is going on, Martin?"
+  },
+  {
+    "start_seconds": 1189.92,
+    "end_seconds": 1190.4,
+    "speaker": "tony",
+    "text": "Tell us more."
+  },
+  {
+    "start_seconds": 1190.4,
+    "end_seconds": 1193.07,
+    "speaker": "comedian:martin_phillips",
+    "text": "Oh, you know, just chilling."
+  },
+  {
+    "start_seconds": 1193.07,
+    "end_seconds": 1194.27,
+    "speaker": "tony",
+    "text": "Geared up for Halloween?"
+  },
+  {
+    "start_seconds": 1194.27,
+    "end_seconds": 1195.14,
+    "speaker": "tony",
+    "text": "Do you have big Halloween plans?"
+  },
+  {
+    "start_seconds": 1195.14,
+    "end_seconds": 1197.64,
+    "speaker": "tony",
+    "text": "That's the one day of the year where everyone walks like a zombie."
+  },
+  {
+    "start_seconds": 1197.64,
+    "end_seconds": 1198.05,
+    "speaker": "comedian:martin_phillips",
+    "text": "Yeah."
+  },
+  {
+    "start_seconds": 1198.05,
+    "end_seconds": 1198.49,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1198.49,
+    "end_seconds": 1202.93,
+    "speaker": "comedian:martin_phillips",
+    "text": "I know. The really a Apocalypse, I'll be safe, you know."
+  },
+  {
+    "start_seconds": 1202.93,
+    "end_seconds": 1203.49,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1203.49,
+    "end_seconds": 1206.59,
+    "speaker": "comedian:martin_phillips",
+    "text": "I don't have to worry about me, so."
+  },
+  {
+    "start_seconds": 1206.59,
+    "end_seconds": 1207.25,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1207.25,
+    "end_seconds": 1208.53,
+    "speaker": "comedian:martin_phillips",
+    "text": "Yeah, but."
+  },
+  {
+    "start_seconds": 1208.53,
+    "end_seconds": 1209.1,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1209.1,
+    "end_seconds": 1210.66,
+    "speaker": "comedian:martin_phillips",
+    "text": "I don't have any plans yet."
+  },
+  {
+    "start_seconds": 1210.66,
+    "end_seconds": 1212.9,
+    "speaker": "comedian:martin_phillips",
+    "text": "I'm in town though, so."
+  },
+  {
+    "start_seconds": 1212.9,
+    "end_seconds": 1213.92,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1213.92,
+    "end_seconds": 1215.35,
+    "speaker": "comedian:martin_phillips",
+    "text": "You got a party?"
+  },
+  {
+    "start_seconds": 1215.35,
+    "end_seconds": 1216.0,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1216.0,
+    "end_seconds": 1216.59,
+    "speaker": "tony",
+    "text": "Let's go."
+  },
+  {
+    "start_seconds": 1216.59,
+    "end_seconds": 1217.15,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1217.15,
+    "end_seconds": 1218.88,
+    "speaker": "comedian:martin_phillips",
+    "text": "My mom sent me candy."
+  },
+  {
+    "start_seconds": 1218.88,
+    "end_seconds": 1219.7,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1219.7,
+    "end_seconds": 1221.36,
+    "speaker": "comedian:martin_phillips",
+    "text": "So, I got my candy."
+  },
+  {
+    "start_seconds": 1221.36,
+    "end_seconds": 1222.18,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1222.18,
+    "end_seconds": 1222.7,
+    "speaker": "tony",
+    "text": "Wow."
+  },
+  {
+    "start_seconds": 1222.7,
+    "end_seconds": 1223.77,
+    "speaker": "tony",
+    "text": "What kind of candy did she send?"
+  },
+  {
+    "start_seconds": 1223.77,
+    "end_seconds": 1226.75,
+    "speaker": "comedian:martin_phillips",
+    "text": "Oh, man. She yeah, I got my Reese's."
+  },
+  {
+    "start_seconds": 1226.75,
+    "end_seconds": 1227.68,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1227.68,
+    "end_seconds": 1228.37,
+    "speaker": "tony",
+    "text": "Oh."
+  },
+  {
+    "start_seconds": 1228.37,
+    "end_seconds": 1230.13,
+    "speaker": "comedian:martin_phillips",
+    "text": "The good shit."
+  },
+  {
+    "start_seconds": 1230.13,
+    "end_seconds": 1230.41,
+    "speaker": "tony",
+    "text": "Okay."
+  },
+  {
+    "start_seconds": 1230.41,
+    "end_seconds": 1232.84,
+    "speaker": "tony",
+    "text": "They say there's no wrong way to eat a Reese's."
+  },
+  {
+    "start_seconds": 1232.84,
+    "end_seconds": 1234.33,
+    "speaker": "tony",
+    "text": "How do you eat a Reese's?"
+  },
+  {
+    "start_seconds": 1234.33,
+    "end_seconds": 1235.31,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1235.31,
+    "end_seconds": 1238.48,
+    "speaker": "comedian:martin_phillips",
+    "text": "Oh, just the whole thing in, baby."
+  },
+  {
+    "start_seconds": 1238.48,
+    "end_seconds": 1239.54,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1239.54,
+    "end_seconds": 1240.54,
+    "speaker": "tony",
+    "text": "Wow."
+  },
+  {
+    "start_seconds": 1240.54,
+    "end_seconds": 1241.67,
+    "speaker": "tony",
+    "text": "Look at that."
+  },
+  {
+    "start_seconds": 1241.67,
+    "end_seconds": 1245.56,
+    "speaker": "tony",
+    "text": "See, I go edges first. I nibble on the edges."
+  },
+  {
+    "start_seconds": 1245.56,
+    "end_seconds": 1246.33,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1246.33,
+    "end_seconds": 1249.77,
+    "speaker": "tony",
+    "text": "And then I take the round coin, the perfectly round coin, and I shove it up my ass."
+  },
+  {
+    "start_seconds": 1249.77,
+    "end_seconds": 1251.36,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1251.36,
+    "end_seconds": 1252.88,
+    "speaker": "tony",
+    "text": "I shove it up my ass."
+  },
+  {
+    "start_seconds": 1252.88,
+    "end_seconds": 1253.37,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1253.37,
+    "end_seconds": 1254.19,
+    "speaker": "comedian:martin_phillips",
+    "text": "Oh."
+  },
+  {
+    "start_seconds": 1254.19,
+    "end_seconds": 1256.46,
+    "speaker": "comedian:martin_phillips",
+    "text": "I knew that was how you ate it."
+  },
+  {
+    "start_seconds": 1256.46,
+    "end_seconds": 1257.6,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1257.6,
+    "end_seconds": 1258.12,
+    "speaker": "tony",
+    "text": "Yeah."
+  },
+  {
+    "start_seconds": 1258.12,
+    "end_seconds": 1258.46,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1258.46,
+    "end_seconds": 1259.98,
+    "speaker": "guest:sam_tripoli",
+    "text": "Dude, I'm sober, but I would relapse to do coke with you."
+  },
+  {
+    "start_seconds": 1259.98,
+    "end_seconds": 1261.05,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1261.05,
+    "end_seconds": 1261.85,
+    "speaker": "guest:sam_tripoli",
+    "text": "I would love to see."
+  },
+  {
+    "start_seconds": 1261.85,
+    "end_seconds": 1262.88,
+    "speaker": "comedian:martin_phillips",
+    "text": "We should just hang out."
+  },
+  {
+    "start_seconds": 1262.88,
+    "end_seconds": 1263.8,
+    "speaker": "guest:sam_tripoli",
+    "text": "How hard you just fuck."
+  },
+  {
+    "start_seconds": 1263.8,
+    "end_seconds": 1266.02,
+    "speaker": "comedian:martin_phillips",
+    "text": "We can fuck, we can do coke."
+  },
+  {
+    "start_seconds": 1266.02,
+    "end_seconds": 1266.82,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1266.82,
+    "end_seconds": 1267.35,
+    "speaker": "comedian:martin_phillips",
+    "text": "Yeah."
+  },
+  {
+    "start_seconds": 1267.35,
+    "end_seconds": 1267.63,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1267.63,
+    "end_seconds": 1268.04,
+    "speaker": "tony",
+    "text": "Hell yeah."
+  },
+  {
+    "start_seconds": 1268.04,
+    "end_seconds": 1269.83,
+    "speaker": "comedian:martin_phillips",
+    "text": "We can do it all, you know."
+  },
+  {
+    "start_seconds": 1269.83,
+    "end_seconds": 1270.3,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1270.3,
+    "end_seconds": 1270.62,
+    "speaker": "tony",
+    "text": "Oh yeah."
+  },
+  {
+    "start_seconds": 1270.62,
+    "end_seconds": 1271.39,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1271.39,
+    "end_seconds": 1272.23,
+    "speaker": "tony",
+    "text": "Have you done coke before?"
+  },
+  {
+    "start_seconds": 1272.23,
+    "end_seconds": 1273.9,
+    "speaker": "comedian:martin_phillips",
+    "text": "Actually, I have not done coke."
+  },
+  {
+    "start_seconds": 1273.9,
+    "end_seconds": 1275.24,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1275.24,
+    "end_seconds": 1277.5,
+    "speaker": "comedian:martin_phillips",
+    "text": "Actually, no, I have not. But."
+  },
+  {
+    "start_seconds": 1277.5,
+    "end_seconds": 1278.47,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1278.47,
+    "end_seconds": 1279.79,
+    "speaker": "tony",
+    "text": "You got to."
+  },
+  {
+    "start_seconds": 1279.79,
+    "end_seconds": 1280.97,
+    "speaker": "guest:sam_tripoli",
+    "text": "Night is young, bro."
+  },
+  {
+    "start_seconds": 1280.97,
+    "end_seconds": 1281.93,
+    "speaker": "guest:sam_tripoli",
+    "text": "Night is young."
+  },
+  {
+    "start_seconds": 1281.93,
+    "end_seconds": 1282.88,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1282.88,
+    "end_seconds": 1286.08,
+    "speaker": "guest:sam_tripoli",
+    "text": "Listen, let's, let's who is, of all the handicapped people,"
+  },
+  {
+    "start_seconds": 1286.08,
+    "end_seconds": 1287.12,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1287.12,
+    "end_seconds": 1290.72,
+    "speaker": "guest:sam_tripoli",
+    "text": "who's the best in bed? If you could just bang, is it the blind person?"
+  },
+  {
+    "start_seconds": 1290.72,
+    "end_seconds": 1291.68,
+    "speaker": "comedian:martin_phillips",
+    "text": "Oh, so."
+  },
+  {
+    "start_seconds": 1291.68,
+    "end_seconds": 1292.05,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1292.05,
+    "end_seconds": 1292.74,
+    "speaker": "comedian:martin_phillips",
+    "text": "Not specific."
+  },
+  {
+    "start_seconds": 1292.74,
+    "end_seconds": 1293.42,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1293.42,
+    "end_seconds": 1293.81,
+    "speaker": "guest:sam_tripoli",
+    "text": "Like."
+  },
+  {
+    "start_seconds": 1293.81,
+    "end_seconds": 1294.63,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1294.63,
+    "end_seconds": 1296.22,
+    "speaker": "comedian:martin_phillips",
+    "text": "I was going to say D. Madness."
+  },
+  {
+    "start_seconds": 1296.22,
+    "end_seconds": 1296.96,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1296.96,
+    "end_seconds": 1298.11,
+    "speaker": "guest:sam_tripoli",
+    "text": "Is the handicapped person?"
+  },
+  {
+    "start_seconds": 1298.11,
+    "end_seconds": 1298.88,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1298.88,
+    "end_seconds": 1299.85,
+    "speaker": "tony",
+    "text": "D Madness is right behind you, by the way."
+  },
+  {
+    "start_seconds": 1299.85,
+    "end_seconds": 1301.18,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1301.18,
+    "end_seconds": 1302.44,
+    "speaker": "comedian:martin_phillips",
+    "text": "Oh."
+  },
+  {
+    "start_seconds": 1302.44,
+    "end_seconds": 1303.04,
+    "speaker": "tony",
+    "text": "He's blind, Sam."
+  },
+  {
+    "start_seconds": 1303.04,
+    "end_seconds": 1303.55,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1303.55,
+    "end_seconds": 1305.52,
+    "speaker": "tony",
+    "text": "The guy behind you, he's blind."
+  },
+  {
+    "start_seconds": 1305.52,
+    "end_seconds": 1306.0,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1306.0,
+    "end_seconds": 1306.49,
+    "speaker": "guest:sam_tripoli",
+    "text": "I know."
+  },
+  {
+    "start_seconds": 1306.49,
+    "end_seconds": 1307.7,
+    "speaker": "guest:sam_tripoli",
+    "text": "I know when I see blind black people, okay?"
+  },
+  {
+    "start_seconds": 1307.7,
+    "end_seconds": 1309.07,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1309.07,
+    "end_seconds": 1311.5,
+    "speaker": "guest:sam_tripoli",
+    "text": "They're not hard to see. They're always making sure you see them all the time."
+  },
+  {
+    "start_seconds": 1311.5,
+    "end_seconds": 1313.34,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1313.34,
+    "end_seconds": 1314.99,
+    "speaker": "guest:sam_tripoli",
+    "text": "I'm blind, Pam!"
+  },
+  {
+    "start_seconds": 1314.99,
+    "end_seconds": 1316.59,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1316.59,
+    "end_seconds": 1317.84,
+    "speaker": "tony",
+    "text": "So they."
+  },
+  {
+    "start_seconds": 1317.84,
+    "end_seconds": 1318.9,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1318.9,
+    "end_seconds": 1321.68,
+    "speaker": "tony",
+    "text": "They always do, do that, don't they?"
+  },
+  {
+    "start_seconds": 1321.68,
+    "end_seconds": 1322.25,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1322.25,
+    "end_seconds": 1323.51,
+    "speaker": "tony",
+    "text": "What's up with that?"
+  },
+  {
+    "start_seconds": 1323.51,
+    "end_seconds": 1324.08,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1324.08,
+    "end_seconds": 1324.47,
+    "speaker": "comedian:martin_phillips",
+    "text": "Stick."
+  },
+  {
+    "start_seconds": 1324.47,
+    "end_seconds": 1324.78,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1324.78,
+    "end_seconds": 1326.06,
+    "speaker": "comedian:martin_phillips",
+    "text": "So."
+  },
+  {
+    "start_seconds": 1326.06,
+    "end_seconds": 1326.68,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1326.68,
+    "end_seconds": 1328.7,
+    "speaker": "tony",
+    "text": "They're always very seen people."
+  },
+  {
+    "start_seconds": 1328.7,
+    "end_seconds": 1329.74,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1329.74,
+    "end_seconds": 1330.14,
+    "speaker": "tony",
+    "text": "It's interesting."
+  },
+  {
+    "start_seconds": 1330.14,
+    "end_seconds": 1331.42,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1331.42,
+    "end_seconds": 1335.79,
+    "speaker": "comedian:martin_phillips",
+    "text": "But the best type of handicapped person, that, that's the question."
+  },
+  {
+    "start_seconds": 1335.79,
+    "end_seconds": 1336.56,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1336.56,
+    "end_seconds": 1336.78,
+    "speaker": "tony",
+    "text": "Yeah."
+  },
+  {
+    "start_seconds": 1336.78,
+    "end_seconds": 1337.89,
+    "speaker": "comedian:martin_phillips",
+    "text": "Okay."
+  },
+  {
+    "start_seconds": 1337.89,
+    "end_seconds": 1338.4,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1338.4,
+    "end_seconds": 1341.6,
+    "speaker": "comedian:martin_phillips",
+    "text": "Well, first of all,"
+  },
+  {
+    "start_seconds": 1341.6,
+    "end_seconds": 1341.97,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1341.97,
+    "end_seconds": 1342.92,
+    "speaker": "comedian:martin_phillips",
+    "text": "Uh."
+  },
+  {
+    "start_seconds": 1342.92,
+    "end_seconds": 1343.89,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1343.89,
+    "end_seconds": 1348.06,
+    "speaker": "comedian:martin_phillips",
+    "text": "Uh, with most of the people just fucking smash it all the time."
+  },
+  {
+    "start_seconds": 1348.06,
+    "end_seconds": 1349.33,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1349.33,
+    "end_seconds": 1350.59,
+    "speaker": "comedian:martin_phillips",
+    "text": "Uh, so we got that."
+  },
+  {
+    "start_seconds": 1350.59,
+    "end_seconds": 1351.48,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1351.48,
+    "end_seconds": 1354.9,
+    "speaker": "comedian:martin_phillips",
+    "text": "Uh, deaf people, you don't even have to hear the ladies."
+  },
+  {
+    "start_seconds": 1354.9,
+    "end_seconds": 1356.12,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1356.12,
+    "end_seconds": 1357.65,
+    "speaker": "comedian:martin_phillips",
+    "text": "So that's pretty good."
+  },
+  {
+    "start_seconds": 1357.65,
+    "end_seconds": 1358.33,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1358.33,
+    "end_seconds": 1358.82,
+    "speaker": "comedian:martin_phillips",
+    "text": "Um."
+  },
+  {
+    "start_seconds": 1358.82,
+    "end_seconds": 1359.73,
+    "speaker": "guest:sam_tripoli",
+    "text": "What about clubfoot?"
+  },
+  {
+    "start_seconds": 1359.73,
+    "end_seconds": 1360.59,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1360.59,
+    "end_seconds": 1361.64,
+    "speaker": "comedian:martin_phillips",
+    "text": "Uh."
+  },
+  {
+    "start_seconds": 1361.64,
+    "end_seconds": 1362.06,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1362.06,
+    "end_seconds": 1367.64,
+    "speaker": "comedian:martin_phillips",
+    "text": "You know, and you don't really have to use your foot in that, so yeah, it's they're probably kinda normal with it."
+  },
+  {
+    "start_seconds": 1367.64,
+    "end_seconds": 1368.5,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1368.5,
+    "end_seconds": 1369.87,
+    "speaker": "comedian:martin_phillips",
+    "text": "Uh."
+  },
+  {
+    "start_seconds": 1369.87,
+    "end_seconds": 1370.47,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1370.47,
+    "end_seconds": 1375.48,
+    "speaker": "comedian:martin_phillips",
+    "text": "I had to do that study, so I haven't done by porn category yet."
+  },
+  {
+    "start_seconds": 1375.48,
+    "end_seconds": 1376.54,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1376.54,
+    "end_seconds": 1377.93,
+    "speaker": "tony",
+    "text": "We want you to."
+  },
+  {
+    "start_seconds": 1377.93,
+    "end_seconds": 1378.89,
+    "speaker": "tony",
+    "text": "We want you to do a study."
+  },
+  {
+    "start_seconds": 1378.89,
+    "end_seconds": 1380.37,
+    "speaker": "tony",
+    "text": "And next time you come on, we expect a full report."
+  },
+  {
+    "start_seconds": 1380.37,
+    "end_seconds": 1381.16,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1381.16,
+    "end_seconds": 1382.49,
+    "speaker": "comedian:martin_phillips",
+    "text": "Okay, sure."
+  },
+  {
+    "start_seconds": 1382.49,
+    "end_seconds": 1382.72,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1382.72,
+    "end_seconds": 1383.67,
+    "speaker": "tony",
+    "text": "Okay, perfect."
+  },
+  {
+    "start_seconds": 1383.67,
+    "end_seconds": 1384.05,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1384.05,
+    "end_seconds": 1385.73,
+    "speaker": "tony",
+    "text": "Ladies and gentlemen, make some noise for Martin Phillips, everybody!"
+  },
+  {
+    "start_seconds": 1385.73,
+    "end_seconds": 1386.72,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1386.72,
+    "end_seconds": 1387.8,
+    "speaker": "tony",
+    "text": "He got the party started."
+  },
+  {
+    "start_seconds": 1387.8,
+    "end_seconds": 1388.58,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1388.58,
+    "end_seconds": 1395.0,
+    "speaker": "tony",
+    "text": "The undisputed golden ticket tyrant, Martin Phillips."
+  },
+  {
+    "start_seconds": 1395.0,
+    "end_seconds": 1395.53,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1395.53,
+    "end_seconds": 1397.74,
+    "speaker": "guest:sam_tripoli",
+    "text": "He's like the Jerry Lewis of fucking handicap."
+  },
+  {
+    "start_seconds": 1397.74,
+    "end_seconds": 1398.24,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1398.24,
+    "end_seconds": 1399.11,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1399.11,
+    "end_seconds": 1406.88,
+    "speaker": "tony",
+    "text": "This name is a one-word name. It is written in ink over and over and over again."
+  },
+  {
+    "start_seconds": 1406.88,
+    "end_seconds": 1412.59,
+    "speaker": "tony",
+    "text": "If we did a handwriting study on what this person is going to be like, I can tell you I've been doing this job a long time."
+  },
+  {
+    "start_seconds": 1412.59,
+    "end_seconds": 1414.97,
+    "speaker": "tony",
+    "text": "A long time. I pull a name out and I see the handwriting."
+  },
+  {
+    "start_seconds": 1414.97,
+    "end_seconds": 1418.99,
+    "speaker": "tony",
+    "text": "The fucking energy of this. This should be interesting."
+  },
+  {
+    "start_seconds": 1418.99,
+    "end_seconds": 1422.58,
+    "speaker": "tony",
+    "text": "Make some noise, everyone, for Stevie! Stevie!"
+  },
+  {
+    "start_seconds": 1422.58,
+    "end_seconds": 1423.47,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1423.47,
+    "end_seconds": 1425.86,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1425.86,
+    "end_seconds": 1426.3,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1426.3,
+    "end_seconds": 1427.67,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1427.67,
+    "end_seconds": 1428.1,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1428.1,
+    "end_seconds": 1429.35,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1429.35,
+    "end_seconds": 1429.74,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1429.74,
+    "end_seconds": 1430.7,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1430.7,
+    "end_seconds": 1431.06,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1431.06,
+    "end_seconds": 1431.42,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1431.42,
+    "end_seconds": 1432.06,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1432.06,
+    "end_seconds": 1432.55,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1432.55,
+    "end_seconds": 1433.02,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1433.02,
+    "end_seconds": 1433.48,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1433.48,
+    "end_seconds": 1434.02,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1434.02,
+    "end_seconds": 1434.42,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1434.42,
+    "end_seconds": 1434.86,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1434.86,
+    "end_seconds": 1435.34,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1435.34,
+    "end_seconds": 1435.79,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1435.79,
+    "end_seconds": 1436.31,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1436.31,
+    "end_seconds": 1436.9,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1436.9,
+    "end_seconds": 1437.3,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1437.3,
+    "end_seconds": 1437.8,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1437.8,
+    "end_seconds": 1438.16,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1438.16,
+    "end_seconds": 1438.74,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1438.74,
+    "end_seconds": 1439.14,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1439.14,
+    "end_seconds": 1439.69,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1439.69,
+    "end_seconds": 1440.09,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1440.09,
+    "end_seconds": 1440.69,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1440.69,
+    "end_seconds": 1441.05,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1441.05,
+    "end_seconds": 1441.56,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1441.56,
+    "end_seconds": 1441.97,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1441.97,
+    "end_seconds": 1442.49,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1442.49,
+    "end_seconds": 1442.87,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1442.87,
+    "end_seconds": 1443.34,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1443.34,
+    "end_seconds": 1443.76,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1443.76,
+    "end_seconds": 1444.25,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1444.25,
+    "end_seconds": 1444.6,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1444.6,
+    "end_seconds": 1445.09,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1445.09,
+    "end_seconds": 1445.42,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1445.42,
+    "end_seconds": 1446.06,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1446.06,
+    "end_seconds": 1446.52,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1446.52,
+    "end_seconds": 1447.16,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1447.16,
+    "end_seconds": 1447.53,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1447.53,
+    "end_seconds": 1447.96,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1447.96,
+    "end_seconds": 1448.37,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1448.37,
+    "end_seconds": 1448.86,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1448.86,
+    "end_seconds": 1449.27,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1449.27,
+    "end_seconds": 1449.77,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1449.77,
+    "end_seconds": 1450.15,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1450.15,
+    "end_seconds": 1450.68,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1450.68,
+    "end_seconds": 1451.05,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1451.05,
+    "end_seconds": 1451.52,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1451.52,
+    "end_seconds": 1451.97,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1451.97,
+    "end_seconds": 1452.48,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1452.48,
+    "end_seconds": 1452.88,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1452.88,
+    "end_seconds": 1453.33,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1453.33,
+    "end_seconds": 1453.77,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1453.77,
+    "end_seconds": 1454.2,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1454.2,
+    "end_seconds": 1454.67,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1454.67,
+    "end_seconds": 1455.03,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1455.03,
+    "end_seconds": 1455.35,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1455.35,
+    "end_seconds": 1456.28,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1456.28,
+    "end_seconds": 1456.62,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1456.62,
+    "end_seconds": 1457.07,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1457.07,
+    "end_seconds": 1457.49,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1457.49,
+    "end_seconds": 1457.99,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1457.99,
+    "end_seconds": 1458.37,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1458.37,
+    "end_seconds": 1458.74,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1458.74,
+    "end_seconds": 1459.16,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1459.16,
+    "end_seconds": 1459.55,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1459.55,
+    "end_seconds": 1459.88,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1459.88,
+    "end_seconds": 1459.97,
+    "speaker": "comedian:stevie",
+    "text": "Okay."
+  },
+  {
+    "start_seconds": 1459.97,
+    "end_seconds": 1460.91,
+    "speaker": "comedian:stevie",
+    "text": "Pattaya Beach, Thailand."
+  },
+  {
+    "start_seconds": 1460.91,
+    "end_seconds": 1465.17,
+    "speaker": "comedian:stevie",
+    "text": "I'm standing out in the front of the girls go-go club, and I can't wait to go inside."
+  },
+  {
+    "start_seconds": 1465.17,
+    "end_seconds": 1465.65,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1465.65,
+    "end_seconds": 1467.43,
+    "speaker": "comedian:stevie",
+    "text": "Here's what I saw."
+  },
+  {
+    "start_seconds": 1467.43,
+    "end_seconds": 1468.64,
+    "speaker": "comedian:stevie",
+    "text": "First girl comes out,"
+  },
+  {
+    "start_seconds": 1468.64,
+    "end_seconds": 1469.6,
+    "speaker": "comedian:stevie",
+    "text": "completely naked."
+  },
+  {
+    "start_seconds": 1469.6,
+    "end_seconds": 1471.21,
+    "speaker": "comedian:stevie",
+    "text": "Had really great chest hair, though."
+  },
+  {
+    "start_seconds": 1471.21,
+    "end_seconds": 1471.74,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1471.74,
+    "end_seconds": 1478.23,
+    "speaker": "comedian:stevie",
+    "text": "And has one of them big fat magic markers, slips it into her woo woo, squats down and wiggles out, 'Welcome USS Denver!'"
+  },
+  {
+    "start_seconds": 1478.23,
+    "end_seconds": 1478.88,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1478.88,
+    "end_seconds": 1484.7,
+    "speaker": "comedian:stevie",
+    "text": "Next girl comes out, completely naked, makes her way over to my table and just using her meat curtain, blows a candle out of my table."
+  },
+  {
+    "start_seconds": 1484.7,
+    "end_seconds": 1485.49,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1485.49,
+    "end_seconds": 1492.21,
+    "speaker": "comedian:stevie",
+    "text": "Then she takes a whistle out of her hair, puts it down on her vagina box and bangs out the Marine Corps hymn."
+  },
+  {
+    "start_seconds": 1492.21,
+    "end_seconds": 1493.18,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1493.18,
+    "end_seconds": 1498.81,
+    "speaker": "comedian:stevie",
+    "text": "And if that wasn't enough, she gets a whole pack of smokes going and you guessed it, her BJ blew the sexiest pussy smoke rings I've ever seen."
+  },
+  {
+    "start_seconds": 1498.81,
+    "end_seconds": 1500.0,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1500.0,
+    "end_seconds": 1504.0,
+    "speaker": "comedian:stevie",
+    "text": "Next girl comes out, takes turns landing ping pong balls into each of our drinks using just a juicy cannon and a shoot reload technique."
+  },
+  {
+    "start_seconds": 1504.0,
+    "end_seconds": 1504.62,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1504.62,
+    "end_seconds": 1512.44,
+    "speaker": "comedian:stevie",
+    "text": "Next girl, I swear she had to have lip burns cuz she pulled like 40 yards of rainbow colored yarn out of her type nocha as her friend ran it around all the stripper balls."
+  },
+  {
+    "start_seconds": 1512.44,
+    "end_seconds": 1513.06,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1513.06,
+    "end_seconds": 1514.86,
+    "speaker": "comedian:stevie",
+    "text": "Oh, and uh, let me, ah."
+  },
+  {
+    "start_seconds": 1514.86,
+    "end_seconds": 1515.68,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1515.68,
+    "end_seconds": 1516.48,
+    "speaker": "comedian:stevie",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1516.48,
+    "end_seconds": 1517.43,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1517.43,
+    "end_seconds": 1519.82,
+    "speaker": "comedian:stevie",
+    "text": "I didn't even get to the banana or the darts."
+  },
+  {
+    "start_seconds": 1519.82,
+    "end_seconds": 1520.44,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1520.44,
+    "end_seconds": 1521.28,
+    "speaker": "comedian:stevie",
+    "text": "Thank you so much!"
+  },
+  {
+    "start_seconds": 1521.28,
+    "end_seconds": 1521.72,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1521.72,
+    "end_seconds": 1522.61,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1522.61,
+    "end_seconds": 1523.63,
+    "speaker": "crowd",
+    "text": "[cheering]"
+  },
+  {
+    "start_seconds": 1523.63,
+    "end_seconds": 1524.32,
+    "speaker": "tony",
+    "text": "Wow."
+  },
+  {
+    "start_seconds": 1524.32,
+    "end_seconds": 1525.66,
+    "speaker": "tony",
+    "text": "somehow exactly one minute."
+  },
+  {
+    "start_seconds": 1525.66,
+    "end_seconds": 1526.47,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1526.47,
+    "end_seconds": 1527.17,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 1527.17,
+    "end_seconds": 1528.29,
+    "speaker": "tony",
+    "text": "Oh my God."
+  },
+  {
+    "start_seconds": 1528.29,
+    "end_seconds": 1529.35,
+    "speaker": "tony",
+    "text": "Stevie, welcome."
+  },
+  {
+    "start_seconds": 1529.35,
+    "end_seconds": 1531.02,
+    "speaker": "tony",
+    "text": "This is your first time on the show, correct?"
+  },
+  {
+    "start_seconds": 1531.02,
+    "end_seconds": 1532.74,
+    "speaker": "comedian:stevie",
+    "text": "Yes, it is. Yes, it is."
+  },
+  {
+    "start_seconds": 1532.74,
+    "end_seconds": 1533.68,
+    "speaker": "tony",
+    "text": "Nice to see you, pal."
+  },
+  {
+    "start_seconds": 1533.68,
+    "end_seconds": 1534.58,
+    "speaker": "tony",
+    "text": "How long you been doing comedy?"
+  },
+  {
+    "start_seconds": 1534.58,
+    "end_seconds": 1535.8,
+    "speaker": "comedian:stevie",
+    "text": "Since the fourth grade."
+  },
+  {
+    "start_seconds": 1535.8,
+    "end_seconds": 1536.87,
+    "speaker": "tony",
+    "text": "Okay."
+  },
+  {
+    "start_seconds": 1536.87,
+    "end_seconds": 1537.49,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1537.49,
+    "end_seconds": 1539.06,
+    "speaker": "tony",
+    "text": "Very good."
+  },
+  {
+    "start_seconds": 1539.06,
+    "end_seconds": 1542.75,
+    "speaker": "comedian:stevie",
+    "text": "My mom had to come and sit behind me in school, so I wouldn't be like, hey, look at me. I'm funny."
+  },
+  {
+    "start_seconds": 1542.75,
+    "end_seconds": 1543.51,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1543.51,
+    "end_seconds": 1543.76,
+    "speaker": "comedian:stevie",
+    "text": "So."
+  },
+  {
+    "start_seconds": 1543.76,
+    "end_seconds": 1544.75,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1544.75,
+    "end_seconds": 1545.24,
+    "speaker": "comedian:stevie",
+    "text": "Sorry about that."
+  },
+  {
+    "start_seconds": 1545.24,
+    "end_seconds": 1546.12,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1546.12,
+    "end_seconds": 1546.8,
+    "speaker": "comedian:stevie",
+    "text": "It's been a while."
+  },
+  {
+    "start_seconds": 1546.8,
+    "end_seconds": 1547.24,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1547.24,
+    "end_seconds": 1548.81,
+    "speaker": "guest:tim_butterly",
+    "text": "She clearly has a coke problem."
+  },
+  {
+    "start_seconds": 1548.81,
+    "end_seconds": 1549.49,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1549.49,
+    "end_seconds": 1550.84,
+    "speaker": "comedian:stevie",
+    "text": "Well, yeah."
+  },
+  {
+    "start_seconds": 1550.84,
+    "end_seconds": 1551.35,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1551.35,
+    "end_seconds": 1553.8,
+    "speaker": "comedian:stevie",
+    "text": "She got me a shirt that says woke and coke."
+  },
+  {
+    "start_seconds": 1553.8,
+    "end_seconds": 1554.43,
+    "speaker": "comedian:stevie",
+    "text": "So I love that shirt."
+  },
+  {
+    "start_seconds": 1554.43,
+    "end_seconds": 1555.24,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1555.24,
+    "end_seconds": 1556.09,
+    "speaker": "tony",
+    "text": "Did she really?"
+  },
+  {
+    "start_seconds": 1556.09,
+    "end_seconds": 1557.19,
+    "speaker": "comedian:stevie",
+    "text": "Yeah, no."
+  },
+  {
+    "start_seconds": 1557.19,
+    "end_seconds": 1559.0,
+    "speaker": "comedian:stevie",
+    "text": "I just made that up on the spot. Sorry."
+  },
+  {
+    "start_seconds": 1559.0,
+    "end_seconds": 1559.6,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1559.6,
+    "end_seconds": 1559.87,
+    "speaker": "tony",
+    "text": "Okay."
+  },
+  {
+    "start_seconds": 1559.87,
+    "end_seconds": 1600.67,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1600.67,
+    "end_seconds": 1602.43,
+    "speaker": "tony",
+    "text": "Good. Stevie, how long have you been doing standup comedy?"
+  },
+  {
+    "start_seconds": 1602.43,
+    "end_seconds": 1604.81,
+    "speaker": "comedian:stevie",
+    "text": "Standup comedy, about three years."
+  },
+  {
+    "start_seconds": 1604.81,
+    "end_seconds": 1605.51,
+    "speaker": "tony",
+    "text": "Three years."
+  },
+  {
+    "start_seconds": 1605.51,
+    "end_seconds": 1606.32,
+    "speaker": "tony",
+    "text": "All of it here in Austin?"
+  },
+  {
+    "start_seconds": 1606.32,
+    "end_seconds": 1610.15,
+    "speaker": "comedian:stevie",
+    "text": "No, I started out in Arizona after some people tried to rob my place."
+  },
+  {
+    "start_seconds": 1610.15,
+    "end_seconds": 1614.07,
+    "speaker": "comedian:stevie",
+    "text": "I ended up talking them out of robbing my place and made them laugh."
+  },
+  {
+    "start_seconds": 1614.07,
+    "end_seconds": 1615.11,
+    "speaker": "comedian:stevie",
+    "text": "We ate pizza, smoked a bunch of pot."
+  },
+  {
+    "start_seconds": 1615.11,
+    "end_seconds": 1616.14,
+    "speaker": "comedian:stevie",
+    "text": "It was great."
+  },
+  {
+    "start_seconds": 1616.14,
+    "end_seconds": 1616.74,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1616.74,
+    "end_seconds": 1617.48,
+    "speaker": "tony",
+    "text": "Is that true?"
+  },
+  {
+    "start_seconds": 1617.48,
+    "end_seconds": 1618.77,
+    "speaker": "comedian:stevie",
+    "text": "Yeah, that actually."
+  },
+  {
+    "start_seconds": 1618.77,
+    "end_seconds": 1621.23,
+    "speaker": "tony",
+    "text": "Explain to us exactly what happened."
+  },
+  {
+    "start_seconds": 1621.23,
+    "end_seconds": 1622.68,
+    "speaker": "comedian:stevie",
+    "text": "So."
+  },
+  {
+    "start_seconds": 1622.68,
+    "end_seconds": 1624.1,
+    "speaker": "tony",
+    "text": "Is the middle of the night? Day?"
+  },
+  {
+    "start_seconds": 1624.1,
+    "end_seconds": 1624.75,
+    "speaker": "tony",
+    "text": "What is it?"
+  },
+  {
+    "start_seconds": 1624.75,
+    "end_seconds": 1625.68,
+    "speaker": "comedian:stevie",
+    "text": "All right, so here we go."
+  },
+  {
+    "start_seconds": 1625.68,
+    "end_seconds": 1627.56,
+    "speaker": "tony",
+    "text": "By the way, Stevie is soaking wet."
+  },
+  {
+    "start_seconds": 1627.56,
+    "end_seconds": 1632.7,
+    "speaker": "tony",
+    "text": "By the way, for those of you just listening to the podcast, perhaps you're getting some work done and just playing it in the background."
+  },
+  {
+    "start_seconds": 1632.7,
+    "end_seconds": 1634.33,
+    "speaker": "tony",
+    "text": "His upper lip is drenched."
+  },
+  {
+    "start_seconds": 1634.33,
+    "end_seconds": 1637.76,
+    "speaker": "tony",
+    "text": "His face is retaining the weight of the water. It appears as if though there's so much toxicity in his sweat."
+  },
+  {
+    "start_seconds": 1637.76,
+    "end_seconds": 1642.41,
+    "speaker": "tony",
+    "text": "that it's not uh, respecting gravity whatsoever."
+  },
+  {
+    "start_seconds": 1642.41,
+    "end_seconds": 1643.08,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1643.08,
+    "end_seconds": 1646.6,
+    "speaker": "tony",
+    "text": "Somehow it's accumulating in a pile as if though he's laying horizontally."
+  },
+  {
+    "start_seconds": 1646.6,
+    "end_seconds": 1647.24,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1647.24,
+    "end_seconds": 1648.56,
+    "speaker": "tony",
+    "text": "This is incredible."
+  },
+  {
+    "start_seconds": 1648.56,
+    "end_seconds": 1650.05,
+    "speaker": "tony",
+    "text": "Tim Butterly, you got a closer look at that sweat."
+  },
+  {
+    "start_seconds": 1650.05,
+    "end_seconds": 1651.13,
+    "speaker": "tony",
+    "text": "Can you describe it for the people?"
+  },
+  {
+    "start_seconds": 1651.13,
+    "end_seconds": 1654.55,
+    "speaker": "guest:tim_butterly",
+    "text": "There's an almost imperceptible twitch on the upper lip."
+  },
+  {
+    "start_seconds": 1654.55,
+    "end_seconds": 1655.33,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1655.33,
+    "end_seconds": 1658.85,
+    "speaker": "guest:tim_butterly",
+    "text": "That is probably the most frightening part of the entire ensemble."
+  },
+  {
+    "start_seconds": 1658.85,
+    "end_seconds": 1659.57,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1659.57,
+    "end_seconds": 1660.18,
+    "speaker": "tony",
+    "text": "Oh."
+  },
+  {
+    "start_seconds": 1660.18,
+    "end_seconds": 1660.48,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1660.48,
+    "end_seconds": 1661.85,
+    "speaker": "tony",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1661.85,
+    "end_seconds": 1664.08,
+    "speaker": "guest:tim_butterly",
+    "text": "Completely lacquered in layers of moisture right now."
+  },
+  {
+    "start_seconds": 1664.08,
+    "end_seconds": 1664.84,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1664.84,
+    "end_seconds": 1665.65,
+    "speaker": "tony",
+    "text": "It is layers."
+  },
+  {
+    "start_seconds": 1665.65,
+    "end_seconds": 1666.96,
+    "speaker": "comedian:stevie",
+    "text": "How do you spell ensemble?"
+  },
+  {
+    "start_seconds": 1666.96,
+    "end_seconds": 1667.66,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1667.66,
+    "end_seconds": 1670.61,
+    "speaker": "comedian:stevie",
+    "text": "I mean, that's like a grown-up third grade word, right?"
+  },
+  {
+    "start_seconds": 1670.61,
+    "end_seconds": 1671.21,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1671.21,
+    "end_seconds": 1674.31,
+    "speaker": "guest:sam_tripoli",
+    "text": "Bro, you look like both ice and the illegal."
+  },
+  {
+    "start_seconds": 1674.31,
+    "end_seconds": 1675.24,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1675.24,
+    "end_seconds": 1676.12,
+    "speaker": "tony",
+    "text": "That's true."
+  },
+  {
+    "start_seconds": 1676.12,
+    "end_seconds": 1676.67,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1676.67,
+    "end_seconds": 1677.16,
+    "speaker": "tony",
+    "text": "Yeah."
+  },
+  {
+    "start_seconds": 1677.16,
+    "end_seconds": 1677.93,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1677.93,
+    "end_seconds": 1679.52,
+    "speaker": "comedian:stevie",
+    "text": "I'm here to get you, bitch!"
+  },
+  {
+    "start_seconds": 1679.52,
+    "end_seconds": 1680.61,
+    "speaker": "comedian:stevie",
+    "text": "Here we go!"
+  },
+  {
+    "start_seconds": 1680.61,
+    "end_seconds": 1680.93,
+    "speaker": "tony",
+    "text": "Sam Tripley!"
+  },
+  {
+    "start_seconds": 1680.93,
+    "end_seconds": 1681.98,
+    "speaker": "comedian:stevie",
+    "text": "One Mexican, two Mexican, three."
+  },
+  {
+    "start_seconds": 1681.98,
+    "end_seconds": 1682.7,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1682.7,
+    "end_seconds": 1684.09,
+    "speaker": "comedian:stevie",
+    "text": "Oh, wait, sorry. I did that wrong."
+  },
+  {
+    "start_seconds": 1684.09,
+    "end_seconds": 1686.58,
+    "speaker": "comedian:stevie",
+    "text": "Uno, dos, tres. No."
+  },
+  {
+    "start_seconds": 1686.58,
+    "end_seconds": 1687.35,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1687.35,
+    "end_seconds": 1688.13,
+    "speaker": "tony",
+    "text": "All right."
+  },
+  {
+    "start_seconds": 1688.13,
+    "end_seconds": 1690.62,
+    "speaker": "tony",
+    "text": "So, Stevie, go ahead and now is the time to tell us about the uh,"
+  },
+  {
+    "start_seconds": 1690.62,
+    "end_seconds": 1693.36,
+    "speaker": "tony",
+    "text": "robbery in which you made friends with the people."
+  },
+  {
+    "start_seconds": 1693.36,
+    "end_seconds": 1694.49,
+    "speaker": "comedian:stevie",
+    "text": "All right, so I'm sitting at home."
+  },
+  {
+    "start_seconds": 1694.49,
+    "end_seconds": 1696.1,
+    "speaker": "comedian:stevie",
+    "text": "It must be about 1:30 in the morning."
+  },
+  {
+    "start_seconds": 1696.1,
+    "end_seconds": 1698.81,
+    "speaker": "comedian:stevie",
+    "text": "And I'm watching porn because that's what I do. I love myself some porn."
+  },
+  {
+    "start_seconds": 1698.81,
+    "end_seconds": 1699.4,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1699.4,
+    "end_seconds": 1700.56,
+    "speaker": "comedian:stevie",
+    "text": "And all of a sudden my porn goes out."
+  },
+  {
+    "start_seconds": 1700.56,
+    "end_seconds": 1701.32,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1701.32,
+    "end_seconds": 1702.47,
+    "speaker": "comedian:stevie",
+    "text": "Oh, what the hell?"
+  },
+  {
+    "start_seconds": 1702.47,
+    "end_seconds": 1702.77,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1702.77,
+    "end_seconds": 1705.41,
+    "speaker": "comedian:stevie",
+    "text": "So this is Arizona, and I know that everything's hot outside."
+  },
+  {
+    "start_seconds": 1705.41,
+    "end_seconds": 1709.61,
+    "speaker": "comedian:stevie",
+    "text": "So I go outside to where it's like 140 degrees, and there's a person standing on my workbench ripping off my TV."
+  },
+  {
+    "start_seconds": 1709.61,
+    "end_seconds": 1710.22,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1710.22,
+    "end_seconds": 1711.23,
+    "speaker": "comedian:stevie",
+    "text": "And I'm like, oh!"
+  },
+  {
+    "start_seconds": 1711.23,
+    "end_seconds": 1712.1,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1712.1,
+    "end_seconds": 1712.98,
+    "speaker": "comedian:stevie",
+    "text": "So I flipped the light on."
+  },
+  {
+    "start_seconds": 1712.98,
+    "end_seconds": 1715.42,
+    "speaker": "comedian:stevie",
+    "text": "She turns around and looks at me, and she goes, oh, shit."
+  },
+  {
+    "start_seconds": 1715.42,
+    "end_seconds": 1716.48,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1716.48,
+    "end_seconds": 1718.32,
+    "speaker": "comedian:stevie",
+    "text": "So I said, wait, hold on, let me get my dog secured."
+  },
+  {
+    "start_seconds": 1718.32,
+    "end_seconds": 1722.56,
+    "speaker": "comedian:stevie",
+    "text": "And once I got them secured, I went ahead and got her down, and then her man started beating on the uh, garage."
+  },
+  {
+    "start_seconds": 1722.56,
+    "end_seconds": 1723.23,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1723.23,
+    "end_seconds": 1724.08,
+    "speaker": "comedian:stevie",
+    "text": "And I was like, whoa."
+  },
+  {
+    "start_seconds": 1724.08,
+    "end_seconds": 1725.29,
+    "speaker": "comedian:stevie",
+    "text": "Tell your man I'm not calling the cops."
+  },
+  {
+    "start_seconds": 1725.29,
+    "end_seconds": 1726.04,
+    "speaker": "comedian:stevie",
+    "text": "Just be cool, just be cool."
+  },
+  {
+    "start_seconds": 1726.04,
+    "end_seconds": 1726.85,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1726.85,
+    "end_seconds": 1727.69,
+    "speaker": "comedian:stevie",
+    "text": "So I was."
+  },
+  {
+    "start_seconds": 1727.69,
+    "end_seconds": 1728.98,
+    "speaker": "guest:sam_tripoli",
+    "text": "What color are these people?"
+  },
+  {
+    "start_seconds": 1728.98,
+    "end_seconds": 1729.82,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1729.82,
+    "end_seconds": 1731.57,
+    "speaker": "tony",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1731.57,
+    "end_seconds": 1734.56,
+    "speaker": "comedian:stevie",
+    "text": "I believe it's my understanding, you're not allowed to ask me about that anymore."
+  },
+  {
+    "start_seconds": 1734.56,
+    "end_seconds": 1735.63,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1735.63,
+    "end_seconds": 1736.65,
+    "speaker": "tony",
+    "text": "Okay, Stevie, very funny."
+  },
+  {
+    "start_seconds": 1736.65,
+    "end_seconds": 1737.71,
+    "speaker": "tony",
+    "text": "Answer the fucking question."
+  },
+  {
+    "start_seconds": 1737.71,
+    "end_seconds": 1739.02,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1739.02,
+    "end_seconds": 1739.5,
+    "speaker": "comedian:stevie",
+    "text": "Um."
+  },
+  {
+    "start_seconds": 1739.5,
+    "end_seconds": 1742.17,
+    "speaker": "comedian:stevie",
+    "text": "They were both of uh, Latino descent."
+  },
+  {
+    "start_seconds": 1742.17,
+    "end_seconds": 1742.94,
+    "speaker": "tony",
+    "text": "Okay."
+  },
+  {
+    "start_seconds": 1742.94,
+    "end_seconds": 1743.83,
+    "speaker": "tony",
+    "text": "Very good."
+  },
+  {
+    "start_seconds": 1743.83,
+    "end_seconds": 1744.17,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1744.17,
+    "end_seconds": 1744.53,
+    "speaker": "tony",
+    "text": "All right."
+  },
+  {
+    "start_seconds": 1744.53,
+    "end_seconds": 1745.24,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1745.24,
+    "end_seconds": 1745.59,
+    "speaker": "tony",
+    "text": "Go ahead."
+  },
+  {
+    "start_seconds": 1745.59,
+    "end_seconds": 1746.47,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1746.47,
+    "end_seconds": 1748.06,
+    "speaker": "comedian:stevie",
+    "text": "All right, so once uh,"
+  },
+  {
+    "start_seconds": 1748.06,
+    "end_seconds": 1753.0,
+    "speaker": "comedian:stevie",
+    "text": "I open up the garage, he comes in, he's mad and shit, ready to beat my ass."
+  },
+  {
+    "start_seconds": 1753.0,
+    "end_seconds": 1756.24,
+    "speaker": "comedian:stevie",
+    "text": "And I look at her and I look at him, and they're like, okay, what are we going to do?"
+  },
+  {
+    "start_seconds": 1756.24,
+    "end_seconds": 1757.29,
+    "speaker": "comedian:stevie",
+    "text": "I said, I'm not going to call the cops."
+  },
+  {
+    "start_seconds": 1757.29,
+    "end_seconds": 1757.92,
+    "speaker": "comedian:stevie",
+    "text": "Are you guys hungry?"
+  },
+  {
+    "start_seconds": 1757.92,
+    "end_seconds": 1759.45,
+    "speaker": "comedian:stevie",
+    "text": "And looked at me and said, yeah, we're hungry."
+  },
+  {
+    "start_seconds": 1759.45,
+    "end_seconds": 1759.87,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1759.87,
+    "end_seconds": 1761.64,
+    "speaker": "comedian:stevie",
+    "text": "So I got pizza. I just finished cooking it."
+  },
+  {
+    "start_seconds": 1761.64,
+    "end_seconds": 1764.55,
+    "speaker": "comedian:stevie",
+    "text": "Let's grab the pizza. I bring the pizza out, slam it down, and he goes to town."
+  },
+  {
+    "start_seconds": 1764.55,
+    "end_seconds": 1766.42,
+    "speaker": "comedian:stevie",
+    "text": "He eats like three pieces and she eats one piece."
+  },
+  {
+    "start_seconds": 1766.42,
+    "end_seconds": 1768.0,
+    "speaker": "comedian:stevie",
+    "text": "Then they both start crying."
+  },
+  {
+    "start_seconds": 1768.0,
+    "end_seconds": 1771.55,
+    "speaker": "comedian:stevie",
+    "text": "And then I had to start, you know, telling stories about Thailand again to get them to laugh."
+  },
+  {
+    "start_seconds": 1771.55,
+    "end_seconds": 1772.37,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1772.37,
+    "end_seconds": 1773.07,
+    "speaker": "tony",
+    "text": "Why were they crying?"
+  },
+  {
+    "start_seconds": 1773.07,
+    "end_seconds": 1776.01,
+    "speaker": "comedian:stevie",
+    "text": "Because they felt bad they were in my place ripping off my shit."
+  },
+  {
+    "start_seconds": 1776.01,
+    "end_seconds": 1777.92,
+    "speaker": "guest:sam_tripoli",
+    "text": "And they had to hear your comedy, right?"
+  },
+  {
+    "start_seconds": 1777.92,
+    "end_seconds": 1778.65,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1778.65,
+    "end_seconds": 1779.16,
+    "speaker": "tony",
+    "text": "Yeah."
+  },
+  {
+    "start_seconds": 1779.16,
+    "end_seconds": 1779.99,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1779.99,
+    "end_seconds": 1780.62,
+    "speaker": "comedian:stevie",
+    "text": "All right."
+  },
+  {
+    "start_seconds": 1780.62,
+    "end_seconds": 1782.78,
+    "speaker": "guest:sam_tripoli",
+    "text": "They're actually wiping his sweat out of their eyes."
+  },
+  {
+    "start_seconds": 1782.78,
+    "end_seconds": 1784.8,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1784.8,
+    "end_seconds": 1787.97,
+    "speaker": "comedian:stevie",
+    "text": "Well, it was 120 degrees outside, sorry."
+  },
+  {
+    "start_seconds": 1787.97,
+    "end_seconds": 1788.63,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1788.63,
+    "end_seconds": 1790.62,
+    "speaker": "guest:sam_tripoli",
+    "text": "How do you describe your comedy in one word?"
+  },
+  {
+    "start_seconds": 1790.62,
+    "end_seconds": 1791.07,
+    "speaker": "guest:sam_tripoli",
+    "text": "What would you?"
+  },
+  {
+    "start_seconds": 1791.07,
+    "end_seconds": 1792.12,
+    "speaker": "guest:sam_tripoli",
+    "text": "Well, two words, maybe."
+  },
+  {
+    "start_seconds": 1792.12,
+    "end_seconds": 1792.5,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1792.5,
+    "end_seconds": 1793.18,
+    "speaker": "comedian:stevie",
+    "text": "Actually, 100."
+  },
+  {
+    "start_seconds": 1793.18,
+    "end_seconds": 1794.75,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1794.75,
+    "end_seconds": 1796.09,
+    "speaker": "comedian:stevie",
+    "text": "Wet and loud."
+  },
+  {
+    "start_seconds": 1796.09,
+    "end_seconds": 1796.79,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1796.79,
+    "end_seconds": 1797.74,
+    "speaker": "guest:sam_tripoli",
+    "text": "I call it fast-forward."
+  },
+  {
+    "start_seconds": 1797.74,
+    "end_seconds": 1800.0,
+    "speaker": "guest:sam_tripoli",
+    "text": "That's what your uh, comedy is, fast-forward."
+  },
+  {
+    "start_seconds": 1800.0,
+    "end_seconds": 1802.13,
+    "speaker": "guest:sam_tripoli",
+    "text": "You're doing ten minutes in a minute and I love it."
+  },
+  {
+    "start_seconds": 1802.13,
+    "end_seconds": 1802.58,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1802.58,
+    "end_seconds": 1805.15,
+    "speaker": "comedian:stevie",
+    "text": "Oh, thank you. Thank you. Thank you. Thank you."
+  },
+  {
+    "start_seconds": 1805.15,
+    "end_seconds": 1806.32,
+    "speaker": "tony",
+    "text": "Okay, Stevie."
+  },
+  {
+    "start_seconds": 1806.32,
+    "end_seconds": 1809.0,
+    "speaker": "tony",
+    "text": "What do you, what do you do for a living exactly?"
+  },
+  {
+    "start_seconds": 1809.0,
+    "end_seconds": 1812.01,
+    "speaker": "comedian:stevie",
+    "text": "What I am is I'm into race cars."
+  },
+  {
+    "start_seconds": 1812.01,
+    "end_seconds": 1816.03,
+    "speaker": "comedian:stevie",
+    "text": "So I find myself uh, going to different race car crews at different race uh,"
+  },
+  {
+    "start_seconds": 1816.03,
+    "end_seconds": 1816.7,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1816.7,
+    "end_seconds": 1817.43,
+    "speaker": "tony",
+    "text": "Uh-huh."
+  },
+  {
+    "start_seconds": 1817.43,
+    "end_seconds": 1823.16,
+    "speaker": "comedian:stevie",
+    "text": "Find myself going to different race teams for different racing events and I help them do stuff for the car."
+  },
+  {
+    "start_seconds": 1823.16,
+    "end_seconds": 1823.63,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1823.63,
+    "end_seconds": 1824.23,
+    "speaker": "tony",
+    "text": "So wait,"
+  },
+  {
+    "start_seconds": 1824.23,
+    "end_seconds": 1824.7,
+    "speaker": "tony",
+    "text": "what what."
+  },
+  {
+    "start_seconds": 1824.7,
+    "end_seconds": 1826.5,
+    "speaker": "tony",
+    "text": "What the fuck do you mean?"
+  },
+  {
+    "start_seconds": 1826.5,
+    "end_seconds": 1828.09,
+    "speaker": "tony",
+    "text": "What exactly do you do in the race world?"
+  },
+  {
+    "start_seconds": 1828.09,
+    "end_seconds": 1828.77,
+    "speaker": "tony",
+    "text": "What's your job?"
+  },
+  {
+    "start_seconds": 1828.77,
+    "end_seconds": 1829.47,
+    "speaker": "guest:sam_tripoli",
+    "text": "Math!"
+  },
+  {
+    "start_seconds": 1829.47,
+    "end_seconds": 1830.0,
+    "speaker": "guest:sam_tripoli",
+    "text": "That's what he does!"
+  },
+  {
+    "start_seconds": 1830.0,
+    "end_seconds": 1830.49,
+    "speaker": "guest:sam_tripoli",
+    "text": "He deals math!"
+  },
+  {
+    "start_seconds": 1830.49,
+    "end_seconds": 1831.06,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1831.06,
+    "end_seconds": 1832.32,
+    "speaker": "tony",
+    "text": "What's the exact job?"
+  },
+  {
+    "start_seconds": 1832.32,
+    "end_seconds": 1832.8,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1832.8,
+    "end_seconds": 1833.47,
+    "speaker": "comedian:stevie",
+    "text": "You can say you."
+  },
+  {
+    "start_seconds": 1833.47,
+    "end_seconds": 1833.91,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1833.91,
+    "end_seconds": 1834.72,
+    "speaker": "tony",
+    "text": "Stevie, stick with me here."
+  },
+  {
+    "start_seconds": 1834.72,
+    "end_seconds": 1835.41,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1835.41,
+    "end_seconds": 1836.56,
+    "speaker": "tony",
+    "text": "What's your job?"
+  },
+  {
+    "start_seconds": 1836.56,
+    "end_seconds": 1837.28,
+    "speaker": "tony",
+    "text": "How do you make money?"
+  },
+  {
+    "start_seconds": 1837.28,
+    "end_seconds": 1839.99,
+    "speaker": "comedian:stevie",
+    "text": "All right, so on the weekends when there is a race,"
+  },
+  {
+    "start_seconds": 1839.99,
+    "end_seconds": 1841.0,
+    "speaker": "comedian:stevie",
+    "text": "it's about two, maybe three."
+  },
+  {
+    "start_seconds": 1841.0,
+    "end_seconds": 1841.49,
+    "speaker": "tony",
+    "text": "All right, Redban,"
+  },
+  {
+    "start_seconds": 1841.49,
+    "end_seconds": 1842.06,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1842.06,
+    "end_seconds": 1843.08,
+    "speaker": "tony",
+    "text": "that's enough of the."
+  },
+  {
+    "start_seconds": 1843.08,
+    "end_seconds": 1845.3,
+    "speaker": "tony",
+    "text_original": "tense game show music. Go ahead."
+  },
+  {
+    "start_seconds": 1845.3,
+    "end_seconds": 1845.7,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 1845.7,
+    "end_seconds": 1846.59,
+    "speaker": "comedian:stevie",
+    "text": "About two or three races."
+  }
+]

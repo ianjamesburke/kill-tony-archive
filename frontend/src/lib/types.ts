@@ -130,6 +130,17 @@ export interface CrowdReaction {
 	count: number;
 }
 
+export interface SetsStats {
+	scores: number[];
+	crowd_reactions: CrowdReaction[];
+	bucket_count: number;
+	regular_count: number;
+	bucket_avg: number | null;
+	regular_avg: number | null;
+	total: number;
+	latest_episode: number | null;
+}
+
 export interface LaughterTimelinePoint {
 	t: number;
 	v: number;

@@ -1,0 +1,14 @@
+[Unit]
+Description=Kill Tony daily episode processor
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/kill-tony-data-project-v1/backend
+ExecStart=/usr/bin/python3 daily_processor.py
+Environment=GEMINI_API_KEY=your-key-here
+# Optional: sync processed DB to Railway
+# Environment=RAILWAY_BACKEND_URL=https://your-app.railway.app
+# Environment=ADMIN_SECRET=your-secret
+TimeoutStartSec=3600
