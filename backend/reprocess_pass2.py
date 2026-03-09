@@ -52,7 +52,7 @@ def pass2_analyze(client: genai.Client, transcript: list[dict], episode_number: 
         ts = entry.get("start_seconds", 0)
         speaker = entry.get("speaker", "unknown")
         text = entry.get("text", "")
-        lines.append(f"[{int(ts//60):02d}:{int(ts%60):02d}] {speaker}: {text}")
+        lines.append(f"[{int(ts)}s / {int(ts//60):02d}:{int(ts%60):02d}] {speaker}: {text}")
 
     transcript_text = "\n".join(lines)
     prompt = PASS2_PROMPT.format(transcript=transcript_text, episode_number=episode_number)

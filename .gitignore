@@ -48,3 +48,9 @@ data/transcripts/
 data/*.log
 data/*.db
 
+data/backups/
+cookies.txt
+__pycache__/
+*.mp3
+*.webm
+*.wav

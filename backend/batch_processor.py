@@ -18,6 +18,7 @@ import subprocess
 import sys
 import tempfile
 import time
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -34,6 +35,9 @@ load_dotenv(ROOT / ".env")
 
 MODEL = "gemini-3-flash-preview"
 GUEST_MODEL = "gemini-3.1-flash-lite-preview"  # cheap model for title parsing
+LAUGHTER_MODEL = "gemini-3-flash-preview"  # chunked laughter detection (1500 RPD vs Pro's 50)
+LAUGHTER_WINDOW_SIZE = 1  # per-second resolution for event-based detection
+PIPELINE_VERSION = 2  # bump when pipeline changes warrant reprocessing (v1=5s windows, v2=events)
 CHUNK_MINUTES = 20
 OVERLAP_MINUTES = 3
 AUDIO_CACHE_DIR = Path(__file__).parent / "audio_cache"
@@ -41,9 +45,11 @@ DB_PATH = ROOT / "data" / "kill_tony.db"
 TRANSCRIPTS_DIR = ROOT / "data" / "transcripts"
 EPISODES_JSON = Path(__file__).parent / "episodes.json"
 
-# Rate limiting — free tier is 15 RPM / 1500 RPD
+# Rate limiting — Flash free tier is 15 RPM / 1500 RPD
 # We use 10s between API calls (safe margin under 15 RPM)
 API_DELAY_SECONDS = 10
+# Flash free tier: 15 RPM / 1500 RPD — short backoff on rate limit errors
+LAUGHTER_RATE_LIMIT_BACKOFF = 60  # 1 minute between retries on 429
 
 # ---------------------------------------------------------------------------
 # Logging
@@ -182,8 +188,9 @@ FIELD RULES:
   DEFAULT TO 3 if Tony doesn't specifically comment on the quality of the set. Most sets are 2-4. Reserve 5 for truly exceptional sets where Tony is visibly impressed.
 - joke_book_size: Listen for Tony saying "big book", "small book", "no book" — this is a specific Kill Tony bit where Tony judges their joke notebook.
 - topic_tags: assign 3-5 tags per set. Choose from: [self_deprecation, politics, relationships, sex, race, crowd_work, observational, shock_humor, storytelling, absurdist, physical, meta, regional, drugs, religion, family, dating, disability, food, aging, lgbtq, crime, work, other]
-- set_transcript: copy their EXACT words from the comedian:<name> entries during their set
-- set_start_seconds / set_end_seconds: timestamps from the transcript for when their set begins and ends
+- set_transcript: copy their EXACT words from the comedian:<name> entries during their set (only the performance, not the interview)
+- set_start_seconds: the timestamp IN SECONDS (the number before "s" in the transcript timestamps, e.g. [2237s / 37:17] means 2237) when the comedian STARTS PERFORMING their material (their first joke/line on the mic). This is NOT when Tony announces their name or when the band plays — it's when the comedian actually begins speaking their set. Look for the first comedian:<name> entry AFTER the band walk-up music.
+- set_end_seconds: the timestamp IN SECONDS when the comedian STOPS performing. This is usually when the buzzer sounds, the band starts playing them off, or they say "that's my time" / trail off. It is NOT the end of the interview.
 - disclosed_age: integer age ONLY if explicitly stated (e.g. "I'm 23", Tony says "you're 19"). null otherwise.
 - disclosed_occupation: their day job or profession if mentioned (e.g. "I'm a nurse", "I work at Costco", "Woody Harrelson's stand-in"). null if not mentioned. This is NOT "comedian" — it's what they do outside comedy.
 - disclosed_location: where they live or are from if stated (e.g. "Austin", "I'm from Detroit", "I moved here from New York"). null if not mentioned.
@@ -194,6 +201,33 @@ TRANSCRIPT:
 {transcript}
 """
 
+LAUGHTER_PROMPT = """
+Listen to this audio clip from a Kill Tony comedy show. Identify every instance of crowd laughter, applause, cheering, or groaning.
+
+Log the precise start and end time IN TOTAL SECONDS from the start of this audio clip.
+The audio is approximately {duration} seconds long ({duration_min} minutes).
+
+Return ONLY a JSON array:
+[
+  {{"start_seconds": 45, "end_seconds": 49, "type": "laughter", "intensity": "big"}},
+  {{"start_seconds": 72, "end_seconds": 74, "type": "applause", "intensity": "moderate"}},
+  ...
+]
+
+Fields:
+- start_seconds / end_seconds: integers, in TOTAL SECONDS from the start of THIS audio clip
+- type: "laughter", "applause", "cheering", or "groaning"
+- intensity: "light", "moderate", "big", or "roaring"
+
+CRITICAL RULES:
+- Only log DISTINCT crowd reactions. Background noise, murmuring, and ambient crowd sounds are NOT reactions.
+- Most of the show is people talking — there should be long gaps between events.
+- A typical 1-minute comedy set has maybe 3-6 laugh moments, not continuous laughter.
+- Timestamp precision matters. Be as accurate as possible with start/end times.
+- When in doubt about intensity, score LOWER not higher.
+- Be exhaustive — catch every reaction, but do NOT invent reactions that aren't there.
+"""
+
 # ---------------------------------------------------------------------------
 # SQLite Schema (matches SCHEMA.md)
 # ---------------------------------------------------------------------------
@@ -201,18 +235,21 @@ TRANSCRIPT:
 SCHEMA_SQL = """
 CREATE TABLE IF NOT EXISTS episodes (
     episode_number INTEGER PRIMARY KEY,
+    title TEXT,
     date TEXT,
     venue TEXT,
     youtube_url TEXT NOT NULL,
     video_id TEXT NOT NULL UNIQUE,
-    guests TEXT NOT NULL,            -- JSON array
+    guests TEXT NOT NULL DEFAULT '[]', -- JSON array
+    status TEXT NOT NULL DEFAULT 'pending',  -- pending, processing, done, error
+    pipeline_version INTEGER DEFAULT 0,     -- bumped when pipeline changes
     laugh_count INTEGER,
     laughter_pct REAL,
     view_count INTEGER,
     like_count INTEGER,
     comment_count INTEGER,
     upload_date TEXT,
-    processed_at TEXT NOT NULL
+    processed_at TEXT
     -- full_transcript stored as data/transcripts/ep_{number}.json (gitignored)
 );
 
@@ -262,9 +299,10 @@ def init_db():
     TRANSCRIPTS_DIR.mkdir(parents=True, exist_ok=True)
     with sqlite3.connect(DB_PATH) as conn:
         conn.executescript(SCHEMA_SQL)
+
         # Migrate: add new columns if they don't exist yet
-        existing = {row[1] for row in conn.execute("PRAGMA table_info(sets)").fetchall()}
-        migrations = [
+        sets_cols = {row[1] for row in conn.execute("PRAGMA table_info(sets)").fetchall()}
+        sets_migrations = [
             ("disclosed_age", "INTEGER"),
             ("disclosed_occupation", "TEXT"),
             ("disclosed_location", "TEXT"),
@@ -273,9 +311,39 @@ def init_db():
             ("disclosed_has_kids", "INTEGER"),
             ("self_disclosed_extra", "TEXT"),
         ]
-        for col, dtype in migrations:
-            if col not in existing:
+        for col, dtype in sets_migrations:
+            if col not in sets_cols:
                 conn.execute(f"ALTER TABLE sets ADD COLUMN {col} {dtype}")
+
+        ep_cols = {row[1] for row in conn.execute("PRAGMA table_info(episodes)").fetchall()}
+        ep_migrations = [
+            ("title", "TEXT"),
+            ("status", "TEXT DEFAULT 'done'"),
+            ("pipeline_version", "INTEGER DEFAULT 0"),
+        ]
+        for col, dtype in ep_migrations:
+            col_name = col.split()[0]
+            if col_name not in ep_cols:
+                conn.execute(f"ALTER TABLE episodes ADD COLUMN {col} {dtype}")
+
+        # Seed episodes from episodes.json into DB as pending (skip existing)
+        if EPISODES_JSON.exists():
+            with open(EPISODES_JSON) as f:
+                all_episodes = json.load(f).get("episodes", [])
+            existing_eps = {row[0] for row in conn.execute("SELECT episode_number FROM episodes").fetchall()}
+            seeded = 0
+            for ep in all_episodes:
+                ep_num = ep.get("episode_number")
+                if ep_num and ep_num not in existing_eps:
+                    conn.execute(
+                        "INSERT INTO episodes (episode_number, title, youtube_url, video_id, guests, status, pipeline_version, processed_at) VALUES (?, ?, ?, ?, '[]', 'pending', 0, '')",
+                        (ep_num, ep.get("title", ""), ep.get("url", ""), ep.get("video_id", "")),
+                    )
+                    seeded += 1
+            if seeded:
+                conn.commit()
+                log.info(f"Seeded {seeded} episodes from episodes.json")
+
     log.info(f"Database ready at {DB_PATH}")
 
 
@@ -283,9 +351,18 @@ def init_db():
 # YouTube metadata + stats
 # ---------------------------------------------------------------------------
 
+def _yt_cookie_opts() -> dict:
+    """Return yt-dlp cookie options if a cookies file or browser is available."""
+    cookie_file = ROOT / "cookies.txt"
+    if cookie_file.exists():
+        return {"cookiefile": str(cookie_file)}
+    # Try chromium cookies (works on Linux with keyring access)
+    return {"cookiesfrombrowser": ("chromium",)}
+
+
 def get_youtube_info(url: str) -> dict:
     """Extract metadata and stats from YouTube."""
-    opts = {"skip_download": True, "quiet": True, "nocheckcertificate": True}
+    opts = {"skip_download": True, "quiet": True, "nocheckcertificate": True, **_yt_cookie_opts()}
     with YoutubeDL(opts) as ydl:  # type: ignore[arg-type]
         info = ydl.extract_info(url, download=False)
 
@@ -389,19 +466,20 @@ def extract_guests_from_title(client: genai.Client, title: str) -> list[str]:
 # Audio download + chunking
 # ---------------------------------------------------------------------------
 
-def get_audio_chunks(url: str, episode_number: int) -> tuple[list[Path], list[int]]:
-    """Download audio and split into overlapping chunks. Cached per episode."""
+def download_audio(url: str, episode_number: int) -> Path:
+    """Download episode audio as a single MP3 file. Cached per episode."""
     cache_dir = AUDIO_CACHE_DIR / f"ep_{episode_number}"
     cache_dir.mkdir(parents=True, exist_ok=True)
 
-    existing = sorted(cache_dir.glob("chunk_*.mp3"))
-    if existing:
-        offsets = []
-        for p in existing:
-            match = re.search(r'_(\d+)s\.mp3$', p.name)
-            offsets.append(int(match.group(1)) if match else 0)
-        log.info(f"Using {len(existing)} cached chunks for ep {episode_number}")
-        return existing, offsets
+    full_path = cache_dir / "full.mp3"
+    if full_path.exists():
+        log.info(f"Using cached full audio for ep {episode_number}")
+        return full_path
+
+    # Check for legacy chunks — if they exist, we still have audio cached
+    existing_chunks = sorted(cache_dir.glob("chunk_*.mp3"))
+    if existing_chunks:
+        log.info(f"Found {len(existing_chunks)} legacy chunks for ep {episode_number} (will use chunked path)")
 
     with tempfile.TemporaryDirectory(prefix="kt_") as tmpdir:
         tmp_path = Path(tmpdir)
@@ -412,6 +490,7 @@ def get_audio_chunks(url: str, episode_number: int) -> tuple[list[Path], list[in
             "nocheckcertificate": True,
             "noplaylist": True,
             "outtmpl": outtmpl,
+            **_yt_cookie_opts(),
         }
 
         log.info("Downloading audio...")
@@ -422,44 +501,65 @@ def get_audio_chunks(url: str, episode_number: int) -> tuple[list[Path], list[in
         if not downloaded:
             raise RuntimeError("No audio file downloaded")
 
-        full_mp3 = tmp_path / "full.mp3"
         log.info("Converting to MP3...")
         subprocess.run(
-            ["ffmpeg", "-i", str(downloaded[0]), "-q:a", "5", "-y", str(full_mp3)],
+            ["ffmpeg", "-i", str(downloaded[0]), "-q:a", "5", "-y", str(full_path)],
             check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=600,
         )
-        downloaded[0].unlink()
 
-        result = subprocess.run(
-            ["ffprobe", "-v", "quiet", "-show_entries", "format=duration", "-of", "csv=p=0", str(full_mp3)],
-            capture_output=True, text=True,
+    result = subprocess.run(
+        ["ffprobe", "-v", "quiet", "-show_entries", "format=duration", "-of", "csv=p=0", str(full_path)],
+        capture_output=True, text=True,
+    )
+    total_duration = float(result.stdout.strip())
+    log.info(f"Duration: {total_duration:.0f}s ({total_duration/60:.1f}min)")
+
+    return full_path
+
+
+def split_into_chunks(full_mp3: Path, episode_number: int) -> tuple[list[Path], list[int]]:
+    """Split a full MP3 into overlapping chunks. Fallback for when full-file transcription fails."""
+    cache_dir = full_mp3.parent
+
+    # Check for existing chunks
+    existing = sorted(cache_dir.glob("chunk_*.mp3"))
+    if existing:
+        offsets = []
+        for p in existing:
+            match = re.search(r'_(\d+)s\.mp3$', p.name)
+            offsets.append(int(match.group(1)) if match else 0)
+        log.info(f"Using {len(existing)} cached chunks for ep {episode_number}")
+        return existing, offsets
+
+    result = subprocess.run(
+        ["ffprobe", "-v", "quiet", "-show_entries", "format=duration", "-of", "csv=p=0", str(full_mp3)],
+        capture_output=True, text=True,
+    )
+    total_duration = float(result.stdout.strip())
+
+    chunk_seconds = CHUNK_MINUTES * 60
+    overlap_seconds = OVERLAP_MINUTES * 60
+    step_seconds = chunk_seconds - overlap_seconds
+
+    chunk_paths = []
+    chunk_offsets = []
+    chunk_num = 0
+    offset = 0
+
+    while offset < total_duration:
+        chunk_num += 1
+        chunk_path = cache_dir / f"chunk_{chunk_num:02d}_{offset}s.mp3"
+        subprocess.run(
+            ["ffmpeg", "-i", str(full_mp3), "-ss", str(offset), "-t", str(chunk_seconds),
+             "-q:a", "5", "-y", str(chunk_path)],
+            check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=300,
         )
-        total_duration = float(result.stdout.strip())
-        log.info(f"Duration: {total_duration:.0f}s ({total_duration/60:.1f}min)")
+        chunk_paths.append(chunk_path)
+        chunk_offsets.append(offset)
+        offset += step_seconds
 
-        chunk_seconds = CHUNK_MINUTES * 60
-        overlap_seconds = OVERLAP_MINUTES * 60
-        step_seconds = chunk_seconds - overlap_seconds
-
-        chunk_paths = []
-        chunk_offsets = []
-        chunk_num = 0
-        offset = 0
-
-        while offset < total_duration:
-            chunk_num += 1
-            chunk_path = cache_dir / f"chunk_{chunk_num:02d}_{offset}s.mp3"
-            subprocess.run(
-                ["ffmpeg", "-i", str(full_mp3), "-ss", str(offset), "-t", str(chunk_seconds),
-                 "-q:a", "5", "-y", str(chunk_path)],
-                check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=300,
-            )
-            chunk_paths.append(chunk_path)
-            chunk_offsets.append(offset)
-            offset += step_seconds
-
-        log.info(f"Split into {len(chunk_paths)} chunks")
-        return chunk_paths, chunk_offsets
+    log.info(f"Split into {len(chunk_paths)} chunks")
+    return chunk_paths, chunk_offsets
 
 
 # ---------------------------------------------------------------------------
@@ -467,7 +567,7 @@ def get_audio_chunks(url: str, episode_number: int) -> tuple[list[Path], list[in
 # ---------------------------------------------------------------------------
 
 def upload_and_wait(client: genai.Client, audio_path: Path):
-    uploaded = client.files.upload(path=audio_path)
+    uploaded = client.files.upload(file=audio_path)
     for _ in range(120):
         info = client.files.get(name=uploaded.name or "")
         if info.state == "ACTIVE":
@@ -534,19 +634,35 @@ def _parse_json_array(raw: str) -> list[dict]:
     raise ValueError("Could not recover a valid JSON array from response")
 
 
+def _text_similarity(a: str, b: str) -> float:
+    """Simple word-overlap similarity between two strings (0.0 to 1.0)."""
+    words_a = set(a.lower().split())
+    words_b = set(b.lower().split())
+    if not words_a or not words_b:
+        return 1.0 if words_a == words_b else 0.0
+    intersection = words_a & words_b
+    return len(intersection) / min(len(words_a), len(words_b))
+
+
 def _deduplicate_entries(entries: list[dict]) -> list[dict]:
     if not entries:
         return entries
     entries.sort(key=lambda x: x.get("start_seconds", 0))
     deduped = [entries[0]]
     for entry in entries[1:]:
-        prev = deduped[-1]
-        time_close = abs(entry.get("start_seconds", 0) - prev.get("start_seconds", 0)) < 3.0
-        text_similar = entry.get("text", "")[:50] == prev.get("text", "")[:50]
-        if time_close and text_similar:
-            if len(entry.get("text", "")) > len(prev.get("text", "")):
-                deduped[-1] = entry
-        else:
+        is_dupe = False
+        # Check against recent entries (overlap can shift timestamps by minutes)
+        for prev in deduped[-10:]:
+            time_close = abs(entry.get("start_seconds", 0) - prev.get("start_seconds", 0)) < 5.0
+            text_sim = _text_similarity(entry.get("text", ""), prev.get("text", ""))
+            if time_close and text_sim > 0.6:
+                # Keep the longer version
+                if len(entry.get("text", "")) > len(prev.get("text", "")):
+                    idx = deduped.index(prev)
+                    deduped[idx] = entry
+                is_dupe = True
+                break
+        if not is_dupe:
             deduped.append(entry)
     return deduped
 
@@ -580,6 +696,7 @@ def normalize_speaker(speaker: str) -> str:
 # ---------------------------------------------------------------------------
 
 def pass1_transcribe(client: genai.Client, chunk_paths: list[Path], chunk_offsets: list[int]) -> list[dict]:
+    """Transcribe episode audio using overlapping chunks."""
     log.info(f"PASS 1: Transcribing {len(chunk_paths)} chunks")
     all_entries = []
 
@@ -597,11 +714,21 @@ def pass1_transcribe(client: genai.Client, chunk_paths: list[Path], chunk_offset
                 offset_seconds=offset_seconds,
                 offset_str=offset_str,
             )
-            response = client.models.generate_content(
-                model=MODEL,
-                contents=[prompt, uploaded],
-                config={"http_options": {"timeout": 600000}},
-            )
+            for attempt in range(3):
+                try:
+                    response = client.models.generate_content(
+                        model=MODEL,
+                        contents=[prompt, uploaded],
+                        config={"http_options": {"timeout": 600000}},
+                    )
+                    break
+                except Exception as api_err:
+                    if attempt < 2:
+                        wait = 30 * (attempt + 1)
+                        log.warning(f"    Chunk {chunk_num} attempt {attempt+1} failed ({api_err}), retrying in {wait}s")
+                        time.sleep(wait)
+                    else:
+                        raise
             entries = _parse_json_array((response.text or "").strip())
             log.info(f"    Got {len(entries)} entries")
             all_entries.extend(entries)
@@ -633,16 +760,26 @@ def pass2_analyze(client: genai.Client, transcript: list[dict], episode_number: 
         ts = entry.get("start_seconds", 0)
         speaker = entry.get("speaker", "unknown")
         text = entry.get("text", "")
-        lines.append(f"[{int(ts//60):02d}:{int(ts%60):02d}] {speaker}: {text}")
+        lines.append(f"[{int(ts)}s / {int(ts//60):02d}:{int(ts%60):02d}] {speaker}: {text}")
 
     transcript_text = "\n".join(lines)
     prompt = PASS2_PROMPT.format(transcript=transcript_text, episode_number=episode_number)
 
-    response = client.models.generate_content(
-        model=MODEL,
-        contents=[{"role": "user", "parts": [{"text": prompt}]}],
-        config={"response_mime_type": "application/json"},
-    )
+    for attempt in range(3):
+        try:
+            response = client.models.generate_content(
+                model=MODEL,
+                contents=[{"role": "user", "parts": [{"text": prompt}]}],
+                config={"response_mime_type": "application/json", "http_options": {"timeout": 600000}},
+            )
+            break
+        except Exception as api_err:
+            if attempt < 2:
+                wait = 30 * (attempt + 1)
+                log.warning(f"  Pass 2 attempt {attempt+1} failed ({api_err}), retrying in {wait}s")
+                time.sleep(wait)
+            else:
+                raise
 
     raw_text = (response.text or "").strip()
     data = json.loads(raw_text)
@@ -653,6 +790,167 @@ def pass2_analyze(client: genai.Client, transcript: list[dict], episode_number: 
     if not isinstance(data, dict):
         raise ValueError(f"Expected dict from Pass 2, got {type(data).__name__}")
     return data
+
+
+LAUGHTER_CHUNK_SECONDS = 900  # 15 minutes per laughter chunk
+
+
+INTENSITY_MAP = {"light": 1, "moderate": 2, "big": 3, "roaring": 4}
+
+
+def _detect_laughter_chunk(client: genai.Client, audio_path: Path, chunk_duration: int, time_offset: int) -> list[dict]:
+    """Run event-based laughter detection on a single audio chunk.
+
+    Returns per-second window dicts {"w": global_second, "s": score} for compatibility
+    with save_laughter_frames.
+    """
+    prompt = LAUGHTER_PROMPT.format(
+        duration=chunk_duration,
+        duration_min=chunk_duration // 60,
+    )
+
+    uploaded = upload_and_wait(client, audio_path)
+    try:
+        for attempt in range(6):
+            try:
+                response = client.models.generate_content(
+                    model=LAUGHTER_MODEL,
+                    contents=[prompt, uploaded],
+                    config={
+                        "response_mime_type": "application/json",
+                        "http_options": {"timeout": 600000},
+                    },
+                )
+                break
+            except Exception as api_err:
+                err_str = str(api_err).lower()
+                if "429" in err_str or "rate" in err_str or "quota" in err_str or "resource" in err_str:
+                    wait = LAUGHTER_RATE_LIMIT_BACKOFF * (attempt + 1)
+                    log.warning(f"  Laughter rate limited (attempt {attempt+1}/6), waiting {wait//60}min...")
+                    time.sleep(wait)
+                elif attempt < 2:
+                    wait = 60 * (attempt + 1)
+                    log.warning(f"  Laughter attempt {attempt+1} failed ({api_err}), retrying in {wait}s")
+                    time.sleep(wait)
+                else:
+                    raise
+
+        raw = (response.text or "").strip()
+        events = json.loads(raw)
+        log.info(f"    Got {len(events)} laughter events from chunk")
+    finally:
+        try:
+            client.files.delete(name=uploaded.name or "")
+        except Exception:
+            pass
+
+    # Convert events to per-second windows with global time offset
+    per_second = {}
+    for e in events:
+        start = int(e.get("start_seconds", 0))
+        end = int(e.get("end_seconds", start + 1))
+        score = INTENSITY_MAP.get(e.get("intensity", "moderate"), 2)
+        for sec in range(max(0, start), min(chunk_duration, end)):
+            global_sec = sec + time_offset
+            per_second[global_sec] = max(per_second.get(global_sec, 0), score)
+
+    return [{"w": sec, "s": score} for sec, score in sorted(per_second.items())]
+
+
+def detect_laughter(client: genai.Client, audio_path: Path, episode_number: int) -> list[dict]:
+    """Detect crowd laughter using Gemini Flash with event-based timestamps.
+
+    Splits audio into 15-min chunks to minimize timestamp drift.
+    Returns list of {"w": second, "s": score} dicts with global timestamps.
+    """
+    result = subprocess.run(
+        ["ffprobe", "-v", "quiet", "-show_entries", "format=duration", "-of", "csv=p=0", str(audio_path)],
+        capture_output=True, text=True,
+    )
+    total_duration = int(float(result.stdout.strip()))
+
+    log.info(f"LAUGHTER DETECTION: {total_duration}s audio, event-based with {LAUGHTER_CHUNK_SECONDS//60}min chunks (using {LAUGHTER_MODEL})")
+
+    # Short enough to process in one shot (under 20 min)
+    if total_duration <= 1200:
+        return _detect_laughter_chunk(client, audio_path, total_duration, time_offset=0), total_duration
+
+    # Chunk the audio
+    all_windows = []
+    offset = 0
+    chunk_num = 0
+
+    while offset < total_duration:
+        chunk_num += 1
+        chunk_duration = min(LAUGHTER_CHUNK_SECONDS, total_duration - offset)
+
+        # Extract chunk audio to temp file
+        with tempfile.NamedTemporaryFile(suffix=".mp3", delete=False, prefix=f"laugh_chunk_{chunk_num}_") as tmp:
+            chunk_path = Path(tmp.name)
+
+        try:
+            subprocess.run(
+                ["ffmpeg", "-i", str(audio_path), "-ss", str(offset), "-t", str(chunk_duration),
+                 "-q:a", "5", "-y", str(chunk_path)],
+                check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=120,
+            )
+            log.info(f"  Laughter chunk {chunk_num} ({offset//60}:{offset%60:02d} - {(offset+chunk_duration)//60}:{(offset+chunk_duration)%60:02d})")
+
+            chunk_windows = _detect_laughter_chunk(client, chunk_path, chunk_duration, time_offset=offset)
+            all_windows.extend(chunk_windows)
+        finally:
+            chunk_path.unlink(missing_ok=True)
+
+        offset += LAUGHTER_CHUNK_SECONDS
+        rate_limit()
+
+    log.info(f"  Total: {len(all_windows)} laughter seconds detected across {chunk_num} chunks")
+    return all_windows, total_duration
+
+
+def save_laughter_frames(episode_number: int, windows: list[dict], total_duration: int = 0):
+    """Store laughter detection results in laughter_frames table and update episode laughter_pct."""
+    with sqlite3.connect(DB_PATH) as conn:
+        # Ensure table exists
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS laughter_frames (
+                episode_number INTEGER NOT NULL,
+                time_seconds REAL NOT NULL,
+                score REAL NOT NULL,
+                PRIMARY KEY (episode_number, time_seconds),
+                FOREIGN KEY (episode_number) REFERENCES episodes(episode_number)
+            )
+        """)
+
+        # Clear old data for this episode
+        conn.execute("DELETE FROM laughter_frames WHERE episode_number = ?", (episode_number,))
+
+        # Insert per-second scores (already per-second from event-based detection)
+        rows = []
+        for w in windows:
+            sec = w.get("w", 0)
+            score = w.get("s", 0)
+            rows.append((episode_number, float(sec), float(score)))
+
+        conn.executemany(
+            "INSERT OR REPLACE INTO laughter_frames (episode_number, time_seconds, score) VALUES (?, ?, ?)",
+            rows,
+        )
+
+        # Compute laughter_pct — use total_duration if provided, else estimate from data
+        active_seconds = sum(1 for _, _, s in rows if s > 0)
+        laugh_count = sum(1 for w in windows if w.get("s", 0) > 0)
+        if total_duration <= 0:
+            total_duration = (max((w.get("w", 0) for w in windows), default=0) + 1) if windows else 1
+        laughter_pct = round((active_seconds / total_duration) * 100, 2) if total_duration > 0 else 0.0
+
+        conn.execute(
+            "UPDATE episodes SET laughter_pct = ?, laugh_count = ? WHERE episode_number = ?",
+            (laughter_pct, laugh_count, episode_number),
+        )
+        conn.commit()
+
+    log.info(f"  Saved {len(rows)} laughter frames, laughter_pct={laughter_pct:.1f}%, laugh_windows={laugh_count}")
 
 
 # ---------------------------------------------------------------------------
@@ -780,16 +1078,19 @@ def save_episode(yt_info: dict, transcript: list[dict], analysis: dict, guests: 
     with sqlite3.connect(DB_PATH) as conn:
         conn.execute("""
             INSERT OR REPLACE INTO episodes
-            (episode_number, date, venue, youtube_url, video_id, guests,
+            (episode_number, title, date, venue, youtube_url, video_id, guests,
+             status, pipeline_version,
              laugh_count, laughter_pct, view_count, like_count, comment_count, upload_date, processed_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?, ?, ?, 'done', ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             episode_number,
+            yt_info.get("title", ""),
             yt_info.get("upload_date"),
             ep_data.get("venue"),
             f"https://www.youtube.com/watch?v={yt_info['video_id']}",
             yt_info["video_id"],
             json.dumps(guests),  # from title extraction, NOT transcript
+            PIPELINE_VERSION,
             laugh_count,
             laughter_pct,
             yt_info.get("view_count"),
@@ -861,6 +1162,7 @@ def load_episodes() -> list[dict]:
 
 
 def update_episode_status(episode_number: int, status: str, error: str | None = None):
+    # Update episodes.json (legacy, kept for compatibility)
     with open(EPISODES_JSON) as f:
         data = json.load(f)
 
@@ -876,10 +1178,57 @@ def update_episode_status(episode_number: int, status: str, error: str | None = 
     with open(EPISODES_JSON, "w") as f:
         json.dump(data, f, indent=2)
 
+    # Update DB status
+    if DB_PATH.exists():
+        with sqlite3.connect(DB_PATH) as conn:
+            if status == "done":
+                conn.execute(
+                    "UPDATE episodes SET status = ?, pipeline_version = ? WHERE episode_number = ?",
+                    (status, PIPELINE_VERSION, episode_number),
+                )
+            else:
+                conn.execute(
+                    "UPDATE episodes SET status = ? WHERE episode_number = ?",
+                    (status, episode_number),
+                )
+
 
 # ---------------------------------------------------------------------------
 # Main processing
 # ---------------------------------------------------------------------------
+
+def sync_db_to_railway():
+    """Push the local SQLite DB to Railway via /admin/upload-db. Skips silently if not configured."""
+    backend_url = os.getenv("RAILWAY_BACKEND_URL", "").rstrip("/")
+    admin_secret = os.getenv("ADMIN_SECRET", "")
+    if not backend_url or not admin_secret:
+        return
+
+    try:
+        with open(DB_PATH, "rb") as f:
+            db_bytes = f.read()
+
+        boundary = "killtony_boundary"
+        body = (
+            f"--{boundary}\r\n"
+            f'Content-Disposition: form-data; name="file"; filename="kill_tony.db"\r\n'
+            f"Content-Type: application/octet-stream\r\n\r\n"
+        ).encode() + db_bytes + f"\r\n--{boundary}--\r\n".encode()
+
+        req = urllib.request.Request(
+            f"{backend_url}/admin/upload-db",
+            data=body,
+            headers={
+                "x-admin-secret": admin_secret,
+                "Content-Type": f"multipart/form-data; boundary={boundary}",
+            },
+            method="POST",
+        )
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            log.info(f"Railway DB synced: {resp.read().decode()}")
+    except Exception as e:
+        log.warning(f"Railway sync failed (non-fatal): {e}")
+
 
 def process_episode(client: genai.Client, ep: dict):
     episode_number = ep["episode_number"]
@@ -907,10 +1256,11 @@ def process_episode(client: genai.Client, ep: dict):
     log.info("Extracting guests from title...")
     guests = extract_guests_from_title(client, ep.get("title", ""))
 
-    # Download and chunk audio
-    chunk_paths, chunk_offsets = get_audio_chunks(url, episode_number)
+    # Download audio and split into chunks
+    audio_path = download_audio(url, episode_number)
+    chunk_paths, chunk_offsets = split_into_chunks(audio_path, episode_number)
 
-    # Pass 1: Transcribe
+    # Pass 1: Transcribe (chunked)
     transcript = pass1_transcribe(client, chunk_paths, chunk_offsets)
 
     # Pass 2: Analyze
@@ -918,6 +1268,13 @@ def process_episode(client: genai.Client, ep: dict):
 
     # Save to SQLite
     save_episode(yt_info, transcript, analysis, guests)
+
+    # Laughter detection (2.5 Pro, uses full audio file)
+    try:
+        laughter_windows, laughter_duration = detect_laughter(client, audio_path, episode_number)
+        save_laughter_frames(episode_number, laughter_windows, laughter_duration)
+    except Exception as e:
+        log.warning(f"Laughter detection failed for ep #{episode_number} (non-fatal): {e}")
 
     # Summary
     sets = analysis.get("sets", [])
@@ -927,8 +1284,9 @@ def process_episode(client: genai.Client, ep: dict):
         log.info(f"  #{s.get('set_number')}: {s.get('comedian_name')} ({s.get('status')}) — kill_score={ks:.1f}")
 
     update_episode_status(episode_number, "done")
+    sync_db_to_railway()
 
-    # Clean up audio chunks to save disk space (transcript is kept for reprocess_pass2)
+    # Clean up audio to save disk space (transcript is kept for reprocess_pass2)
     audio_dir = AUDIO_CACHE_DIR / f"ep_{episode_number}"
     if audio_dir.exists():
         import shutil
@@ -996,6 +1354,8 @@ def main():
     parser.add_argument("--fix-golden-tickets", action="store_true",
                         help="Correct past GT winners: only first win keeps golden_ticket=True, rest become regulars")
     parser.add_argument("--limit", type=int, help="Max number of episodes to process in this run")
+    parser.add_argument("--laughter-only", action="store_true",
+                        help="Run laughter detection only on already-processed episodes (requires cached audio)")
     args = parser.parse_args()
 
     if args.status:
@@ -1019,6 +1379,39 @@ def main():
     init_db()
     client = genai.Client(api_key=api_key)
     episodes = load_episodes()
+
+    if args.laughter_only:
+        done_eps = sorted(
+            [e for e in episodes if e.get("status") == "done"],
+            key=lambda e: e["episode_number"],
+            reverse=True,
+        )
+        if args.episode:
+            done_eps = [e for e in done_eps if e["episode_number"] == args.episode]
+        if args.limit:
+            done_eps = done_eps[:args.limit]
+        log.info(f"Running laughter detection on {len(done_eps)} episodes ({LAUGHTER_MODEL})")
+        for i, ep in enumerate(done_eps):
+            ep_num = ep["episode_number"]
+            audio_dir = AUDIO_CACHE_DIR / f"ep_{ep_num}"
+            audio_path = audio_dir / "full.mp3"
+            if not audio_path.exists():
+                # Need to re-download
+                log.info(f"[{i+1}/{len(done_eps)}] Downloading audio for ep #{ep_num}...")
+                try:
+                    audio_path = download_audio(ep["url"], ep_num)
+                except Exception as e:
+                    log.error(f"  Download failed for ep #{ep_num}: {e}")
+                    continue
+            log.info(f"[{i+1}/{len(done_eps)}] Laughter detection for ep #{ep_num}")
+            try:
+                windows, duration = detect_laughter(client, audio_path, ep_num)
+                save_laughter_frames(ep_num, windows, duration)
+            except Exception as e:
+                log.error(f"  Laughter detection failed for ep #{ep_num}: {e}")
+                continue
+        sync_db_to_railway()
+        return
 
     if args.episode:
         ep = next((e for e in episodes if e["episode_number"] == args.episode), None)
@@ -1047,7 +1440,7 @@ def main():
         return
 
     total_chunks_est = sum(max(1, e["duration_seconds"] // (CHUNK_MINUTES * 60 - OVERLAP_MINUTES * 60) + 1) for e in pending)
-    total_calls_est = total_chunks_est + len(pending)  # chunks + 1 pass2 per episode
+    total_calls_est = total_chunks_est + len(pending) * 2  # chunks + 1 pass2 + 1 laughter per episode
     log.info(f"Processing {len(pending)} episodes (~{total_calls_est} API calls, ~{total_calls_est * API_DELAY_SECONDS // 60} min)")
 
     for i, ep in enumerate(pending):

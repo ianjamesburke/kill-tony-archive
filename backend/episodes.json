@@ -14,7 +14,8 @@
       "url": "https://www.youtube.com/watch?v=h55BVmVQJ-8",
       "video_id": "h55BVmVQJ-8",
       "duration_seconds": 7663,
-      "status": "pending"
+      "status": "error",
+      "error": "ERROR: [youtube] h55BVmVQJ-8: Sign in to confirm your age. This video may be inappropriate for some users. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies"
     },
     {
       "episode_number": 756,
@@ -118,7 +119,8 @@
       "url": "https://www.youtube.com/watch?v=MaXtfCpexqM",
       "video_id": "MaXtfCpexqM",
       "duration_seconds": 8531,
-      "status": "pending"
+      "status": "error",
+      "error": "ERROR: [youtube] MaXtfCpexqM: Sign in to confirm your age. This video may be inappropriate for some users. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies"
     },
     {
       "episode_number": 743,
@@ -126,7 +128,7 @@
       "url": "https://www.youtube.com/watch?v=S-hoyAhR0f0",
       "video_id": "S-hoyAhR0f0",
       "duration_seconds": 7457,
-      "status": "pending"
+      "status": "processing"
     },
     {
       "episode_number": 742,
@@ -142,7 +144,7 @@
       "url": "https://www.youtube.com/watch?v=FAyfhUgUmAQ",
       "video_id": "FAyfhUgUmAQ",
       "duration_seconds": 8235,
-      "status": "pending"
+      "status": "done"
     },
     {
       "episode_number": 740,
@@ -150,7 +152,7 @@
       "url": "https://www.youtube.com/watch?v=QenGLCQyi4A",
       "video_id": "QenGLCQyi4A",
       "duration_seconds": 8325,
-      "status": "pending"
+      "status": "done"
     },
     {
       "episode_number": 739,
@@ -158,7 +160,8 @@
       "url": "https://www.youtube.com/watch?v=QePXRkrAEoE",
       "video_id": "QePXRkrAEoE",
       "duration_seconds": 8080,
-      "status": "pending"
+      "status": "error",
+      "error": "The read operation timed out"
     },
     {
       "episode_number": 738,
@@ -166,7 +169,7 @@
       "url": "https://www.youtube.com/watch?v=i1ucuvfyw0o",
       "video_id": "i1ucuvfyw0o",
       "duration_seconds": 8632,
-      "status": "pending"
+      "status": "done"
     },
     {
       "episode_number": 736,
@@ -174,7 +177,7 @@
       "url": "https://www.youtube.com/watch?v=0DvjvaMG8RQ",
       "video_id": "0DvjvaMG8RQ",
       "duration_seconds": 7682,
-      "status": "pending"
+      "status": "done"
     },
     {
       "episode_number": 735,
@@ -182,7 +185,8 @@
       "url": "https://www.youtube.com/watch?v=u2_AydCiyiU",
       "video_id": "u2_AydCiyiU",
       "duration_seconds": 6721,
-      "status": "pending"
+      "status": "error",
+      "error": "Files.upload() got an unexpected keyword argument 'file'"
     },
     {
       "episode_number": 734,
@@ -190,7 +194,8 @@
       "url": "https://www.youtube.com/watch?v=F0U3VuBrK4Y",
       "video_id": "F0U3VuBrK4Y",
       "duration_seconds": 7268,
-      "status": "pending"
+      "status": "error",
+      "error": "Files.upload() got an unexpected keyword argument 'file'"
     },
     {
       "episode_number": 733,
@@ -198,7 +203,8 @@
       "url": "https://www.youtube.com/watch?v=cqXwoGrebXs",
       "video_id": "cqXwoGrebXs",
       "duration_seconds": 8681,
-      "status": "pending"
+      "status": "error",
+      "error": "Files.upload() got an unexpected keyword argument 'file'"
     },
     {
       "episode_number": 732,
@@ -206,7 +212,8 @@
       "url": "https://www.youtube.com/watch?v=feaZhhJo5Uc",
       "video_id": "feaZhhJo5Uc",
       "duration_seconds": 7908,
-      "status": "pending"
+      "status": "error",
+      "error": "Files.upload() got an unexpected keyword argument 'file'"
     },
     {
       "episode_number": 731,
@@ -214,7 +221,8 @@
       "url": "https://www.youtube.com/watch?v=3jAPUKKW5pE",
       "video_id": "3jAPUKKW5pE",
       "duration_seconds": 7526,
-      "status": "pending"
+      "status": "error",
+      "error": "Files.upload() got an unexpected keyword argument 'file'"
     },
     {
       "episode_number": 730,
@@ -222,7 +230,8 @@
       "url": "https://www.youtube.com/watch?v=7AgDQxUvq6w",
       "video_id": "7AgDQxUvq6w",
       "duration_seconds": 8111,
-      "status": "pending"
+      "status": "error",
+      "error": "ERROR: [youtube] 7AgDQxUvq6w: Sign in to confirm your age. This video may be inappropriate for some users. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies"
     },
     {
       "episode_number": 729,
@@ -230,7 +239,8 @@
       "url": "https://www.youtube.com/watch?v=xINfBBZBa3U",
       "video_id": "xINfBBZBa3U",
       "duration_seconds": 7872,
-      "status": "pending"
+      "status": "error",
+      "error": "Files.upload() got an unexpected keyword argument 'file'"
     },
     {
       "episode_number": 728,
@@ -238,7 +248,8 @@
       "url": "https://www.youtube.com/watch?v=Yd3iQE3io3Y",
       "video_id": "Yd3iQE3io3Y",
       "duration_seconds": 7392,
-      "status": "pending"
+      "status": "error",
+      "error": "Files.upload() got an unexpected keyword argument 'file'"
     },
     {
       "episode_number": 727,
@@ -246,7 +257,8 @@
       "url": "https://www.youtube.com/watch?v=8Y9LGrRKWqo",
       "video_id": "8Y9LGrRKWqo",
       "duration_seconds": 7587,
-      "status": "pending"
+      "status": "error",
+      "error": "Files.upload() got an unexpected keyword argument 'file'"
     },
     {
       "episode_number": 726,
@@ -254,7 +266,8 @@
       "url": "https://www.youtube.com/watch?v=G5aLw1s2w2Y",
       "video_id": "G5aLw1s2w2Y",
       "duration_seconds": 7783,
-      "status": "pending"
+      "status": "error",
+      "error": "Files.upload() got an unexpected keyword argument 'file'"
     },
     {
       "episode_number": 725,
@@ -382,7 +395,8 @@
       "url": "https://www.youtube.com/watch?v=fv9fHeLYa2o",
       "video_id": "fv9fHeLYa2o",
       "duration_seconds": 7110,
-      "status": "pending"
+      "status": "error",
+      "error": "ERROR: [youtube] fv9fHeLYa2o: Sign in to confirm your age. This video may be inappropriate for some users. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies"
     },
     {
       "episode_number": 709,
@@ -3638,7 +3652,7 @@
       "url": "https://www.youtube.com/watch?v=UAORP2SW9I8",
       "video_id": "UAORP2SW9I8",
       "duration_seconds": 4331,
-      "status": "pending"
+      "status": "done"
     },
     {
       "episode_number": 279,

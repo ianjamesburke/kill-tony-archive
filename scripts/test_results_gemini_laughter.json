@@ -1,0 +1,134 @@
+[
+  {
+    "start_seconds": 0.5,
+    "end_seconds": 2.5,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 11.5,
+    "end_seconds": 19.5,
+    "type": "applause",
+    "intensity": "big"
+  },
+  {
+    "start_seconds": 26.0,
+    "end_seconds": 30.0,
+    "type": "laughter",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 32.5,
+    "end_seconds": 35.0,
+    "type": "laughter",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 39.0,
+    "end_seconds": 44.0,
+    "type": "laughter",
+    "intensity": "big"
+  },
+  {
+    "start_seconds": 52.5,
+    "end_seconds": 58.5,
+    "type": "laughter",
+    "intensity": "big"
+  },
+  {
+    "start_seconds": 104.5,
+    "end_seconds": 113.5,
+    "type": "laughter",
+    "intensity": "big"
+  },
+  {
+    "start_seconds": 119.5,
+    "end_seconds": 128.0,
+    "type": "laughter",
+    "intensity": "roaring"
+  },
+  {
+    "start_seconds": 150.0,
+    "end_seconds": 153.5,
+    "type": "laughter",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 206.0,
+    "end_seconds": 209.5,
+    "type": "cheering",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 228.0,
+    "end_seconds": 235.0,
+    "type": "applause",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 242.0,
+    "end_seconds": 246.5,
+    "type": "laughter",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 308.0,
+    "end_seconds": 312.5,
+    "type": "laughter",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 323.5,
+    "end_seconds": 330.5,
+    "type": "laughter",
+    "intensity": "big"
+  },
+  {
+    "start_seconds": 400.0,
+    "end_seconds": 404.0,
+    "type": "laughter",
+    "intensity": "light"
+  },
+  {
+    "start_seconds": 416.5,
+    "end_seconds": 420.5,
+    "type": "laughter",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 423.0,
+    "end_seconds": 429.5,
+    "type": "laughter",
+    "intensity": "big"
+  },
+  {
+    "start_seconds": 433.0,
+    "end_seconds": 441.5,
+    "type": "laughter",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 509.5,
+    "end_seconds": 516.5,
+    "type": "laughter",
+    "intensity": "big"
+  },
+  {
+    "start_seconds": 521.0,
+    "end_seconds": 525.0,
+    "type": "cheering",
+    "intensity": "moderate"
+  },
+  {
+    "start_seconds": 537.5,
+    "end_seconds": 550.0,
+    "type": "applause",
+    "intensity": "big"
+  },
+  {
+    "start_seconds": 553.0,
+    "end_seconds": 606.0,
+    "type": "applause",
+    "intensity": "big"
+  }
+]

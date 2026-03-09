@@ -1,0 +1,662 @@
+[
+  {
+    "start_seconds": 0.0,
+    "end_seconds": 1.5,
+    "speaker": "tony",
+    "text": "Anything can happen."
+  },
+  {
+    "start_seconds": 1.5,
+    "end_seconds": 4.0,
+    "speaker": "tony",
+    "text": "Your next comedian goes by the name of Nicholas Sapaglia."
+  },
+  {
+    "start_seconds": 4.0,
+    "end_seconds": 6.5,
+    "speaker": "crowd",
+    "text": "[applause] [cheering]"
+  },
+  {
+    "start_seconds": 6.5,
+    "end_seconds": 8.0,
+    "speaker": "tony",
+    "text": "Nicholas Sapaglia."
+  },
+  {
+    "start_seconds": 8.0,
+    "end_seconds": 12.0,
+    "speaker": "band",
+    "text": "[music]"
+  },
+  {
+    "start_seconds": 12.0,
+    "end_seconds": 13.5,
+    "speaker": "tony",
+    "text": "Here he comes. One more time for Nicholas everybody."
+  },
+  {
+    "start_seconds": 13.5,
+    "end_seconds": 19.5,
+    "speaker": "crowd",
+    "text": "[applause] [cheering]"
+  },
+  {
+    "start_seconds": 22.0,
+    "end_seconds": 24.0,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "I want to open up a gay coffee shop."
+  },
+  {
+    "start_seconds": 24.0,
+    "end_seconds": 26.5,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "I'm gonna call it a gay cafe 'Hey!'"
+  },
+  {
+    "start_seconds": 26.5,
+    "end_seconds": 29.5,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 30.0,
+    "end_seconds": 31.5,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "Come on down and try our lattes."
+  },
+  {
+    "start_seconds": 31.5,
+    "end_seconds": 34.0,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 34.0,
+    "end_seconds": 36.5,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "Our best seller is Big Black Coffee."
+  },
+  {
+    "start_seconds": 36.5,
+    "end_seconds": 43.0,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 44.0,
+    "end_seconds": 50.0,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "My friends make fun of me because I like to go to gay bars, but they don't get it, that regular bars don't have what I like,"
+  },
+  {
+    "start_seconds": 50.0,
+    "end_seconds": 51.5,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "Which is free drinks and compliments."
+  },
+  {
+    "start_seconds": 51.5,
+    "end_seconds": 58.5,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 59.0,
+    "end_seconds": 103.5,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "I like to test out all my new jokes in gay bars too, because I'm more likely to test positively."
+  },
+  {
+    "start_seconds": 104.0,
+    "end_seconds": 113.5,
+    "speaker": "crowd",
+    "text": "[laughter] [applause]"
+  },
+  {
+    "start_seconds": 114.0,
+    "end_seconds": 116.5,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "I think palm readers are full of shit,"
+  },
+  {
+    "start_seconds": 116.5,
+    "end_seconds": 120.0,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "Because I jack off before I get my palm read every time and they never see it coming."
+  },
+  {
+    "start_seconds": 120.5,
+    "end_seconds": 127.5,
+    "speaker": "crowd",
+    "text": "[laughter] [cheering] [applause]"
+  },
+  {
+    "start_seconds": 127.5,
+    "end_seconds": 128.5,
+    "speaker": "tony",
+    "text": "Wow. I mean that's how it's done sir."
+  },
+  {
+    "start_seconds": 128.5,
+    "end_seconds": 133.5,
+    "speaker": "tony",
+    "text": "Indeed, welcome to Kill Tony, that is Nicholas Sapaglia. Am I saying that correctly?"
+  },
+  {
+    "start_seconds": 133.5,
+    "end_seconds": 136.0,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "Absolutely. First person in Austin to get it right the first time."
+  },
+  {
+    "start_seconds": 136.0,
+    "structure": "tony",
+    "speaker": "tony",
+    "text": "I love it. Absolutely, writers guild over a decade, it's incredible how smart I am."
+  },
+  {
+    "start_seconds": 140.5,
+    "end_seconds": 141.5,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 141.5,
+    "end_seconds": 142.5,
+    "speaker": "tony",
+    "text": "With words and shit."
+  },
+  {
+    "start_seconds": 142.5,
+    "end_seconds": 143.5,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 143.5,
+    "end_seconds": 145.5,
+    "speaker": "tony",
+    "text": "Major life choices not so much. Anyway."
+  },
+  {
+    "start_seconds": 146.0,
+    "end_seconds": 151.5,
+    "speaker": "tony",
+    "text": "Sapaglia. Very Italian. You look like a hipster Mario or something like that."
+  },
+  {
+    "start_seconds": 151.5,
+    "end_seconds": 153.5,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 153.5,
+    "end_seconds": 154.5,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "Thanks."
+  },
+  {
+    "start_seconds": 154.5,
+    "end_seconds": 156.0,
+    "speaker": "tony",
+    "text": "What do you do for work Nicholas?"
+  },
+  {
+    "start_seconds": 156.0,
+    "end_seconds": 200.5,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "Um, I'm not working right now, I just moved here about six weeks ago so I'm just kind of feeling out the city."
+  },
+  {
+    "start_seconds": 200.5,
+    "end_seconds": 201.5,
+    "speaker": "tony",
+    "text": "From where?"
+  },
+  {
+    "start_seconds": 201.5,
+    "end_seconds": 202.5,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "From Fresno, California."
+  },
+  {
+    "start_seconds": 202.5,
+    "end_seconds": 203.5,
+    "speaker": "tony",
+    "text": "Whoa! Fresno. Okay."
+  },
+  {
+    "start_seconds": 203.5,
+    "end_seconds": 207.5,
+    "speaker": "crowd",
+    "text": "[applause]"
+  },
+  {
+    "start_seconds": 207.5,
+    "end_seconds": 209.5,
+    "speaker": "tony",
+    "text": "That's a big deal. Welcome to Austin. What made you move here?"
+  },
+  {
+    "start_seconds": 209.5,
+    "end_seconds": 219.0,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "Um, just over Covid I was able to save up enough money to like take some time off from work and, you know, go try something else I'd never left Fresno before so I moved out here and give comedy a full time shot."
+  },
+  {
+    "start_seconds": 219.0,
+    "end_seconds": 220.0,
+    "speaker": "tony",
+    "text": "How old are you?"
+  },
+  {
+    "start_seconds": 220.0,
+    "end_seconds": 221.0,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "I'm 34."
+  },
+  {
+    "start_seconds": 221.0,
+    "end_seconds": 223.0,
+    "speaker": "tony",
+    "text": "34. Fucking perfect. And how long you been doing stand-up?"
+  },
+  {
+    "start_seconds": 223.0,
+    "end_seconds": 224.5,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "Seven years."
+  },
+  {
+    "start_seconds": 224.5,
+    "end_seconds": 226.5,
+    "speaker": "tony",
+    "text": "Seven years. Absolutely, seems like it."
+  },
+  {
+    "start_seconds": 226.5,
+    "end_seconds": 232.0,
+    "speaker": "crowd",
+    "text": "[applause] [cheering]"
+  },
+  {
+    "start_seconds": 232.0,
+    "end_seconds": 236.0,
+    "speaker": "tony",
+    "text": "For sure. That's great. I love that. So you've been here six weeks, what do you love about Austin so far?"
+  },
+  {
+    "start_seconds": 236.5,
+    "end_seconds": 242.0,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "It's pretty cool I like it. It honestly seems like a less disgusting San Francisco."
+  },
+  {
+    "start_seconds": 242.0,
+    "end_seconds": 243.0,
+    "speaker": "tony",
+    "text": "Right."
+  },
+  {
+    "start_seconds": 243.0,
+    "end_seconds": 244.5,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 244.5,
+    "end_seconds": 245.5,
+    "speaker": "tony",
+    "text": "Yeah, for sure. San Fran-doo."
+  },
+  {
+    "start_seconds": 245.5,
+    "end_seconds": 256.0,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "It's nice being able to go up to, you know, many mics a night because in Fresno there's like three a week and one once a night, you know, so I've just been doing it like that part time for the last seven years, you know."
+  },
+  {
+    "start_seconds": 256.0,
+    "end_seconds": 259.0,
+    "speaker": "tony",
+    "text": "Has anybody been racist to you or anything like that since you've been here?"
+  },
+  {
+    "start_seconds": 259.0,
+    "end_seconds": 260.0,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "No, not really."
+  },
+  {
+    "start_seconds": 260.0,
+    "end_seconds": 304.0,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "I've seen a lot of it but not towards me."
+  },
+  {
+    "start_seconds": 304.0,
+    "end_seconds": 305.5,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 305.5,
+    "end_seconds": 312.0,
+    "speaker": "tony",
+    "text": "There's a very anti-Italian thing going on here in Austin. I don't know if you guys know about it. Yeah, it's very real. I have to deal with it all the time, people bullying me and uh whatnot."
+  },
+  {
+    "start_seconds": 312.0,
+    "end_seconds": 313.5,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 313.5,
+    "end_seconds": 316.0,
+    "speaker": "tony",
+    "text": "So, Sapaglia. How Italian are your parents?"
+  },
+  {
+    "start_seconds": 316.0,
+    "end_seconds": 319.5,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "Um, I'm Italian on my dad's side, I'm Italian and German."
+  },
+  {
+    "start_seconds": 319.5,
+    "end_seconds": 322.0,
+    "speaker": "tony",
+    "text": "Oh, okay. Fucking Axis powers over here. All right."
+  },
+  {
+    "start_seconds": 322.5,
+    "end_seconds": 328.0,
+    "speaker": "crowd",
+    "text": "[laughter] [applause]"
+  },
+  {
+    "start_seconds": 328.5,
+    "end_seconds": 332.5,
+    "speaker": "tony",
+    "text": "Jesus Christ. Oh my god. What happens when you like run into a Jewish person? You just fucking like kick them in the shins or something like that?"
+  },
+  {
+    "start_seconds": 332.5,
+    "end_seconds": 334.5,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 334.5,
+    "end_seconds": 335.5,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "No, no, of course not."
+  },
+  {
+    "start_seconds": 335.5,
+    "end_seconds": 342.5,
+    "speaker": "tony",
+    "text": "Italian German... Ryan don't look at me that way. Oh he's drawing me, okay. I love it. Um, so close with your family? Brother, sisters? What's interesting about your life? What would we be surprised to know about you?"
+  },
+  {
+    "start_seconds": 342.5,
+    "end_seconds": 346.5,
+    "speaker": "tony",
+    "text": "Seems like you have a trophy for something, like you must be good at something."
+  },
+  {
+    "start_seconds": 346.5,
+    "end_seconds": 347.5,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "I mean I'm good at good at comedy."
+  },
+  {
+    "start_seconds": 347.5,
+    "end_seconds": 349.0,
+    "speaker": "tony",
+    "text": "Yeah, I know. I know. I knew you were going to say that."
+  },
+  {
+    "start_seconds": 349.5,
+    "end_seconds": 358.5,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "Um, I don't know, something weird, interesting that not a lot of people know is when I was 22 I worked for a mortuary company."
+  },
+  {
+    "start_seconds": 358.5,
+    "end_seconds": 400.0,
+    "speaker": "tony",
+    "text": "Ooh, okay."
+  },
+  {
+    "start_seconds": 400.0,
+    "end_seconds": 407.5,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "My job title was coroner transport, so I was in charge of going to the crime scenes or the place where people die and pick them up, put them in bags and take them to the morgue."
+  },
+  {
+    "start_seconds": 407.5,
+    "end_seconds": 409.5,
+    "speaker": "tony",
+    "text": "Wow, so you're like fucking death Uber."
+  },
+  {
+    "start_seconds": 409.5,
+    "end_seconds": 412.5,
+    "speaker": "crowd",
+    "text": "[laughter] [applause]"
+  },
+  {
+    "start_seconds": 412.5,
+    "end_seconds": 415.5,
+    "speaker": "tony",
+    "text": "Damn that's fucking incredible. One of the corpses ever ask from the back to suck your dick?"
+  },
+  {
+    "start_seconds": 415.5,
+    "end_seconds": 421.5,
+    "speaker": "crowd",
+    "text": "[laughter] [groaning]"
+  },
+  {
+    "start_seconds": 421.5,
+    "end_seconds": 422.5,
+    "speaker": "tony",
+    "text": "What do you want, what do you want? I'll do anything!"
+  },
+  {
+    "start_seconds": 422.5,
+    "end_seconds": 426.0,
+    "speaker": "redban",
+    "text": "Yeah, or or was there ever like a hot chick and you're like holy shit, look at her tits, you'd like unzip it a few times?"
+  },
+  {
+    "start_seconds": 426.0,
+    "end_seconds": 427.5,
+    "speaker": "tony",
+    "text": "Redban that's enough. All right."
+  },
+  {
+    "start_seconds": 427.5,
+    "end_seconds": 428.5,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 428.5,
+    "end_seconds": 434.5,
+    "speaker": "tony",
+    "text": "We all know where you're going, you don't have to keep going. You unzip the bag and then throw some hands in there and then start licking stuff and uh kissing all around and uh..."
+  },
+  {
+    "start_seconds": 434.5,
+    "end_seconds": 436.0,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  },
+  {
+    "start_seconds": 436.0,
+    "end_seconds": 437.0,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "But the answer's no to that question."
+  },
+  {
+    "start_seconds": 437.0,
+    "end_seconds": 443.5,
+    "speaker": "tony",
+    "text": "Right, we know Nicholas, we know, you're a good boy. But there is a little mortuary in this look, there is a little fucking... I could see you like answering the door at a mortuary or something like that."
+  },
+  {
+    "start_seconds": 443.5,
+    "end_seconds": 445.0,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "Probably, yeah."
+  },
+  {
+    "start_seconds": 445.0,
+    "end_seconds": 446.0,
+    "speaker": "tony",
+    "text": "Hell yeah. I love it. What do you like to do for fun?"
+  },
+  {
+    "start_seconds": 446.0,
+    "end_seconds": 449.0,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "Um, I like to go hiking and hang out with my friends and paint."
+  },
+  {
+    "start_seconds": 449.0,
+    "end_seconds": 452.5,
+    "speaker": "tony",
+    "text": "Okay. What do you and your friends do? You guys ever get wild? What's like something fun that you guys do?"
+  },
+  {
+    "start_seconds": 452.5,
+    "end_seconds": 500.5,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "Um, we go to like concerts or music festivals, um just hanging out around the house, smoke pot, watch some funny movies, you know."
+  },
+  {
+    "start_seconds": 500.5,
+    "end_seconds": 501.5,
+    "speaker": "redban",
+    "text": "Fuck dead bodies."
+  },
+  {
+    "start_seconds": 501.5,
+    "end_seconds": 504.0,
+    "speaker": "crowd",
+    "text": "[laughter] [groaning]"
+  },
+  {
+    "start_seconds": 504.0,
+    "end_seconds": 512.5,
+    "speaker": "tony",
+    "text": "All right. I love it. Well Nicholas, you're a fine fine comedian. Seven years in the game, just moved here to Austin, Texas."
+  },
+  {
+    "start_seconds": 512.5,
+    "end_seconds": 517.0,
+    "speaker": "crowd",
+    "text": "[applause] [cheering]"
+  },
+  {
+    "start_seconds": 517.0,
+    "end_seconds": 523.5,
+    "speaker": "tony",
+    "text": "Uh, I mean you're you're in position for uh for greatness. It must make you feel good to be the fuck out of Fresno."
+  },
+  {
+    "start_seconds": 523.5,
+    "end_seconds": 525.5,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "Yeah, it's nice, yeah."
+  },
+  {
+    "start_seconds": 525.5,
+    "end_seconds": 527.5,
+    "speaker": "tony",
+    "text": "What's the longest set you've ever done?"
+  },
+  {
+    "start_seconds": 527.5,
+    "end_seconds": 528.5,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "Like 25 minutes."
+  },
+  {
+    "start_seconds": 528.5,
+    "end_seconds": 532.0,
+    "speaker": "tony",
+    "text": "I'd love to have you on the Secret Show Thursday. There you go."
+  },
+  {
+    "start_seconds": 532.0,
+    "end_seconds": 534.5,
+    "speaker": "crowd",
+    "text": "[applause] [cheering]"
+  },
+  {
+    "start_seconds": 534.5,
+    "end_seconds": 536.0,
+    "speaker": "tony",
+    "text": "There it is! He just got booked!"
+  },
+  {
+    "start_seconds": 536.0,
+    "end_seconds": 537.0,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "Perfect, fuck yeah, cool."
+  },
+  {
+    "start_seconds": 537.0,
+    "end_seconds": 542.0,
+    "speaker": "tony",
+    "text": "And you have one of these coming at you from the great Bonsai, a real handmade fucking Texas leather book."
+  },
+  {
+    "start_seconds": 542.0,
+    "end_seconds": 543.0,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "Awesome, thank you."
+  },
+  {
+    "start_seconds": 543.0,
+    "end_seconds": 547.0,
+    "speaker": "tony",
+    "text": "Welcome to town my friend. I think you're in the exact right place."
+  },
+  {
+    "start_seconds": 547.0,
+    "end_seconds": 548.5,
+    "speaker": "comedian:nicholas sapaglia",
+    "text": "Fuck yeah, thank you, appreciate it."
+  },
+  {
+    "start_seconds": 548.5,
+    "end_seconds": 552.0,
+    "speaker": "tony",
+    "text": "One more time for Nicholas Sapaglia."
+  },
+  {
+    "start_seconds": 552.0,
+    "end_seconds": 558.5,
+    "speaker": "crowd",
+    "text": "[applause] [cheering]"
+  },
+  {
+    "start_seconds": 558.5,
+    "end_seconds": 601.5,
+    "speaker": "tony",
+    "text": "Fuck yeah. Wow. Look at that. Every once in a great while, somebody's actually good at this. It's pretty wild."
+  },
+  {
+    "start_seconds": 601.5,
+    "end_seconds": 603.5,
+    "speaker": "crowd",
+    "text": "[laughter]"
+  }
+]

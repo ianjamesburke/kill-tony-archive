@@ -114,6 +114,15 @@ install-frontend:
 install-pipeline:
     cd backend && .venv/bin/pip install -r requirements-pipeline.txt
 
+# Create and activate Python venv, install backend deps
+venv:
+    python3 -m venv backend/.venv
+    backend/.venv/bin/pip install -r backend/requirements.txt
+
+# Activate Python venv
+activate:
+    source backend/.venv/bin/activate
+
 # ── Misc ──────────────────────────────────────────────────────────────────────
 
 # Check DB row counts
