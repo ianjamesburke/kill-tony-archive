@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#09090b"/>
+  <!-- Ticket body -->
+  <rect x="2" y="9" width="28" height="14" rx="2" fill="#e63946"/>
+  <!-- Left notch -->
+  <circle cx="2" cy="16" r="3" fill="#09090b"/>
+  <!-- Right notch -->
+  <circle cx="30" cy="16" r="3" fill="#09090b"/>
+  <!-- KTA: render as layered text — K in dark red, TA in white, both centered -->
+  <text x="15" y="16" text-anchor="middle" dominant-baseline="central"
+        font-family="'Arial Black', Arial, sans-serif" font-weight="900" font-size="8">
+    <tspan fill="#7a0d14">K</tspan><tspan fill="#fafafa" dx="0.5">TA</tspan>
+  </text>
+</svg>
