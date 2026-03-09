@@ -4,6 +4,18 @@
 
 ---
 
+## 2026-03-09 — Railway deployment: GitHub CI, RAILPACK, monorepo config
+
+Re-linked both services to GitHub (`ianjamesburke/kill-tony-archive`) after repo refactor disconnected them. Configured as an isolated monorepo with `rootDirectory` per service (`/backend`, `/frontend`). Key changes:
+
+- **Builder**: Migrated from NIXPACKS (deprecated) to RAILPACK for both services
+- **Watch patterns**: `backend/**` and `frontend/**` — prevents cross-service redeploys on unrelated changes
+- **Auto-deploy**: Push to `main` triggers deploy for affected services only
+- **Node version**: Replaced `NIXPACKS_NODE_VERSION` env var with `RAILPACK_NODE_VERSION=24`
+- **No config files**: All deployment config lives in Railway service settings (via CLI/API), not in-repo `railway.json` files — cleaner, no drift between config file and dashboard
+
+---
+
 ## 2026-03-09 — Split models for pipeline, daily processor cron job
 
 Split the single `MODEL` constant into `PASS1_MODEL` (gemini-2.5-flash) and `PASS2_MODEL` (gemini-3.1-flash-lite-preview). Testing showed 2.5-flash produces 4x more granular transcripts for Pass 1 (audio), while flash-lite is adequate for Pass 2 (text-only set extraction) and laughter detection. This avoids burning all the 2.5-flash free tier quota (250 RPD) on cheap text tasks that flash-lite (1000 RPD) handles fine.
