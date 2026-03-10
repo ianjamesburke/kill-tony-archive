@@ -57,10 +57,10 @@ def get_next_api_key() -> str:
     _current_key_idx += 1
     return key
 
-PASS1_MODEL = "gemini-2.5-flash"            # audio transcription (4x more granular than flash-3)
-PASS2_MODEL = "gemini-3.1-flash-lite-preview"  # text-only set extraction (1000 RPD free tier)
+PASS1_MODEL = "gemini-3.1-flash-lite-preview"  # audio transcription (500 RPD free tier per key)
+PASS2_MODEL = "gemini-3.1-flash-lite-preview"  # text-only set extraction (500 RPD free tier)
 GUEST_MODEL = "gemini-3.1-flash-lite-preview"  # cheap model for title parsing
-LAUGHTER_MODEL = "gemini-3.1-flash-lite-preview"  # chunked laughter detection (1000 RPD free tier)
+LAUGHTER_MODEL = "gemini-3.1-flash-lite-preview"  # chunked laughter detection (500 RPD free tier)
 LAUGHTER_WINDOW_SIZE = 1  # per-second resolution for event-based detection
 PIPELINE_VERSION = 2  # bump when pipeline changes warrant reprocessing (v1=5s windows, v2=events)
 CHUNK_MINUTES = 20
