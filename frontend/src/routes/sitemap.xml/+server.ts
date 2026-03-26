@@ -32,7 +32,7 @@ export const GET: RequestHandler = async () => {
 		lastmod: ep.date ? formatDate(ep.date) : undefined
 	}));
 
-	const guestPages = guestsData.guests.map((guest) => ({
+	const guestPages: SitemapEntry[] = guestsData.guests.map((guest) => ({
 		loc: `/guests/${encodeURIComponent(guest.guest_name)}`,
 		priority: '0.6',
 		changefreq: 'weekly'

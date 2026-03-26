@@ -8,8 +8,6 @@
 	import { fetchSets } from '$lib/api';
 	import { goto } from '$app/navigation';
 
-	import { page } from '$app/state';
-
 	let { data }: { data: PageData } = $props();
 
 	const pageTitle = 'Kill Tony Archive — Every 1-minute set scored and analyzed';
