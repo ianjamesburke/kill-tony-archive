@@ -5,6 +5,10 @@
 
 	let { data }: { data: PageData } = $props();
 
+	const pageTitle = $derived(`All Kill Tony Episodes — ${data.episodes.length} episodes analyzed`);
+	const pageDescription = $derived(`Browse all ${data.episodes.length} Kill Tony episodes with kill scores, set counts, and laughter analysis. Find the best and worst episodes of all time.`);
+	const canonicalUrl = 'https://killtonyarchive.com/episodes';
+
 	type TimePeriod = 'all' | 'year' | '30d' | 'last_ep';
 	const periodLabels: Record<TimePeriod, string> = {
 		all: 'All Time',
@@ -101,7 +105,15 @@
 </script>
 
 <svelte:head>
-	<title>Episodes | Kill Tony Archive</title>
+	<title>{pageTitle}</title>
+	<meta name="description" content={pageDescription}>
+	<link rel="canonical" href={canonicalUrl}>
+	<meta property="og:title" content={pageTitle}>
+	<meta property="og:description" content={pageDescription}>
+	<meta property="og:type" content="website">
+	<meta property="og:url" content={canonicalUrl}>
+	<meta name="twitter:title" content={pageTitle}>
+	<meta name="twitter:description" content={pageDescription}>
 </svelte:head>
 
 <!-- KILL SCORE DISTRIBUTION -->

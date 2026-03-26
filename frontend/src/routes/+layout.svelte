@@ -13,6 +13,8 @@
 
 <svelte:head>
 	<title>Kill Tony Archive</title>
+	<meta property="og:site_name" content="Kill Tony Archive">
+	<meta name="twitter:card" content="summary_large_image">
 </svelte:head>
 
 <!-- TODO: Bring back the live bar once all episodes have been indexed -->

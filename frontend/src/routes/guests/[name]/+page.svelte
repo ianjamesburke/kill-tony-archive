@@ -4,6 +4,10 @@
 	let { data }: { data: PageData } = $props();
 
 	const g = $derived(data.guest);
+	const pageTitle = $derived(`${g.guest_name} on Kill Tony — appearances and scores`);
+	const pageDescription = $derived(`${g.guest_name} has appeared on ${g.episode_count} Kill Tony episode${g.episode_count !== 1 ? 's' : ''} with an avg Kill Score of ${g.avg_kill_score ?? 'N/A'}. See all appearances and performance stats.`);
+	const canonicalUrl = $derived(`https://killtonyarchive.com/guests/${encodeURIComponent(g.guest_name)}`);
+
 	const lift = $derived(
 		g.avg_kill_score != null ? +(g.avg_kill_score - g.baseline_avg).toFixed(1) : null
 	);
@@ -38,7 +42,15 @@
 </script>
 
 <svelte:head>
-	<title>{g.guest_name} | Kill Tony Archive</title>
+	<title>{pageTitle}</title>
+	<meta name="description" content={pageDescription}>
+	<link rel="canonical" href={canonicalUrl}>
+	<meta property="og:title" content={pageTitle}>
+	<meta property="og:description" content={pageDescription}>
+	<meta property="og:type" content="website">
+	<meta property="og:url" content={canonicalUrl}>
+	<meta name="twitter:title" content={pageTitle}>
+	<meta name="twitter:description" content={pageDescription}>
 </svelte:head>
 
 <div class="guest-hero">

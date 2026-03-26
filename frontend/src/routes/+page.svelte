@@ -8,7 +8,13 @@
 	import { fetchSets } from '$lib/api';
 	import { goto } from '$app/navigation';
 
+	import { page } from '$app/state';
+
 	let { data }: { data: PageData } = $props();
+
+	const pageTitle = 'Kill Tony Archive — Every 1-minute set scored and analyzed';
+	const pageDescription = `Browse ${data.stats.episode_count} episodes, ${data.stats.set_count} transcribed sets, and ${data.stats.comedian_count} comedians. Every Kill Tony 1-minute set scored by Kill Score.`;
+	const canonicalUrl = 'https://killtonyarchive.com';
 
 	type TimePeriod = 'all' | 'year' | '30d' | 'last_ep';
 	const periodLabels: Record<TimePeriod, string> = {
@@ -81,6 +87,18 @@
 		return n.toLocaleString();
 	}
 </script>
+
+<svelte:head>
+	<title>{pageTitle}</title>
+	<meta name="description" content={pageDescription}>
+	<link rel="canonical" href={canonicalUrl}>
+	<meta property="og:title" content={pageTitle}>
+	<meta property="og:description" content={pageDescription}>
+	<meta property="og:type" content="website">
+	<meta property="og:url" content={canonicalUrl}>
+	<meta name="twitter:title" content={pageTitle}>
+	<meta name="twitter:description" content={pageDescription}>
+</svelte:head>
 
 <!-- HERO -->
 <div class="hero">

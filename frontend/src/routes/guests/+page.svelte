@@ -4,10 +4,21 @@
 
 	let { data }: { data: PageData } = $props();
 
+	const pageTitle = 'Kill Tony Guest Rankings — top guests by Kill Score';
+	const pageDescription = $derived(`Explore ${data.guests.length} Kill Tony guest rankings. See which guests boost episode scores the most, with impact analysis and appearance history.`);
+	const canonicalUrl = 'https://killtonyarchive.com/guests';
 </script>
 
 <svelte:head>
-	<title>Guests | Kill Tony Archive</title>
+	<title>{pageTitle}</title>
+	<meta name="description" content={pageDescription}>
+	<link rel="canonical" href={canonicalUrl}>
+	<meta property="og:title" content={pageTitle}>
+	<meta property="og:description" content={pageDescription}>
+	<meta property="og:type" content="website">
+	<meta property="og:url" content={canonicalUrl}>
+	<meta name="twitter:title" content={pageTitle}>
+	<meta name="twitter:description" content={pageDescription}>
 </svelte:head>
 
 <!-- GUEST IMPACT VISUALIZATION -->

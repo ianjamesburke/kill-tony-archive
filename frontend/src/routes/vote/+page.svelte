@@ -1,3 +1,15 @@
+<svelte:head>
+	<title>Vote — Best Kill Tony Set of All Time</title>
+	<meta name="description" content="Vote head-to-head on the best Kill Tony 1-minute sets of all time. Elo-ranked crowd voting to find the ultimate minute.">
+	<link rel="canonical" href="https://killtonyarchive.com/vote">
+	<meta property="og:title" content="Vote — Best Kill Tony Set of All Time">
+	<meta property="og:description" content="Vote head-to-head on the best Kill Tony 1-minute sets of all time. Elo-ranked crowd voting to find the ultimate minute.">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://killtonyarchive.com/vote">
+	<meta name="twitter:title" content="Vote — Best Kill Tony Set of All Time">
+	<meta name="twitter:description" content="Vote head-to-head on the best Kill Tony 1-minute sets of all time. Elo-ranked crowd voting to find the ultimate minute.">
+</svelte:head>
+
 <div class="coming-soon">
 	<div class="cs-badge">Coming Soon</div>
 	<h1 class="cs-title">Head-to-Head</h1>
