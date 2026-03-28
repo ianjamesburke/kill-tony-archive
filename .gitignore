@@ -57,3 +57,6 @@ __pycache__/
 *.mp3
 *.webm
 *.wav
+
+# OpenClaw project context
+.openclaw.md

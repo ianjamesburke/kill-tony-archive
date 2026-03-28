@@ -1,0 +1,383 @@
+{
+  "episode": {
+    "episode_number": 716,
+    "guests": [
+      "Chris O'Connor",
+      "Tim Butterly"
+    ],
+    "venue": "Comedy Mothership"
+  },
+  "sets": [
+    {
+      "set_number": 1,
+      "comedian_name": "Hans Kim",
+      "status": "regular",
+      "set_transcript": "I am Hans Kim, that's my and uh I am Asian, or as I'm known in Texas, I'm Chinese. So there will be a 145% tariff added to your bill tonight. Take a good look at this shirt, you're going to have to make it soon. Love seeing Trump do optional side quests for no reason. It's like watching a cat play Oregon Trail. Trying to get a mineral deal out of Ukraine. What is this guy, Cam Patterson? I'm not retarded, but I want your rocks. I blame the Democrats. Why would you send a woman out against Trump? This guy grabs women by the pussy. It's got a finishing move. He's two and 0 against women right now. He's the best transgender athlete we have.",
+      "set_start_seconds": 267.0,
+      "set_end_seconds": 331.0,
+      "topic_tags": [
+        "politics",
+        "race",
+        "sex",
+        "current_events"
+      ],
+      "crowd_reaction": "big_laughs",
+      "tony_praise_level": 4,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "Hans discusses his domesticated life, including having a stroller for his two cats. He mentions hanging out with Heath Cortez recently.",
+      "disclosed_age": null,
+      "disclosed_occupation": null,
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "girlfriend",
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Has a cat stroller for his two cats",
+        "Put a drunk Heath Cortez in a driverless Waymo"
+      ]
+    },
+    {
+      "set_number": 2,
+      "comedian_name": "Poncho",
+      "status": "bucket_pull",
+      "set_transcript": "If you're going to cheat on me, cheat on me with a lesbian. That way I know you really never got penetrated by a big, veiny real dick. Y'all were just playing with dildos and licking each other.",
+      "set_start_seconds": 703.0,
+      "set_end_seconds": 724.0,
+      "topic_tags": [
+        "relationships",
+        "sex",
+        "self_deprecation"
+      ],
+      "crowd_reaction": "silence",
+      "tony_praise_level": 1,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "small",
+      "interview_summary": "Poncho tries to end his set early after only 20 seconds. He claims to have performed for Tony previously in Ontario or Brea.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Valet",
+      "disclosed_location": "Long Beach",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": 3,
+      "fun_facts": [
+        "Tries to quit his set after 20 seconds",
+        "Left the stage while giving the crowd double birds",
+        "Joyrides in customer's Lamborghinis at his valet job"
+      ]
+    },
+    {
+      "set_number": 3,
+      "comedian_name": "Josh Gideon",
+      "status": "bucket_pull",
+      "set_transcript": "Have y'all ever broke your straw while trying to open it? And it ruins your drinking experience? Do you think babies feel the same way when sipping on pierced nipples? Is that the Cause they got to take the piercing out right? And when they do, you think it comes out in three like a Bellagio fountain? That logic. I don't know. A little bit about myself, I am half Haitian. And y'all heard what Trump said, how we eat pets. I'm also half Korean. So I guess you could say I really got that dog in me, you know? Who knew a Haitian dad and a Korean mom would make a beige wine punch guy? I'm over here looking like a crouching tiger hidden nigger. Fuck it. All right that's my time appreciate you.",
+      "set_start_seconds": 950.0,
+      "set_end_seconds": 1005.0,
+      "topic_tags": [
+        "race",
+        "observational",
+        "politics"
+      ],
+      "crowd_reaction": "moderate",
+      "tony_praise_level": 3,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "Josh describes his mixed Haitian and Korean heritage. He recently moved to San Antonio from Virginia after serving in the Air Force.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Foot Locker employee",
+      "disclosed_location": "San Antonio",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": 3,
+      "fun_facts": [
+        "Was a painter of F-22 airplanes in the Air Force",
+        "Says he hasn't been on a date since high school"
+      ]
+    },
+    {
+      "set_number": 4,
+      "comedian_name": "Jordan Pablo",
+      "status": "bucket_pull",
+      "set_transcript": "Hello guys. I couldn't tell my ex-girlfriend what I was into in the bedroom. Cuz then none of her friends would wear open toe shoes around me. I uh I've been in the the closet for a long time about my foot fetish, cuz I was smelling all the shoes. Yeah, uh, I don't know what you guys are trying to do when you meet the right lady. I'm just trying to get off on the right foot. I don't know. Even when I get with a girl, I don't even know what the fuck to do. I was with this girl the other day, she's like, choke me, choke me. I'm like, is it that bad? She's like, no, I've been bad. I was like, no, you were great. Thank you guys.",
+      "set_start_seconds": 1296.0,
+      "set_end_seconds": 1333.0,
+      "topic_tags": [
+        "sex",
+        "relationships",
+        "self_deprecation"
+      ],
+      "crowd_reaction": "light",
+      "tony_praise_level": 3,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "small",
+      "interview_summary": "Jordan moved to Austin a week ago and is doing Door Dash. He admits to a foot fetish and says his parents own a cattle ranch in Mexico.",
+      "disclosed_age": 25,
+      "disclosed_occupation": "Door Dash driver",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": 5,
+      "fun_facts": [
+        "His parents own cattle in Mexico",
+        "Admits to being obsessed with feet and looking at foot pictures on Instagram"
+      ]
+    },
+    {
+      "set_number": 5,
+      "comedian_name": "Audrey Scott",
+      "status": "bucket_pull",
+      "set_transcript": "I'm very good at Spanish. Hola. But I can't roll my Rs. Unless I'm saying the N-word. And I was like, 'Oh my god, you roll your Rs!' I I I want to be honest with y'all, I I don't like child porn. So funny about that you freak. Right, because every time I watch it, right? Every time I shove that flash drive right into my fucking PC to watch my CP. Acting's too immature. Kids are always like, 'Oh, where am I?' I'm hungry. Grow up. It's show business, baby. How the fuck did you think Bieber made it? He got ushered into the diddy-ing. Baby, baby, baby oil. Diddy did it. Hot take. The brand of the baby oil was Johnson and Johnson and Johnson and Johnson and Johnson and Johnson and That's it. Thank you.",
+      "set_start_seconds": 1409.0,
+      "set_end_seconds": 1426.0,
+      "topic_tags": [
+        "shock_humor",
+        "race",
+        "pop_culture"
+      ],
+      "crowd_reaction": "moderate",
+      "tony_praise_level": 3,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "small",
+      "interview_summary": "Audrey moved from Virginia to Austin. She works as a sandwich maker and a bartender. She complains about a massive cockroach infestation in her house.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Sandwich maker and Bartender",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": null,
+      "disclosed_years_doing_comedy": 5,
+      "fun_facts": [
+        "Hula-hoops in her backyard to avoid going to the gym",
+        "Sees roughly 12 cockroaches a day in her kitchen",
+        "Her dad was in the Air Force"
+      ]
+    },
+    {
+      "set_number": 6,
+      "comedian_name": "Gordon Dixon",
+      "status": "bucket_pull",
+      "set_transcript": "Make some fucking noise Austin, let's go. Florida is in the b I just moved to Florida. Anybody from Florida in here? There's three people in here that can't read. That's what we I took a girl on a day yesterday, she got a she got a T bone steak. I ordered a filet mignon. That's how I knew. She's like, oh, you're from Florida? I said, bitch you racist. Anyways. Austin's weird. I've been here a year now. Uh, I just found out that my roommates were swingers. That's awkward. Yeah. I found it the hard way, I woke up to them having sex on top of me. That's not But I'm single, so of course I fucked. You know what I mean? I fucked. Whole room smelled like booty hole and corn chips, I knew. Raw, too. I don't give a fuck. That is what you do when you have old people with dementia. That's what you do, you fuck old people. And after I came to my senses, I was like, listen mom and dad, y'all got to get out of here, all right? That is I don't think I can get better than that. That's my time. I'm going to dix it, you.",
+      "set_start_seconds": 1618.0,
+      "set_end_seconds": 1657.0,
+      "topic_tags": [
+        "relationships",
+        "sex",
+        "shock_humor",
+        "regional"
+      ],
+      "crowd_reaction": "moderate",
+      "tony_praise_level": 4,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "small",
+      "interview_summary": "Gordon moved to Austin from Tampa a year ago. He works as a door guy at Shakespeare's next door. He tells a story about watching a homeless man on 6th street for 25 minutes.",
+      "disclosed_age": 40,
+      "disclosed_occupation": "Door guy at Shakespeare's",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": 6,
+      "fun_facts": [
+        "Has a credit score of 69",
+        "Wearing a $10 fake G-Shock watch",
+        "His heritage is African, German, Cape Verdean, and Portuguese"
+      ]
+    },
+    {
+      "set_number": 7,
+      "comedian_name": "Neil Rubinstein",
+      "status": "bucket_pull",
+      "set_transcript": "Cuz you guys saw me. You're like, 'This guy, he's afraid of nothing.' You know? And then you heard me. And you're like, 'Oh, he's afraid of the dark.' I was told I sound like the person, I look like I kidnapped. That's okay. I'm doing all right? Okay. I don't mind being a big guy, you know? Usually pretty safe, right? Like I remember one time I was walking in Brooklyn, and this is before Brooklyn was a yoga studio, you know, so. The streets were so ruled with crime, uh and gluten. And uh this dude popped out to mug me and I was like, 'Nah, man, get the next guy.' And he was like, 'Okay, thank you.' And he skirted off. I was like, This is mint, everyone should give this a shot. Oh, all right, cool. Thanks, all right.",
+      "set_start_seconds": 1646.0,
+      "set_end_seconds": 1658.0,
+      "topic_tags": [
+        "self_deprecation",
+        "observational",
+        "crime"
+      ],
+      "crowd_reaction": "big_laughs",
+      "tony_praise_level": 5,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": true,
+      "joke_book_size": "none",
+      "interview_summary": "Neil is a Jewish comedian from NY who moved to Austin. He used to be in a hardcore band and toured as a tour manager for Taking Back Sunday. He lost his voice due to years of screaming in bands.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Comedian/Personal Assistant",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "married",
+      "disclosed_years_doing_comedy": 10,
+      "fun_facts": [
+        "Was in a hardcore band and provided background vocals on a Taking Back Sunday record",
+        "Is a massive New York Mets fan with a tattoo to prove it",
+        "His dating profile says 'I'll break your lawn furniture'"
+      ]
+    },
+    {
+      "set_number": 8,
+      "comedian_name": "Riley Gilmore",
+      "status": "bucket_pull",
+      "set_transcript": "Um the other day I got a sad ending massage. They just on me, so it was uh I just got a What the fuck, dude? Fucking Groupon. Mom, can you pick me up but I'm not going back there. That place sucks. I was uh I was thinking about that phrase, thoughts and prayers. It's like, people say that after tragedy, they're like, I send you my thoughts and my prayers. I can send you your prayers. That makes sense. But it's like you want to send your thoughts? So, yeah, and praying for your family, uh tits. Thinking about getting a bike. Uh, what else? Fucking, might have a lasagna later, but uh I was thinking, I don't know the titties, that would be cool, but uh All right, that's it for me guys. Thank you very much.",
+      "set_start_seconds": 2434.0,
+      "set_end_seconds": 2459.0,
+      "topic_tags": [
+        "observational",
+        "sex",
+        "self_deprecation"
+      ],
+      "crowd_reaction": "light",
+      "tony_praise_level": 4,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": true,
+      "joke_book_size": "none",
+      "interview_summary": "Riley works at the Comedy Mothership as a trash/recycling guy. He attempts a lion impression that fails, then succeeds with an owl impression.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Janitor at Comedy Mothership",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Performed the first ever owl impression in Kill Tony history",
+        "Gardens and grows squash and blackberries",
+        "Used to sneak beers out while taking out the trash"
+      ]
+    },
+    {
+      "set_number": 9,
+      "comedian_name": "Patrick Christopher",
+      "status": "bucket_pull",
+      "set_transcript": "Austin, what is up? How y'all doing? Hell yeah, man. So I I've been married for 12 years. Uh so I'm already start dating again. Uh I want to know what love is, you know? No, my wife is my best friend, there's nothing sad about that. Uh But she makes jokes too. She has jokes of her own too, you know, like anytime she's feeling her age, feeling old, she's like, oh, just trade me and already, you know? Just trade me in for a new model, like she's a car, right? And I love my wife, I would never trade her in. I do want to get a rental though. You know, something fun, something new to me. Maybe something yellow. A lot of people don't get that joke, man. I had one lady yell out, what about a blue one? I was like, how do you know I like choking bitches?",
+      "set_start_seconds": 5182.0,
+      "set_end_seconds": 5243.0,
+      "topic_tags": [
+        "relationships",
+        "sex",
+        "shock_humor"
+      ],
+      "crowd_reaction": "moderate",
+      "tony_praise_level": 4,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": true,
+      "joke_book_size": "large",
+      "interview_summary": "Patrick has been doing comedy for 7 years in San Antonio. He works at a medical clinic. He challenges Michael Gonzales to a Mexican drum-off and holds his own.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Medical clinic insurance clerk",
+      "disclosed_location": "San Antonio",
+      "disclosed_relationship_status": "married",
+      "disclosed_years_doing_comedy": 7,
+      "fun_facts": [
+        "Won the audience's favor in a Mexican drum-off against regular Michael Gonzales",
+        "His wife is a cancer survivor in 12-year remission",
+        "Sent upstairs to perform for the club's booker immediately after the set"
+      ]
+    },
+    {
+      "set_number": 10,
+      "comedian_name": "Ray Cheneby",
+      "status": "bucket_pull",
+      "set_transcript": "Hello. Uh I'd I'd sex with my first Goth girl recently. I was pretty cool. I could tell she was goth because when she took a shit on my chest, the shit had a piercing. She told me she didn't think come was good for your skin. Can you believe that? I told her, no, I know the come is good for your skin. Because my belly button is glowing. Look at this shit bitch. Take a look fucking idiot. Uh I do I I do mass shootings. Uh But it's with a t-shirt gun, I mean the mascot for Texas state, you know, give it up. But when you open the t-shirt, it says, don't come to school tomorrow, all right. I like how Michael Jackson said, it didn't matter if you were black or white and then decided.",
+      "set_start_seconds": 5506.0,
+      "set_end_seconds": 5546.0,
+      "topic_tags": [
+        "shock_humor",
+        "sex",
+        "crime"
+      ],
+      "crowd_reaction": "light",
+      "tony_praise_level": 3,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": true,
+      "joke_book_size": "large",
+      "interview_summary": "Ray works for Redban at the Sunset Strip doing AV. He admits to lying on dating apps, telling liberal women he is into communism and art to get them to date him. He is currently trying to get Slovakian citizenship.",
+      "disclosed_age": null,
+      "disclosed_occupation": "AV contractor at Sunset Strip",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": 4,
+      "fun_facts": [
+        "Admits to stealing drinks and weed from Redban's club",
+        "Is trying to become a citizen of Slovakia to own property in the EU",
+        "Pretends to be a communist on Hinge as a 'pussy cheat code'"
+      ]
+    },
+    {
+      "set_number": 11,
+      "comedian_name": "Mike Aiobebe",
+      "status": "bucket_pull",
+      "set_transcript": "Yeah. That's the black dance right there, the duggy. You don't matter. Don't matter what beat is going on, man. A nigga going duggy. Man. This is a nice crowd. This is not open mic, for sure. Um, uh, a little bit about myself, Aiobebe. That's a that's a crazy non-American last name right there. I was born and raised in Nigeria. Don't get scared. When I tell people that they want to put their phones away, man, think I'm going to send them an email. No, being born and raised in Nigeria, man, make you appreciate things that y'all in America take for granted. You know, clean air, clean water. You all got nice water here, man. The one in Nigeria, you can see germs and demons in that thing break dancing. You could see Grizz brown in your cup. I'm trying to tell you, man. You take a sip, you don't know what you're going to catch. You might catch a diamond, or disease. You know, you might need a doctor or a priest, you know, to relieve you of your pain. That's what you might",
+      "set_start_seconds": 6296.0,
+      "set_end_seconds": 6312.0,
+      "topic_tags": [
+        "race",
+        "storytelling",
+        "regional"
+      ],
+      "crowd_reaction": "moderate",
+      "tony_praise_level": 4,
+      "golden_ticket": false,
+      "sign_up_again": true,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "Mike was born in Nigeria and moved to Minnesota at age 13. He has a degree in Social Work but currently works for Amazon. He describes Nigerian cuisine and how his family won the visa lottery.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Amazon Driver",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Has a college degree in Social Work",
+        "His family moved to America via the 'Lottery Visa'",
+        "His father was a photographer of 'hungry people' in Nigeria"
+      ]
+    },
+    {
+      "set_number": 12,
+      "comedian_name": "Kam Patterson",
+      "status": "regular",
+      "set_transcript": "I be I be going to clubs and shit. I go to clubs a lot. And I went to a club recently back home in Florida. And uh one of the bouncers had like, had one of the wine things, and he wanded the bottom of my feet. And uh, I left that line immediately, dog. I don't want to go nowhere they getting foot pistols in. That's crazy. That's psychopathic. And I also have a theory about uh bouncers. Not the bouncer here because they are regular people, but I think like uh bouncers anywhere else are all gay, that's what I think. Think they big gay niggas. That's what I think. Big undercover gay niggas. Cuz every time I go to a club, they pat me down, they always touch my dick. My dick get touched every single time. And they if the club is full, they probably touched 200 dicks. It's a lot of dicks to touch for a straight man, gay ass nigga, that's crazy. Just gay. And if I was a bouncer, and I'm not, because I'm not gay, but if I was, If I was a bouncer, and I patted you down, you had a bigger dick than me, I would not let you in the club. No, my girlfriend's in there, no. No, Bucko. There's going to be a bunch of little dick, they doing little dick dance and shit like that, you know what I mean?",
+      "set_start_seconds": 6448.0,
+      "set_end_seconds": 6460.0,
+      "topic_tags": [
+        "sex",
+        "regional",
+        "self_deprecation"
+      ],
+      "crowd_reaction": "roaring",
+      "tony_praise_level": 5,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "Kam talks about his two new cars, a '96 Impala and a 2014 Infinity. He shares a story about his father, Kenny Patterson, being denied entry to Canada due to a domestic abuse charge from 1999.",
+      "disclosed_age": 25,
+      "disclosed_occupation": "Comedian",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "girlfriend",
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Just bought a 1996 Chevy Impala with 24-inch rims",
+        "His dad was blocked from Canada at customs in front of him",
+        "Thinks bouncers are undercover gay for touching 200 dicks a night"
+      ]
+    }
+  ]
+}

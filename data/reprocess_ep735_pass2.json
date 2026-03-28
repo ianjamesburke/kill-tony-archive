@@ -1,0 +1,262 @@
+{
+  "episode": {
+    "episode_number": 735,
+    "guests": [
+      "Triple H",
+      "Carrot Top",
+      "Donnell Rawlings"
+    ],
+    "venue": "Comedy Mothership"
+  },
+  "sets": [
+    {
+      "set_number": 1,
+      "comedian_name": "Mike Holder",
+      "status": "bucket_pull",
+      "set_transcript": "Good, guys, very much. Thank you very much. I'm not sure if you guys know who I am, but uh, I'm on a lot of street signs. It's a signs that say pedestrian crossing and I'm standing like this. Thought you might recognize me, with my clothes on, maybe not. Uh, a couple phrases that piss me off. I hate it when someone starts telling me a story and halfway through they say, Anyway, long story short. Then they continue to make the story longer, my God, man. And why do we call people who wake up at sunrise, early birds. As if there are late birds. I thought all birds wake up early. What do you think there's a bird somewhere waking up at 10 o'clock? Saying, oh, shit. I missed my flight. It would never fucking happen. Since they lock your phones away, I assume you haven't heard the news. Earlier today, a group of chickens were protesting the use of hormones. It was a peaceful protest, but some are raising canes. In tragic news, a fatal shooting at a golf resort resulted in a hole in one and three handicaps, it was tragic. Regarding the Epstein scandal, honestly, all this time, I was never interested in seeing the list. I just wanted to know why is that place still called the Virgin Islands? There's not a single virgin left. My grandma shopping by caller.",
+      "set_start_seconds": 1410.0,
+      "set_end_seconds": 1480.0,
+      "topic_tags": [
+        "observational",
+        "meta",
+        "crime",
+        "work"
+      ],
+      "crowd_reaction": "moderate",
+      "tony_praise_level": 3,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "small",
+      "interview_summary": "Mike discusses his work in AT&T sales and his background moving from Sudan and Saudi Arabia to the United States.",
+      "disclosed_age": null,
+      "disclosed_occupation": "AT&T Sales",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": 3,
+      "fun_facts": [
+        "Born and raised in Sudan and Saudi Arabia",
+        "Works for AT&T sales",
+        "Claims Sudan has more pyramids than Egypt"
+      ]
+    },
+    {
+      "set_number": 2,
+      "comedian_name": "Matt Rivera",
+      "status": "bucket_pull",
+      "set_transcript": "Thank you. My grandpa just had a kid. All right. Yeah, it's uh, it's actually pretty fucked up. I don't think that old people should have kids after a certain point. I think it's inconsiderate to the rest of your family. You know? It really screws up your family tree. Like, why the fuck do I have a two-year-old uncle? It used to be you respect your uncle, now it's don't drop your uncle. Also, he's not that different from a regular uncle, you know, very handsy. He refuses to put down the bottle. And he sucks on my fingers too long.",
+      "set_start_seconds": 1878.0,
+      "set_end_seconds": 1932.0,
+      "topic_tags": [
+        "family",
+        "observational",
+        "shock_humor"
+      ],
+      "crowd_reaction": "moderate",
+      "tony_praise_level": 4,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": true,
+      "joke_book_size": "large",
+      "interview_summary": "Matt reveals he has a two-year-old uncle and works as a chef at P. Terry's. He shares a story about being diagnosed with Type 1 diabetes at Disney World.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Chef",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": null,
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Diagnosed with diabetes at Disney World",
+        "Works as a chef at P. Terry's (AADC Burger)",
+        "Has a two-year-old uncle"
+      ]
+    },
+    {
+      "set_number": 3,
+      "comedian_name": "Spencer Esgridge",
+      "status": "bucket_pull",
+      "set_transcript": "Hi, I'm Spencer. Yes, sir. If I was born a girl though, my mom said she was gonna name me Shaylynn. Whatever, my mom's name was Shayna Lorene. Her aunt's name is Shayna Carroll. So, my first cousin Shay Ann has two belligerently insane Aunt Shaynas. So, Shayna Lorene, right there in the middle, just so anal retentive. Can't spell Shayna Lorene without A N A L. Right there in the middle, but last time I took 250 milligrams of Sunshine LSD. It was COVID, I was dating a bad alcoholic and I put on a long skirt and let my fucking hair down and there she was, Shaylynn. I watched Gone with the Wind for four and a half hours and just fucking cried my eyes out. Being a woman is very gay. That poor, poor Shaylynn though, bless her fucking heart.",
+      "set_start_seconds": 2465.0,
+      "set_end_seconds": 2528.0,
+      "topic_tags": [
+        "drugs",
+        "family",
+        "storytelling"
+      ],
+      "crowd_reaction": "light",
+      "tony_praise_level": 3,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "Spencer discusses his job as a brewery manager and his history with state-sanctioned therapy following a mushroom arrest. He claims his therapists were unprofessional.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Brewery Manager",
+      "disclosed_location": "Smithville, Texas",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": 2,
+      "fun_facts": [
+        "Manages a brewery in Smithville",
+        "Practices witchcraft",
+        "Was on probation for 9 grams of mushrooms"
+      ]
+    },
+    {
+      "set_number": 4,
+      "comedian_name": "Uncle Lazer",
+      "status": "regular",
+      "set_transcript": "As y'all know, uh, I was in a Western about a year ago. And uh It's gonna release a couple weeks. And it had a rape in it. And there's really not an acting class for rape. Like anybody ever raped anybody before? Exact Well, Exact, well. Well, they paid me 10 grand so there I am on set, getting ready to rape. And uh And uh, I don't think you just go up to someone and go, hey, I'm a rape you, you know, uh I feel like you got to rough 'em up a little bit, soften the meat. And I was working with this little French actress. Fuck the French, you know. And I'm asking her between, I said, \"Hey, am I hitting you too hard, is there anything I could be doing better?\" She's smoking a little cigarette like. How long you been acting? I said about six hours. She said, \"Well, we're acting, so act fucking act.\" When the director called action for the next take, I clotheslined that bitch into hell. I said, I'm not a fucking my boyfriend is. My name is Uncle Lazier, I've been great.",
+      "set_start_seconds": 3099.0,
+      "set_end_seconds": 3177.0,
+      "topic_tags": [
+        "shock_humor",
+        "storytelling",
+        "meta"
+      ],
+      "crowd_reaction": "moderate",
+      "tony_praise_level": 3,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "Uncle Lazer returns to the show to discuss a role he played in a Western film. He is a huge fan of Triple H and wore a DX shirt for the occasion.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Actor",
+      "disclosed_location": null,
+      "disclosed_relationship_status": null,
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Appears in a Western series called An Outlaw named Bob",
+        "Is a massive WWE and Triple H fan"
+      ]
+    },
+    {
+      "set_number": 5,
+      "comedian_name": "Ronaldo Mercado",
+      "status": "bucket_pull",
+      "set_transcript": "So you guys, I've lived here, uh, I've lived in Austin for about a year now. I haven't been able to fit in yet. Louis here for you. Everybody here they're hot. People look good. They care about diet, exercise. Ugh. That's why I like the rest of Texas. Here, in Austin, I wear an extra large, I'll admit that. This is an extra large T-shirt. I weigh 225. You can see my belly when I put my hands in the air. Fuck you guys, I don't care. Okay. In Austin, this is fat. But in the rest of Texas, I look pretty good, okay? When I go down to San Antonio, I'm petite, okay? All right. I was here in Austin, I had to ride a Lime scooter last week. I'm not proud of it, but I did. I had to be somewhere fast, and I was on my Lime scooter, and it's a bad look. You can admit that the Lime scooter is a bad look. This. [sound of scooter bell] It's a bad look. But I had to ride one out of necessity when I was on my Lime scooter. Another dude rode past me on his Lime scooter. And when he rode past me, he looked me in the eyes and he gave me one of those. Like it was a fucking Jeep thing. Like we were in a club together. Don't do that, okay? Look, if you give somebody a little wave on a motorcycle, Hell's Angels. You give them a wave on a Lime scooter, Charlie's Angels. It's a lot different. I think I think you can have a secret wave on the Lime scooter. The guys on the Lime scooter can have a wave, but it's got to be this right here. [sound of fart]",
+      "set_start_seconds": 3682.0,
+      "set_end_seconds": 3760.0,
+      "topic_tags": [
+        "observational",
+        "self_deprecation",
+        "regional"
+      ],
+      "crowd_reaction": "big_laughs",
+      "tony_praise_level": 4,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": true,
+      "joke_book_size": "large",
+      "interview_summary": "Ronaldo works as a door guy at Redban's club, the Sunset Strip. He talks about his 9-year relationship and his hobby of BMX riding.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Door guy",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "in a relationship",
+      "disclosed_years_doing_comedy": 7,
+      "fun_facts": [
+        "Works at Redban's comedy club",
+        "BMX rider",
+        "In a 9-year relationship with a woman who works in the Motherhip box office"
+      ]
+    },
+    {
+      "set_number": 6,
+      "comedian_name": "Aaron Silverstein",
+      "status": "bucket_pull",
+      "set_transcript": "You've got your your outdoor bugs. And you've got your indoor bugs. You've got bugs. Fucking Carrot Top's here. I'm into it. Who'da thought dreams can come true?",
+      "set_start_seconds": 4009.0,
+      "set_end_seconds": 4042.0,
+      "topic_tags": [
+        "absurdist",
+        "meta",
+        "drugs"
+      ],
+      "crowd_reaction": "light",
+      "tony_praise_level": 2,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "small",
+      "interview_summary": "Aaron claims to have smoked a 'Jeffrey' before his set. He tells a wild story about being a meth-addicted superhero named 'The Circuit'.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Cannabis grower",
+      "disclosed_location": "Colorado",
+      "disclosed_relationship_status": null,
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Former cannabis grower",
+        "Claims he was a meth-addicted superhero named 'The Circuit'",
+        "Was visibly intoxicated during the set"
+      ]
+    },
+    {
+      "set_number": 7,
+      "comedian_name": "Cameron May",
+      "status": "bucket_pull",
+      "set_transcript": "Yes, hello. I had a polyamorous mom when I was a child. And uh sometimes when I tell people that, they get very sad. Which I don't understand. Uh because to me your childhood is just your childhood, you know? I didn't really know mine was that different from anyone else's until I reflected on the number of stepdads. And I love my stepdads because they taught me that it really does take a village. To make my mom come. You guys ever walk in on your parents wrestling and it's the Royal Rumble match? That's. Sometimes when you like, uh, you tell people stuff like that about yourself, they get curious. They want to know if you think it affected your sexuality today. I don't think so, because I'm in a long-term monogamous relationship with my bedet. We're going pretty strong. But I definitely I think it affected my sexuality like when I was growing up, you know, cuz Trying to jerk off with more than two parents. It's like trying to assassinate the president today. Because like realistically speaking, there's no way they didn't see me on that roof.",
+      "set_start_seconds": 4375.0,
+      "set_end_seconds": 4455.0,
+      "topic_tags": [
+        "family",
+        "observational",
+        "sex",
+        "shock_humor"
+      ],
+      "crowd_reaction": "big_laughs",
+      "tony_praise_level": 4,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "large",
+      "interview_summary": "Cameron discusses growing up with a polyamorous mother and two stepdads. He works in manufacturing for a brain-computer interface company.",
+      "disclosed_age": 22,
+      "disclosed_occupation": "Manufacturer",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "girlfriend",
+      "disclosed_years_doing_comedy": 4,
+      "fun_facts": [
+        "Grew up with a polyamorous mother",
+        "Works for a brain-computer interface manufacturer called Paradromics",
+        "Started comedy at age 18"
+      ]
+    },
+    {
+      "set_number": 8,
+      "comedian_name": "Doc Ferry",
+      "status": "bucket_pull",
+      "set_transcript": "feel like everybody looking at me right now knows exactly who I voted for. I like to rag doll women in the bedroom. Not very fond of women right now. Me and my wife were arguing in the car. I said, bitch, I wish you were Asian. I don't. I don't think you're the one of us that's going to win this one. She said, I wish you would talk to me the way you want to be talked to. You want me to talk to you like this? How about a bro job? We ain't married anymore. Not very fond of women. But I still have a fantasy. It's pretty easy. I want to date a black chick. From the year 1868. Now hear me out. It'll all make sense. I know what you all are thinking, that whole thing. But let me educate you. Slavery officially ended in the year 1865. The only reason I wanted one from 68 because I heard them bitches was off the chain and that sounded like fun to me. Thank you, my name's Doc.",
+      "set_start_seconds": 4948.0,
+      "set_end_seconds": 5019.0,
+      "topic_tags": [
+        "politics",
+        "race",
+        "relationships"
+      ],
+      "crowd_reaction": "big_laughs",
+      "tony_praise_level": 4,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "large",
+      "interview_summary": "An Army veteran of 23 years, Doc discusses his PTSD (which he attributes to his ex-wives) and building a private comedy club in his home with mannequins for an audience.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Retired / HVAC Student",
+      "disclosed_location": null,
+      "disclosed_relationship_status": "divorced",
+      "disclosed_years_doing_comedy": 2,
+      "fun_facts": [
+        "Army veteran of 23 years",
+        "Built a comedy club in his own home with mannequins",
+        "Was a personal security medic for the ambassador in Afghanistan"
+      ]
+    }
+  ]
+}

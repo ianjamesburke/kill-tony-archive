@@ -159,12 +159,23 @@ def find_backfill_episode() -> dict | None:
     """
     episodes = load_episodes()
 
-    # First: newest unprocessed
+    # Max consecutive errors before skipping an episode (will retry on next pipeline change)
+    MAX_ERROR_COUNT = 3
+
+    # First: newest unprocessed (skip episodes that have failed too many times)
     unprocessed = sorted(
-        [e for e in episodes if e.get("status") in ("pending", "error")],
+        [e for e in episodes if e.get("status") in ("pending", "error")
+         and (e.get("error_count") or 0) < MAX_ERROR_COUNT],
         key=lambda e: e["episode_number"],
         reverse=True,
     )
+
+    # Count skipped for logging
+    skipped_errors = [e for e in episodes if e.get("status") == "error"
+                      and (e.get("error_count") or 0) >= MAX_ERROR_COUNT]
+    if skipped_errors:
+        log.info(f"Skipping {len(skipped_errors)} episodes with {MAX_ERROR_COUNT}+ consecutive failures")
+
     if unprocessed:
         ep = unprocessed[0]
         log.info(f"Backfill: episode #{ep['episode_number']} ({ep['status']}) — {ep.get('title', '(no title)')}")

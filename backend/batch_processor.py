@@ -58,6 +58,7 @@ def get_next_api_key() -> str:
     return key
 
 PASS1_MODEL = "gemini-3.1-flash-lite-preview"  # audio transcription (500 RPD free tier per key)
+PASS1_FALLBACK_MODEL = "gemini-3-flash-preview"  # fallback when lite fails to return valid JSON
 PASS2_MODEL = "gemini-3.1-flash-lite-preview"  # text-only set extraction (500 RPD free tier)
 GUEST_MODEL = "gemini-3.1-flash-lite-preview"  # cheap model for title parsing
 LAUGHTER_MODEL = "gemini-3.1-flash-lite-preview"  # chunked laughter detection (500 RPD free tier)
@@ -741,24 +742,38 @@ def pass1_transcribe(client: genai.Client, chunk_paths: list[Path], chunk_offset
                 offset_seconds=offset_seconds,
                 offset_str=offset_str,
             )
-            for attempt in range(6):
-                try:
-                    response = client.models.generate_content(
-                        model=transcribe_model,
-                        contents=[prompt, uploaded],
-                        config={"http_options": {"timeout": 600000}},
-                    )
-                    entries = _parse_json_array((response.text or "").strip())
+            entries = None
+            # Try primary model first (up to 4 attempts), then fallback model (up to 3)
+            models_to_try = [(transcribe_model, 4)]
+            if transcribe_model != PASS1_FALLBACK_MODEL:
+                models_to_try.append((PASS1_FALLBACK_MODEL, 3))
+
+            for try_model, max_attempts in models_to_try:
+                if entries is not None:
                     break
-                except Exception as api_err:
-                    err_str = str(api_err)
-                    is_503 = "503" in err_str or "UNAVAILABLE" in err_str
-                    if attempt < 5:
-                        wait = 60 * (attempt + 1) if is_503 else 30 * (attempt + 1)
-                        log.warning(f"    Chunk {chunk_num} attempt {attempt+1} failed ({api_err}), retrying in {wait}s")
-                        time.sleep(wait)
-                    else:
-                        raise
+                for attempt in range(max_attempts):
+                    try:
+                        response = client.models.generate_content(
+                            model=try_model,
+                            contents=[prompt, uploaded],
+                            config={"http_options": {"timeout": 600000}},
+                        )
+                        entries = _parse_json_array((response.text or "").strip())
+                        if try_model != transcribe_model:
+                            log.info(f"    Fallback model {try_model} succeeded")
+                        break
+                    except Exception as api_err:
+                        err_str = str(api_err)
+                        is_503 = "503" in err_str or "UNAVAILABLE" in err_str
+                        is_last = (attempt == max_attempts - 1)
+                        if not is_last:
+                            wait = 60 * (attempt + 1) if is_503 else 30 * (attempt + 1)
+                            log.warning(f"    Chunk {chunk_num} attempt {attempt+1} failed [{try_model}] ({api_err}), retrying in {wait}s")
+                            time.sleep(wait)
+                        elif try_model == transcribe_model and PASS1_FALLBACK_MODEL != transcribe_model:
+                            log.warning(f"    Chunk {chunk_num} exhausted {max_attempts} attempts with {try_model}, falling back to {PASS1_FALLBACK_MODEL}")
+                        else:
+                            raise
             log.info(f"    Got {len(entries)} entries")
             all_entries.extend(entries)
         finally:
@@ -1230,7 +1245,7 @@ def load_episodes() -> list[dict]:
     with sqlite3.connect(DB_PATH) as conn:
         conn.row_factory = sqlite3.Row
         rows = conn.execute(
-            "SELECT episode_number, title, youtube_url AS url, video_id, status, pipeline_version FROM episodes ORDER BY episode_number"
+            "SELECT episode_number, title, youtube_url AS url, video_id, status, pipeline_version, error_count, last_error FROM episodes ORDER BY episode_number"
         ).fetchall()
         return [dict(r) for r in rows]
 
@@ -1240,8 +1255,13 @@ def update_episode_status(episode_number: int, status: str, error: str | None = 
     with sqlite3.connect(DB_PATH) as conn:
         if status == "done":
             conn.execute(
-                "UPDATE episodes SET status = ?, pipeline_version = ? WHERE episode_number = ?",
+                "UPDATE episodes SET status = ?, pipeline_version = ?, error_count = 0, last_error = NULL WHERE episode_number = ?",
                 (status, PIPELINE_VERSION, episode_number),
+            )
+        elif status == "error":
+            conn.execute(
+                "UPDATE episodes SET status = ?, error_count = COALESCE(error_count, 0) + 1, last_error = ? WHERE episode_number = ?",
+                (status, error, episode_number),
             )
         else:
             conn.execute(
