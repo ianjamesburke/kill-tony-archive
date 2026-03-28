@@ -13,6 +13,7 @@
 
 <svelte:head>
 	<title>Kill Tony Archive</title>
+	<meta name="google-site-verification" content="Ijw_g4PxOeP3R-lvxju2alLphAjsixAm6V9xDQZPaSc" />
 	<meta property="og:site_name" content="Kill Tony Archive">
 	<meta name="twitter:card" content="summary">
 	<meta property="og:image" content="https://killtonyarchive.com/og-default.png">
