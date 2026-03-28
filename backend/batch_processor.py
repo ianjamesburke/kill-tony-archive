@@ -1367,6 +1367,18 @@ def process_episode(client: genai.Client, ep: dict, model_override: str | None =
         ks = compute_kill_score(s)
         log.info(f"  #{s.get('set_number')}: {s.get('comedian_name')} ({s.get('status')}) — kill_score={ks:.1f}")
 
+    # QA checks (run before audio cleanup)
+    try:
+        from qa_checks import run_qa_checks, save_qa_results
+        qa_results = run_qa_checks(client, episode_number, audio_path=audio_path)
+        save_qa_results(episode_number, qa_results)
+        qa_failures = [r for r in qa_results if not r["passed"]]
+        if qa_failures:
+            for f in qa_failures:
+                log.warning(f"QA issue: {f.get('warning', 'unknown')}")
+    except Exception as e:
+        log.warning(f"QA checks failed (non-fatal): {e}")
+
     update_episode_status(episode_number, "done")
     sync_db_to_railway()
 
