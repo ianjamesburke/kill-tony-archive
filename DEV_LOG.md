@@ -4,6 +4,37 @@
 
 ---
 
+## 2026-03-28 — SEO shipped, Google Search Console live, og:image, r/KillTony strategy
+
+### SEO PR (seo-improvements branch → main)
+- **PR #2** created, reviewed by Claude Code, all issues addressed:
+  - Added `og:image` meta tags (YouTube thumbnails for episode pages, default fallback for everything else)
+  - Fixed `twitter:card` — default `summary`, upgrades to `summary_large_image` on episode pages with video
+  - Removed unused `today` variable in sitemap.xml generator
+  - Fixed mid-word truncation in meta descriptions (word-boundary-aware `.slice(0,155).replace(/\s+\S*$/, '') + '...'`)
+  - Fixed empty string episode_summary passing truthy check (now uses `.trim()`)
+- Merged to main, deployed to Railway
+
+### og:image
+- Generated 5 design options via HTML→screenshot pipeline
+- Selected option 5: dark editorial with spotlight gradient, red "Archive" badge, stats (510+ episodes, 835+ sets, 593+ comedians)
+- Lives at `frontend/static/og-default.png`, served at `https://killtonyarchive.com/og-default.png`
+
+### Google Search Console
+- Verified via meta tag method (`google-site-verification` in `+layout.svelte`)
+- Sitemap submitted: `https://killtonyarchive.com/sitemap.xml`
+- Only homepage indexed so far — full crawl will take days
+
+### Railway Deploy
+- Frontend and backend services now linked via Railway CLI on Linux (both dirs independently linked)
+- Deploy: `cd frontend && railway up --detach` / `cd backend && railway up --detach`
+
+### r/KillTony Posting Strategy
+- Confirmed: new episodes drop every Monday night, subreddit peaks Tuesday/Wednesday
+- Calendar reminder set for Tuesday 7am to post archive link during peak activity
+
+---
+
 ## 2026-03-28 — Pipeline fixes: model fallback, error tracking, QA checks
 
 ### Problem
