@@ -28,6 +28,8 @@
 	const pageTitle = $derived(`Kill Tony Episode #${ep.episode_number} — ${guestSummary}`);
 	const pageDescription = $derived(ep.episode_summary ? ep.episode_summary.slice(0, 155) : `Watch and analyze all ${ep.set_count} sets from Kill Tony Episode #${ep.episode_number}. Kill Score: ${ep.episode_kill_score ?? 'N/A'}.`);
 	const canonicalUrl = $derived(`https://killtonyarchive.com/episodes/${ep.episode_number}`);
+	const ogImage = $derived(ep.video_id ? `https://img.youtube.com/vi/${ep.video_id}/maxresdefault.jpg` : 'https://killtonyarchive.com/og-default.png');
+	const twitterCard = $derived(ep.video_id ? 'summary_large_image' : 'summary');
 
 	const embedUrl = $derived(
 		ep.video_id

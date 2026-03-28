@@ -1,0 +1,21 @@
+[
+  {
+    "check": "set_count",
+    "episode": 760,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 760,
+    "set_number": 4,
+    "comedian": "Emily Wade",
+    "start_seconds": 2407.0,
+    "similarity": 0.226,
+    "passed": false,
+    "clip_transcription": "supposed to be the next single off the Pure BS record and I got fired and then I didn't get my song singled and it cost me about a million. Can you do a solo? Just really",
+    "expected_start": "I'm from Boston. You can't really hear it from my accent unless I say certain words like back or khakis, or suck my fucking dick, bitch. You know, the classics. My guy friend heard my accent once, and",
+    "warning": "Timecode mismatch for set #4 (Emily Wade) at 2407s. Similarity: 22.6%. Audio says: 'supposed to be the next single off the Pure BS record and I got fired and then I...' but transcript starts: 'I'm from Boston. You can't really hear it from my accent unless I say certain wo...'"
+  }
+]

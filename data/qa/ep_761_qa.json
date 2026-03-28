@@ -1,0 +1,10 @@
+[
+  {
+    "check": "set_count",
+    "episode": 761,
+    "set_count": 5,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 5 sets found (expected >= 8). Pass 2 may have missed sets."
+  }
+]

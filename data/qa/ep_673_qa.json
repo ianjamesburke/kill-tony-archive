@@ -1,0 +1,9 @@
+[
+  {
+    "check": "set_count",
+    "episode": 673,
+    "set_count": 14,
+    "min_expected": 8,
+    "passed": true
+  }
+]

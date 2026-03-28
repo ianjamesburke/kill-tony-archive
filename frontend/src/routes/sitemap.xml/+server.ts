@@ -8,7 +8,6 @@ export const GET: RequestHandler = async () => {
 	]);
 
 	const baseUrl = 'https://killtonyarchive.com';
-	const today = new Date().toISOString().split('T')[0];
 
 	interface SitemapEntry {
 		loc: string;
