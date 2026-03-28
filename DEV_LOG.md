@@ -4,6 +4,61 @@
 
 ---
 
+## 2026-03-28 — Pipeline fixes: model fallback, error tracking, QA checks
+
+### Problem
+Pipeline had been stuck for 4 days. Episode #761 (Houston — Adam Ray + Kim Congdon) failed repeatedly on chunk 4/9 — `gemini-3.1-flash-lite-preview` returned malformed JSON (no parseable array) every attempt. Since `daily_processor.py` always picks the newest error/pending episode, ep 761 blocked all progress. Additionally, 11 episodes were stuck in "processing" status from systemd timeout kills, and the deno JS challenge solver for yt-dlp was erroring (non-fatal since audio was cached).
+
+### Root cause
+`gemini-3.1-flash-lite-preview` is unreliable at returning structured JSON for certain audio chunks — specifically chunk 4 (offset 51:00) of ep 761 failed 100% of the time across dozens of attempts over 4 days. The lite model seems to choke on certain audio segments (possibly noisy crowd sections or music transitions).
+
+### Fixes
+
+**1. Model fallback system** (`batch_processor.py`)
+- Primary: `gemini-3.1-flash-lite-preview` (4 attempts)
+- Fallback: `gemini-3-flash-preview` (3 attempts)
+- Flash-lite is preferred for rate limits (1000 RPD vs 250 RPD), but when it fails to return valid JSON, the stronger flash model takes over. Ep 761 chunk 4 succeeded on the first flash attempt.
+- Note: `gemini-3.1-flash-preview` does NOT exist as a model name. The correct 3.x flash model is `gemini-3-flash-preview`. This was discovered the hard way (404 errors).
+
+**2. Error count tracking** (`batch_processor.py` + DB schema)
+- Added `error_count` and `last_error` columns to episodes table
+- `update_episode_status()` increments `error_count` on errors, resets to 0 on success
+- `daily_processor.py` skips episodes with 3+ consecutive failures — prevents infinite death loops
+- Skipped episodes retry automatically when pipeline version bumps
+
+**3. Stuck episode recovery**
+- Reset 11 "processing" episodes back to "pending" (killed mid-run by systemd timeout)
+- Increased systemd `TimeoutStartSec` from 3600s to 5400s (90 min) to accommodate retry loops
+
+**4. QA checks** (`backend/qa_checks.py`)
+Two post-processing checks now run after every episode, before audio cleanup:
+
+- **Set count validation**: Flags episodes with < 8 sets. Most KT episodes have 9-15 bucket pulls + regulars. Below 8 means Pass 2 likely missed sets. Initial scan: 6/70 done episodes flagged (705, 707, 713, 724, 726, 761).
+- **Timecode spot-check**: Randomly picks a set, extracts 15s of audio at `set_start_seconds` via ffmpeg, transcribes via Gemini, compares word overlap with stored transcript. Catches misaligned timecodes where the set starts at the wrong point in the video.
+
+Results saved to `data/qa/ep_*_qa.json`. Standalone CLI: `python3 qa_checks.py --all --set-count-only` or `--episode 761`.
+
+**5. Heartbeat monitoring**
+Added Kill Tony pipeline health check to heartbeat (every 4 hours):
+- Checks systemd service status and recent journal output
+- Queries DB for processing progress
+- Auto-resets stuck "processing" episodes
+- Alerts if no progress in 24 hours
+
+### Available Gemini models (as of 2026-03-28)
+For reference, the valid model names on the free tier:
+- `gemini-3.1-flash-lite-preview` — cheapest, 1000 RPD, unreliable on some audio chunks
+- `gemini-3-flash-preview` — mid-tier, better JSON reliability
+- `gemini-3.1-pro-preview` — most capable, lowest rate limits
+- `gemini-2.5-flash` — previous gen, still available
+
+### State after fixes
+- 70 episodes done (was 69), 422 pending, 15 errors, 2 skipped
+- Timer running 3x daily (10am, 12pm, 2pm MT)
+- Episode #761 successfully processed: 5 sets extracted (flagged by QA — needs Pass 2 re-run for missing sets)
+
+---
+
 ## 2026-03-09 — Railway deployment: GitHub CI, RAILPACK, monorepo config
 
 Re-linked both services to GitHub (`ianjamesburke/kill-tony-archive`) after repo refactor disconnected them. Configured as an isolated monorepo with `rootDirectory` per service (`/backend`, `/frontend`). Key changes:
