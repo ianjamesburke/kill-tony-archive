@@ -145,6 +145,14 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for setup instructions.
 
 ---
 
+## Support
+
+If you enjoy this project, consider buying me a coffee:
+
+<a href="https://buymeacoffee.com/ianjamesbu8" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="200"></a>
+
+---
+
 ## License
 
 MIT
