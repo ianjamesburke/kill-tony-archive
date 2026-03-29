@@ -64,6 +64,10 @@
 			<svg viewBox="0 0 16 16" fill="currentColor" class="footer-icon"><path d="M9.52 6.78L15.48 0h-1.41L8.9 5.88 4.76 0H0l6.25 9.1L0 16h1.41l5.46-6.35L11.24 16H16L9.52 6.78zm-1.93 2.25l-.63-.91L1.93 1.04h2.17l4.07 5.82.63.91 5.28 7.55h-2.17L7.59 9.03z"/></svg>
 			@atfostermusic
 		</a>
+		<a href="https://buymeacoffee.com/ianjamesbu8" target="_blank" rel="noopener noreferrer" class="footer-link">
+			<svg viewBox="0 0 24 24" fill="currentColor" class="footer-icon"><path d="M2 21h18v2H2zM20 8h-2V5H4v3H2V5a2 2 0 012-2h14a2 2 0 012 2zm-2 0a2 2 0 012 2v2a2 2 0 01-2 2h-2v-2h2v-2h-2V8zM4 8h12v8a2 2 0 01-2 2H6a2 2 0 01-2-2z"/></svg>
+			Buy Me a Coffee
+		</a>
 	</div>
 	<div class="footer-bottom">
 		<div class="footer-left">Kill Tony Archive &middot; All data from public sources</div>
