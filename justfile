@@ -48,6 +48,11 @@ process EP:
 reprocess EP:
     cd backend && .venv/bin/python reprocess_pass2.py --episode {{EP}}
 
+# Run QA checks on an already-processed episode (set count + timecode spot-check)
+#   just qa 742
+qa EP:
+    cd backend && .venv/bin/python qa_checks.py --episode {{EP}}
+
 # Process a batch with a limit (default 5 at a time)
 #   just batch 10
 batch LIMIT="5":
