@@ -4,6 +4,31 @@
 
 ---
 
+## 2026-04-08 — [DECISION] jrgillick/laughter-detection (ResNet) vs Gemini Flash Lite for laughter
+
+Tested the jrgillick/laughter-detection ResNet model (trained on Switchboard corpus) against the current Gemini Flash Lite chunked approach on the same ep_757 chunk. ResNet produced 6 events vs Gemini's 34 for 20 minutes of audio — ResNet is more conservative/precise, Gemini casts a wider net with semantic classification (laughter vs applause vs cheering). ResNet runs fully local (no API cost), but needs several compatibility patches to run on modern Python (see GOTCHA below). Neither approach solves the real blocker: per-set laughter attribution requires accurate WhisperX timestamps first. Keeping Gemini as primary for now; ResNet is a viable local supplement once timestamps are fixed.
+
+## 2026-04-08 — [GOTCHA] jrgillick/laughter-detection requires multiple compat patches for Python 3.11 + modern deps
+
+The library has no PyPI package — clone from GitHub only. The following patches are required to run on Python 3.11 with modern torch/numpy/librosa:
+1. `torch.load(..., weights_only=False, map_location='cpu')` — PyTorch 2.6 changed default to weights_only=True; checkpoint uses old format saved on GPU
+2. `pip install 'praatio<5'` — praatio 5.x renamed `tgio` → `textgrid`, breaking the import
+3. `np.unicode_` removed in NumPy 2.0 — replace with `np.str_` in `audio_utils.py:102`
+4. `num_workers=0` in DataLoader — macOS multiprocessing requires `if __name__ == '__main__'` guard which the script lacks
+5. librosa positional args removed — `melspectrogram(y, sr, ...)` → `melspectrogram(y=y, sr=sr, ...)` and same for `mfcc()`
+6. Default stride=1 in `SwitchBoardLaughterInferenceDataset` means 51,500 windows for 20min audio (~20min on CPU). Added `stride` param; stride=5 gives ~10,300 windows and finishes in ~4min with no meaningful quality loss for laughter segmentation.
+
+## 2026-04-08 — [GOTCHA] yt-dlp with Chrome cookies forces TV player, drops audio formats
+
+Passing `cookiesfrombrowser: ("chrome",)` to yt-dlp causes it to use the "tv downgraded player" API path instead of the standard "android vr + web safari" path. The TV player doesn't offer audio-only formats (140/251), so `bestaudio/best` raises "Requested format is not available." Fix: don't use Chrome cookies on macOS — let yt-dlp use the standard player path. The existing `_yt_cookie_opts()` flow is correct; the issue only surfaced when testing manually with `--cookies-from-browser chrome`.
+
+## 2026-04-08 — [GOTCHA] yt-dlp JS challenge solver (deno) version mismatch breaks audio download
+
+The cached deno challenge solver script was v0.5.0 but yt-dlp 2026.3.17 requires v0.8.0. Without a valid solver, the n-challenge fails and audio format URLs get throttled/dropped. Fix: add `"remote_components": {"ejs:github"}` to `_yt_base_opts()` — this auto-fetches the latest solver from GitHub on first use and caches it. One-time internet hit, then works offline.
+
+## 2026-04-08 — [GOTCHA] Broken venv from renamed project directory
+The `.venv` at `backend/.venv` was created when the repo lived at `kill-tony-data-project-v1/`. After the repo was moved/renamed, all venv shebang lines still pointed at the old path, making pip and python unusable. Fix: `rm -rf backend/.venv && python3 -m venv backend/.venv && .venv/bin/pip install -r requirements-pipeline.txt`. If venv breaks again after a repo move, this is why.
+
 ## 2026-03-28 — SEO shipped, Google Search Console live, og:image, r/KillTony strategy
 
 ### SEO PR (seo-improvements branch → main)
