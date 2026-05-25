@@ -18,6 +18,8 @@
 	<meta name="twitter:card" content="summary">
 	<meta property="og:image" content="https://killtonyarchive.com/og-default.png">
 	<meta name="twitter:image" content="https://killtonyarchive.com/og-default.png">
+	<!-- Google AdSense -->
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script>
 </svelte:head>
 
 <!-- TODO: Bring back the live bar once all episodes have been indexed -->
@@ -71,6 +73,7 @@
 	</div>
 	<div class="footer-bottom">
 		<div class="footer-left">Kill Tony Archive &middot; All data from public sources</div>
+		<a href="/privacy" class="footer-privacy">Privacy Policy</a>
 	</div>
 </footer>
 
@@ -220,7 +223,10 @@
 	}
 
 	.footer-bottom {
-		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 16px;
 	}
 
 	.footer-left {
@@ -229,6 +235,20 @@
 		color: var(--dim);
 		letter-spacing: 1px;
 		text-transform: uppercase;
+	}
+
+	.footer-privacy {
+		font-family: var(--mono);
+		font-size: 9px;
+		color: var(--dim);
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		text-decoration: none;
+		transition: color 0.15s;
+	}
+
+	.footer-privacy:hover {
+		color: var(--muted);
 	}
 
 	.footer-link {

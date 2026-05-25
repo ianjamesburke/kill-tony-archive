@@ -7,6 +7,7 @@
 	import TopicBubbleTimeline from '$lib/components/TopicBubbleTimeline.svelte';
 	import { fetchSets } from '$lib/api';
 	import { goto } from '$app/navigation';
+	import AdUnit from '$lib/components/AdUnit.svelte';
 
 	let { data }: { data: PageData } = $props();
 
@@ -143,6 +144,11 @@
 		<div class="s-badge">{data.stats.episode_count} episodes</div>
 	</div>
 	<EpisodePulse episodes={data.episodes} />
+</div>
+
+<!-- AD UNIT: Below hero -->
+<div class="section ad-section">
+	<AdUnit adSlot="home-banner" />
 </div>
 
 <!-- MAIN GRID: Topics + Guests -->

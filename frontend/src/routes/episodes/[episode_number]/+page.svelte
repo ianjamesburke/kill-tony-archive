@@ -2,6 +2,7 @@
 	import type { PageData } from './$types';
 	import SetCard from '$lib/components/SetCard.svelte';
 	import LaughterTimeline from '$lib/components/LaughterTimeline.svelte';
+	import AdUnit from '$lib/components/AdUnit.svelte';
 	import { tick } from 'svelte';
 	import { afterNavigate } from '$app/navigation';
 
@@ -122,6 +123,11 @@
 			<div class="stat-val">{ep.avg_kill_score ?? '—'}</div>
 		</div>
 	</div>
+</div>
+
+<!-- AD UNIT: After episode info -->
+<div class="section ad-section">
+	<AdUnit adSlot="episode-banner" />
 </div>
 
 <!-- YOUTUBE EMBED -->

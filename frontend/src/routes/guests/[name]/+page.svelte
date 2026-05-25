@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import AdUnit from '$lib/components/AdUnit.svelte';
 
 	let { data }: { data: PageData } = $props();
 
@@ -89,6 +90,11 @@
 			</div>
 		{/if}
 	</div>
+</div>
+
+<!-- AD UNIT: After profile -->
+<div class="section ad-section">
+	<AdUnit adSlot="comedian-banner" />
 </div>
 
 <!-- TODO: Bring back Episode Performance chart once we have more guest data -->
