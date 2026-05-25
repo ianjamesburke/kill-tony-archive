@@ -45,6 +45,7 @@ from batch_processor import (
     extract_episode_number,
     is_valid_episode,
     _yt_base_opts,
+    get_next_api_key,
 )
 from google import genai
 
@@ -239,7 +240,7 @@ def main():
         return
 
     # Process the episode
-    client = genai.Client()
+    client = genai.Client(api_key=get_next_api_key())
     try:
         process_episode(client, target)
     except Exception as e:

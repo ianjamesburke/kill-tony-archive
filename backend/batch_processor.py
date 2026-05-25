@@ -57,13 +57,13 @@ def get_next_api_key() -> str:
     _current_key_idx += 1
     return key
 
-PASS1_MODEL = "gemini-3.1-flash-lite-preview"  # audio transcription (500 RPD free tier per key)
-PASS1_FALLBACK_MODEL = "gemini-3-flash-preview"  # fallback when lite fails to return valid JSON
-PASS2_MODEL = "gemini-3.1-flash-lite-preview"  # text-only set extraction (500 RPD free tier)
-GUEST_MODEL = "gemini-3.1-flash-lite-preview"  # cheap model for title parsing
-LAUGHTER_MODEL = "gemini-3.1-flash-lite-preview"  # chunked laughter detection (500 RPD free tier)
+PASS1_MODEL = "gemini-3.1-flash-lite"  # audio transcription (500 RPD free tier per key)
+PASS1_FALLBACK_MODEL = "gemini-3.5-flash"  # fallback when lite fails to return valid JSON
+PASS2_MODEL = "gemini-3.1-flash-lite"  # text-only set extraction (500 RPD free tier)
+GUEST_MODEL = "gemini-3.1-flash-lite"  # cheap model for title parsing
+LAUGHTER_MODEL = "gemini-3.1-flash-lite"  # chunked laughter detection (500 RPD free tier)
 LAUGHTER_WINDOW_SIZE = 1  # per-second resolution for event-based detection
-PIPELINE_VERSION = 2  # bump when pipeline changes warrant reprocessing (v1=5s windows, v2=events)
+PIPELINE_VERSION = 3  # bump when pipeline changes warrant reprocessing (v1=5s windows, v2=events, v3=model update)
 CHUNK_MINUTES = 20
 OVERLAP_MINUTES = 3
 AUDIO_CACHE_DIR = Path(__file__).parent / "audio_cache"
