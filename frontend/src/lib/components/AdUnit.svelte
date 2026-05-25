@@ -14,7 +14,7 @@
 	<ins
 		class="adsbygoogle"
 		style="display:block"
-		data-ad-client="ca-pub-XXXXXXXXXXXX"
+		data-ad-client="ca-pub-6987368776964335"
 		data-ad-slot={adSlot}
 		data-ad-format="auto"
 		data-full-width-responsive="true"

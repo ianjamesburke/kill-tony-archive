@@ -19,7 +19,7 @@
 	<meta property="og:image" content="https://killtonyarchive.com/og-default.png">
 	<meta name="twitter:image" content="https://killtonyarchive.com/og-default.png">
 	<!-- Google AdSense -->
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX" crossorigin="anonymous"></script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6987368776964335" crossorigin="anonymous"></script>
 </svelte:head>
 
 <!-- TODO: Bring back the live bar once all episodes have been indexed -->
