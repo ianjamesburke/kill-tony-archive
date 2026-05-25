@@ -1,0 +1,32 @@
+Diagnose why the Kill Tony Archive episode processing pipeline has stopped working — no new episodes processed for months.
+
+The pipeline:
+- Runs via cron on Ian's Linux machine (hourly, 8am-midnight MT)
+- daily_processor.py scans YouTube @KillTony for new videos, processes one episode per run
+- batch_processor.py handles the actual two-pass Gemini transcription pipeline
+- Uses yt-dlp to download audio, ffmpeg to split into 20min chunks
+- Gemini models: gemini-3.1-flash-lite-preview (pass 1 audio), gemini-3-flash-preview (fallback)
+- API keys from env: GEMINI_API_KEY, GEMINI_API_KEY_2, GEMINI_API_KEY_3, GEMINI_API_KEY_4
+- Stores in SQLite at ../data/kill_tony.db
+
+Possible breakage points to investigate:
+1. Gemini model names deprecated? (Google sunsets preview models frequently — check if gemini-3.1-flash-lite-preview still exists)
+2. yt-dlp breakage? (YouTube changes anti-bot measures)
+3. API key rotation logic — what happens if all keys hit free tier limits?
+4. The YouTube channel URL or video scanning logic
+5. Any hardcoded model names or API endpoints that changed
+6. Dependencies — check if deno is needed (for yt-dlp JS challenges)
+
+Read ALL relevant files:
+- backend/batch_processor.py (full 1569 lines)
+- backend/daily_processor.py (full 259 lines)
+- backend/qa_checks.py
+- justfile (for dev commands)
+- DEV_LOG.md (recent decisions)
+
+After reading everything, list:
+1. The most likely cause of the breakage
+2. What needs to change to fix it
+3. A specific plan to resume processing
+
+Do NOT make any changes yet — just diagnose.

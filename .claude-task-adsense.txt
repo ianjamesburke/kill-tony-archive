@@ -1,0 +1,21 @@
+Add Google AdSense to the Kill Tony Archive frontend (killtonyarchive.com).
+
+Steps:
+1. Add the AdSense script tag to frontend/src/routes/+layout.svelte (in the head). Use placeholder publisher ID: ca-pub-XXXXXXXXXXXX
+
+2. Add responsive ad units to these pages:
+   - Episode page (find the correct file in frontend/src/routes/episode/) — one banner after episode info
+   - Comedian page (frontend/src/routes/comedian/) — one banner after profile
+   - Home page (frontend/src/routes/+page.svelte) — one banner below featured content
+
+3. Use this pattern for each ad unit (replace PLACEHOLDER with unique slot names like "episode-banner", "comedian-banner", "home-banner"):
+   <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="PLACEHOLDER" data-ad-format="auto" data-full-width-responsive="true"></ins>
+   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+4. Create frontend/static/ads.txt: google.com, pub-XXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+
+5. Add a privacy policy page at frontend/src/routes/privacy/+page.svelte covering AdSense use, cookies, and opt-out instructions.
+
+6. Add privacy policy link to footer in +layout.svelte.
+
+IMPORTANT: Do NOT commit or push. Just make the changes and list what was modified.
