@@ -93,7 +93,7 @@
 				{#if set.topic_tags.length > 0}
 					<span class="set-topics">
 						{#each set.topic_tags.slice(0, 3) as tag}
-							<span class="topic-tag">{tag}</span>
+							<span class="topic-tag">{tag.replace(/_/g, ' ')}</span>
 						{/each}
 					</span>
 				{/if}

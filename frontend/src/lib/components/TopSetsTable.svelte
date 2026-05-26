@@ -37,7 +37,7 @@
 					<td>
 						<div class="td-topics">
 							{#each s.topic_tags as tag}
-								<span class="topic-tag">{tag}</span>
+								<span class="topic-tag">{tag.replace(/_/g, ' ')}</span>
 							{/each}
 						</div>
 					</td>

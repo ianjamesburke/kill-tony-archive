@@ -4,6 +4,20 @@
 
 ---
 
+## 2026-05-25 — [CHANGED] Pipeline v4: WhisperX on Modal GPU replaces Gemini for Pass 1 transcription
+
+Replaced Gemini audio transcription (Pass 1) with WhisperX large-v3 running on Modal's T4 GPU. Key results from ep_742 benchmarking:
+- GPU transcription: 468s (7.8 min) vs local CPU: 9,106s (2.5 hrs) = 19.5x speedup
+- Timestamps accurate to ~1s (Gemini drifted 100-700s, root cause of timecode QA failures)
+- Cost: ~$0.08/episode on Modal free tier ($30/mo covers ~390 episodes)
+- Quality: 90.7% word overlap between GPU and CPU runs (segment boundary differences only)
+
+Pass 2 (Gemini Flash Lite for text extraction) stays as-is. Added WHISPERX_PASS2_PROMPT that handles unlabeled transcripts since WhisperX doesn't identify speakers. Also fixed yt-dlp Chrome cookie issue on macOS (forces TV player, drops audio formats).
+
+Files changed: `backend/batch_processor.py` (PIPELINE_VERSION=4, USE_WHISPERX flag, pass1_whisperx(), WHISPERX_PASS2_PROMPT), `backend/modal_whisperx.py` (new, Modal GPU function).
+
+**Breaks if:** WhisperX segments have no `start` field, Modal GPU times out (>900s), or `modal` package not installed. QA timecode checks should now pass consistently.
+
 ## 2026-04-08 — [DECISION] jrgillick/laughter-detection (ResNet) vs Gemini Flash Lite for laughter
 
 Tested the jrgillick/laughter-detection ResNet model (trained on Switchboard corpus) against the current Gemini Flash Lite chunked approach on the same ep_757 chunk. ResNet produced 6 events vs Gemini's 34 for 20 minutes of audio — ResNet is more conservative/precise, Gemini casts a wider net with semantic classification (laughter vs applause vs cheering). ResNet runs fully local (no API cost), but needs several compatibility patches to run on modern Python (see GOTCHA below). Neither approach solves the real blocker: per-set laughter attribution requires accurate WhisperX timestamps first. Keeping Gemini as primary for now; ResNet is a viable local supplement once timestamps are fixed.

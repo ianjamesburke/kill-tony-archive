@@ -1,0 +1,21 @@
+[
+  {
+    "check": "set_count",
+    "episode": 744,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 744,
+    "set_number": 5,
+    "comedian": "Colin Sledge",
+    "start_seconds": 2473.0,
+    "similarity": 0.088,
+    "passed": false,
+    "clip_transcription": "I mute save. While you may never instantly find these things, if you're hiring, you can find qualified candidates right away, time and time again with ZipRecruiter. And today, you can try it for free ",
+    "expected_start": "So I moved to Austin. Um I'm a little worried about fitting in, you know? I went I went to my I went to my first show and this guy in the green was going on like, you know when I'm on stage, man, that",
+    "warning": "Timecode mismatch for set #5 (Colin Sledge) at 2473s. Similarity: 8.8%. Audio says: 'I mute save. While you may never instantly find these things, if you're hiring, ...' but transcript starts: 'So I moved to Austin. Um I'm a little worried about fitting in, you know? I went...'"
+  }
+]

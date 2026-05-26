@@ -1,0 +1,21 @@
+[
+  {
+    "check": "set_count",
+    "episode": 769,
+    "set_count": 5,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 5 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "timecode",
+    "episode": 769,
+    "set_number": 3,
+    "comedian": "BK",
+    "start_seconds": 1760.0,
+    "similarity": 0.897,
+    "passed": true,
+    "clip_transcription": "Thank you. So, being Middle Eastern, I realized my childhood was very different from my white friends. So, for instance, um, during summer breaks, my white friends' parents would send them to summer c",
+    "expected_start": "Thank you. So being Middle Eastern, I realized my childhood was very different from my white friends. So for instance, during summer breaks, my white friend's parents would send them to summer camp. M"
+  }
+]

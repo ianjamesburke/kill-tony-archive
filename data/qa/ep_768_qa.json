@@ -1,0 +1,20 @@
+[
+  {
+    "check": "set_count",
+    "episode": 768,
+    "set_count": 14,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 768,
+    "set_number": 3,
+    "comedian": "Liv Taylor",
+    "start_seconds": 1379.0,
+    "similarity": 0.914,
+    "passed": true,
+    "clip_transcription": "What's up, Austin? Uh I've been here for about a year now. Uh and there's one thing I know about Texas before living here, it it's hot, right? Um but it does get it gets pretty cold at night. Um it go",
+    "expected_start": "What's up, Austin? I've been here for about a year now. And there's one thing I knew about Texas before living here. It's hot, right? But it does get it gets pretty cold at night. It got pretty cold d"
+  }
+]
