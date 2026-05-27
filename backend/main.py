@@ -1,7 +1,8 @@
 from __future__ import annotations
 
+import hmac
 import os
-import shutil
+import sqlite3
 from pathlib import Path
 from typing import Any, Optional
 
@@ -39,9 +40,17 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=_allowed_origins,
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST"],
+    allow_headers=["x-admin-secret", "content-type"],
 )
+
+from fastapi.responses import JSONResponse  # noqa: E402
+from starlette.requests import Request  # noqa: E402
+
+
+@app.exception_handler(Exception)
+async def unhandled_error(request: Request, exc: Exception) -> JSONResponse:  # noqa: ARG001
+    return JSONResponse(status_code=500, content={"detail": "Internal server error"})
 
 
 # ── Health ──
@@ -176,11 +185,23 @@ async def upload_db(
 ) -> dict[str, str]:
     if not _ADMIN_SECRET:
         raise HTTPException(status_code=503, detail="Admin endpoint disabled (ADMIN_SECRET not set)")
-    if x_admin_secret != _ADMIN_SECRET:
+    if not hmac.compare_digest(x_admin_secret, _ADMIN_SECRET):
         raise HTTPException(status_code=403, detail="Forbidden")
+    MAX_DB_SIZE = 500 * 1024 * 1024
+    content = await file.read()
+    if len(content) > MAX_DB_SIZE:
+        raise HTTPException(status_code=413, detail="File too large (500MB limit)")
+    if content[:16] != b"SQLite format 3\x00":
+        raise HTTPException(status_code=400, detail="Not a valid SQLite database")
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     tmp = DB_PATH.with_suffix(".tmp")
-    with tmp.open("wb") as f:
-        shutil.copyfileobj(file.file, f)
+    tmp.write_bytes(content)
+    try:
+        conn = sqlite3.connect(str(tmp))
+        conn.execute("SELECT count(*) FROM sqlite_master")
+        conn.close()
+    except sqlite3.DatabaseError:
+        tmp.unlink(missing_ok=True)
+        raise HTTPException(status_code=400, detail="Corrupt SQLite database")
     tmp.replace(DB_PATH)
-    return {"status": "ok", "path": str(DB_PATH)}
+    return {"status": "ok"}

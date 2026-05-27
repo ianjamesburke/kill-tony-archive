@@ -8,6 +8,9 @@ ARG VITE_API_BASE
 ENV VITE_API_BASE=$VITE_API_BASE
 RUN npm run build
 
+RUN addgroup -g 1001 -S nodejs && adduser -S sveltekit -u 1001 -G nodejs
+USER sveltekit
+
 EXPOSE 3000
 ENV PORT=3000
 CMD ["node", "build"]
