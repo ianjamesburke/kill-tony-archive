@@ -70,7 +70,24 @@ cd backend && uv run python qa_checks.py --episode 742           # Standalone QA
    - `429 Resource Exhausted` / `RESOURCE_EXHAUSTED` — Gemini rate limit. Wait 60s and retry. Do NOT auto-loop.
    - `Function has not been hydrated` — Modal issue. Make sure `modal_whisperx.py` is importable and `app.run()` wraps the `.remote()` call.
    - `yt-dlp` / `Requested format is not available` — on macOS, Chrome cookies force a TV player path. The pipeline returns empty cookie opts on macOS to avoid this.
-   - `Episode #N not found in database` — add it to the episodes table first.
+   - `Episode #N not found in database` — add it first (see "Adding a New Episode" below).
+
+## Adding a New Episode
+
+When `Episode #N not found in database`, fetch metadata from YouTube and insert:
+
+```bash
+# Get title and metadata
+yt-dlp --get-title "URL"
+yt-dlp --print "%(upload_date)s|%(view_count)s|%(like_count)s|%(comment_count)s" "URL"
+```
+
+```sql
+INSERT INTO episodes (episode_number, date, title, youtube_url, video_id, guests, view_count, like_count, comment_count, upload_date, processed_at, status, pipeline_version)
+VALUES (<N>, '<YYYYMMDD>', '<title from yt-dlp>', '<URL>', '<video_id>', '["Guest1", "Guest2"]', <views>, <likes>, <comments>, '<YYYYMMDD>', datetime('now'), 'pending', 4);
+```
+
+**Critical:** `title` must be set (not NULL) or `extract_episode_number()` will TypeError. Extract guests from the title (format: `KT #N - GUEST1 + GUEST2`). Use `upload_date` for the `date` column (matches existing pattern). `video_id` is the `v=` parameter from the YouTube URL.
 
 ## Pass 2 Auto-Chunking
 
@@ -157,11 +174,11 @@ QA: Episode #<N>
 
 ## Upload DB to Railway (`/kt-upload`)
 
-```
-! cd ~/Documents/GitHub/kill-tony-archive && just upload-db
+```bash
+! cd ~/Documents/GitHub/kill-tony-archive && export $(grep -E "ADMIN_SECRET|RAILWAY_BACKEND_URL" .env | xargs) && just upload-db
 ```
 
-Requires `RAILWAY_BACKEND_URL` and `ADMIN_SECRET` env vars. The pipeline also auto-syncs after each episode via `sync_db_to_railway()`.
+The justfile expects `RAILWAY_BACKEND_URL` and `ADMIN_SECRET` as shell vars. They live in `.env` but aren't auto-sourced, so export them inline.
 
 ## Environment Requirements
 

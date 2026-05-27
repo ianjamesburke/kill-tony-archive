@@ -1,0 +1,20 @@
+[
+  {
+    "check": "set_count",
+    "episode": 767,
+    "set_count": 15,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 767,
+    "set_number": 11,
+    "comedian": "Adam Beck Areola",
+    "start_seconds": 5351.0,
+    "similarity": 0.861,
+    "passed": true,
+    "clip_transcription": "I recently met a girl with herpes and well, I think I'm in love. I mean, what are the odds? The first woman I talk to in months has aftermarket parts. It was kind of a surreal moment for me, you know,",
+    "expected_start": "I recently met a girl with herpes and, well, I think I'm in love. I mean, what are the odds the first woman I talked to in months has aftermarket parts? It was kind of a surreal moment for me, you kno"
+  }
+]

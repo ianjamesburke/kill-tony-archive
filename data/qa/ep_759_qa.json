@@ -5,5 +5,16 @@
     "set_count": 10,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 759,
+    "set_number": 3,
+    "comedian": "Mark Fitman",
+    "start_seconds": 1248.0,
+    "similarity": 0.906,
+    "passed": true,
+    "clip_transcription": "How you doing, everyone? Nice to be here. It's coming up on Oscar season and, you know, I used to be into it a lot more. Last year, I saw the Best Picture, uh, and Nora.",
+    "expected_start": "How you doing, everyone? Nice to be here. Coming up on Oscar season, and, you know, I used to be into it a lot more. Last year, I saw the best picture, Nora. And the first 20 minutes of that movie is "
   }
 ]

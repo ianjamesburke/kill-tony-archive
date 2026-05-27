@@ -2,8 +2,19 @@
   {
     "check": "set_count",
     "episode": 729,
-    "set_count": 10,
+    "set_count": 13,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 729,
+    "set_number": 6,
+    "comedian": "Vinny Flores",
+    "start_seconds": 3057.0,
+    "similarity": 0.909,
+    "passed": true,
+    "clip_transcription": "All right. So, I'm a rookie to this comedy field, right? And uh, one of the things that a lot of the veterans tell me is that you got to be relatable. You got to relate to your audience. So, uh, has a",
+    "expected_start": "So I'm a rookie to this comedy field, right? And one of the things that a lot of the veterans tell me is that you gotta be relatable. You gotta relate to your audience. So has anybody here ever done c"
   }
 ]

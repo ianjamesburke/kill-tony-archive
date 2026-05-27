@@ -1,0 +1,20 @@
+[
+  {
+    "check": "set_count",
+    "episode": 762,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 762,
+    "set_number": 4,
+    "comedian": "Riley Galvin",
+    "start_seconds": 2200.0,
+    "similarity": 0.818,
+    "passed": true,
+    "clip_transcription": "Here we go. Whoever created the phrase, it's not about the size of the dog in the fight. It's about the size of the fight and the dog. Clearly, has never gambled on dog fighting. Always bet on the big",
+    "expected_start": "Whoever created the phrase it's not about the size of the dog in the fight it's about the size of the fight the dog clearly has never gambled on dog fighting always bet on the bigger dog ventriloquist"
+  }
+]

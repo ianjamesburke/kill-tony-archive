@@ -1,0 +1,20 @@
+[
+  {
+    "check": "set_count",
+    "episode": 765,
+    "set_count": 15,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 765,
+    "set_number": 6,
+    "comedian": "Karen Feehan",
+    "start_seconds": 2882.0,
+    "similarity": 0.682,
+    "passed": true,
+    "clip_transcription": "God, this is so exciting. Hi! Hi! Hi, Dustin. Hi! How are we? Um I don't know, some of you guys might not know",
+    "expected_start": "god this is so exciting hi hi hi dustin hi how are we um i don't know some of you guys might not know my name is karen i'm from massachusetts i was in the boston ballet for about 10 years that's why i"
+  }
+]

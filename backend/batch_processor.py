@@ -439,34 +439,49 @@ def _yt_cookie_opts() -> dict:
     cookie_file = ROOT / "cookies.txt"
     if cookie_file.exists():
         return {"cookiefile": str(cookie_file)}
-    # macOS: don't use browser cookies (forces TV player, drops audio formats)
     if sys.platform == "darwin":
         return {}
-    # Use "Profile 1" (Ian's profile with Google login)
     return {"cookiesfrombrowser": ("chromium", "Profile 1")}
 
 
-def _yt_base_opts() -> dict:
-    """Base yt-dlp options including cookies and JS challenge solver."""
-    return {
+def _yt_base_opts(*, with_cookies: bool = False) -> dict:
+    """Base yt-dlp options. Cookies excluded by default (break macOS TV player path)."""
+    opts: dict = {
         "nocheckcertificate": True,
         "no_warnings": False,
         "ignoreerrors": False,
-        **_yt_cookie_opts()
     }
+    if with_cookies:
+        opts.update(_yt_cookie_opts())
+    return opts
+
+
+def _is_age_restricted_error(err: Exception) -> bool:
+    msg = str(err).lower()
+    return "sign in to confirm your age" in msg or "age" in msg and "restrict" in msg
 
 
 def get_youtube_info(url: str) -> dict:
     """Extract metadata and stats from YouTube."""
     opts = {
         "skip_download": True,
-        "quiet": False,  # Show warnings
+        "quiet": False,
         "extract_flat": False,
-        "format": "bestaudio/best",  # Ensure format is available
+        "ignore_no_formats_error": True,
         **_yt_base_opts()
     }
-    with YoutubeDL(opts) as ydl:  # type: ignore[arg-type]
-        info = ydl.extract_info(url, download=False)
+    try:
+        with YoutubeDL(opts) as ydl:  # type: ignore[arg-type]
+            info = ydl.extract_info(url, download=False)
+    except Exception as e:
+        if _is_age_restricted_error(e):
+            log.info("Age-restricted video detected, retrying with cookies...")
+            opts.update(_yt_cookie_opts())
+            opts["ignore_no_formats_error"] = True
+            with YoutubeDL(opts) as ydl:  # type: ignore[arg-type]
+                info = ydl.extract_info(url, download=False)
+        else:
+            raise
 
     if not info:
         return {"title": "", "episode_number": None, "duration": None,
@@ -597,8 +612,17 @@ def download_audio(url: str, episode_number: int) -> Path:
         }
 
         log.info("Downloading audio...")
-        with YoutubeDL(opts) as ydl:  # type: ignore[arg-type]
-            ydl.extract_info(url, download=True)
+        try:
+            with YoutubeDL(opts) as ydl:  # type: ignore[arg-type]
+                ydl.extract_info(url, download=True)
+        except Exception as e:
+            if _is_age_restricted_error(e):
+                log.info("Age-restricted video detected, retrying with cookies...")
+                opts.update(_yt_cookie_opts())
+                with YoutubeDL(opts) as ydl:  # type: ignore[arg-type]
+                    ydl.extract_info(url, download=True)
+            else:
+                raise
 
         downloaded = list(tmp_path.glob("audio.*"))
         if not downloaded:
@@ -924,24 +948,56 @@ def _pass2_call(client: genai.Client, transcript_text: str, episode_number: int,
     else:
         prompt = WHISPERX_PASS2_PROMPT.format(transcript=transcript_text, episode_number=episode_number)
 
-    for attempt in range(3):
+    for attempt in range(4):
         try:
             response = client.models.generate_content(
                 model=PASS2_MODEL,
                 contents=[{"role": "user", "parts": [{"text": prompt}]}],
                 config={"response_mime_type": "application/json", "http_options": {"timeout": 600000}},
             )
+            raw_text = (response.text or "").strip()
+            if not raw_text:
+                if attempt < 3:
+                    wait = 30 * (attempt + 1)
+                    log.warning(f"  Pass 2 attempt {attempt+1} returned empty response, retrying in {wait}s")
+                    time.sleep(wait)
+                    continue
+                raise ValueError("Gemini returned empty response after 4 attempts")
             break
+        except ValueError:
+            raise
         except Exception as api_err:
-            if attempt < 2:
+            if attempt < 3:
                 wait = 30 * (attempt + 1)
                 log.warning(f"  Pass 2 attempt {attempt+1} failed ({api_err}), retrying in {wait}s")
                 time.sleep(wait)
             else:
                 raise
 
-    raw_text = (response.text or "").strip()
-    data = json.loads(raw_text)
+    raw_text = raw_text.strip()
+    if "```" in raw_text:
+        raw_text = re.sub(r"```(?:json)?", "", raw_text).strip()
+    try:
+        data = json.loads(raw_text)
+    except json.JSONDecodeError:
+        # Gemini sometimes appends extra data after the JSON object
+        brace = raw_text.find("{")
+        if brace == -1:
+            raise
+        depth = 0
+        end = -1
+        for i in range(brace, len(raw_text)):
+            if raw_text[i] == "{":
+                depth += 1
+            elif raw_text[i] == "}":
+                depth -= 1
+                if depth == 0:
+                    end = i + 1
+                    break
+        if end > 0:
+            data = json.loads(raw_text[brace:end])
+        else:
+            raise
     if isinstance(data, list) and len(data) == 1:
         data = data[0]
 

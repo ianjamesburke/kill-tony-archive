@@ -2,9 +2,20 @@
   {
     "check": "set_count",
     "episode": 761,
-    "set_count": 5,
+    "set_count": 6,
     "min_expected": 8,
     "passed": false,
-    "warning": "Only 5 sets found (expected >= 8). Pass 2 may have missed sets."
+    "warning": "Only 6 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "timecode",
+    "episode": 761,
+    "set_number": 3,
+    "comedian": "Jake McFarlane",
+    "start_seconds": 1351.0,
+    "similarity": 0.941,
+    "passed": true,
+    "clip_transcription": "I just want to start this by saying I'm five years sober and clean from white pussy.",
+    "expected_start": "I just want to start this by saying I'm five years sober and clean. From white pussy. Yeah. Wasn't a hard choice. White pussy tastes like nickels. Yeah, it does. That's true. Yeah. It's February, baby"
   }
 ]

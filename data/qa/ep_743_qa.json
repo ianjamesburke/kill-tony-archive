@@ -1,0 +1,20 @@
+[
+  {
+    "check": "set_count",
+    "episode": 743,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 743,
+    "set_number": 6,
+    "comedian": "Aaron Belisle",
+    "start_seconds": 3546.0,
+    "similarity": 0.852,
+    "passed": true,
+    "clip_transcription": "Aaron. A H Who wants to see me do some crowd work? Well, I can't talk so you're not fucking going to. Fine, I'll give it a try.",
+    "expected_start": "Aaron, A-H. Who wants to see me do some crowd work? Well, I can't talk, so you're not fucking gonna. Fine, I'll give it a try. Hello, random person who I'm never going to see again. What's your name? "
+  }
+]

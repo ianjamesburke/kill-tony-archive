@@ -1,0 +1,20 @@
+[
+  {
+    "check": "set_count",
+    "episode": 766,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 766,
+    "set_number": 5,
+    "comedian": "Austin Ingalls",
+    "start_seconds": 3091.0,
+    "similarity": 0.875,
+    "passed": true,
+    "clip_transcription": "How are we doing? Thank you so much. Uh I'm from the Midwest. Uh my family's old fashioned is what you say when your family's still racist. Uh",
+    "expected_start": "How we doing? Thank you so much. I'm from the Midwest. My family's old-fashioned, is what you say when your family's still racist. And all my friends are starting families of their own, and one of my "
+  }
+]

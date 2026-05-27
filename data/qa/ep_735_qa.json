@@ -2,8 +2,19 @@
   {
     "check": "set_count",
     "episode": 735,
-    "set_count": 8,
+    "set_count": 12,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 735,
+    "set_number": 10,
+    "comedian": "Doc Ferry",
+    "start_seconds": 4947.0,
+    "similarity": 0.905,
+    "passed": true,
+    "clip_transcription": "I feel like everybody looking at me right now knows exactly who I voted for. I like to ride doll women in the bedroom.",
+    "expected_start": "I feel like everybody looking at me right now knows exactly who I voted for. I like to ragdoll women in the bedroom. Not very fond of women right now. Me and my wife were arguing in the car. She said,"
   }
 ]
