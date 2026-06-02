@@ -2,8 +2,19 @@
   {
     "check": "set_count",
     "episode": 734,
-    "set_count": 12,
+    "set_count": 13,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 734,
+    "set_number": 3,
+    "comedian": "Jim Talley",
+    "start_seconds": 1500.0,
+    "similarity": 0.828,
+    "passed": true,
+    "clip_transcription": "Fuck yeah, I want to talk about Elon Musk tonight, man. Uh, yeah, I don't I don't like the guy. You know, I don't like how he's trying to take humans to Mars. You know, I'm black. I'm not going, right",
+    "expected_start": "Yeah, how y'all doing tonight? Fuck yeah, I want to talk about Elon Musk tonight, man. Uh, yeah, I don't... I don't like the guy. You know, I don't like how he's trying to take humans to Mars. You kno"
   }
 ]

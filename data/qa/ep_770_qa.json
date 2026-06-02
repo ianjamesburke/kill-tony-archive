@@ -1,0 +1,20 @@
+[
+  {
+    "check": "set_count",
+    "episode": 770,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 770,
+    "set_number": 6,
+    "comedian": "David Hall",
+    "start_seconds": 5543.0,
+    "similarity": 0.909,
+    "passed": true,
+    "clip_transcription": "Good evening, ladies and gentlemen. I am a bunch of white privilege. Let me tell you, I was born in Africa, so it technically makes me African-American. That must make some of you a little uncomfortab",
+    "expected_start": "Good evening, ladies and gentlemen. I am a bunch of white privilege. Let me tell you, I'm born in Africa, so it technically makes me African American. That must make some of you a little uncomfortable"
+  }
+]

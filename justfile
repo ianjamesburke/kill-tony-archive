@@ -46,7 +46,7 @@ process EP:
 # Re-run Pass 2 only (uses cached transcript, skips audio download)
 #   just reprocess 742
 reprocess EP:
-    cd backend && .venv/bin/python reprocess_pass2.py --episode {{EP}}
+    cd backend && .venv/bin/python reprocess_pass2.py {{EP}}
 
 # Run QA checks on an already-processed episode (set count + timecode spot-check)
 #   just qa 742

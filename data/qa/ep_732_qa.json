@@ -2,8 +2,19 @@
   {
     "check": "set_count",
     "episode": 732,
-    "set_count": 13,
+    "set_count": 14,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 732,
+    "set_number": 13,
+    "comedian": "Mason Byrd",
+    "start_seconds": 6639.0,
+    "similarity": 0.92,
+    "passed": true,
+    "clip_transcription": "I have the mindset of an NFL quarterback when I have sex. If I go three and out one more time, they're going to put in the black guy.",
+    "expected_start": "I have the mindset of an NFL quarterback when I have sex. If I go three and out one more time, they're gonna put in the black guy. And they should. The black guys can do spin moves in the pussy. I'm m"
   }
 ]

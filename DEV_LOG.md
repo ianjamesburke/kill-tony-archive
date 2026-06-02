@@ -4,6 +4,16 @@
 
 ---
 
+## 2026-06-02 — [CHANGED] Pass 2 rolling-window chunker replaces single-midpoint split
+
+Old approach: if episode > 90min, split transcript at the midpoint into two halves and call Pass 2 twice. Problem: for a 131min episode the first half was still 68 minutes of transcript — Gemini dropped sets in the middle of the long context (ep 770 lost 5 sets: Max Imum, Nilo Mac, Blix Hanson, Chris Longoria, Sir Winston Pickles).
+
+New approach: always chunk at 40min windows (PASS2_CHUNK_SIZE=2400s) with 5min overlap (PASS2_OVERLAP_SECONDS=300s), stride = 35min. Any episode ≤40min = single call (unchanged). Episodes >40min get N rolling windows, sets deduped by comedian name across windows, sorted by set_start_seconds. Also added gap-detection warning: logs if >20min gap between consecutive sets after extraction.
+
+Also fixed `justfile` reprocess recipe — was passing `--episode N` but reprocess_pass2.py takes a positional arg.
+
+**Breaks if:** episode with >40min of transcript produces fewer sets than expected, or sets are out of order — check for gap warnings in pipeline logs.
+
 ## 2026-05-25 — [CHANGED] Pipeline v4: WhisperX on Modal GPU replaces Gemini for Pass 1 transcription
 
 Replaced Gemini audio transcription (Pass 1) with WhisperX large-v3 running on Modal's T4 GPU. Key results from ep_742 benchmarking:

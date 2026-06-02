@@ -209,7 +209,7 @@ FIELD RULES:
   2 = Unimpressed/disappointed — "eh", short dismissive answer, "you have some work to do", no laughs, no specific praise
   3 = Neutral/polite — generic host comments ("nice to meet you", "where you from"), asks interview questions without complimenting the set, or gives mild encouragement with no specific praise ("keep working at it", "you'll get better")
   4 = Genuinely positive — laughs at specific jokes, "I liked that", "that was funny", "good set", calls out a particular joke that worked, real enthusiasm
-  5 = High praise — "you killed it", "that was one of the best sets tonight", golden ticket, "you're ready for a special", calls out multiple killer moments, audience still cheering
+  5 = High praise — "you killed it", "that was one of the best sets tonight", golden ticket, "you're ready for a special", calls out multiple killer moments, audience still cheering. ALSO 5 if Tony says "Welcome" or "Welcome to the Kill Tony Universe" (or similar "welcome" phrasing) — this is his signature signal that someone has truly arrived.
   DEFAULT TO 3 if Tony doesn't specifically comment on the quality of the set. Most sets are 2-4. Reserve 5 for truly exceptional sets where Tony is visibly impressed.
 - joke_book_size: This refers to the physical notebook/paper the comedian brings on stage to read their jokes from. Tony often comments on it AFTER their set during the interview ("big book", "small book", "no book", "you didn't even have a book"). DEFAULT TO "none" — only set to small/medium/large if Tony or a judge EXPLICITLY comments on the comedian having a physical joke book/paper during THIS comedian's interview. Do NOT guess or infer. Regulars NEVER have joke books (always "none"). The joke book comment belongs to the comedian whose interview is happening, NOT the next comedian about to be introduced.
 - topic_tags: assign 3-5 tags per set. Choose from: [self_deprecation, politics, relationships, sex, race, crowd_work, observational, shock_humor, storytelling, absurdist, physical, meta, regional, drugs, religion, family, dating, disability, food, aging, lgbtq, crime, work, other]
@@ -292,7 +292,7 @@ FIELD RULES:
   Mark status = "special_request" when someone is brought up outside the normal bucket draw or regular rotation.
   Default to "bucket_pull" if none of those signals are present.
 - Boolean fields default to false. Only set to true when EXPLICITLY stated in the transcript.
-- tony_praise_level: 1=negative, 2=unimpressed, 3=neutral, 4=positive, 5=high praise. Default 3.
+- tony_praise_level: 1=negative, 2=unimpressed, 3=neutral, 4=positive, 5=high praise. Default 3. SPECIAL SIGNAL: if Tony says "Welcome" or "Welcome to the Kill Tony Universe" (or similar welcome phrasing) after a set, that is always a 5.
 - set_start_seconds: when the comedian STARTS their material (first joke), NOT when Tony announces them. Use the timestamp from the transcript.
 - set_end_seconds: when they STOP performing (buzzer, band plays off).
 - topic_tags: 3-5 from [self_deprecation, politics, relationships, sex, race, crowd_work, observational, shock_humor, storytelling, absurdist, physical, meta, regional, drugs, religion, family, dating, disability, food, aging, lgbtq, crime, work, other]
@@ -470,18 +470,28 @@ def get_youtube_info(url: str) -> dict:
         "ignore_no_formats_error": True,
         **_yt_base_opts()
     }
+    def _needs_cookie_retry(info_result: dict | None) -> bool:
+        """yt-dlp sometimes returns an info dict with no formats instead of raising."""
+        if not info_result:
+            return True
+        formats = info_result.get("formats") or []
+        return len(formats) == 0
+
     try:
         with YoutubeDL(opts) as ydl:  # type: ignore[arg-type]
             info = ydl.extract_info(url, download=False)
     except Exception as e:
         if _is_age_restricted_error(e):
-            log.info("Age-restricted video detected, retrying with cookies...")
-            opts.update(_yt_cookie_opts())
-            opts["ignore_no_formats_error"] = True
-            with YoutubeDL(opts) as ydl:  # type: ignore[arg-type]
-                info = ydl.extract_info(url, download=False)
+            info = None
         else:
             raise
+
+    if info is None or _needs_cookie_retry(info):
+        log.info("Age-restricted video detected, retrying with cookies...")
+        opts.update(_yt_cookie_opts())
+        opts["ignore_no_formats_error"] = True
+        with YoutubeDL(opts) as ydl:  # type: ignore[arg-type]
+            info = ydl.extract_info(url, download=False)
 
     if not info:
         return {"title": "", "episode_number": None, "duration": None,
@@ -625,6 +635,13 @@ def download_audio(url: str, episode_number: int) -> Path:
                 raise
 
         downloaded = list(tmp_path.glob("audio.*"))
+        if not downloaded:
+            # yt-dlp sometimes silently produces no output for age-restricted videos
+            log.info("No audio downloaded, retrying with cookies...")
+            opts.update(_yt_cookie_opts())
+            with YoutubeDL(opts) as ydl:  # type: ignore[arg-type]
+                ydl.extract_info(url, download=True)
+            downloaded = list(tmp_path.glob("audio.*"))
         if not downloaded:
             raise RuntimeError("No audio file downloaded")
 
@@ -937,8 +954,8 @@ def pass1_whisperx(audio_path: Path) -> list[dict]:
     return entries
 
 
-PASS2_CHUNK_THRESHOLD = 5400  # 90 minutes — episodes longer than this get chunked Pass 2
-PASS2_OVERLAP_SECONDS = 300   # 5-minute overlap between halves
+PASS2_CHUNK_SIZE = 2400       # 40 minutes per chunk — keeps each Gemini call manageable
+PASS2_OVERLAP_SECONDS = 300   # 5-minute overlap between adjacent chunks
 
 
 def _pass2_call(client: genai.Client, transcript_text: str, episode_number: int, has_speakers: bool) -> dict:
@@ -1026,40 +1043,63 @@ def pass2_analyze(client: genai.Client, transcript: list[dict], episode_number: 
 
     last_ts = max((e.get("start_seconds", 0) for e in transcript), default=0)
 
-    if last_ts < PASS2_CHUNK_THRESHOLD:
+    def check_gaps(sets: list[dict]) -> None:
+        for i in range(1, len(sets)):
+            prev_end = sets[i - 1].get("set_end_seconds", 0)
+            curr_start = sets[i].get("set_start_seconds", 0)
+            gap = curr_start - prev_end
+            if gap > 1200:
+                log.warning(
+                    f"  GAP WARNING: {gap/60:.0f}min gap between set #{i} ({sets[i-1].get('comedian_name')}) "
+                    f"and set #{i+1} ({sets[i].get('comedian_name')}) — possible missed sets"
+                )
+
+    if last_ts <= PASS2_CHUNK_SIZE:
         transcript_text = format_lines(transcript)
-        return _pass2_call(client, transcript_text, episode_number, has_speakers)
+        data = _pass2_call(client, transcript_text, episode_number, has_speakers)
+        check_gaps(data.get("sets", []))
+        return data
 
-    # Long episode: split transcript into two halves with overlap to avoid missing sets
-    midpoint = last_ts / 2
-    overlap_start = midpoint - PASS2_OVERLAP_SECONDS / 2
-    overlap_end = midpoint + PASS2_OVERLAP_SECONDS / 2
+    # Build rolling windows: each chunk is PASS2_CHUNK_SIZE seconds, advancing by
+    # (PASS2_CHUNK_SIZE - PASS2_OVERLAP_SECONDS) each step so adjacent chunks share
+    # PASS2_OVERLAP_SECONDS of context for deduplication.
+    stride = PASS2_CHUNK_SIZE - PASS2_OVERLAP_SECONDS
+    chunk_starts = list(range(0, int(last_ts), stride))
+    chunks = []
+    for start in chunk_starts:
+        end = start + PASS2_CHUNK_SIZE
+        segs = [e for e in transcript if start <= e.get("start_seconds", 0) < end]
+        if segs:
+            chunks.append((start, end, segs))
 
-    first_half = [e for e in transcript if e.get("start_seconds", 0) <= overlap_end]
-    second_half = [e for e in transcript if e.get("start_seconds", 0) >= overlap_start]
+    log.info(f"  Episode {int(last_ts)}s — chunking Pass 2 into {len(chunks)} x {PASS2_CHUNK_SIZE//60}min windows")
 
-    log.info(f"  Long episode ({int(last_ts)}s), splitting Pass 2: first half {len(first_half)} segments, second half {len(second_half)} segments")
+    seen_names: set[str] = set()
+    merged_sets: list[dict] = []
+    first_data: dict | None = None
 
-    data1 = _pass2_call(client, format_lines(first_half), episode_number, has_speakers)
-    data2 = _pass2_call(client, format_lines(second_half), episode_number, has_speakers)
+    for idx, (start, end, segs) in enumerate(chunks):
+        log.info(f"  Pass 2 chunk {idx+1}/{len(chunks)} ({start//60:.0f}–{min(end, int(last_ts))//60:.0f}min, {len(segs)} segs)")
+        data = _pass2_call(client, format_lines(segs), episode_number, has_speakers)
+        if first_data is None:
+            first_data = data
+        for s in data.get("sets", []):
+            name = s.get("comedian_name", "")
+            if name and name not in seen_names:
+                seen_names.add(name)
+                merged_sets.append(s)
 
-    # Merge sets, deduplicating by comedian name in the overlap region
-    sets1 = data1.get("sets", [])
-    sets2 = data2.get("sets", [])
-    first_half_names = {s.get("comedian_name") for s in sets1}
-    merged_sets = list(sets1)
-    for s in sets2:
-        if s.get("comedian_name") not in first_half_names:
-            merged_sets.append(s)
-
-    # Renumber sets sequentially
+    # Sort by set_start_seconds and renumber sequentially
+    merged_sets.sort(key=lambda s: s.get("set_start_seconds", 0))
     for i, s in enumerate(merged_sets, 1):
         s["set_number"] = i
 
-    log.info(f"  Merged: {len(sets1)} + {len(sets2)} sets -> {len(merged_sets)} unique sets")
+    log.info(f"  Merged {len(chunks)} chunks -> {len(merged_sets)} unique sets")
+    check_gaps(merged_sets)
 
-    data1["sets"] = merged_sets
-    return data1
+    assert first_data is not None
+    first_data["sets"] = merged_sets
+    return first_data
 
 
 LAUGHTER_CHUNK_SECONDS = 900  # 15 minutes per laughter chunk
@@ -1608,7 +1648,9 @@ def process_episode(client: genai.Client, ep: dict, model_override: str | None =
     # Get YouTube stats
     log.info("Fetching YouTube metadata...")
     yt_info = get_youtube_info(url)
-    log.info(f"  Views: {yt_info.get('view_count', 'N/A'):,} | Likes: {yt_info.get('like_count', 'N/A'):,} | Comments: {yt_info.get('comment_count', 'N/A'):,}")
+    def _fmt(v: object) -> str:
+        return f"{v:,}" if isinstance(v, int) else "N/A"
+    log.info(f"  Views: {_fmt(yt_info.get('view_count'))} | Likes: {_fmt(yt_info.get('like_count'))} | Comments: {_fmt(yt_info.get('comment_count'))}")
 
     # Extract guests from YouTube title
     log.info("Extracting guests from title...")

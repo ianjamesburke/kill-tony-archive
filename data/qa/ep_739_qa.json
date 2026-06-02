@@ -2,8 +2,19 @@
   {
     "check": "set_count",
     "episode": 739,
-    "set_count": 12,
+    "set_count": 13,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 739,
+    "set_number": 5,
+    "comedian": "Busco Jones",
+    "start_seconds": 2946.0,
+    "similarity": 0.857,
+    "passed": true,
+    "clip_transcription": "So, for a little while, my 20s, I thought I was gay. Turned out, though, I was just really, really bad with the women.",
+    "expected_start": "So for a little while in my 20s i thought i was gay. Turned out, though, I was just really, really bad with the women. I am what my daughter's generation would have called a simp, which all that means"
   }
 ]
