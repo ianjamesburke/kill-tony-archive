@@ -52,9 +52,7 @@
 			<a href="/vote" class="nt" class:active={isActive('/vote')}>Vote</a>
 		</div>
 	</div>
-	<div class="nav-right">
-		<div class="nav-tag">Kill Score v2.1</div>
-	</div>
+	<div class="nav-right"></div>
 </nav>
 
 <!-- PAGE CONTENT -->
@@ -81,6 +79,7 @@
 	</div>
 	<div class="footer-bottom">
 		<div class="footer-left">Kill Tony Archive &middot; All data from public sources</div>
+		<div class="footer-disclaimer-bottom">Not affiliated with Kill Tony or its creators.</div>
 		<a href="/privacy" class="footer-privacy">Privacy Policy</a>
 	</div>
 </footer>
@@ -238,6 +237,14 @@
 	}
 
 	.footer-left {
+		font-family: var(--mono);
+		font-size: 9px;
+		color: var(--dim);
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+
+	.footer-disclaimer-bottom {
 		font-family: var(--mono);
 		font-size: 9px;
 		color: var(--dim);
