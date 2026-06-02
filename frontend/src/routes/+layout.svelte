@@ -18,6 +18,14 @@
 	<meta name="twitter:card" content="summary">
 	<meta property="og:image" content="https://killtonyarchive.com/og-default.png">
 	<meta name="twitter:image" content="https://killtonyarchive.com/og-default.png">
+	<!-- Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-WGQRS31KEP"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-WGQRS31KEP');
+	</script>
 	<!-- Google AdSense -->
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6987368776964335" crossorigin="anonymous"></script>
 </svelte:head>
