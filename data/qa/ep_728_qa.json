@@ -5,5 +5,16 @@
     "set_count": 13,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 728,
+    "set_number": 7,
+    "comedian": "David Lucas",
+    "start_seconds": 4346.0,
+    "similarity": 0.957,
+    "passed": true,
+    "clip_transcription": "A plane in India just recently crashed heading to England and 176 Indians died. And since that plane crash, scam calls have been down 50%.",
+    "expected_start": "A plane in India just recently crashed heading to England, and 176 Indians died. And since that plane crash, scam calls have been down 50%. Apple has no more tech support. It's crazy. You're going to "
   }
 ]

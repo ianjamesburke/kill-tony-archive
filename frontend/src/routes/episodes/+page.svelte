@@ -200,7 +200,11 @@
 
 	<div class="ep-list">
 		{#each pagedEpisodes() as ep}
-			<a href="/episodes/{ep.episode_number}" class="ep-row">
+			<svelte:element
+				this={ep.status === 'age_restricted' ? 'div' : 'a'}
+				href={ep.status === 'age_restricted' ? undefined : `/episodes/${ep.episode_number}`}
+				class="ep-row{ep.status === 'age_restricted' ? ' ep-row--age-restricted' : ''}"
+			>
 				<div class="ep-left">
 					{#if ep.episode_rank != null}
 						<div class="ep-rank">#{ep.episode_rank}</div>
@@ -212,6 +216,9 @@
 								<span class="ep-dash">—</span>
 								<span class="ep-guest-names">{ep.guests.join(', ')}</span>
 							{/if}
+							{#if ep.status === 'age_restricted'}
+								<span class="ep-age-badge">18+</span>
+							{/if}
 						</div>
 						<div class="ep-meta">
 							{#if ep.date}
@@ -220,38 +227,45 @@
 							{#if ep.venue}
 								<span class="ep-venue">{ep.venue}</span>
 							{/if}
+							{#if ep.status === 'age_restricted'}
+								<span class="ep-age-note">Age-restricted on YouTube — not available</span>
+							{/if}
 						</div>
 					</div>
 				</div>
 				<div class="ep-stats">
-					<div class="ep-stat ep-stat-score">
-						<span class="ep-stat-label">Kill Score</span>
-						<div class="ep-score-row">
-							<div class="ep-score-bar-bg">
-								<div
-									class="ep-score-bar-fill"
-									style="width: {(((ep.episode_kill_score ?? 0) / maxKillScore) * 100).toFixed(0)}%"
-								></div>
+					{#if ep.status === 'age_restricted'}
+						<span class="ep-unavailable">Unavailable</span>
+					{:else}
+						<div class="ep-stat ep-stat-score">
+							<span class="ep-stat-label">Kill Score</span>
+							<div class="ep-score-row">
+								<div class="ep-score-bar-bg">
+									<div
+										class="ep-score-bar-fill"
+										style="width: {(((ep.episode_kill_score ?? 0) / maxKillScore) * 100).toFixed(0)}%"
+									></div>
+								</div>
+								<span class="ep-stat-val score">{ep.episode_kill_score ?? '—'}</span>
 							</div>
-							<span class="ep-stat-val score">{ep.episode_kill_score ?? '—'}</span>
 						</div>
-					</div>
-					<div class="ep-stat">
-						<span class="ep-stat-label">Sets</span>
-						<span class="ep-stat-val">{ep.set_count}</span>
-					</div>
-					<div class="ep-stat">
-						<span class="ep-stat-label">Avg Set</span>
-						<span class="ep-stat-val">{ep.avg_kill_score ?? '—'}</span>
-					</div>
-					{#if ep.laughter_pct != null && ep.laughter_pct > 0}
 						<div class="ep-stat">
-							<span class="ep-stat-label">Laugh %</span>
-							<span class="ep-stat-val">{ep.laughter_pct.toFixed(1)}%</span>
+							<span class="ep-stat-label">Sets</span>
+							<span class="ep-stat-val">{ep.set_count}</span>
 						</div>
+						<div class="ep-stat">
+							<span class="ep-stat-label">Avg Set</span>
+							<span class="ep-stat-val">{ep.avg_kill_score ?? '—'}</span>
+						</div>
+						{#if ep.laughter_pct != null && ep.laughter_pct > 0}
+							<div class="ep-stat">
+								<span class="ep-stat-label">Laugh %</span>
+								<span class="ep-stat-val">{ep.laughter_pct.toFixed(1)}%</span>
+							</div>
+						{/if}
 					{/if}
 				</div>
-			</a>
+			</svelte:element>
 		{/each}
 	</div>
 
@@ -435,6 +449,33 @@
 	.ep-venue {
 		font-size: 12px;
 		color: var(--dim);
+	}
+
+	.ep-row--age-restricted {
+		opacity: 0.5;
+		cursor: default;
+	}
+
+	.ep-age-badge {
+		font-size: 10px;
+		font-weight: 700;
+		background: #7f1d1d;
+		color: #fca5a5;
+		padding: 1px 5px;
+		border-radius: 3px;
+		letter-spacing: 0.05em;
+	}
+
+	.ep-age-note {
+		font-size: 11px;
+		color: #f87171;
+		font-style: italic;
+	}
+
+	.ep-unavailable {
+		font-size: 12px;
+		color: var(--dim);
+		font-style: italic;
 	}
 
 	.ep-stats {

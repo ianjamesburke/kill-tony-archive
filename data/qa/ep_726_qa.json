@@ -2,9 +2,19 @@
   {
     "check": "set_count",
     "episode": 726,
-    "set_count": 5,
+    "set_count": 12,
     "min_expected": 8,
-    "passed": false,
-    "warning": "Only 5 sets found (expected >= 8). Pass 2 may have missed sets."
+    "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 726,
+    "set_number": 4,
+    "comedian": "Mike Holloway",
+    "start_seconds": 2099.0,
+    "similarity": 1.0,
+    "passed": true,
+    "clip_transcription": "I don't think everyone who has a cat also throws trash on the floor and calls it a toy.",
+    "expected_start": "I don't think everyone who has a cat also throws trash on the floor and calls it a toy. But I do think everyone who throws trash on the floor and calls it a toy also has a cat. I don't think everyone "
   }
 ]

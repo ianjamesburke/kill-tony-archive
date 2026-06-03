@@ -441,7 +441,7 @@ def _yt_cookie_opts() -> dict:
         return {"cookiefile": str(cookie_file)}
     if sys.platform == "darwin":
         return {}
-    return {"cookiesfrombrowser": ("chromium", "Profile 1")}
+    return {"cookiesfrombrowser": ("chrome",)}
 
 
 def _yt_base_opts(*, with_cookies: bool = False) -> dict:
@@ -1425,6 +1425,17 @@ def save_episode(yt_info: dict, transcript: list[dict], analysis: dict, guests: 
         json.dump(transcript, f)
 
     with sqlite3.connect(DB_PATH) as conn:
+        # Preserve accurate laughter_pct from save_laughter_frames() if already computed
+        existing = conn.execute(
+            "SELECT COUNT(*) FROM laughter_frames WHERE episode_number = ?", (episode_number,)
+        ).fetchone()
+        if existing and existing[0] > 0:
+            existing_pct = conn.execute(
+                "SELECT laughter_pct FROM episodes WHERE episode_number = ?", (episode_number,)
+            ).fetchone()
+            if existing_pct and existing_pct[0] is not None:
+                laughter_pct = existing_pct[0]
+
         conn.execute("""
             INSERT OR REPLACE INTO episodes
             (episode_number, title, date, venue, youtube_url, video_id, guests,
@@ -1662,7 +1673,7 @@ def process_episode(client: genai.Client, ep: dict, model_override: str | None =
     except Exception as e:
         if "Sign in to confirm your age" in str(e) or "age" in str(e).lower():
             log.warning(f"  Skipping age-restricted episode #{episode_number}")
-            update_episode_status(episode_number, "skipped")
+            update_episode_status(episode_number, "age_restricted")
             return
         raise
 
