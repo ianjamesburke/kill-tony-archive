@@ -2,8 +2,19 @@
   {
     "check": "set_count",
     "episode": 731,
-    "set_count": 14,
+    "set_count": 15,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 731,
+    "set_number": 7,
+    "comedian": "Aya",
+    "start_seconds": 2917.0,
+    "similarity": 0.786,
+    "passed": true,
+    "clip_transcription": "Um, some people don't trust Muslims. I get it. Whatever. Um, me personally, I don't trust Jehovah Witnesses.",
+    "expected_start": "some people don't trust Muslims, I get it, whatever. Me personally, I don't trust Jehovah Witnesses. I feel like some Jehovah Witnesses are just registered sex offenders who got really, really, really"
   }
 ]

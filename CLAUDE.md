@@ -12,6 +12,13 @@ Kill Tony is a weekly comedy podcast/show hosted by Tony Hinchcliffe where rando
 
 510 episodes indexed, 835 sets transcribed, 593 comedians tracked.
 
+## Backlog State (as of 2026-06-02)
+
+**47 episodes in `error` status** — all `pipeline_version=0`, never successfully processed. Batch retry in progress.
+Episodes (newest-first): 733 731 727 725 723 721 719 717 715 713 711 710 709 707 705 703 700 698 696 694 692 690 688 686 684 682 680 678 676 674 672 670 668 666 664 662 660 658 656 654 652 650 648 646 644 640 638
+
+**To resume:** `just batch 5` processes 5 at a time, newest-first. Gemini rate limits are the bottleneck — stagger runs with ~5 min between batches if hitting 429s. After clearing errors, mark any age-restricted ones: `UPDATE episodes SET status='age_restricted' WHERE episode_number=N`.
+
 ## Tech Stack
 
 - **Backend:** Python + FastAPI

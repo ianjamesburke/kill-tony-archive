@@ -2,8 +2,19 @@
   {
     "check": "set_count",
     "episode": 733,
-    "set_count": 14,
+    "set_count": 15,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 733,
+    "set_number": 9,
+    "comedian": "Michael Hines",
+    "start_seconds": 4874.0,
+    "similarity": 1.0,
+    "passed": true,
+    "clip_transcription": "You know, believe it or not, this is the second most exciting thing to happen to me today, though. I saw a UFO on the way over here, an unidentified flying object.",
+    "expected_start": "You know, believe it or not, this is the second most exciting thing to happen to me today, though. I saw a UFO on the way over here, an unidentified flying object. Really, it was a non-binary person j"
   }
 ]

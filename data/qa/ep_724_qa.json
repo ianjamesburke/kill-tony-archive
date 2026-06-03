@@ -2,9 +2,19 @@
   {
     "check": "set_count",
     "episode": 724,
-    "set_count": 5,
+    "set_count": 11,
     "min_expected": 8,
-    "passed": false,
-    "warning": "Only 5 sets found (expected >= 8). Pass 2 may have missed sets."
+    "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 724,
+    "set_number": 6,
+    "comedian": "Nick James",
+    "start_seconds": 3450.0,
+    "similarity": 0.697,
+    "passed": true,
+    "clip_transcription": "All right, thank you, thank you. Um, I don't know how to say this, I'm not sexy like at all. It's and I can't even dirty talk right either. Like I just sound way too polite and dorky.",
+    "expected_start": "I don't know how to say this. I'm not sexy, like, at all. And I can't even dirty talk right either. Like, I just sound way too polite and dorky. Like, I had this girlfriend, and she would always say t"
   }
 ]

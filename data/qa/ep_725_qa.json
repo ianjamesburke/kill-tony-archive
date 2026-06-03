@@ -2,8 +2,19 @@
   {
     "check": "set_count",
     "episode": 725,
-    "set_count": 18,
+    "set_count": 21,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 725,
+    "set_number": 12,
+    "comedian": "Kenny Cabanaugh",
+    "start_seconds": 5513.0,
+    "similarity": 0.864,
+    "passed": true,
+    "clip_transcription": "What's up, Nashville? Sorry I was a little late getting up here. Rife and I were getting blow jobs by Haley in the back.",
+    "expected_start": "What's up, Nashville? Sorry, I was a little late getting up here. Rife and I were getting blowjobs by Haley in the back. She had to hawk to us so we could come out here and talk to you. holy they know"
   }
 ]
