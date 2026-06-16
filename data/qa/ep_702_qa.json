@@ -1,0 +1,20 @@
+[
+  {
+    "check": "set_count",
+    "episode": 702,
+    "set_count": 17,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 702,
+    "set_number": 7,
+    "comedian": "Colt McNeely",
+    "start_seconds": 3132.0,
+    "similarity": 0.971,
+    "passed": true,
+    "clip_transcription": "My name, as he said, is Colt. It's actually Colton. Yeah. My mid-20s, I shorten it up, you know, a little bit easier to say. I think when I'm an old man, I'm just going to go by",
+    "expected_start": "My name, as he said, is Colt. It's actually Colton. Colton. Yeah. In my mid-20s, I shorten it up, you know, a little bit easier to say. I think when I'm an old man, I'm just going to go by... Thank yo"
+  }
+]
