@@ -21,7 +21,8 @@ export const GET: RequestHandler = async () => {
 		{ loc: '/episodes', priority: '0.9', changefreq: 'daily' },
 		{ loc: '/sets', priority: '0.9', changefreq: 'daily' },
 		{ loc: '/guests', priority: '0.8', changefreq: 'weekly' },
-		{ loc: '/vote', priority: '0.5', changefreq: 'monthly' }
+		{ loc: '/vote', priority: '0.8', changefreq: 'daily' },
+		{ loc: '/fan-favorites', priority: '0.8', changefreq: 'daily' }
 	];
 
 	const episodePages: SitemapEntry[] = episodes.map((ep) => ({

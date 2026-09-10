@@ -50,6 +50,7 @@
 			<a href="/sets" class="nt" class:active={isActive('/sets')}>Sets</a>
 			<a href="/guests" class="nt" class:active={isActive('/guests')}>Guests</a>
 			<a href="/vote" class="nt" class:active={isActive('/vote')}>Vote</a>
+			<a href="/fan-favorites" class="nt" class:active={isActive('/fan-favorites')}>Fan Favorites</a>
 		</div>
 	</div>
 	<div class="nav-right"></div>

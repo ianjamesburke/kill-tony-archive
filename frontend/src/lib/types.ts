@@ -162,3 +162,60 @@ export interface LaughterTimeline {
 	timeline: LaughterTimelinePoint[];
 	sets: LaughterSetMarker[];
 }
+
+export interface MatchupSet {
+	set_id: string;
+	comedian_name: string;
+	episode_number: number;
+	set_number: number;
+	set_start_seconds: number;
+	set_end_seconds: number;
+	excerpt: string;
+	kill_score: number;
+	kill_score_rank: number;
+	golden_ticket: boolean;
+	video_id: string;
+	elo: number;
+	wins: number;
+	losses: number;
+	matchups: number;
+}
+
+export interface VoterStats {
+	votes_today: number;
+	votes_total: number;
+	daily_limit: number;
+}
+
+export interface Matchup {
+	a: MatchupSet;
+	b: MatchupSet;
+	voter: VoterStats;
+}
+
+export interface VoteOutcome {
+	set_id: string;
+	elo_before: number;
+	elo_after: number;
+	wins: number;
+	losses: number;
+	matchups: number;
+	win_rate: number;
+}
+
+export interface VoteResult {
+	winner: VoteOutcome;
+	loser: VoteOutcome;
+}
+
+export interface LeaderboardSet extends MatchupSet {
+	rank: number;
+	win_rate: number;
+}
+
+export interface Leaderboard {
+	sets: LeaderboardSet[];
+	total_votes: number;
+	ranked_count: number;
+	min_matchups: number;
+}
