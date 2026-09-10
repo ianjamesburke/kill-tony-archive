@@ -10,17 +10,48 @@ import type {
 	GuestDetail,
 	GuestsResponse,
 	CrowdReaction,
-	LaughterTimeline
+	LaughterTimeline,
+	Matchup,
+	VoteResult,
+	Leaderboard
 } from './types';
 
 const API_BASE = import.meta.env.VITE_API_BASE ?? 'http://localhost:8000/api';
 
-async function get<T>(path: string): Promise<T> {
-	const res = await fetch(`${API_BASE}${path}`);
+export class ApiError extends Error {
+	constructor(
+		public status: number,
+		public detail: string,
+		path: string
+	) {
+		super(`API error ${status} on ${path}: ${detail}`);
+	}
+}
+
+async function request<T>(path: string, init?: RequestInit): Promise<T> {
+	const res = await fetch(`${API_BASE}${path}`, init);
 	if (!res.ok) {
-		throw new Error(`API error ${res.status}: ${path}`);
+		let detail = res.statusText;
+		try {
+			detail = (await res.json()).detail ?? detail;
+		} catch {
+			/* non-JSON error body */
+		}
+		throw new ApiError(res.status, detail, path);
 	}
 	return res.json();
+}
+
+async function get<T>(path: string): Promise<T> {
+	return request<T>(path);
+}
+
+async function post<T>(path: string, body: unknown): Promise<T> {
+	return request<T>(path, {
+		method: 'POST',
+		headers: { 'content-type': 'application/json' },
+		body: JSON.stringify(body)
+	});
 }
 
 export async function fetchStats(): Promise<Stats> {
@@ -113,4 +144,21 @@ export async function fetchLaughterTimeline(episodeNumber: number): Promise<Laug
 	} catch {
 		return null;
 	}
+}
+
+export async function fetchMatchup(voterId: string): Promise<Matchup> {
+	return get<Matchup>(`/vote/matchup?voter_id=${encodeURIComponent(voterId)}`);
+}
+
+export async function submitVote(vote: {
+	set_a: string;
+	set_b: string;
+	winner: string;
+	voter_id: string;
+}): Promise<VoteResult> {
+	return post<VoteResult>('/vote', vote);
+}
+
+export async function fetchLeaderboard(limit = 50): Promise<Leaderboard> {
+	return get<Leaderboard>(`/vote/leaderboard?limit=${limit}`);
 }
