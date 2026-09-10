@@ -9,6 +9,7 @@ from typing import Any, Optional
 from fastapi import FastAPI, Header, HTTPException, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response
+from pydantic import BaseModel, Field
 
 from stat_card import get_or_render_card
 from database import (
@@ -26,9 +27,21 @@ from database import (
     get_topic_stats,
     get_topic_timeline,
 )
+from votes import (
+    VoteError,
+    get_leaderboard,
+    get_matchup,
+    get_vote_stats,
+    get_voter_stats,
+    init_votes_db,
+    record_vote,
+)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DB_PATH = Path(os.environ.get("DB_PATH", str(BASE_DIR / "data" / "kill_tony.db")))
+# Votes are user-generated and must survive /admin/upload-db, which replaces DB_PATH wholesale.
+VOTES_DB_PATH = Path(os.environ.get("VOTES_DB_PATH", str(DB_PATH.parent / "votes.db")))
+init_votes_db(VOTES_DB_PATH)
 
 _raw_origins = os.environ.get("ALLOWED_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173")
 _allowed_origins = [o.strip() for o in _raw_origins.split(",") if o.strip()]
@@ -182,6 +195,46 @@ def laughter_timeline(episode_number: int) -> dict[str, Any]:
 @app.get("/api/crowd-reactions")
 def crowd_reactions() -> list[dict[str, Any]]:
     return get_crowd_reaction_distribution(DB_PATH)
+
+
+# ── Head-to-head voting ──
+
+
+class VoteIn(BaseModel):
+    set_a: str = Field(min_length=1, max_length=32)
+    set_b: str = Field(min_length=1, max_length=32)
+    winner: str = Field(min_length=1, max_length=32)
+    voter_id: str = Field(min_length=8, max_length=64)
+
+
+@app.exception_handler(VoteError)
+async def vote_error(request: Request, exc: VoteError) -> JSONResponse:  # noqa: ARG001
+    return JSONResponse(status_code=exc.status, content={"detail": exc.detail})
+
+
+@app.get("/api/vote/matchup")
+def vote_matchup(voter_id: str = Query(min_length=8, max_length=64)) -> dict[str, Any]:
+    return {**get_matchup(DB_PATH, VOTES_DB_PATH, voter_id), "voter": get_voter_stats(VOTES_DB_PATH, voter_id)}
+
+
+@app.post("/api/vote")
+def vote_submit(body: VoteIn) -> dict[str, Any]:
+    return record_vote(
+        DB_PATH, VOTES_DB_PATH, set_a=body.set_a, set_b=body.set_b, winner=body.winner, voter_id=body.voter_id
+    )
+
+
+@app.get("/api/vote/leaderboard")
+def vote_leaderboard(
+    min_matchups: int = Query(20, ge=1, le=1000),
+    limit: int = Query(50, ge=1, le=200),
+) -> dict[str, Any]:
+    return get_leaderboard(DB_PATH, VOTES_DB_PATH, min_matchups=min_matchups, limit=limit)
+
+
+@app.get("/api/vote/stats")
+def vote_stats() -> dict[str, Any]:
+    return get_vote_stats(VOTES_DB_PATH)
 
 
 # ── Admin ──
