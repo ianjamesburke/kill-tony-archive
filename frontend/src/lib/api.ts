@@ -99,6 +99,10 @@ export async function fetchGuestDetail(name: string): Promise<GuestDetail> {
 	return get<GuestDetail>(`/guests/${encodeURIComponent(name)}`);
 }
 
+export function guestCardImageUrl(name: string): string {
+	return `${API_BASE}/guests/${encodeURIComponent(name)}/card.png`;
+}
+
 export async function fetchCrowdReactions(): Promise<CrowdReaction[]> {
 	return get<CrowdReaction[]>('/crowd-reactions');
 }
