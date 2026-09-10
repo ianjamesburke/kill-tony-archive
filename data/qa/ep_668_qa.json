@@ -1,0 +1,36 @@
+[
+  {
+    "check": "set_count",
+    "episode": 668,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 668,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 668,
+    "passed": false,
+    "warnings": [
+      "set #8 (Tom Whalen) and set #9 (Logan Gut Connect) are only 3.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #9 (Logan Gut Connect) and set #10 (Ethan) are only 2.7min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #10 (Ethan) and set #11 (Jacob Jones) are only 3.2min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 668,
+    "set_number": 7,
+    "comedian": "New Logan",
+    "start_seconds": 4631.0,
+    "similarity": 0.92,
+    "passed": true,
+    "clip_transcription": "How's everybody doing? Real quick everybody, do a handstand on your head if you're not gay. You're gay. Oh shit. I guess everybody in here is gay. That's cool.",
+    "expected_start": "How's everybody doing? Real quick, everybody, do a handstand on your head if you're not gay. You're gay. Oh, shit. I guess everybody in here is gay. That's cool. I like gay people, though. Let me get "
+  }
+]

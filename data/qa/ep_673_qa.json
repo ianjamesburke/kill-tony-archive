@@ -5,5 +5,30 @@
     "set_count": 14,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 673,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 673,
+    "passed": false,
+    "warnings": [
+      "set #10 (Jonathan Hamill) and set #11 (Jason Elrod) are only 4.4min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 673,
+    "set_number": 7,
+    "comedian": "Benjamin Grelley",
+    "start_seconds": 2958.0,
+    "similarity": 0.629,
+    "passed": true,
+    "clip_transcription": "Hello, how are you? Nice to see you. My name is Ben. I'm from Boston. Anybody ever been to Boston? All right, hey, my condolences. Did you get mugged? I missed the mystery, motherfucker. Son of a bitc",
+    "expected_start": "My name's Ben. I'm from Boston. Anybody ever been to Boston? All right, hey, my condolences. I grew up in the Italian section of town. It wasn't quite a ghetto. It was more of a spaghetto, if you know"
   }
 ]

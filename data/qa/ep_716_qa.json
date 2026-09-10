@@ -2,8 +2,31 @@
   {
     "check": "set_count",
     "episode": 716,
-    "set_count": 12,
+    "set_count": 13,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 716,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 716,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 716,
+    "set_number": 7,
+    "comedian": "Poncho",
+    "start_seconds": 3775.0,
+    "similarity": 0.895,
+    "passed": true,
+    "clip_transcription": "You know what's the worst time to be a One you're hiding it from your wife and kids? Oh!",
+    "expected_start": "You know what's the worst time to be a... When you're hiding it from your wife and kids. Oh! That's all you get for free. Thank you. If you're going to cheat on me, cheat on me with a lesbian. You kno"
   }
 ]

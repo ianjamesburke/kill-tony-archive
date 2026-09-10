@@ -5,5 +5,28 @@
     "set_count": 13,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 696,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 696,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 696,
+    "set_number": 4,
+    "comedian": "Mason Davis",
+    "start_seconds": 2122.0,
+    "similarity": 0.842,
+    "passed": true,
+    "clip_transcription": "You still live with a couple guys who are super into like Star Wars and Marvels? Marvel, don't get me wrong, those are great movies. But do you guys know how hard it is to get laid when your front doo",
+    "expected_start": "Used to live with a couple of guys that are super into like Star Wars and Marvels. Marvel, don't get me wrong. Those are great movies. But do you guys know how hard it is to get laid when your front d"
   }
 ]

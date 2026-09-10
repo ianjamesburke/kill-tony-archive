@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 714,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 714,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 714,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 714,
+    "set_number": 9,
+    "comedian": "Sarah Sloan",
+    "start_seconds": 5688.0,
+    "similarity": 0.952,
+    "passed": true,
+    "clip_transcription": "So my mom is super Hispanic and I'm talking like very Hispanic. This is how she wakes me up in the morning.",
+    "expected_start": "So my mom is super Hispanic, and I'm talking like very Hispanic. This is how she wakes me up in the morning. Her accent is so thick she has trouble pronouncing my name, so she has to call me Sara. She"
+  }
+]

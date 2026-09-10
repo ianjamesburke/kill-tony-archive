@@ -2,8 +2,31 @@
   {
     "check": "set_count",
     "episode": 703,
-    "set_count": 10,
+    "set_count": 11,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 703,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 703,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 703,
+    "set_number": 6,
+    "comedian": "Eddie Lursa",
+    "start_seconds": 3616.0,
+    "similarity": 0.857,
+    "passed": true,
+    "clip_transcription": "Ew, I uh got my Uber on the way here and it was a lady driver, so you know, I buckled up.",
+    "expected_start": "I got my Uber on the way here, and it was a lady driver, so you know, I buckled up. Not just because she was a woman. I'm not a sexist. She was also Asian. Not that Asian people can't drive. They can,"
   }
 ]

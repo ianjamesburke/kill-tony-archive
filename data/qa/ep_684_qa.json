@@ -5,5 +5,30 @@
     "set_count": 11,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 684,
+    "passed": false,
+    "warnings": [
+      "22min gap between set #8 (Noah Dasat) and set #9 (Brandon LaCaruba) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 684,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 684,
+    "set_number": 5,
+    "comedian": "Kam Patterson",
+    "start_seconds": 3513.0,
+    "similarity": 0.667,
+    "passed": true,
+    "clip_transcription": "Cuz all, uh, right this minute, we're kind of hard, and I don't really got nothing. But I got, I don't got too much right now, but I got something in my notes that I'm trying to figure out. So, if y'a",
+    "expected_start": "I don't got too much right now, but I got something in my notes that I'm trying to figure out, so maybe y'all can help me. I just put, uh, you got to really be gay to like men, because women got assho"
   }
 ]

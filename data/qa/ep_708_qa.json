@@ -2,8 +2,33 @@
   {
     "check": "set_count",
     "episode": 708,
-    "set_count": 10,
+    "set_count": 12,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 708,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 708,
+    "passed": false,
+    "warnings": [
+      "set #10 (Seth Tilley) and set #11 (Seth) are only 4.2min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 708,
+    "set_number": 10,
+    "comedian": "Seth Tilley",
+    "start_seconds": 6050.0,
+    "similarity": 0.947,
+    "passed": true,
+    "clip_transcription": "Good morning. I tried to get a job at Goodwill, they turned me down. I couldn't pass the background check.",
+    "expected_start": "Good morning. I tried to get a job at Goodwill. They turned me down. I couldn't pass the background check. So now I work for the airlines. All kinds of shit goes on there. I walked into the back room."
   }
 ]

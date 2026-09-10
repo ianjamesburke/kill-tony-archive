@@ -2,8 +2,31 @@
   {
     "check": "set_count",
     "episode": 676,
-    "set_count": 13,
+    "set_count": 14,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 676,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 676,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 676,
+    "set_number": 6,
+    "comedian": "Rose Highland",
+    "start_seconds": 3119.0,
+    "similarity": 0.679,
+    "passed": true,
+    "clip_transcription": "Hi guys, I'm from England, and I I recently did my citizenship test. I got 82% wrong. Uh, but it was hard, you know, cuz I had to take a written test.",
+    "expected_start": "hi guys i'm from england and i i recently did my citizenship test i got 82 wrong um but it was hard you know because i had to take a written test and the mexicans get to just do an obstacle course lik"
   }
 ]

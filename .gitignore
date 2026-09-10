@@ -60,3 +60,4 @@ __pycache__/
 
 # OpenClaw project context
 .openclaw.md
+.plexi-beta/

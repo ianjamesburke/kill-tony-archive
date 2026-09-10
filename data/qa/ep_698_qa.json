@@ -2,8 +2,31 @@
   {
     "check": "set_count",
     "episode": 698,
-    "set_count": 9,
+    "set_count": 12,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 698,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 698,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 698,
+    "set_number": 10,
+    "comedian": "Judah Z",
+    "start_seconds": 5744.0,
+    "similarity": 0.967,
+    "passed": true,
+    "clip_transcription": "What's going on, Austin? Doing good. I'm feeling pretty good. I'm having my birthday come up soon. I'm uh turning 41. Uh People tell me I look great for 41. Uh but that's not fair uh because people",
+    "expected_start": "What's going on, Austin? Doing good. I'm feeling pretty good. I'm having my birthday come up soon. I'm turning 41. People tell me I look great for 41, but that's not fair because people look like shit"
   }
 ]

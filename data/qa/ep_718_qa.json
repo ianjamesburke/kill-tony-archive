@@ -2,8 +2,19 @@
   {
     "check": "set_count",
     "episode": 718,
-    "set_count": 9,
+    "set_count": 12,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 718,
+    "set_number": 6,
+    "comedian": "Isaac Kane Brown",
+    "start_seconds": 1546.0,
+    "similarity": 0.952,
+    "passed": true,
+    "clip_transcription": "I've been dating a girl recently with a pretty big red flag. I think it's Chinese or something, I'm not too sure.",
+    "expected_start": "I've been dating a girl recently with a pretty big red flag. I think it's Chinese or something. I'm not too sure. I've been thinking I should be in the UFC. The way I've been fighting these gay though"
   }
 ]

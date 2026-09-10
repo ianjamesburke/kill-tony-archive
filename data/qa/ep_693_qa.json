@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 693,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 693,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 693,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 693,
+    "set_number": 4,
+    "comedian": "Rock Turner",
+    "start_seconds": 2037.0,
+    "similarity": 0.968,
+    "passed": true,
+    "clip_transcription": "Hey, I'm autistic and have ADHD. Great. Yeah. I wish I had you guys in school. You could have popped up anytime I said something inappropriate. Like, yay, autism. We would have confused the shit out o",
+    "expected_start": "Hey, I'm autistic and have ADHD. Great. I wish I had you guys in school. You could have popped up anytime I said something inappropriate. You're like, yay, autism. We would have confused the shit out "
+  }
+]

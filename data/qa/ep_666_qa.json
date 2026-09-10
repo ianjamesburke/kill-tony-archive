@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 666,
+    "set_count": 17,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 666,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 666,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 666,
+    "set_number": 8,
+    "comedian": "Andrew Avila",
+    "start_seconds": 5192.0,
+    "similarity": 0.848,
+    "passed": true,
+    "clip_transcription": "How are y'all doing doing tonight? Hey, so it's a good thing I'm not sitting around a bunch of black people, because it's probably going to offend some people, right? So, I don't think George Floyd di",
+    "expected_start": "How's everyone doing tonight? Hey, so it's a good thing I'm not sitting around a bunch of black people because it's probably gonna offend some people, right? So I don't think George Floyd died from th"
+  }
+]

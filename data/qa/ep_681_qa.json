@@ -2,8 +2,35 @@
   {
     "check": "set_count",
     "episode": 681,
-    "set_count": 15,
+    "set_count": 13,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 681,
+    "passed": false,
+    "warnings": [
+      "34min gap between set #9 (Kam Patterson) and set #10 (Uncle Lazer) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 681,
+    "passed": false,
+    "warnings": [
+      "set #11 (Alicia) and set #12 (Angel Miguez) are only 3.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 681,
+    "set_number": 6,
+    "comedian": "Drew Nickens",
+    "start_seconds": 2273.0,
+    "similarity": 0.844,
+    "passed": true,
+    "clip_transcription": "When I first got my head injury, I was in a dark place. But you know what pulled me out of it? The children's TV show The Wiggles. Y'all know the Wiggles? Fruit salad. Yummy yummy.",
+    "expected_start": "When I first got my head injury, I was in a dark place. But you know what pulled me out of it? The children's TV show, The Wiggles! Y'all know The Wiggles. Fruit salad! Yummy, yummy! They're actually "
   }
 ]

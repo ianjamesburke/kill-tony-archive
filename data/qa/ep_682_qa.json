@@ -1,0 +1,38 @@
+[
+  {
+    "check": "set_count",
+    "episode": 682,
+    "set_count": 16,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 682,
+    "passed": false,
+    "warnings": [
+      "41min gap between set #15 (Andrew Parker) and set #16 (Joey Diaz) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 682,
+    "passed": false,
+    "warnings": [
+      "set #6 (Joe DeRosa) and set #7 (Brian Oyola) are only 2.9min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #9 (Jim Norton) and set #10 (Sid Claypool) are only 4.2min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #14 (Casey Rockett) and set #15 (Andrew Parker) are only 4.3min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 682,
+    "set_number": 6,
+    "comedian": "Joe DeRosa",
+    "start_seconds": 2640.0,
+    "similarity": 0.929,
+    "passed": true,
+    "clip_transcription": "I um, I just bought a house in Pennsylvania. I've been decorating. Yeah. Fuck yeah, boring state. All right. I've been decorating the house. I was going to buy a fake plant. Uh plants",
+    "expected_start": "I just bought a house in Pennsylvania. I've been decorating. Yeah. Fuck yeah. Boring state. All right. I've been decorating the house. I was going to buy a fake plant. Plants are weird. Plants are the"
+  }
+]

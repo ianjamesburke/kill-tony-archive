@@ -2,8 +2,19 @@
   {
     "check": "set_count",
     "episode": 719,
-    "set_count": 12,
+    "set_count": 13,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 719,
+    "set_number": 10,
+    "comedian": "Nicholas Hartley",
+    "start_seconds": 6438.0,
+    "similarity": 0.889,
+    "passed": true,
+    "clip_transcription": "Hey! My grandpa is, uh, not a big sports fan. In fact, I think his favorite sport is Family Feud. Because every episode they put a white family versus",
+    "expected_start": "Hey, my grandpa is not a big sports fan. In fact, I think his favorite sport is Family Feud. Because every episode they put a white family versus a black family. And my grandpa, die hard whites fan. I"
   }
 ]

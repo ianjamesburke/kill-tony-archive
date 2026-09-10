@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 670,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 670,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 670,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 670,
+    "set_number": 11,
+    "comedian": "Quentin Jones",
+    "start_seconds": 7116.0,
+    "similarity": 0.571,
+    "passed": true,
+    "clip_transcription": "Yeah man I'm happy to be here man. I feel good because I'm actually going through a breakup right now and um",
+    "expected_start": "I feel good because I'm actually going through a breakup right now. And I don't really miss my ex. I just miss parts of the relationship. Like, I miss how we didn't use condoms. That was a real fun pa"
+  }
+]

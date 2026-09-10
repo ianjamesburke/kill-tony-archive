@@ -1,0 +1,35 @@
+[
+  {
+    "check": "set_count",
+    "episode": 675,
+    "set_count": 14,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 675,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 675,
+    "passed": false,
+    "warnings": [
+      "set #1 (William Montgomery) and set #2 (Gary Falcon) are only 4.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #2 (Gary Falcon) and set #3 (Drew Nickens) are only 3.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 675,
+    "set_number": 10,
+    "comedian": "Aaron Belisle",
+    "start_seconds": 4784.0,
+    "similarity": 0.967,
+    "passed": true,
+    "clip_transcription": "Guys, I'm dressed as Justin Trudeau. Last time on Kill Tony, I was offered stem cells from a company called ways to well. As you can see, it's going fucking great.",
+    "expected_start": "I'm dressed as Justin Trudeau. Last time on Kill Tony, I was offered stem cells from a company called Ways Too Well. As you can see, it's going fucking great. I used to look like the scrawny little pr"
+  }
+]

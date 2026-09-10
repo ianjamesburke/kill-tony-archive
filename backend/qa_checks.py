@@ -79,6 +79,58 @@ def check_set_count(episode_number: int) -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Gap / proximity checks
+# ---------------------------------------------------------------------------
+
+MAX_GAP_SECONDS = 1200       # 20min — flag as a possible missed set
+MIN_PROXIMITY_SECONDS = 270  # 4.5min — flag as likely interview/cold-open content mistaken for a set
+
+
+def _load_sets(episode_number: int) -> list[dict]:
+    with sqlite3.connect(DB_PATH) as conn:
+        conn.row_factory = sqlite3.Row
+        return [
+            dict(row) for row in conn.execute(
+                "SELECT set_number, comedian_name, set_start_seconds, set_end_seconds "
+                "FROM sets WHERE episode_number = ? ORDER BY set_number",
+                (episode_number,)
+            ).fetchall()
+        ]
+
+
+def check_gaps(episode_number: int) -> dict:
+    """Flag large silent gaps between sets that might indicate Pass 2 missed sets."""
+    sets = _load_sets(episode_number)
+    warnings = []
+    for i in range(1, len(sets)):
+        prev_end = sets[i - 1]["set_end_seconds"] or 0
+        curr_start = sets[i]["set_start_seconds"] or 0
+        gap = curr_start - prev_end
+        if gap > MAX_GAP_SECONDS:
+            warnings.append(
+                f"{gap/60:.0f}min gap between set #{sets[i-1]['set_number']} ({sets[i-1]['comedian_name']}) "
+                f"and set #{sets[i]['set_number']} ({sets[i]['comedian_name']}) — possible missed sets"
+            )
+    return {"check": "gaps", "episode": episode_number, "passed": not warnings, "warnings": warnings}
+
+
+def check_proximity(episode_number: int) -> dict:
+    """Flag sets that start suspiciously close together — likely interview content or a
+    cold-open highlight clip mistaken for a real set."""
+    sets = _load_sets(episode_number)
+    warnings = []
+    for i in range(1, len(sets)):
+        gap = (sets[i]["set_start_seconds"] or 0) - (sets[i - 1]["set_start_seconds"] or 0)
+        if gap < MIN_PROXIMITY_SECONDS:
+            warnings.append(
+                f"set #{sets[i-1]['set_number']} ({sets[i-1]['comedian_name']}) and "
+                f"set #{sets[i]['set_number']} ({sets[i]['comedian_name']}) are only {gap/60:.1f}min apart "
+                f"— likely interview content or a cold-open clip mistaken for a set"
+            )
+    return {"check": "proximity", "episode": episode_number, "passed": not warnings, "warnings": warnings}
+
+
+# ---------------------------------------------------------------------------
 # Timecode spot-check
 # ---------------------------------------------------------------------------
 
@@ -236,6 +288,23 @@ def run_qa_checks(
         log.info(f"QA set_count: PASS ({count_result['set_count']} sets)")
     else:
         log.warning(f"QA set_count: FAIL — {count_result['warning']}")
+
+    # 1b. Gap / proximity checks (always run — no API call needed)
+    gap_result = check_gaps(episode_number)
+    results.append(gap_result)
+    if gap_result["passed"]:
+        log.info("QA gaps: PASS")
+    else:
+        for w in gap_result["warnings"]:
+            log.warning(f"QA gaps: FAIL — {w}")
+
+    proximity_result = check_proximity(episode_number)
+    results.append(proximity_result)
+    if proximity_result["passed"]:
+        log.info("QA proximity: PASS")
+    else:
+        for w in proximity_result["warnings"]:
+            log.warning(f"QA proximity: FAIL — {w}")
 
     # 2. Timecode spot-check (requires audio file)
     if not skip_timecode and audio_path and audio_path.exists():

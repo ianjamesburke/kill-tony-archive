@@ -1,0 +1,20 @@
+[
+  {
+    "check": "set_count",
+    "episode": 776,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 776,
+    "set_number": 9,
+    "comedian": "Djordje Kirk-Edgic",
+    "start_seconds": 5421.0,
+    "similarity": 0.828,
+    "passed": true,
+    "clip_transcription": "Last time I was here, I'm the guy two years ago that was here and missing a front teeth and ask for repairs. Well I got mine, which is American made porcelain.",
+    "expected_start": "Last time I was here, I'm the guy two years ago that was here and missing a front teeth and asked for reparations. Well, I got mine, bitches. American made porcelain. You can't hear that. Anyway, I wa"
+  }
+]

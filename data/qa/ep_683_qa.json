@@ -5,5 +5,28 @@
     "set_count": 12,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 683,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 683,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 683,
+    "set_number": 9,
+    "comedian": "Patrick Cassaday",
+    "start_seconds": 5336.0,
+    "similarity": 0.7,
+    "passed": true,
+    "clip_transcription": "What is up? So happy to be here. Anybody else ever walk in on your parents having sex when you're a kid? Seventeen times? Get awkward after four or five.",
+    "expected_start": "Anybody else ever walk in on your parents having sex when you're a kid? 17 times? It gets awkward after four or five. That's stupid. It's kind of my fault the first time they asked me what I wanted fo"
   }
 ]

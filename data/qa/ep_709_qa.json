@@ -2,8 +2,31 @@
   {
     "check": "set_count",
     "episode": 709,
-    "set_count": 9,
+    "set_count": 10,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 709,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 709,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 709,
+    "set_number": 2,
+    "comedian": "Gabriel Kerr",
+    "start_seconds": 1054.0,
+    "similarity": 0.939,
+    "passed": true,
+    "clip_transcription": "I saw an ad on a porn site recently, and it was just a guy staring there by himself completely naked, right? And he's got his dick in one hand and a Pringles party stack can in the other.",
+    "expected_start": "I saw an ad on a porn site recently, and there was just a guy standing there by himself, completely naked, right? And he's got his dick in one hand and a Pringles party stack can in the other. And the"
   }
 ]

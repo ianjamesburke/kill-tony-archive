@@ -1,0 +1,26 @@
+[
+  {
+    "check": "set_count",
+    "episode": 777,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 777,
+    "passed": false,
+    "warnings": [
+      "34min gap between set #11 (Ty Wynn) and set #12 (Jake Stewart) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 777,
+    "passed": false,
+    "warnings": [
+      "set #1 (Ty Wynn) and set #2 (Jake Stewart) are only 0.6min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #6 (Fumio Flores) and set #7 (Fumio) are only 1.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

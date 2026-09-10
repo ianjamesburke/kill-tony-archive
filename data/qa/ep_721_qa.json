@@ -1,0 +1,20 @@
+[
+  {
+    "check": "set_count",
+    "episode": 721,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 721,
+    "set_number": 7,
+    "comedian": "JJ Curry",
+    "start_seconds": 3804.0,
+    "similarity": 0.903,
+    "passed": true,
+    "clip_transcription": "What up though? I like to give the crowd information about me so that we feel comfortable with each other. Like, I know you guys can't tell, but I'm actually 1/8 Caucasian.",
+    "expected_start": "What I'll do? I like to give the crowd information about me so that we feel comfortable with each other. Like, I know you guys can't tell, but I'm actually in one eighth Caucasian. Thank you. I'm real"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 687,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 687,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 687,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 687,
+    "set_number": 3,
+    "comedian": "Chris Rees",
+    "start_seconds": 1703.0,
+    "similarity": 0.808,
+    "passed": true,
+    "clip_transcription": "So, I was thinking the other day, just pondering. Thinking to myself. Were there any retarded kids on Epstein Island? Like do you think there was retarded kids on Epstein Island? Yeah? Can I ask you",
+    "expected_start": "So I was thinking the other day, just pondering, just thinking to myself, were there any retarded kids on Epstein Island? Like, do you think there was retarded kids on Epstein Island? Yeah? And can I "
+  }
+]

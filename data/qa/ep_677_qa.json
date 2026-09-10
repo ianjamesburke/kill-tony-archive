@@ -2,8 +2,31 @@
   {
     "check": "set_count",
     "episode": 677,
-    "set_count": 13,
+    "set_count": 11,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 677,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 677,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 677,
+    "set_number": 7,
+    "comedian": "Kam Patterson",
+    "start_seconds": 3441.0,
+    "similarity": 0.935,
+    "passed": true,
+    "clip_transcription": "I I like immigrants. Uh y'all see how fast our claps changed? Y'all didn't like that at all. You didn't see that game. That's fucked. I like them. I like them a lot. I like them. I if you leave your c",
+    "expected_start": "I like immigrants. Y'all see how fast our claps change? Y'all didn't like that at all. I like them. I like them a lot. I like them. If you leave your country to come here for a better life, I think th"
   }
 ]

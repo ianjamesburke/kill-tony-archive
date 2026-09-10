@@ -2,8 +2,33 @@
   {
     "check": "set_count",
     "episode": 711,
-    "set_count": 11,
+    "set_count": 12,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 711,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 711,
+    "passed": false,
+    "warnings": [
+      "set #6 (Brian Smith) and set #7 (Kam Patterson) are only 2.8min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 711,
+    "set_number": 7,
+    "comedian": "Kam Patterson",
+    "start_seconds": 4475.0,
+    "similarity": 0.939,
+    "passed": true,
+    "clip_transcription": "I think we as a people should research uh cucks. We need to look into them a little more. Nobody, that's weird. I think about it a lot. I have a theory on why people do cuck shit. I have an idea in my",
+    "expected_start": "I think we as a people should research cucks. We need to look into them a little more. Nobody, that's weird to me, I think about it a lot. I have a theory on why people do cuck shit. I have an idea in"
   }
 ]

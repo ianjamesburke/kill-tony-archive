@@ -2,9 +2,50 @@
   {
     "check": "set_count",
     "episode": 707,
-    "set_count": 5,
+    "set_count": 33,
     "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 707,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 707,
     "passed": false,
-    "warning": "Only 5 sets found (expected >= 8). Pass 2 may have missed sets."
+    "warnings": [
+      "set #11 (Wes Bullins) and set #12 (Matthew Jordan) are only 1.8min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #12 (Matthew Jordan) and set #13 (Ian Sharp) are only 1.8min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #13 (Ian Sharp) and set #14 (Drew Nickens) are only 1.8min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #14 (Drew Nickens) and set #15 (Matt Rivera) are only 2.3min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #15 (Matt Rivera) and set #16 (Sean Stewart) are only 3.8min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #16 (Sean Stewart) and set #17 (Adam Luckey) are only 1.7min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #17 (Adam Luckey) and set #18 (Luke Newcomb) are only 4.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #18 (Luke Newcomb) and set #19 (Bruce DeTore) are only 2.4min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #22 (Brandon Farris) and set #23 (Dubs General) are only 1.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #23 (Dubs General) and set #24 (Eric Bell) are only 1.2min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #24 (Eric Bell) and set #25 (Aaron Spaller) are only 2.6min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #25 (Aaron Spaller) and set #26 (Ashley Palmer) are only 1.6min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #27 (Owen Gallivan) and set #28 (Nate Mueller) are only 1.6min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #28 (Nate Mueller) and set #29 (Jeff Scott) are only 2.8min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #29 (Jeff Scott) and set #30 (Marvin Izzy) are only 1.8min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #30 (Marvin Izzy) and set #31 (Cesar Leone) are only 2.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #31 (Cesar Leone) and set #32 (Matt Puchitsky) are only 1.8min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #32 (Matt Puchitsky) and set #33 (Mario Zapata) are only 1.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 707,
+    "set_number": 11,
+    "comedian": "Wes Bullins",
+    "start_seconds": 6109.0,
+    "similarity": 0.893,
+    "passed": true,
+    "clip_transcription": "Am I the only one that always gets jump scared by Valentine's Day? It's the same day every year guys. It's a day to just be sad as fuck, you know?",
+    "expected_start": "Am I the only one that always gets jump-scared by Valentine's Day? It's the same day every year, guys. It's a day to just be sad as fuck, you know? Think about all the past trauma from your last relat"
   }
 ]

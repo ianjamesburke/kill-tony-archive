@@ -5,5 +5,16 @@
     "set_count": 11,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 722,
+    "set_number": 6,
+    "comedian": "Matt Suri",
+    "start_seconds": 3326.0,
+    "similarity": 0.71,
+    "passed": true,
+    "clip_transcription": "What is up Mothership? Now, obviously you can tell I'm into extreme sports. Uh, actually that's so true. I I tried to go skydiving for my birthday the other year. Now I say",
+    "expected_start": "Now, obviously, you can tell I'm into extreme sports. Actually, it's so true. I tried to go skydiving for my birthday the other year. Now, I say tried, because when I got to the airfield, the lady too"
   }
 ]

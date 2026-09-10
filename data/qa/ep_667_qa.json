@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 667,
+    "set_count": 16,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 667,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 667,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 667,
+    "set_number": 9,
+    "comedian": "Dane Anthony",
+    "start_seconds": 5496.0,
+    "similarity": 1.0,
+    "passed": true,
+    "clip_transcription": "I have a pretty fun dad. He was a stripper. Anyone else? No one's dad showed dong?",
+    "expected_start": "I have a pretty fun dad. He was a stripper. Anyone else? No one's dad showed dong? It is pretty weird finding out your dad was a stripper because I thought he just had a lot of jobs. He was a firefigh"
+  }
+]

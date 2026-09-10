@@ -5,5 +5,16 @@
     "set_count": 12,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 727,
+    "set_number": 5,
+    "comedian": "Johnny Mockney",
+    "start_seconds": 2842.0,
+    "similarity": 0.919,
+    "passed": true,
+    "clip_transcription": "Hi, I'm Johnny Machney. Uh I'm a teacher during the day. That's my day job. Uh I teach high school seniors. They're eight years younger than me. Uh They uh it's weird being so close in age to your kid",
+    "expected_start": "Hi, I'm Johnny Mockney. I'm a teacher during the day. That's my day job. I teach high school seniors. They're eight years younger than me. It's weird being so close in age to your kids, because they k"
   }
 ]

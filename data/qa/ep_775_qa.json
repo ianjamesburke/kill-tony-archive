@@ -1,0 +1,20 @@
+[
+  {
+    "check": "set_count",
+    "episode": 775,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 775,
+    "set_number": 5,
+    "comedian": "Nick Thomas",
+    "start_seconds": 2360.0,
+    "similarity": 0.923,
+    "passed": true,
+    "clip_transcription": "Ladies and gentlemen, fuck boys and e-girls, how we doing? So I very recently came out to my dad as gay. It's a big one I know. You guys kind of reacted the same way he did. No one was real excited ab",
+    "expected_start": "Ladies and gentlemen, fuckboys and e-girls, how we doing? So I very recently came out to my dad as gay. It was a big one. I know. You guys kind of reacted the same way he did. No one was real excited "
+  }
+]
