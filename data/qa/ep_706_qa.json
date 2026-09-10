@@ -2,8 +2,31 @@
   {
     "check": "set_count",
     "episode": 706,
-    "set_count": 14,
+    "set_count": 18,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 706,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 706,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 706,
+    "set_number": 16,
+    "comedian": "Daisy Hart",
+    "start_seconds": 9572.0,
+    "similarity": 0.875,
+    "passed": true,
+    "clip_transcription": "What the fuck is up Texas? Happy New Years! Woo! Guys, I'm Daisy Hart. I've been hearing everyone's been calling me Daisy heartless lately. I'm like, uh, I'm",
+    "expected_start": "What the fuck is up, Texas? Happy New Year's! Woo! Woo! Guys, I'm Daisy Hart. I've been hearing everyone's been calling me Daisy Heartless lately. I'm like, ah, I'm sorry, boys. You gotta be at least "
   }
 ]

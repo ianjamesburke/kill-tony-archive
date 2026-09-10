@@ -1,0 +1,40 @@
+[
+  {
+    "check": "set_count",
+    "episode": 665,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 665,
+    "passed": false,
+    "warnings": [
+      "21min gap between set #4 (Drew Nickens) and set #5 (Alexander Marcano) \u2014 possible missed sets",
+      "34min gap between set #10 (Drew Nickens) and set #11 (William Montgomery) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 665,
+    "passed": false,
+    "warnings": [
+      "set #1 (Drew Nickens) and set #2 (William Montgomery) are only 0.6min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #2 (William Montgomery) and set #3 (Casey Rockett) are only 4.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #6 (Drew Nickens) and set #7 (Jordan Shelby) are only 4.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #9 (Dubs General) and set #10 (Drew Nickens) are only 3.2min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 665,
+    "set_number": 3,
+    "comedian": "Casey Rockett",
+    "start_seconds": 346.0,
+    "similarity": 0.821,
+    "passed": true,
+    "clip_transcription": "Lord, forgive me because I'm about to rib. All right, very cool. All right. God, I miss when men were men in this country. You know what I mean? Just miss when men were men. You know what I'm talking ",
+    "expected_start": "Lord, forgive me, because I'm about to rive. All right, very cool. All right, God. Missed when men were men in this country. You know what I mean? Just missed when men were men. You know what I'm talk"
+  }
+]

@@ -5,5 +5,30 @@
     "set_count": 10,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 701,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 701,
+    "passed": false,
+    "warnings": [
+      "set #6 (Mike Jones) and set #7 (Candace August) are only 3.9min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 701,
+    "set_number": 3,
+    "comedian": "Carl Kurz",
+    "start_seconds": 1838.0,
+    "similarity": 0.852,
+    "passed": true,
+    "clip_transcription": "What's up, guys? I have a kidney but it also has hep C so Um, I got picked on a lot in middle school, and I got made fun of a lot.",
+    "expected_start": "What's up, guys? What's up? I have a kidney, but it also has hep C, so. I got picked on a lot in middle school, and I got made fun of a lot. I don't know if you could tell by looking at me. I tried to"
   }
 ]

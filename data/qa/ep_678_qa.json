@@ -2,8 +2,33 @@
   {
     "check": "set_count",
     "episode": 678,
-    "set_count": 11,
+    "set_count": 12,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 678,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 678,
+    "passed": false,
+    "warnings": [
+      "set #7 (JT Abbott) and set #8 (Drew Nickens) are only 3.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 678,
+    "set_number": 5,
+    "comedian": "Luke Stamm",
+    "start_seconds": 2941.0,
+    "similarity": 0.967,
+    "passed": true,
+    "clip_transcription": "I heard if you do what you love, you never work a day in your life. That's why I became a school bus driver. Cuz I love driving drunk. But what about the children? Don't worry,",
+    "expected_start": "I heard if you do what you love, you never work a day in your life. That's why I became a school bus driver. Cause I love driving drunk. Oh, but what about the children? Don't worry, I drive a short b"
   }
 ]

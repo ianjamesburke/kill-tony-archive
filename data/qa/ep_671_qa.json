@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 671,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 671,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 671,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 671,
+    "set_number": 11,
+    "comedian": "Ben Bankus",
+    "start_seconds": 6076.0,
+    "similarity": 0.963,
+    "passed": true,
+    "clip_transcription": "Um You know how black people are afraid of police cars? Yeah, that's how white people feel when we see a Nissan Altima with the bumper falling off. Right? Black people see the police",
+    "expected_start": "You know how black people are afraid of police cars? Yeah, that's how white people feel when we see a Nissan Altima with the bumper falling off. Right? Black people see the police car, they're like, o"
+  }
+]

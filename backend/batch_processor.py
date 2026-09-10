@@ -9,6 +9,7 @@ Usage:
 """
 
 import argparse
+import difflib
 import json
 import logging
 import os
@@ -136,6 +137,17 @@ PASS2_PROMPT = """
 You are analyzing a Kill Tony episode transcript with speaker labels.
 This is episode #{episode_number} of Kill Tony.
 
+CRITICAL — COLD OPEN / HIGHLIGHT REEL:
+Episodes often open with a rapid-fire highlight montage before the live show actually starts: several
+different comedians' punchlines cut together back-to-back with no live introduction, no band walk-up,
+and no host feedback in between. The tell is TIMING, not content — each clip can sound like a complete
+joke-dense set, but the clips are compressed to seconds apart (often under a minute), whereas a real
+live set is always followed by a multi-minute Tony/panel interview before the next name is called. If
+multiple "sets" appear to start within about a minute of each other near the start of the transcript,
+with no interview or band walk-up between them, treat that whole stretch as the cold open and do NOT
+extract any of it as individual sets — wait for the first COMPLETE set-then-interview-then-next-intro
+cycle, which marks where the live show actually begins.
+
 Extract structured data for every comedian set you find. Return ONLY valid JSON (as a single object, NOT wrapped in an array):
 
 {{
@@ -257,11 +269,24 @@ The interview is NOT a set. Do NOT extract it as a new comedian's set.
 A new set ONLY begins when Tony introduces a COMPLETELY DIFFERENT, NEW person to come to the stage.
 If you see a long personal story being told conversationally (not joke-joke-joke format), it is almost certainly interview content, not a set.
 
+CRITICAL — COLD OPEN / HIGHLIGHT REEL:
+Episodes often open with a rapid-fire highlight montage before the live show actually starts: several
+different comedians' punchlines cut together back-to-back with no live introduction, no band walk-up,
+and no host feedback in between. The tell is TIMING, not content — each clip can sound like a complete
+joke-dense set, but the clips are compressed to seconds apart (often under a minute), whereas a real
+live set is always followed by a multi-minute Tony/panel interview before the next name is called. If
+multiple "sets" appear to start within about a minute of each other near the start of the transcript,
+with no interview or band walk-up between them, treat that whole stretch as the cold open and do NOT
+extract any of it as individual sets — wait for the first COMPLETE set-then-interview-then-next-intro
+cycle, which marks where the live show actually begins.
+
 EXHAUSTIVENESS REQUIREMENT:
 A typical Kill Tony episode has 8-15 bucket pull sets plus 1-3 regulars. This transcript chunk may contain several sets.
 Be EXHAUSTIVE — scan the ENTIRE transcript from start to finish. Do not stop after finding 2-3 sets.
 If you finish and have fewer than 3 sets per 30 minutes of this chunk, you have almost certainly missed some.
-It is better to include a borderline case than to miss a real set.
+This exhaustiveness requirement applies to genuine live sets only — it is not license to extract cold-open
+highlight clips (see above). It is better to include a borderline live set than to miss a real one, but a
+clip with no live introduction or post-set interview is not a borderline case, it is not a set at all.
 
 Extract structured data for every comedian set you find. Return ONLY valid JSON (as a single object, NOT wrapped in an array):
 
@@ -456,17 +481,32 @@ def init_db():
 # ---------------------------------------------------------------------------
 
 def _yt_cookie_opts() -> dict:
-    """Return yt-dlp cookie options if a cookies file or browser is available."""
+    """Return yt-dlp cookie + client options for videos that need authentication
+    (age-restricted or flagged by YouTube's bot-check).
+
+    Live Chrome cookies are preferred over a static cookies.txt export: YouTube rotates
+    session cookies, and a static file silently goes stale (this bit us in production —
+    cookies.txt was present and recently modified but its session had already been
+    invalidated). The 'web' player client is forced because yt-dlp's default client
+    selection once cookies are attached picks a 'tv'-downgraded client whose resolved
+    stream URLs 403 on actual download, even though metadata extraction succeeds.
+    """
+    opts: dict = {"extractor_args": {"youtube": {"player_client": ["web"]}}}
+    if sys.platform == "darwin":
+        opts["cookiesfrombrowser"] = ("chrome",)
+        return opts
     cookie_file = ROOT / "cookies.txt"
     if cookie_file.exists():
-        return {"cookiefile": str(cookie_file)}
-    if sys.platform == "darwin":
-        return {}
-    return {"cookiesfrombrowser": ("chrome",)}
+        opts["cookiefile"] = str(cookie_file)
+        return opts
+    opts["cookiesfrombrowser"] = ("chrome",)
+    return opts
 
 
 def _yt_base_opts(*, with_cookies: bool = False) -> dict:
-    """Base yt-dlp options. Cookies excluded by default (break macOS TV player path)."""
+    """Base yt-dlp options. Cookies excluded by default — most videos don't need them,
+    and unwanted cookies attached to a request also trigger the broken client selection
+    _yt_cookie_opts works around (see its docstring)."""
     opts: dict = {
         "nocheckcertificate": True,
         "no_warnings": False,
@@ -475,6 +515,13 @@ def _yt_base_opts(*, with_cookies: bool = False) -> dict:
     if with_cookies:
         opts.update(_yt_cookie_opts())
     return opts
+
+
+def _needs_auth_retry_error(err: Exception) -> bool:
+    """True for any YouTube error that a signed-in retry can fix: age-restriction or
+    the "confirm you're not a bot" challenge. Both surface as "Sign in to confirm..."."""
+    msg = str(err).lower()
+    return "sign in to confirm" in msg
 
 
 def _is_age_restricted_error(err: Exception) -> bool:
@@ -502,13 +549,13 @@ def get_youtube_info(url: str) -> dict:
         with YoutubeDL(opts) as ydl:  # type: ignore[arg-type]
             info = ydl.extract_info(url, download=False)
     except Exception as e:
-        if _is_age_restricted_error(e):
+        if _needs_auth_retry_error(e):
             info = None
         else:
             raise
 
     if info is None or _needs_cookie_retry(info):
-        log.info("Age-restricted video detected, retrying with cookies...")
+        log.info("Auth-gated video detected, retrying with cookies...")
         opts.update(_yt_cookie_opts())
         opts["ignore_no_formats_error"] = True
         with YoutubeDL(opts) as ydl:  # type: ignore[arg-type]
@@ -647,8 +694,8 @@ def download_audio(url: str, episode_number: int) -> Path:
             with YoutubeDL(opts) as ydl:  # type: ignore[arg-type]
                 ydl.extract_info(url, download=True)
         except Exception as e:
-            if _is_age_restricted_error(e):
-                log.info("Age-restricted video detected, retrying with cookies...")
+            if _needs_auth_retry_error(e):
+                log.info("Auth-gated video detected, retrying with cookies...")
                 opts.update(_yt_cookie_opts())
                 with YoutubeDL(opts) as ydl:  # type: ignore[arg-type]
                     ydl.extract_info(url, download=True)
@@ -1064,49 +1111,49 @@ def pass2_analyze(client: genai.Client, transcript: list[dict], episode_number: 
 
     last_ts = max((e.get("start_seconds", 0) for e in transcript), default=0)
 
-    def check_gaps(sets: list[dict]) -> None:
-        for i in range(1, len(sets)):
-            prev_end = sets[i - 1].get("set_end_seconds", 0)
-            curr_start = sets[i].get("set_start_seconds", 0)
-            gap = curr_start - prev_end
-            if gap > 1200:
-                log.warning(
-                    f"  GAP WARNING: {gap/60:.0f}min gap between set #{i} ({sets[i-1].get('comedian_name')}) "
-                    f"and set #{i+1} ({sets[i].get('comedian_name')}) — possible missed sets"
-                )
+    SAME_SET_SECONDS = 30  # two live sets can never start this close together — same set, re-extracted
 
-    def _fuzzy_name_seen(name: str, seen: set[str]) -> bool:
-        """Return True if name is close enough to any seen name to be a duplicate.
-        Uses simple character-overlap ratio to catch typos like Ludlam/Ludlum."""
+    def _fuzzy_name_seen(name: str, start_seconds: float, seen: list[tuple[str, float]]) -> bool:
+        """Return True if a set already seen within the chunk-overlap window is the same set re-extracted.
+
+        A true chunk-boundary duplicate can only occur inside PASS2_OVERLAP_SECONDS, since that's the
+        only span two adjacent Pass 2 windows both cover. Two signals both fire on it:
+
+        1. Near-identical start time (within SAME_SET_SECONDS) is dedup on its own, regardless of name —
+           the show physically cannot have two different live sets start seconds apart, so this alone
+           catches cases where the same person got two very different name strings across chunks (e.g.
+           "Chaddo" vs "Chad 'Chaddo' Alampi" — too dissimilar for any name-based ratio to catch).
+        2. Otherwise, within the wider overlap window, high name similarity is dedup — this catches
+           transcription spelling drift ("Hinderleiter"/"Hinderlighter") where the perceived start time
+           shifted slightly between chunks. Name similarity alone isn't safe further out: it can't tell
+           "Timmy No Brakes"/"Timmy No Breaks" (same person, a typo) apart from "Kam Patterson"/
+           "Cam Patterson" (two different real comedians) — those score similarly under difflib. Two
+           people who happen to have similar names but perform minutes apart are not deduped.
+        """
         name_l = name.lower().strip()
-        for s in seen:
-            s_l = s.lower().strip()
-            if name_l == s_l:
-                return True
-            # Levenshtein-lite: if names share a long prefix and differ by <=2 chars, treat as same
-            shorter, longer = sorted([name_l, s_l], key=len)
-            if len(longer) >= 6 and longer.startswith(shorter[:4]):
-                edits = sum(a != b for a, b in zip(shorter, longer)) + abs(len(longer) - len(shorter))
-                if edits <= 2:
-                    log.warning(f"  Fuzzy dedup: '{name}' treated as duplicate of '{s}' (edit distance {edits})")
-                    return True
-        return False
-
-    def check_proximity(sets: list[dict]) -> None:
-        for i in range(1, len(sets)):
-            gap = sets[i].get("set_start_seconds", 0) - sets[i-1].get("set_start_seconds", 0)
-            if gap < 270:  # less than 4.5 minutes apart (set + bare minimum interview)
+        for seen_name, seen_start in seen:
+            time_diff = abs(start_seconds - seen_start)
+            if time_diff > PASS2_OVERLAP_SECONDS:
+                continue
+            seen_l = seen_name.lower().strip()
+            if name_l == seen_l or time_diff <= SAME_SET_SECONDS:
                 log.warning(
-                    f"  PROXIMITY WARNING: set #{i} ({sets[i-1].get('comedian_name')}) and "
-                    f"set #{i+1} ({sets[i].get('comedian_name')}) are only {gap/60:.1f}min apart "
-                    f"— likely one is interview content mistaken for a set"
+                    f"  Dedup: '{name}' at {start_seconds:.0f}s treated as duplicate of "
+                    f"'{seen_name}' at {seen_start:.0f}s (same start time)"
                 )
+                return True
+            ratio = difflib.SequenceMatcher(None, name_l, seen_l).ratio()
+            if ratio >= 0.85:
+                log.warning(
+                    f"  Fuzzy dedup: '{name}' at {start_seconds:.0f}s treated as duplicate of "
+                    f"'{seen_name}' at {seen_start:.0f}s (similarity {ratio:.2f})"
+                )
+                return True
+        return False
 
     if last_ts <= PASS2_CHUNK_SIZE:
         transcript_text = format_lines(transcript)
         data = _pass2_call(client, transcript_text, episode_number, has_speakers)
-        check_gaps(data.get("sets", []))
-        check_proximity(data.get("sets", []))
         return data
 
     # Build rolling windows: each chunk is PASS2_CHUNK_SIZE seconds, advancing by
@@ -1123,7 +1170,7 @@ def pass2_analyze(client: genai.Client, transcript: list[dict], episode_number: 
 
     log.info(f"  Episode {int(last_ts)}s — chunking Pass 2 into {len(chunks)} x {PASS2_CHUNK_SIZE//60}min windows")
 
-    seen_names: set[str] = set()
+    seen: list[tuple[str, float]] = []
     merged_sets: list[dict] = []
     first_data: dict | None = None
 
@@ -1139,8 +1186,9 @@ def pass2_analyze(client: genai.Client, transcript: list[dict], episode_number: 
             first_data = data
         for s in data.get("sets", []):
             name = s.get("comedian_name", "")
-            if name and not _fuzzy_name_seen(name, seen_names):
-                seen_names.add(name)
+            start_seconds = s.get("set_start_seconds", 0)
+            if name and not _fuzzy_name_seen(name, start_seconds, seen):
+                seen.append((name, start_seconds))
                 merged_sets.append(s)
 
     # Sort by set_start_seconds and renumber sequentially
@@ -1149,8 +1197,6 @@ def pass2_analyze(client: genai.Client, transcript: list[dict], episode_number: 
         s["set_number"] = i
 
     log.info(f"  Merged {len(chunks)} chunks -> {len(merged_sets)} unique sets")
-    check_gaps(merged_sets)
-    check_proximity(merged_sets)
 
     assert first_data is not None
     first_data["sets"] = merged_sets

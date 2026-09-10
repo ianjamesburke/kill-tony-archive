@@ -2,8 +2,20 @@
   {
     "check": "set_count",
     "episode": 720,
-    "set_count": 8,
+    "set_count": 12,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 720,
+    "set_number": 4,
+    "comedian": "Molly McGee",
+    "start_seconds": 2307.0,
+    "similarity": 0.0,
+    "passed": false,
+    "clip_transcription": "",
+    "expected_start": "I'm new here. I recently escaped California with my son's genitals still intact. He said, Mommy, am I a boy or a girl? I said, toddler, are you a boy? He said, you're a cowboy. Pew, pew, back of shape",
+    "warning": "Timecode mismatch for set #4 (Molly McGee) at 2307s. Similarity: 0.0%. Audio says: '...' but transcript starts: 'I'm new here. I recently escaped California with my son's genitals still intact....'"
   }
 ]

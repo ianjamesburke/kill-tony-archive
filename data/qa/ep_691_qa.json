@@ -1,0 +1,35 @@
+[
+  {
+    "check": "set_count",
+    "episode": 691,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 691,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 691,
+    "passed": false,
+    "warnings": [
+      "set #4 (Chad Mitchell Rogers) and set #5 (Fiona Cauley) are only 4.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #10 (Kim Congdon) and set #11 (Matthew LaCour) are only 3.7min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 691,
+    "set_number": 6,
+    "comedian": "Danny Martinello",
+    "start_seconds": 3065.0,
+    "similarity": 0.846,
+    "passed": true,
+    "clip_transcription": "I recently took a first aid course, and I think I'm ready for my hero moment now. Where like, if I go out and about, and I see someone choking, and they're like,",
+    "expected_start": "I recently took a first aid course, and I think I'm ready for my hero moment now, where, like, if I go out and about and I see someone choking and they're like, ugh. And then they drop. I go to them a"
+  }
+]

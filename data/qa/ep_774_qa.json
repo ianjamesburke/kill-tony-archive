@@ -1,0 +1,20 @@
+[
+  {
+    "check": "set_count",
+    "episode": 774,
+    "set_count": 14,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 774,
+    "set_number": 12,
+    "comedian": "Austin Gerstenschlager",
+    "start_seconds": 6020.0,
+    "similarity": 0.968,
+    "passed": true,
+    "clip_transcription": "My name is Austin Gerstenslager. I No, I just realized I look exactly like how my last name sounds. I've been going to the same barber for a while. I keep telling her I want to look more youthful.",
+    "expected_start": "My name is Austin Gerstenslager. I just realized I look exactly like how my last name sounds. I've been going to the same barber for a while. I keep telling her I want to look more youthful. I think s"
+  }
+]

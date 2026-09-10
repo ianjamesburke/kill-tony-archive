@@ -1,0 +1,20 @@
+[
+  {
+    "check": "set_count",
+    "episode": 773,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 773,
+    "set_number": 6,
+    "comedian": "Aya",
+    "start_seconds": 3355.0,
+    "similarity": 0.943,
+    "passed": true,
+    "clip_transcription": "One of my closest friends is schizophrenic now. When I met her she wasn't, but she was always a little bit off. Like when we were in high school, she could just look at a QR code and tell",
+    "expected_start": "One of my closest friends is schizophrenic now. When I met her, she wasn't, but she was always a little bit off. Like, when we were in high school, she could just look at a QR code and tell you where "
+  }
+]

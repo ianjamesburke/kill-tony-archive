@@ -5,5 +5,28 @@
     "set_count": 10,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 685,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 685,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 685,
+    "set_number": 9,
+    "comedian": "Eddie Lursa",
+    "start_seconds": 6656.0,
+    "similarity": 0.879,
+    "passed": true,
+    "clip_transcription": "I dated this girl who didn't believe in dinosaurs once, cuz they're not in the Bible. But neither is planet Mercury and it was still the reason she was acting like a bitch all the time, apparently.",
+    "expected_start": "I dated this girl who didn't believe in dinosaurs once because they're not in the Bible. but neither is Planet Mercury, and it was still the reason she was acting like a bitch all the time, apparently"
   }
 ]

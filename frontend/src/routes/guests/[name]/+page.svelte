@@ -9,6 +9,21 @@
 	const pageDescription = $derived(`${g.guest_name} has appeared on ${g.episode_count} Kill Tony episode${g.episode_count !== 1 ? 's' : ''} with an avg Kill Score of ${g.avg_kill_score ?? 'N/A'}. See all appearances and performance stats.`);
 	const canonicalUrl = $derived(`https://killtonyarchive.com/guests/${encodeURIComponent(g.guest_name)}`);
 
+	let copyState = $state<'idle' | 'copied' | 'error'>('idle');
+
+	async function shareCard() {
+		try {
+			const res = await fetch(data.cardImageUrl);
+			const blob = await res.blob();
+			await navigator.clipboard.write([new ClipboardItem({ [blob.type]: blob })]);
+			copyState = 'copied';
+		} catch {
+			copyState = 'error';
+		} finally {
+			setTimeout(() => (copyState = 'idle'), 2000);
+		}
+	}
+
 	const lift = $derived(
 		g.avg_kill_score != null ? +(g.avg_kill_score - g.baseline_avg).toFixed(1) : null
 	);
@@ -50,8 +65,11 @@
 	<meta property="og:description" content={pageDescription}>
 	<meta property="og:type" content="website">
 	<meta property="og:url" content={canonicalUrl}>
+	<meta property="og:image" content={data.cardImageUrl}>
+	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content={pageTitle}>
 	<meta name="twitter:description" content={pageDescription}>
+	<meta name="twitter:image" content={data.cardImageUrl}>
 </svelte:head>
 
 <div class="guest-hero">
@@ -63,6 +81,20 @@
 			All Guests
 		</a>
 		<h1 class="guest-name">{g.guest_name}</h1>
+		<div class="share-row">
+			<button class="share-btn" onclick={shareCard} type="button">
+				{#if copyState === 'copied'}
+					Copied!
+				{:else if copyState === 'error'}
+					Copy failed
+				{:else}
+					Copy Card
+				{/if}
+			</button>
+			<a class="share-btn" href={data.cardImageUrl} download="{g.guest_name}-kill-tony-stats.png">
+				Download Card
+			</a>
+		</div>
 	</div>
 	<div class="guest-hero-stats">
 		<div class="stat-row">
@@ -277,6 +309,33 @@
 		font-weight: 700;
 		letter-spacing: -1.5px;
 		line-height: 1.1;
+	}
+
+	.share-row {
+		display: flex;
+		gap: 10px;
+		margin-top: 20px;
+	}
+
+	.share-btn {
+		font-family: var(--mono);
+		font-size: 11px;
+		font-weight: 600;
+		color: var(--muted);
+		text-decoration: none;
+		letter-spacing: 0.5px;
+		padding: 8px 14px;
+		border: 1px solid var(--border);
+		border-radius: 6px;
+		background: var(--card);
+		cursor: pointer;
+		transition: border-color 0.15s, color 0.15s, background 0.15s;
+	}
+
+	.share-btn:hover {
+		border-color: var(--bh);
+		color: var(--red);
+		background: var(--raised);
 	}
 
 	.guest-hero-stats {

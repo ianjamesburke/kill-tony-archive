@@ -2,8 +2,31 @@
   {
     "check": "set_count",
     "episode": 717,
-    "set_count": 10,
+    "set_count": 13,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 717,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 717,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 717,
+    "set_number": 7,
+    "comedian": "Will",
+    "start_seconds": 5161.0,
+    "similarity": 0.875,
+    "passed": true,
+    "clip_transcription": "So, uh there's this video. I know a lot of people have seen. Um, some of this primitive African tribe trying Fanta for the first time. And it's like, it's crazy. Like, they're trying to, like, open th",
+    "expected_start": "So there's this video I know a lot of people have seen. It's of this primitive African tribe trying Fanta for the first time. And it's crazy. They're trying to open the bottle with their teeth. Eventu"
   }
 ]

@@ -5,5 +5,28 @@
     "set_count": 12,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 686,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 686,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 686,
+    "set_number": 5,
+    "comedian": "Cam Patterson",
+    "start_seconds": 3088.0,
+    "similarity": 0.654,
+    "passed": true,
+    "clip_transcription": "I like eat two white bits. Uh, it's good. I was just in Reading, Pennsylvania. Uh, that place is terrible. Uh, don't woo for that. Don't woo for that. That place is god awful, nigga. Uh, I hate that p",
+    "expected_start": "I love you too, white bitch. This is good. I was just in Redden, Pennsylvania. That place is terrible. Don't root for that. Don't root for that. That place is god-awful, nigga. I hate that place so mu"
   }
 ]

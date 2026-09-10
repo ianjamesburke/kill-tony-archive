@@ -1,0 +1,423 @@
+{
+  "episode": {
+    "episode_number": 774,
+    "guests": [
+      "Joe DeRosa",
+      "Mike Benoia"
+    ],
+    "venue": "Comedy Mothership"
+  },
+  "sets": [
+    {
+      "set_number": 1,
+      "comedian_name": "Mason Bird",
+      "status": "regular",
+      "set_transcript": "Life is like a box of chocolates. Fat people finish it a lot faster. I'm fat. But I'm working on it. Like I learned how to make Caesar dressing from scratch the other day. What you do is you take Greek dressing and you stab it in the back 23 times. If you don't get that joke, you're fucking stupid. Idiot. No, I live with a lady, you know, and she likes to do this thing when we argue. Like she likes to attack my masculinity. The other day she was like, be a man, kill that bug. That's so unfair. I can't be like, be a woman. Take care of me. Run your fingers through my hair. Because that'd be a very inappropriate thing to say to your mom in your 20s. No, actually, I live with a lesbian. Which is something I suggest you don't do. Unless you want to find out how much pussy you don't get, dude. Thank you.",
+      "set_start_seconds": 351.0,
+      "set_end_seconds": 418.0,
+      "topic_tags": [
+        "self_deprecation",
+        "relationships"
+      ],
+      "crowd_reaction": "moderate",
+      "tony_praise_level": 5,
+      "golden_ticket": true,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "Discussed living with a lesbian roommate and her rejection of him, plus his sister having a baby with a man named Blue.",
+      "disclosed_age": null,
+      "disclosed_occupation": "cook",
+      "disclosed_location": "Texas",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Golden Ticket winner"
+      ]
+    },
+    {
+      "set_number": 2,
+      "comedian_name": "Daniel Harder",
+      "status": "bucket_pull",
+      "set_transcript": "If you do enough drugs, you will definitely meet God. That's a fact. And if you keep doing drugs... God will be like, what the fuck are you still doing here, dude? Pick up all these cigarette butts. You got fucking empty beer cans everywhere. Empty fucking everything. Get your fucking life together, dude. Get your life together. Maybe get a job. I got a better idea. Why don't you go down, drive 19 hours down to kill Tony? I got a beat for you, dude. This came straight from God, by the way.",
+      "set_start_seconds": 819.0,
+      "set_end_seconds": 881.0,
+      "topic_tags": [
+        "drugs",
+        "other"
+      ],
+      "crowd_reaction": "silence",
+      "tony_praise_level": 1,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "First time appearing on the show, drove 19 hours, Tony criticized the lack of actual jokes.",
+      "disclosed_age": 38,
+      "disclosed_occupation": "musician",
+      "disclosed_location": "Wisconsin",
+      "disclosed_relationship_status": null,
+      "disclosed_years_doing_comedy": 0,
+      "fun_facts": [
+        "Drove 19 hours for the set"
+      ]
+    },
+    {
+      "set_number": 3,
+      "comedian_name": "Otis Hicks",
+      "status": "bucket_pull",
+      "set_transcript": "Good evening, ladies and gentlemen. How we doing? I'm a father. My daughter was getting cyberbullied. I didn't know what cyberbullying was. Growing up, I had a real bully. I wish I would have got hit with emojis. instead of getting hit in the fucking face. You know, I got teased before I even went to school. Somebody come up to me like this, Otis, you're big-headed, you're black, you're ugly, and your mom doesn't love you. Now go to school, son. My dad once saw a bully, you sensitive bitches. And growing up, I saw this 10-year-old with like an iPhone, 10 years old. When I was 10 years old, I didn't get no iPhone. My dad just bought me an eyepatch. He said, here, become a pirate. Here's a treasure map so you can find your real dad. My dad was an asshole. That's pretty much all I got. Thank you, guys.",
+      "set_start_seconds": 1207.0,
+      "set_end_seconds": 1269.0,
+      "topic_tags": [
+        "race",
+        "family"
+      ],
+      "crowd_reaction": "big_laughs",
+      "tony_praise_level": 5,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "large",
+      "interview_summary": "Discussed being Puerto Rican/Black, working as a security guard, and his past job at a sex shop.",
+      "disclosed_age": 34,
+      "disclosed_occupation": "security guard",
+      "disclosed_location": "El Paso, Texas",
+      "disclosed_relationship_status": null,
+      "disclosed_years_doing_comedy": 10,
+      "fun_facts": [
+        "Worked in a sex shop",
+        "Half Puerto Rican"
+      ]
+    },
+    {
+      "set_number": 4,
+      "comedian_name": "Adam Luckey",
+      "status": "regular",
+      "set_transcript": "Pretty good day today. I had a homeless guy come up to me and go, hey, are you trans or retarded? All right, you guys usually ask for a dollar, but I'll fucking take it, I guess. Whatever, dude. Put some fucking pants on first, dog, before you gotta throw some heavy hypotheticals at me. Then I thought about, like, trans or retarded, what's the difference? Like, come on. Where my repubs at? Come on, get them out of our bathrooms. Freak shows. Nah, I want them in the bathrooms, because I like jerking off to watching them shit, so I like that. I like black people too. Sorry. I think they're chill. I have black friends. I lost one though. I said the M word in front of him. He got pretty mad. He's like, you can't say that. I was like, but I was singing it in a song. He's like, yeah, but you were singing happy birthday to me. Yeah, I went to an all-black high school. That was hard. Did not make the sports teams. I'll say that. I made the swim team because I could fucking swim.",
+      "set_start_seconds": 1645.0,
+      "set_end_seconds": 1712.0,
+      "topic_tags": [
+        "shock_humor",
+        "race"
+      ],
+      "crowd_reaction": "roaring",
+      "tony_praise_level": 5,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": true,
+      "joke_book_size": "none",
+      "interview_summary": "Discussed his recent divorce, getting sober, and living with his mother.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Uber Eats driver",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "divorced",
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Sober for nine months",
+        "Lives with mother"
+      ]
+    },
+    {
+      "set_number": 5,
+      "comedian_name": "Clay McLaren",
+      "status": "bucket_pull",
+      "set_transcript": "Damn, that is way too high for a midget like me. Yeah, that's bad. So I had to down a bottle of Listerine just to get the courage to come up here. But don't worry, my shakes have almost gone. I had to stop by Bucky's, hit on some of the very fine fat Latina ladies. They are beautiful. Tortas, as they're called. Yeah, I gotta help myself to some pulled pork, if you know what I mean. Yeah, gotta get up in those beaver nuggets. But I like the black girls, too. Got to get some of those burnt tips going. All right, I love you all.",
+      "set_start_seconds": 2042.0,
+      "set_end_seconds": 2108.0,
+      "topic_tags": [
+        "sex",
+        "race"
+      ],
+      "crowd_reaction": "moderate",
+      "tony_praise_level": 2,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "Interviewed about his job at Punchline Houston and his awkward interaction at Buc-ee's.",
+      "disclosed_age": 31,
+      "disclosed_occupation": "Comedy club employee",
+      "disclosed_location": "Houston",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Drove five hours",
+        "Works at Punchline Houston"
+      ]
+    },
+    {
+      "set_number": 6,
+      "comedian_name": "Javi Ballon",
+      "status": "bucket_pull",
+      "set_transcript": "So as y'all can see, I'm clearly a bottom. Oh, I see bottoms here tonight. Fuck you guys, dude. I see a lot. No, but I gotta be a bottom. I'm too fucking fat, bro. I gotta be a bottom. Imagine me being on top. My girl, she's like four feet five. If I'm on top of that bitch and my arms come out, that bitch is dead, dog. She's dead, dude. I'd rather be up here telling you guys jokes instead of asking you to help fund my go-funding for that bitch. I'd rather do that. I'd rather do that, bro. It just sucks being fat. It sucks. For example, I bought a new belt. I bet you can't see it. Titties, titties, titties. Can you see my fucking belt? I doubt it. I got a new belt. I'm serious. I'm not lying. Blue eyes. I'm not lying, bro. I never lie. Area, brand new. Just bought this shit at a Bucky's. Just bought this shit on the way over here. I hate that shit, bro. No, but I actually feel grateful that I'm doing this, dog. Because I don't do this when my girl blows me. I swear to God. And it's heavy, so she better make me come fast, bro. Otherwise, I drop the thing and slap her. Peneja, no. No, you hurry up. You make me come faster. Fuck you.",
+      "set_start_seconds": 2627.0,
+      "set_end_seconds": 2699.0,
+      "topic_tags": [
+        "self_deprecation",
+        "sex",
+        "other"
+      ],
+      "crowd_reaction": "big_laughs",
+      "tony_praise_level": 5,
+      "golden_ticket": true,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "Javi is a big guy from El Paso currently touring. He discusses his relationship, his weight, and a past violent encounter in a bathroom. He received a golden ticket.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Sketch comedy content creator",
+      "disclosed_location": "El Paso",
+      "disclosed_relationship_status": "In a relationship (12 years)",
+      "disclosed_years_doing_comedy": 4,
+      "fun_facts": [
+        "Got a Golden Ticket",
+        "Childhood trauma involved 'Homies' figurines"
+      ]
+    },
+    {
+      "set_number": 7,
+      "comedian_name": "Dedrick Flynn",
+      "status": "regular",
+      "set_transcript": "Life advice, relationship advice, if you love a girl, if you seriously love a girl, stay away from the girls that don't like her, because they'll pick out a flaw to ruin your entire relationship. Last year, I thought I was going to marry this girl, Brittany, and I went to my best friend, Emily, and I was like, I think I want to marry Brittany. And she said, ugh, you mean that giraffe neck bitch? I was like, she ain't got no giraffe neck. So I went to Instagram immediately and I started scrolling. And I was like, damn. She do got a long ass neck. She even got like freckles on her neck. It looked like the spots like on a giraffe. She do be deep throat, you know what I'm saying? Like she do let effort live. Why is she eating salad in every photo? Bitch a herbivore. Also, this is just one picture. It don't get to you right then. You kind of barrel it inside you and then you get into a fight and it come out and she's like, I don't understand why you can't take out the trash. I'm like, I don't know why I'm dating a zoo animal, Brittany. You know what, you been a real bitch since you lost your job at Toys R Us. Because Jeffrey, Toys R Us is real good. You know what I'm talking about? So we broke up.",
+      "set_start_seconds": 3156.0,
+      "set_end_seconds": 3262.0,
+      "topic_tags": [
+        "relationships",
+        "dating"
+      ],
+      "crowd_reaction": "big_laughs",
+      "tony_praise_level": 5,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "Dedrick discusses his upcoming tour dates, including a headline festival in Okinawa, Japan. The panel discusses his success and stage presence.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Comedian",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "Single",
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Headlining a festival in Okinawa",
+        "Adopted Japanese sister"
+      ]
+    },
+    {
+      "set_number": 8,
+      "comedian_name": "Brock White Lions",
+      "status": "bucket_pull",
+      "set_transcript": "I got a hot wife, believe it or not. And if you don't believe it, then fuck you. I pulled it off and you can too, despite my average looks. Below average bank account, I got a hot wife. You just gotta follow these easy tips. Tip number one, find you a gorgeous girl with gross feet. My wife's feet are disgusting, y'all. But I suck those toes. I know they ain't the only thing between me and some ugly bitch in open-toed shoes. Tip number two makes people uncomfortable, but it's the best tip I'll give it to you anyway. Everyone's bragging these days they got their animal from a shelter, adopt, don't shop. I got my woman from a woman's shelter. And I don't get enough credit for that.",
+      "set_start_seconds": 3588.0,
+      "set_end_seconds": 3646.0,
+      "topic_tags": [
+        "relationships",
+        "shock_humor"
+      ],
+      "crowd_reaction": "big_laughs",
+      "tony_praise_level": 3,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "Brock works offshore in the oil fields. He reveals a history of petty crime (burglaries) and is currently facing a DUI charge, which he discusses openly despite the panel's warning to wait for legal proceedings.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Oil field worker (offshore)",
+      "disclosed_location": "Lafayette, Louisiana",
+      "disclosed_relationship_status": "Married",
+      "disclosed_years_doing_comedy": 3,
+      "fun_facts": [
+        "Works 14 days on, 7 off",
+        "Wife's name is Cosmo Elizabeth",
+        "Faced DUI charges"
+      ]
+    },
+    {
+      "set_number": 9,
+      "comedian_name": "Megan Knights",
+      "status": "bucket_pull",
+      "set_transcript": "My husband and I are going through couples therapy. It's kind of like a threesome for people who hate sex. It's weird for me. I live in Texas, where therapy's only okay if it's to heal a bone or stop being gay. My husband thinks I work too hard. I'm a health and fitness coach. Looking at the people here in Texas, I'm obviously not working hard enough. My husband's an underemployed musician. Now I'm doing stand-up on a podcast. We're basically trying to Austin each other to death. He's one of the few people who's been both a go-go dancer in a gay club and a country western singer. Unless you count the guy that shows up at Lindsey Graham's house in different outfits. He actually tried organizing a stand-up show once, but it was just like when we have sex. Nobody came. And yet, he still recorded it.",
+      "set_start_seconds": 4454.0,
+      "set_end_seconds": 4512.0,
+      "topic_tags": [
+        "relationships",
+        "observational",
+        "dating"
+      ],
+      "crowd_reaction": "moderate",
+      "tony_praise_level": 4,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "small",
+      "interview_summary": "Megan is a first-time comic and fitness coach married to a struggling musician. Discussed her husband's career, her business, and their therapy.",
+      "disclosed_age": null,
+      "disclosed_occupation": "health and fitness coach",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "married",
+      "disclosed_years_doing_comedy": 0,
+      "fun_facts": [
+        "Husband is a musician",
+        "Uses notes on paper for set"
+      ]
+    },
+    {
+      "set_number": 10,
+      "comedian_name": "Layla",
+      "status": "bucket_pull",
+      "set_transcript": "I should have peed earlier. Don't you think that Nike's slogan just sounds a little passive aggressive? Because I remember hearing it the first time. It was when my husband and I, we were fighting. And he said to me, if you spit on my mother's photo one more time, bitch, I'll divorce you. So go ahead, he said. Just do it. I did. It worked. He divorced me. This slogan actually works every time I use it. One time, my close friend texted me at 3 a.m. at night. He said, no one loves me. I'm going to kill myself tonight. I was very tired that night, sleepless. It was the first day of my period, and I said, listen, man, just do it. He did. Thank you.",
+      "set_start_seconds": 4964.0,
+      "set_end_seconds": 5036.0,
+      "topic_tags": [
+        "relationships",
+        "shock_humor",
+        "dark"
+      ],
+      "crowd_reaction": "big_laughs",
+      "tony_praise_level": 5,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "large",
+      "interview_summary": "Layla is from Azerbaijan. She works as a dildo designer. Tony and guests were impressed by her stage presence.",
+      "disclosed_age": null,
+      "disclosed_occupation": "dildo designer",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": 1,
+      "fun_facts": [
+        "From Azerbaijan",
+        "Designs fantasy dildos"
+      ]
+    },
+    {
+      "set_number": 11,
+      "comedian_name": "Mikey Genosi",
+      "status": "bucket_pull",
+      "set_transcript": "What's going on, Austin? I've been living here for a couple months now, and I think my favorite thing about Texas is your guys' lingo. Like, I love how you guys call all your thick Latinas tortas down here. You know, because that's just a Mexican sandwich. How have we not started doing that with all of the races? Like, if you hook up with a big Asian girl, you could be like, yeah, I fucked a steam bun last night. I took home a bond me, you know? If you're talking about a big white girl, you'd be like, yeah, Becky was hot in high school, but once she got married and had a couple kids, that bitch is a straight hoagie now, you know? Goddamn. If you're talking about a big black girl, you could be like, man, this girl didn't look anything like her online profile picture. I thought I matched with this busty African queen on Hinge, but when she showed up, she was a catfish po' boy, you know? I got one more. Can I do one more? I know it's not a race, but I do have one for little people. If you're at a bachelor party and you're like, hey, did you hear? Jake fucked that thick midget stripper last night. He'd be like, whoa, whoa, whoa, man. You can't say that. It's 2026. You gotta be progressive. You know they prefer to be called sliders now.",
+      "set_start_seconds": 5576.0,
+      "set_end_seconds": 5662.0,
+      "topic_tags": [
+        "race",
+        "sex",
+        "observational"
+      ],
+      "crowd_reaction": "roaring",
+      "tony_praise_level": 4,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "large",
+      "interview_summary": "Mikey is from Cleveland. He works in mortgages. He was involved in a live segment where he kissed an audience member.",
+      "disclosed_age": 32,
+      "disclosed_occupation": "mortgage products",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": 9,
+      "fun_facts": [
+        "From Akron/Cleveland"
+      ]
+    },
+    {
+      "set_number": 12,
+      "comedian_name": "Austin Gerstenschlager",
+      "status": "bucket_pull",
+      "set_transcript": "Thank you. My name is Austin Gerstenslager. I just realized I look exactly like how my last name sounds. I've been going to the same barber for a while. I keep telling her I want to look more youthful. I think she thought I meant Hitler youthful. No, last time I saw her, I had a mustache. She was like, I think we should just take a little bit off the sides. Go for that Charlie Chaplin, Michael Jordan look, you know? Let's see, I recently moved back in with my grandparents. That's been a lot of fun. No, it's cool. I don't have to pay rent anymore. I don't have to do my own laundry. But the only woman I ever have over now is my grandma. No, it's weird. The hardest part about having a woman over is when the sex gets really loud. I don't have to awkwardly knock on their door and ask my grandparents to be quiet.",
+      "set_start_seconds": 6020.0,
+      "set_end_seconds": 6083.0,
+      "topic_tags": [
+        "observational",
+        "family",
+        "dating"
+      ],
+      "crowd_reaction": "moderate",
+      "tony_praise_level": 3,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "large",
+      "interview_summary": "Austin is from San Diego. He moved in with his grandparents. Tony joked about his name sounding like a Nazi.",
+      "disclosed_age": null,
+      "disclosed_occupation": null,
+      "disclosed_location": "San Diego",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": 2,
+      "fun_facts": [
+        "Name sounds German/Nazi-like",
+        "Lives with grandparents"
+      ]
+    },
+    {
+      "set_number": 13,
+      "comedian_name": "Aaron Heltz",
+      "status": "bucket_pull",
+      "set_transcript": "I learned this today. They're called unisex bathrooms because you can have sex in them one time. Before they escort you out of TJ Maxx. They were very adamant about the second time, it was a no-go, you know? I watch pornography. I was watching this video of this lady, nice lady, I don't know, fucking, she was doing nice things to two gentlemen at the same time. I didn't fucking like it, I didn't like it. Click, dislike, thumbs up. That's just giving that lady too much power. At any point in time, she can be like, you know what? And now I'm a gay guy? I'm just trying to get a blowjob with my best friend. Now I'm into something new? What if she touches them together? It's like jumper cables. It sparks. I come. I'm like, I gotta get out of this TJ Maxx. They already do not like me. My name's Aaron Heltz.",
+      "set_start_seconds": 6365.0,
+      "set_end_seconds": 6442.0,
+      "topic_tags": [
+        "sex",
+        "shock_humor",
+        "observational"
+      ],
+      "crowd_reaction": "roaring",
+      "tony_praise_level": 5,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "medium",
+      "interview_summary": "Aaron is from Baton Rouge. He is friends with another comic who performed earlier. He was invited to do a second minute by Tony.",
+      "disclosed_age": 30,
+      "disclosed_occupation": null,
+      "disclosed_location": "Baton Rouge",
+      "disclosed_relationship_status": "married",
+      "disclosed_years_doing_comedy": 3,
+      "fun_facts": [
+        "Married to someone he's known since 15"
+      ]
+    },
+    {
+      "set_number": 14,
+      "comedian_name": "Pat O'Neill",
+      "status": "regular",
+      "set_transcript": "Hitler was born on 420? Yes! And boy, did he like smoking J's. A lot of people are on TikTok now. Which just used to be what I said when I saw Muslims at the airport. Times are changing. Last year, my little brother, he was a part of the Queers for Palestine protest. Ah, yes, gay Muslims. Better known as ghosts. Okay, that's it.",
+      "set_start_seconds": 6899.0,
+      "set_end_seconds": 6969.0,
+      "topic_tags": [
+        "shock_humor",
+        "politics",
+        "religion",
+        "lgbtq"
+      ],
+      "crowd_reaction": "roaring",
+      "tony_praise_level": 5,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "Tony praises Pat as one of the most promising regulars in the show's history, calling his Hitler joke the best he's ever heard.",
+      "disclosed_age": null,
+      "disclosed_occupation": null,
+      "disclosed_location": null,
+      "disclosed_relationship_status": null,
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Mentioned having trouble paying rent recently",
+        "Tony calls him 'The Real Deal'"
+      ]
+    }
+  ]
+}

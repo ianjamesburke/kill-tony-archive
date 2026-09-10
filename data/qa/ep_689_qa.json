@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 689,
+    "set_count": 18,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 689,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 689,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 689,
+    "set_number": 9,
+    "comedian": "Todd Royce",
+    "start_seconds": 4774.0,
+    "similarity": 0.909,
+    "passed": true,
+    "clip_transcription": "I have a dog. Um, I have a dog. Uh, not a dog. A Shih Tzu Poodle. I don't think if you, that's not a dog. Shih Tzu Poodles to me are like K-pop bands.",
+    "expected_start": "I have a dog. I have a dog, not a dog, a shih tzu poodle. I don't think if you, that's not a dog. Shih tzu poodles to me are like K-pop bands. Like they're adorable, but if I hit one with my car, I'm "
+  }
+]

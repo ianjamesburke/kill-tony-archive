@@ -2,9 +2,31 @@
   {
     "check": "set_count",
     "episode": 713,
-    "set_count": 7,
+    "set_count": 13,
     "min_expected": 8,
-    "passed": false,
-    "warning": "Only 7 sets found (expected >= 8). Pass 2 may have missed sets."
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 713,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 713,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 713,
+    "set_number": 12,
+    "comedian": "Nino",
+    "start_seconds": 7199.0,
+    "similarity": 0.76,
+    "passed": true,
+    "clip_transcription": "Uh oh. The Tesla bots AI the future is here. Where my Latinos at? Ya estuvo. Se acabo. No more el trabajo. Jose, did you get",
+    "expected_start": "Uh-oh, the Tesla bots, AI, the future is here. Where my Latinos at? Ya estuvo, se acab\u00f3. No more el trabajo. Jose, did you get the job? No, they gave it to the robots. He's cheaper. Mike says, hey, th"
   }
 ]

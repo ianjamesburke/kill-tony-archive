@@ -28,6 +28,7 @@ from batch_processor import (
     save_episode,
     init_db,
     pass2_analyze,
+    sync_db_to_railway,
 )
 
 
@@ -134,6 +135,9 @@ def main():
     init_db()
     save_episode(yt_info, transcript, analysis, existing_guests)
     print(f"\nDatabase updated for episode #{args.episode}")
+
+    sync_db_to_railway()
+    print("Railway sync complete (skipped if RAILWAY_BACKEND_URL/ADMIN_SECRET not set)")
 
 
 if __name__ == "__main__":

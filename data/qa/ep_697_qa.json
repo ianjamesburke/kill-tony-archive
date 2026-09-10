@@ -2,8 +2,33 @@
   {
     "check": "set_count",
     "episode": 697,
-    "set_count": 9,
+    "set_count": 12,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 697,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 697,
+    "passed": false,
+    "warnings": [
+      "set #11 (Andrew Renaud) and set #12 (Ari Mati) are only 4.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 697,
+    "set_number": 8,
+    "comedian": "Tajay",
+    "start_seconds": 4431.0,
+    "similarity": 0.72,
+    "passed": true,
+    "clip_transcription": "How y'all doing? How the rest of y'all doing? Good, good. Now y'all look good man, it's a very diverse room. Of white people. I like. Now white people make some noise.",
+    "expected_start": "How y'all doing? How the rest of y'all doing? Good, good, now y'all look good, man. This is a very diverse room of white people. Now white people, make some noise. All right, black people make some no"
   }
 ]

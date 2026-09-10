@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 710,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 710,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 710,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 710,
+    "set_number": 7,
+    "comedian": "Craig Baxter",
+    "start_seconds": 3645.0,
+    "similarity": 0.833,
+    "passed": true,
+    "clip_transcription": "flying the plane doesn't even follow comedies like this is the place to be, then I get here, the odds are like 8 million to one to be on here. I'm from a small town, man. I've never seen so many homel",
+    "expected_start": "guy on the plane doesn't even follow comedy he's like this is the place to be then I get here the odds are like 8 million to 1 to be on here I'm from a small town man I've never seen so many homeless "
+  }
+]

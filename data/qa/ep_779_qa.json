@@ -1,0 +1,35 @@
+[
+  {
+    "check": "set_count",
+    "episode": 779,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 779,
+    "passed": false,
+    "warnings": [
+      "21min gap between set #4 (Big Ed) and set #5 (Orhun Timur) \u2014 possible missed sets",
+      "20min gap between set #6 (Michael Dragon) and set #7 (Alexis Al-Azari) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 779,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 779,
+    "set_number": 5,
+    "comedian": "Orhun Timur",
+    "start_seconds": 3894.0,
+    "similarity": 0.844,
+    "passed": true,
+    "clip_transcription": "Yes. I met beget back there. Man has a hickey, doesn't have a neck. I don't know how you guys achieve that. It's really good. Uh do you guys like immigrants? No, you don't. Shit. I understand. Listen,",
+    "expected_start": "I met Big Ed back there. Man has a hickey, doesn't have a neck. I don't know how you guys achieved that. It's really good. Do you guys like immigrants? No, you don't. Shut up. I understand. Listen, I "
+  }
+]

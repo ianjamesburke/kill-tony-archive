@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 669,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 669,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 669,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 669,
+    "set_number": 2,
+    "comedian": "Jesus Eliezer",
+    "start_seconds": 1135.0,
+    "similarity": 0.966,
+    "passed": true,
+    "clip_transcription": "All right, so uh scientists the other day, they discovered the location of the clitoris on the snakes. I don't know about you, but this is just more confirmation that women are snakes.",
+    "expected_start": "All right, so scientists the other day, they discovered the location of the clitoris on the snakes. I don't know about you, but this is just more confirmation that women are snakes. That's all that is"
+  }
+]

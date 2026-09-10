@@ -2,9 +2,31 @@
   {
     "check": "set_count",
     "episode": 705,
-    "set_count": 7,
+    "set_count": 11,
     "min_expected": 8,
-    "passed": false,
-    "warning": "Only 7 sets found (expected >= 8). Pass 2 may have missed sets."
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 705,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 705,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 705,
+    "set_number": 4,
+    "comedian": "Jake Kennedy",
+    "start_seconds": 2422.0,
+    "similarity": 0.917,
+    "passed": true,
+    "clip_transcription": "I come from your typical normal-sized family, you know? My sister's 6 foot, my mom's 6 foot. My dad just really beat the fuck out of me.",
+    "expected_start": "I come from your typical normal-sized family, you know? My sister's six foot, my mom's six foot, and my dad just really beat the fuck out of me. Really stunning my growth growing up. Yeah, my mom, she"
   }
 ]

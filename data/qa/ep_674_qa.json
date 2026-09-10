@@ -5,5 +5,30 @@
     "set_count": 12,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 674,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 674,
+    "passed": false,
+    "warnings": [
+      "set #6 (Dallas Urban) and set #7 (Drew Nickens) are only 4.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 674,
+    "set_number": 9,
+    "comedian": "Aaron Belisle",
+    "start_seconds": 4965.0,
+    "similarity": 0.947,
+    "passed": true,
+    "clip_transcription": "Being disabled, I often run into people who try to recruit Jesus to fix me. I was in a taxi one time, and he pulled over to tell me that he once cured an ear infection by praying. He says he can cure ",
+    "expected_start": "Being disabled, I often run into people who try to recruit Jesus to fix me. I was in a taxi one time and he pulled over to tell me that he once cured an ear infection by praying. He says he can cure m"
   }
 ]

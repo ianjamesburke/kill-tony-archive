@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 778,
+    "set_count": 14,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 778,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 778,
+    "passed": false,
+    "warnings": [
+      "set #8 (Jules Villalobos) and set #9 (Andrew Packer) are only 3.2min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 778,
+    "set_number": 4,
+    "comedian": "Greg Anderson",
+    "start_seconds": 2236.0,
+    "similarity": 0.81,
+    "passed": true,
+    "clip_transcription": "And I am also a schizophrenic life coach. Thank you. Thank you. Yeah. Yeah. Um everybody, I am uh reconnecting with my uh mom on social media.",
+    "expected_start": "I am also a schizophrenic life coach. Everybody, I am reconnecting with my mom on social media. I super liked her, and she unmatched with me. Tinder joke for you. Martin Scorsese is making a story abo"
+  }
+]

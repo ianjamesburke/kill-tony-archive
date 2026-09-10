@@ -46,6 +46,7 @@ yarn-error.log*
 # *.json
 # data/*.db
 backend/audio_cache/
+backend/card_cache/
 data/whisperx_cache/
 data/transcripts/
 data/*.log
@@ -60,3 +61,4 @@ __pycache__/
 
 # OpenClaw project context
 .openclaw.md
+.plexi-beta/

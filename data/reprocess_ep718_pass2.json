@@ -1,0 +1,366 @@
+{
+  "episode": {
+    "episode_number": 718,
+    "guests": [
+      "James McCann",
+      "Kim Congdon"
+    ],
+    "venue": "Comedy Mothership"
+  },
+  "sets": [
+    {
+      "set_number": 1,
+      "comedian_name": "David Jolly",
+      "status": "regular",
+      "set_transcript": "How y'all doing tonight, white people in Puerto Rico? Hell yeah. It's been 21 months since I had a drink. That's pretty fucking cool, right? Hell yeah, hell yeah. I had to do it cold turkey because I tried to do it like with the AA meetings at first. But every time I went to an AA meeting, I needed a fucking drink. Them people's lives be miserable as hell, you know what I mean? Like, goddamn, do it already, bitch. Nobody gonna miss your ass. It got to the point where I started going to the meetings and I just spiked the coffee, you know what I mean? Get you back to your regular self, you know? Then it got so bad, I start coming to the meetings drunk as hell, you know? I start coming to the meetings drunk, and they'll kick me out of the meetings. And I'm like, fuck, you can't kick me out of this AA meeting, man. I'm crying. It's a fucking cry for help right now, you know? You can't kick me out of this AA meeting. This isn't an AA meeting. It's a PTA meeting. All right, that didn't go as good as I thought it was going to go, right? All right, that's my time. Thank y'all. Fuck, yeah.",
+      "set_start_seconds": 411.0,
+      "set_end_seconds": 476.0,
+      "topic_tags": [
+        "self_deprecation",
+        "drugs",
+        "observational"
+      ],
+      "crowd_reaction": "big_laughs",
+      "tony_praise_level": 4,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "Discussion of his 21-month sobriety, his past as a 'troublemaker,' his recent trip to Portland, and the experience of having a sign language interpreter for his set.",
+      "disclosed_age": null,
+      "disclosed_occupation": null,
+      "disclosed_location": "Florida",
+      "disclosed_relationship_status": null,
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Sober for 21 months",
+        "Toured Portland recently"
+      ]
+    },
+    {
+      "set_number": 2,
+      "comedian_name": "Joseph Paul Alampi",
+      "status": "bucket_pull",
+      "set_transcript": "I would exterminate those bugs like I was in the party in the 1940s. For room and board, of course. That's a callback. Okay. Let's give it a round of applause for Mary. Everybody, Mary! Mary! Oh, hi there. Oh, my God. This is a different sort of ship. Holy fuck, this guy. I'm Mary. Sometimes the aliens talk to me in my sleep or when I'm awake, et cetera, et cetera. And I'm all out of fucking tinfoil. Wait, go back on the X. Where's the X? I don't know. Is the X in my head? Did I take any X? Stop taking X. Because I think it's like in the psychic sphere or something. My grandson was also electrocuted. I was electrocuted. I'll break the fifth wall. I love you, Tony.",
+      "set_start_seconds": 789.0,
+      "set_end_seconds": 862.0,
+      "topic_tags": [
+        "shock_humor",
+        "absurdist"
+      ],
+      "crowd_reaction": "silence",
+      "tony_praise_level": 1,
+      "golden_ticket": false,
+      "sign_up_again": true,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "Tony heavily critiques the set, questioning his 'Mary' persona and lack of prepared jokes. Joseph talks about working as a security guard/personal trainer and being electrocuted.",
+      "disclosed_age": 50,
+      "disclosed_occupation": "security guard",
+      "disclosed_location": "Tampa",
+      "disclosed_relationship_status": null,
+      "disclosed_years_doing_comedy": 1,
+      "fun_facts": [
+        "Got electrocuted by an ice machine",
+        "Wears a muumuu on stage"
+      ]
+    },
+    {
+      "set_number": 3,
+      "comedian_name": "Isaac Kane Brown",
+      "status": "bucket_pull",
+      "set_transcript": "I've been dating a girl recently with a pretty big red flag. I think it's Chinese or something. I'm not too sure. I've been thinking I should be in the UFC. The way I've been fighting these gay thoughts, I think it's going to come down to a decision. I think the black guy's going to win. I don't know. Have you guys ever noticed that veterans and trans people are a lot alike? Like, you don't have to ask them. They'll tell you about it. They have a hard time finding employment. And sometimes they kill themselves. Which is honestly just a burden off our shoulders.",
+      "set_start_seconds": 1546.0,
+      "set_end_seconds": 1612.0,
+      "topic_tags": [
+        "shock_humor",
+        "race",
+        "lgbtq"
+      ],
+      "crowd_reaction": "moderate",
+      "tony_praise_level": 5,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": true,
+      "joke_book_size": "large",
+      "interview_summary": "Isaac discusses his work selling Yu-Gi-Oh! cards, his social anxiety, and his habit of watching 'encouraging' videos while masturbating. Tony sends him to see the talent booker.",
+      "disclosed_age": 28,
+      "disclosed_occupation": "Yu-Gi-Oh! card seller",
+      "disclosed_location": "Peoria, Illinois",
+      "disclosed_relationship_status": "dating",
+      "disclosed_years_doing_comedy": 2,
+      "fun_facts": [
+        "Dating a dog groomer",
+        "Anxious in public parks"
+      ]
+    },
+    {
+      "set_number": 4,
+      "comedian_name": "Chaddo",
+      "status": "bucket_pull",
+      "set_transcript": "Thanks, guys. I really needed that. It's been a rough week. My son, he came out to me as trans this week. He said, Dad, I think I'd be happy if I was a woman. I said, Son, I've never met a happy woman. I almost recently died also the last couple weeks. I woke up in the hospital. My wife was next to me crying. I thought, well, this is the woman who's been there for me. I finally got somebody I can be there for and trust. And she's like, Chad, please don't die. I can't get Hulu on the TV. We have a lot of animals. But I have this one little girl dog who keeps getting out of the fence every time I put her in the backyard. And every time she does, she gets fucking pregnant. So I put a little Plan B in her dog food. I used to wake up and step in dog shit and be like really mad. Now I wake up in the middle of the night and step in something. I'm like, God, I hope that's dog shit.",
+      "set_start_seconds": 2103.0,
+      "set_end_seconds": 2173.0,
+      "topic_tags": [
+        "family",
+        "relationships",
+        "observational"
+      ],
+      "crowd_reaction": "moderate",
+      "tony_praise_level": 4,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "Chaddo talks about his job running a 'Cannabis College' and his recent publication of a psychological thriller novel about a female serial killer.",
+      "disclosed_age": 44,
+      "disclosed_occupation": "cannabis educator",
+      "disclosed_location": null,
+      "disclosed_relationship_status": "married",
+      "disclosed_years_doing_comedy": 3,
+      "fun_facts": [
+        "Owns a cannabis college",
+        "Published a thriller novel"
+      ]
+    },
+    {
+      "set_number": 5,
+      "comedian_name": "Zach Hollis",
+      "status": "bucket_pull",
+      "set_transcript": "The other day my smartwatch notified me that I was having a fantastic workout. I was taking a shit. I don't think I could ever have a normal job, because every time I tighten that tie, my dick gets hard. I've been getting into BDSM lately, or at least that's what my girl tells the cops. Sometimes I fantasize about orgies, so they don't let me near schools anymore. I think I'm pretty good at flirting, but it's hard to tell between all their muffled screams, you know? I don't like to waste leftovers, so I always eat the fetus afterwards. Why do people fantasize about having a zombie apocalypse? You could eat people right now. Like, you don't have to wait, man.",
+      "set_start_seconds": 2809.0,
+      "set_end_seconds": 2863.0,
+      "topic_tags": [
+        "shock_humor",
+        "sex",
+        "absurdist"
+      ],
+      "crowd_reaction": "moderate",
+      "tony_praise_level": 3,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "small",
+      "interview_summary": "Discusses working as a karaoke DJ, his love of video games, home ownership, and his relationship dynamics.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Karaoke DJ / DoorDash",
+      "disclosed_location": "Austin",
+      "disclosed_relationship_status": "dating",
+      "disclosed_years_doing_comedy": 2,
+      "fun_facts": [
+        "Formerly worked in restaurant repair",
+        "Owns two dogs"
+      ]
+    },
+    {
+      "set_number": 6,
+      "comedian_name": "Tommy Tickles",
+      "status": "bucket_pull",
+      "set_transcript": "They say that opposites attract. If opposites really did attract, then my wife really... Wouldn't have a penis. I'm always broke, looking for new ways to make money. Last week I took an ad out in the back of a men's magazine offering $50 blow jobs. Now I just got to get my wife on board. I've written several books, nine different ways to skin a cat. You gotta skin it if you're gonna eat it. I've been married 13 years. And the next book I wrote I dedicated to my wife, 101 Ways to Kill Your Wife. That book was quickly followed by a sequel, 101 Things to Do in Prison.",
+      "set_start_seconds": 3206.0,
+      "set_end_seconds": 3271.0,
+      "topic_tags": [
+        "shock_humor",
+        "relationships",
+        "sex"
+      ],
+      "crowd_reaction": "big_laughs",
+      "tony_praise_level": 4,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "medium",
+      "interview_summary": "Discusses ranching life near Fredericksburg, offering services to dispose of bodies, and his eccentric relationship with his wife.",
+      "disclosed_age": 50,
+      "disclosed_occupation": "Farmer and rancher",
+      "disclosed_location": "Fredericksburg, TX",
+      "disclosed_relationship_status": "married",
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Instagram handle is @TommyTickles2025",
+        "Has llamas",
+        "Wife bottle feeds 19 baby goats and sheep"
+      ]
+    },
+    {
+      "set_number": 7,
+      "comedian_name": "Kansai Yasuda",
+      "status": "regular",
+      "set_transcript": "I used to date with this girl, beautiful girl. And after we dated for one month, she dumped me. And I was devastated. I was sad. Because she didn't tell me at least why. So I went up to Facebook and see what was going on in her life. Turns out she used to date with this huge... black masculine man. And after dumping me, she's back with this huge same black masculine man again. And do you guys eat sushi? Do you guys know the reason why there's a little ginger right next to sushi? Yeah, it's a palate cleanser. So this bitch using me for palate cleanser. Because she didn't want to eat big black tuna twice in a row. She had to eat pickled ginger penis in between.",
+      "set_start_seconds": 4133.0,
+      "set_end_seconds": 4204.0,
+      "topic_tags": [
+        "relationships",
+        "race",
+        "sex"
+      ],
+      "crowd_reaction": "roaring",
+      "tony_praise_level": 5,
+      "golden_ticket": true,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "Kansai talks about his temporary living situation in Austin with a black roommate, the cultural differences he's observed, and being taken on tour by Hans Kim.",
+      "disclosed_age": null,
+      "disclosed_occupation": null,
+      "disclosed_location": "Canada/Japan",
+      "disclosed_relationship_status": "single",
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Recently toured with Hans Kim"
+      ]
+    },
+    {
+      "set_number": 8,
+      "comedian_name": "Alex Tarchun",
+      "status": "bucket_pull",
+      "set_transcript": "So I'm not transgender right now. But I am thinking about it. So I might be a translator. I'm actually kind of odd. I'm odd like an eight ball. I'm even, black. I'm even black. I got this odd problem I'm trying to figure out. So there's three planes that depart from a Boston airport within a 20 minute window and collide with a building each. Now if X represents the plane that hit the Pentagon, I'm trying to solve for why the government won't show me the footage. 20 years, still figuring it out, you know? Thank you. Thank you very much.",
+      "set_start_seconds": 4772,
+      "set_end_seconds": 4828,
+      "topic_tags": [
+        "politics",
+        "race",
+        "absurdist"
+      ],
+      "crowd_reaction": "moderate",
+      "tony_praise_level": 5,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "Alex discusses his African-Italian heritage, his tiny pinky finger, having eight dogs, and his unique dating strategy of going after deaf women.",
+      "disclosed_age": null,
+      "disclosed_occupation": "Pizza delivery",
+      "disclosed_location": "Austin (via New York)",
+      "disclosed_relationship_status": null,
+      "disclosed_years_doing_comedy": 11,
+      "fun_facts": [
+        "Has a tiny pinky finger",
+        "Has eight dogs",
+        "Met a deaf woman holding a pile of cash"
+      ]
+    },
+    {
+      "set_number": 9,
+      "comedian_name": "Cameron Frisk",
+      "status": "bucket_pull",
+      "set_transcript": "My buddy's dad just died in a motorcycle accident, and then he got super religious after it happened. And he's like, Cameron, I accept Jesus as my one true father. I'm like, nice, now you got two dads that don't talk to you, jackass. He's like, you wanna come to church? He's like, I'd rather ride on the back of your dad's motorcycle when he crashed, I'm not gonna lie to you. Everybody tells me my mustache makes me look racist. I was like, wait till you hear my mouth. You're gonna love it. Now, a little bit about me, I do, I hate reverse cowgirl. Unpopular opinion, I do, I hate reverse cowgirl. That's just because I love fucking straight cowboys. Where my fellas at? Horns up, boys. Listen, I came here to suck dick and tell jokes, and I'm all out of jokes, fellas. I didn't get these tonsils removed for nothing. Let's get this golden ticket over with.",
+      "set_start_seconds": 6082,
+      "set_end_seconds": 6148,
+      "topic_tags": [
+        "sex",
+        "relationships",
+        "observational"
+      ],
+      "crowd_reaction": "big_laughs",
+      "tony_praise_level": 3,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "medium",
+      "interview_summary": "Cameron discusses working at a smoothie shop, his trip to Africa, and a potential stalker-ish situation involving a child in Denver.",
+      "disclosed_age": 27,
+      "disclosed_occupation": "Smoothie shop worker",
+      "disclosed_location": "Ojai, California",
+      "disclosed_relationship_status": null,
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Went to Africa and offered to trade his girlfriend for goats"
+      ]
+    },
+    {
+      "set_number": 10,
+      "comedian_name": "Alex O'Brien",
+      "status": "bucket_pull",
+      "set_transcript": "y'all are beautiful first class high dollar i'm gonna be like nick cage i'm gonna be gone in 60 seconds y'all ma'am do you know what your problem is not shit nothing you're doing great you're killing the game i appreciate you being out here so i have two things for you uh bank robbers and playing hinders my grandma used to say playing hinders oh we're playing hinders y'all playing hinders which meant inappropriately touching something as a kid from another person Now, we didn't play hinders, but we did play doctor a little bit. We got to play doctor a little bit. We'd be like, oh, is your elbow hurt? Let me get some aloe. Rub that on there real quick. Your low back hurt? Get some aloe on the doctor. Rub that on. Make you feel good. Make me think about hinders. As I'm an adult, I think hinders might have been fucking butt stuff. And I think my grandma might have been into that a little bit. She'd be asking us to play hinders. I tell you that to tell you this, the bank robber situation. Bank robber situation is, some of y'all men know about this, is when you're tucked into your waistband and your opportunity is looking straight up at you. It's goddamn robbing a bank, just put the fucking money in the bag.",
+      "set_start_seconds": 6531,
+      "set_end_seconds": 6595,
+      "topic_tags": [
+        "sex",
+        "childhood",
+        "observational"
+      ],
+      "crowd_reaction": "moderate",
+      "tony_praise_level": 3,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "Set was cut short due to time; brief transition to end of show.",
+      "disclosed_age": null,
+      "disclosed_occupation": null,
+      "disclosed_location": null,
+      "disclosed_relationship_status": null,
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": []
+    },
+    {
+      "set_number": 11,
+      "comedian_name": "Lisa Jane Spencer",
+      "status": "bucket_pull",
+      "set_transcript": "Hello. I know I sound retarded, but I'm just Australian. Yeah, so I'm just wondering, are we still pretending, white people, are we still pretending that we don't say the N-word? Like when they're not around, obviously. I remember learning about it. I was young, my brother was young, and my brother got back from a friend's house and he was talking about this cereal that he had. You guys call it Cocoa Krispies, we call it Cocoa Pops, but see, he called it N Pops. Yeah. So my mum banned that. But yeah, we just learn to hide it, right? You just learn to hide it. And my favourite is just doing it in the car, you know, listening to Kanye. That's my favourite. I'm talking about eating Nutella.",
+      "set_start_seconds": 7334.0,
+      "set_end_seconds": 7413.0,
+      "topic_tags": [
+        "race",
+        "observational"
+      ],
+      "crowd_reaction": "moderate",
+      "tony_praise_level": 3,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "large",
+      "interview_summary": "Lisa talks about arriving in America 4 days ago, being from Melbourne, and engages in awkward banter with Alex Tarshun (who is brought back on stage).",
+      "disclosed_age": null,
+      "disclosed_occupation": null,
+      "disclosed_location": "Melbourne, Australia",
+      "disclosed_relationship_status": null,
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "Moved to America 4 days prior"
+      ]
+    },
+    {
+      "set_number": 12,
+      "comedian_name": "William Montgomery",
+      "status": "regular",
+      "set_transcript": "Virginia Giffrey got suicided this past week in Australia after having been hit by a school bus going 80 miles an hour a couple weeks before. In the immortal words of Hillary Clinton, if at first you don't succeed, try, try again. So the Philadelphia Eagles drafted a guy named Jihad Campbell. My math may be off, but wasn't he born after 9-11 and they named him Jihad Campbell? He's an explosive linebacker, really willing to sacrifice his body. He'll fast. I mean, he's fast. In college, I heard he banged 99 virgins, and if you think the New York Giants can tower over him, he will fly right into them, two at a time. If he launches into two people hard enough, a third might fall down, and folks will claim it was a controlled demolition. Also, there's a rumor Mossad knew about Jihad Campbell, but failed to warn the Patriots. I ain't taking no shit! That's my impression of a constipated man.",
+      "set_start_seconds": 7933.0,
+      "set_end_seconds": 8007.0,
+      "topic_tags": [
+        "politics",
+        "shock_humor",
+        "other"
+      ],
+      "crowd_reaction": "roaring",
+      "tony_praise_level": 5,
+      "golden_ticket": false,
+      "sign_up_again": false,
+      "promoted_to_regular": false,
+      "invited_secret_show": false,
+      "joke_book_size": "none",
+      "interview_summary": "William discusses his recent tour in Virginia Beach, his fitness regimen (rowing), and engages in a bit with James McCann where they swap headwear.",
+      "disclosed_age": null,
+      "disclosed_occupation": "comedian",
+      "disclosed_location": "Austin, Texas",
+      "disclosed_relationship_status": null,
+      "disclosed_years_doing_comedy": null,
+      "fun_facts": [
+        "On a national tour",
+        "Has been rowing frequently"
+      ]
+    }
+  ]
+}

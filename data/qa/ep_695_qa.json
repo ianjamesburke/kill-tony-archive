@@ -5,5 +5,28 @@
     "set_count": 11,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 695,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 695,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 695,
+    "set_number": 10,
+    "comedian": "Dusty Carter",
+    "start_seconds": 5525.0,
+    "similarity": 0.882,
+    "passed": true,
+    "clip_transcription": "So, any of you fellas ever had your lady tell you after five years and a kids you didn't want the same things anymore, just to find out she was completely wrong, we both wanted pussy.",
+    "expected_start": "So any of you fellas ever had your lady tell you after five years and a kid you didn't want the same things anymore? Just to find out she was completely wrong? We both wanted pussy. See how that turne"
   }
 ]

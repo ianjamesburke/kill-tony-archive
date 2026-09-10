@@ -2,8 +2,34 @@
   {
     "check": "set_count",
     "episode": 672,
-    "set_count": 15,
+    "set_count": 16,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 672,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 672,
+    "passed": false,
+    "warnings": [
+      "set #7 (Brittany Martinez) and set #8 (Giovanni Martinez) are only 4.2min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #14 (Sherry Vesegi) and set #15 (William Montgomery) are only 4.2min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 672,
+    "set_number": 10,
+    "comedian": "J.K. Spindler",
+    "start_seconds": 5439.0,
+    "similarity": 0.824,
+    "passed": true,
+    "clip_transcription": "I've had terrible luck lately. My car was recently stolen. Cops didn't do shit. It's crazy now calling 911 nowadays is just a dude showing up an hour later going, damn, that's wild and just leaves.",
+    "expected_start": "I've had terrible luck lately. My car's recently stolen. Cops didn't do shit. It's crazy now. I'm calling 911 nowadays. It's just a dude showing up an hour later going, damn, that's wild, and just lea"
   }
 ]

@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 694,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 694,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 694,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 694,
+    "set_number": 4,
+    "comedian": "Simon Perkovich",
+    "start_seconds": 2129.0,
+    "similarity": 0.962,
+    "passed": true,
+    "clip_transcription": "What's up, everybody? Let me gauge the room. What do we think of trans athletes? Boo? Why? I love trans athletes. Trans athletes are the best thing to ever",
+    "expected_start": "What's up, everybody? Let me gauge the room. What do we think of trans athletes? Who? Why? I love trans athletes. Trans athletes are the best thing to ever happen to women's sports. Yeah. Case in poin"
+  }
+]

@@ -8,7 +8,9 @@ from typing import Any, Optional
 
 from fastapi import FastAPI, Header, HTTPException, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import Response
 
+from stat_card import get_or_render_card
 from database import (
     get_crowd_reaction_distribution,
     get_episode,
@@ -158,6 +160,15 @@ def guest_detail(guest_name: str) -> dict[str, Any]:
     if not g:
         raise HTTPException(status_code=404, detail="Guest not found")
     return g
+
+
+@app.get("/api/guests/{guest_name}/card.png")
+def guest_card(guest_name: str) -> Response:
+    g = get_guest_detail(DB_PATH, guest_name)
+    if not g:
+        raise HTTPException(status_code=404, detail="Guest not found")
+    png_bytes = get_or_render_card(g)
+    return Response(content=png_bytes, media_type="image/png", headers={"Cache-Control": "public, max-age=86400"})
 
 
 @app.get("/api/episodes/{episode_number}/laughter-timeline")

@@ -2,8 +2,33 @@
   {
     "check": "set_count",
     "episode": 704,
-    "set_count": 14,
+    "set_count": 15,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 704,
+    "passed": false,
+    "warnings": [
+      "23min gap between set #14 (Carly Rose) and set #15 (William Montgomery) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 704,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 704,
+    "set_number": 9,
+    "comedian": "Hans Kim",
+    "start_seconds": 4912.0,
+    "similarity": 0.962,
+    "passed": true,
+    "clip_transcription": "What's up? It's good to be here. It's a great time right now to be a comedian at the comedy mothership. We all got jobs in the new administration. I'm in charge.",
+    "expected_start": "Hey. What's up? It's good to be here. It's a great time right now to be a comedian at the Comedy Mothership. We all got jobs in the new administration. I'm in charge of agriculture. Fiona Kali is in c"
   }
 ]

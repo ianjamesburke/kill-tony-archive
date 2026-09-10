@@ -2,8 +2,32 @@
   {
     "check": "set_count",
     "episode": 699,
-    "set_count": 12,
+    "set_count": 13,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 699,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 699,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 699,
+    "set_number": 8,
+    "comedian": "Toddy Tindall",
+    "start_seconds": 4199.0,
+    "similarity": 0.0,
+    "passed": false,
+    "clip_transcription": "",
+    "expected_start": "So I was manning the door at an establishment here on 6th Street with a fatty deterrent system in place. And as I stood at the bottom of them stairs, gorgeous young thing cut me with a little spaghett",
+    "warning": "Timecode mismatch for set #8 (Toddy Tindall) at 4199s. Similarity: 0.0%. Audio says: '...' but transcript starts: 'So I was manning the door at an establishment here on 6th Street with a fatty de...'"
   }
 ]

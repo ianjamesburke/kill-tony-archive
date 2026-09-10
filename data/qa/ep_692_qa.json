@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 692,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 692,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 692,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 692,
+    "set_number": 5,
+    "comedian": "Angel Maldonado",
+    "start_seconds": 2608.0,
+    "similarity": 0.839,
+    "passed": true,
+    "clip_transcription": "How are we doing tonight, y'all? Ooh. Yeah, all right, identify yourself. Who in this room thinks I'm straight? You know, show of hands, make a little noise, clap your hands. All right,",
+    "expected_start": "How we doing tonight, y'all? Who in this room thinks I'm straight? You know, show of hands, make a little noise, clap your hands. All right, some delayed reactions. That's the usual reaction that I ge"
+  }
+]

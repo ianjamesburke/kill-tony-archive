@@ -1,0 +1,20 @@
+[
+  {
+    "check": "set_count",
+    "episode": 723,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "timecode",
+    "episode": 723,
+    "set_number": 8,
+    "comedian": "Alex James",
+    "start_seconds": 4215.0,
+    "similarity": 0.886,
+    "passed": true,
+    "clip_transcription": "I have an English degree from a state school so it's safe to say that I make more money from doing comedy. Um, fuck, I am soaking wet, now I'm butchering everything. All right, my girlfriend is 20 yea",
+    "expected_start": "I have an English degree from a state school, so it's safe to say that I make more money from doing comedy. Fuck, I am soaking wet. Now I'm butchering everything. All right, my girlfriend's 20 years o"
+  }
+]
