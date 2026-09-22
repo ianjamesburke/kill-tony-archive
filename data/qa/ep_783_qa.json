@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 783,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 783,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 783,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 783,
+    "set_number": 6,
+    "comedian": "Alan Fox",
+    "start_seconds": 3049.0,
+    "similarity": 0.875,
+    "passed": true,
+    "clip_transcription": "Holy shit, what's up guys? Um didn't expect to get pulled up. Uh Al Fox is a stage name. My actual last name is Kim. And uh I was really fighting like whether or not I want a stage name or",
+    "expected_start": "Holy shit, what's up, guys? Did not expect to get pulled up. Alan Fox is a stage name. My actual last name is Kim. And I was really fighting whether or not I want a stage name or whether I want to go "
+  }
+]

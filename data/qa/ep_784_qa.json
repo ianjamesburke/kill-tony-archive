@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 784,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 784,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 784,
+    "passed": false,
+    "warnings": [
+      "set #12 (Mason Smith) and set #13 (Pat O'Neill) are only 4.3min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 784,
+    "set_number": 5,
+    "comedian": "Luther Thompson",
+    "start_seconds": 2838.0,
+    "similarity": 0.882,
+    "passed": true,
+    "clip_transcription": "So, a little about me. I was child trafficked out of Russia at age 6. True story.",
+    "expected_start": "So a little about me. I was child trafficked out of Russia at age six. True story. Parents use the term adopted, so it's a tomato-tomato kind of situation going on there. One of the main questions I g"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 786,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 786,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 786,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 786,
+    "set_number": 6,
+    "comedian": "Ronaldo Mercado",
+    "start_seconds": 4447.0,
+    "similarity": 0.879,
+    "passed": true,
+    "clip_transcription": "here I just I'm one of the short midgets that fucked that guy's girlfriend. Uh I can't believe we made it to the same place. Uh this is exciting. It's good to be here. What's up you guys? Uh",
+    "expected_start": "I'm one of the short midgets that fucked that guy's girlfriend. I can't believe we made it to the same place. This is exciting. It's good to be here. What's up, you guys? You guys racist, or... All ri"
+  }
+]

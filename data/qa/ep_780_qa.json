@@ -1,0 +1,36 @@
+[
+  {
+    "check": "set_count",
+    "episode": 780,
+    "set_count": 20,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 780,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 780,
+    "passed": false,
+    "warnings": [
+      "set #3 (Jack Shaw) and set #4 (Chris Aguirre) are only 4.4min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #13 (Christina Mariani) and set #14 (Mario Bosco) are only 4.2min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #16 (Joseph Garcia) and set #17 (David Lucas) are only 4.4min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 780,
+    "set_number": 15,
+    "comedian": "Ari Matney",
+    "start_seconds": 6618.0,
+    "similarity": 0.917,
+    "passed": true,
+    "clip_transcription": "Hello. Everybody is drinking tonight, huh? Thank God. I hate sober people.",
+    "expected_start": "Hello. Everybody drinking tonight, huh? Thank God. I hate sober people. Listen, if you're sober, just don't come out. I don't want to see your ass at my party. Just walking around remembering what hap"
+  }
+]

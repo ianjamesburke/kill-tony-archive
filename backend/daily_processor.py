@@ -138,13 +138,16 @@ def find_new_episode(videos: list[dict]) -> dict | None:
 def add_episode_to_db(ep: dict):
     """Insert a newly discovered episode into the database."""
     with sqlite3.connect(DB_PATH) as conn:
-        conn.execute(
+        cursor = conn.execute(
             """INSERT OR IGNORE INTO episodes
-               (episode_number, title, youtube_url, video_id, status)
-               VALUES (?, ?, ?, ?, 'pending')""",
+               (episode_number, title, youtube_url, video_id, guests, processed_at, status)
+               VALUES (?, ?, ?, ?, '[]', '', 'pending')""",
             (ep["episode_number"], ep["title"], ep["url"], ep["video_id"]),
         )
-    log.info(f"  Added episode #{ep['episode_number']} to database")
+    if cursor.rowcount == 0:
+        log.warning(f"  Episode #{ep['episode_number']} was NOT inserted (already exists or constraint violation)")
+    else:
+        log.info(f"  Added episode #{ep['episode_number']} to database")
 
 
 # ---------------------------------------------------------------------------

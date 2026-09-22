@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 781,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 781,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 781,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 781,
+    "set_number": 11,
+    "comedian": "Annie Teicher",
+    "start_seconds": 6301.0,
+    "similarity": 0.879,
+    "passed": true,
+    "clip_transcription": "All my friends are getting married, having kids, I feel behind, I've always been behind. I remember when I was 14 and I hadn't gotten my period yet. I would just pretend walk out of the bathroom at sc",
+    "expected_start": "All my friends are getting married, having kids. I feel behind. I've always been behind. I remember when I was 14 and I hadn't gotten my period yet, I would just pretend, walk out of the bathroom at s"
+  }
+]
