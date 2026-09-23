@@ -2,8 +2,31 @@
   {
     "check": "set_count",
     "episode": 688,
-    "set_count": 12,
+    "set_count": 11,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 688,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 688,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 688,
+    "set_number": 10,
+    "comedian": "Fantasia Wilhoite",
+    "start_seconds": 6176.0,
+    "similarity": 0.909,
+    "passed": true,
+    "clip_transcription": "I bet none of you expected a white girl to pop out, did you? No. Nope, but it's me. Hi, everybody. I'm Fantasia. I'm a mom. That's probably my favorite thing, but it's a little tough because you got t",
+    "expected_start": "I bet none of you expected a white girl to pop out, did you? Nope, but it's me. Hi, everybody. I'm Fantasia. I'm a mom. That's probably my favorite thing. But it's a little tough because you gotta giv"
   }
 ]

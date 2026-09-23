@@ -1,0 +1,36 @@
+[
+  {
+    "check": "set_count",
+    "episode": 664,
+    "set_count": 14,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 664,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 664,
+    "passed": false,
+    "warnings": [
+      "set #10 (Luke Newcomb) and set #11 (Eddie Lursa) are only 3.3min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #11 (Eddie Lursa) and set #12 (Sherry Beseji) are only 4.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #12 (Sherry Beseji) and set #13 (Sagan Butler) are only 2.9min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 664,
+    "set_number": 10,
+    "comedian": "Luke Newcomb",
+    "start_seconds": 6017.0,
+    "similarity": 0.781,
+    "passed": true,
+    "clip_transcription": "Women. Women are like wine. I can't afford it. It's not something I can keep around the house. Anytime I have one, I am being judge. Proly quickly I finish. Just bottoms up. Now women and wine",
+    "expected_start": "Give it up for the ladies. Yeah. Women. Women are like wine. I can't afford it. It's not something I can keep around the house. Anytime I have one, I am being judged for how quickly I finish. just bot"
+  }
+]

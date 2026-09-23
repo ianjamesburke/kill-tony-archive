@@ -2,8 +2,38 @@
   {
     "check": "set_count",
     "episode": 680,
-    "set_count": 17,
+    "set_count": 20,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 680,
+    "passed": false,
+    "warnings": [
+      "27min gap between set #18 (Cam Patterson) and set #19 (David Lucas) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 680,
+    "passed": false,
+    "warnings": [
+      "set #5 (Big Jay Oakerson) and set #6 (Tyler Matthews) are only 3.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #8 (Johnny J.) and set #9 (Hans Kim) are only 2.9min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #15 (Luis J. Gomez) and set #16 (Harland Williams) are only 3.6min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #16 (Harland Williams) and set #17 (Jason King) are only 2.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 680,
+    "set_number": 10,
+    "comedian": "Jim Norton",
+    "start_seconds": 4139.0,
+    "similarity": 0.909,
+    "passed": true,
+    "clip_transcription": "You'll have to, uh, before I start, I apologize if I if I move. I hurt my neck. Um, I've been taking Jiu-jitsu for about a year and a half, and um, I hurt myself today, but no one has submitted me. In",
+    "expected_start": "You'll have to, before I start, I apologize if I move. I hurt my neck. I've been taking jujitsu for about a year and a half. And I hurt myself today. But no one has submitted me in the whole year and "
   }
 ]
