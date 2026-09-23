@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 663,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 663,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 663,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 663,
+    "set_number": 8,
+    "comedian": "Avery Hutto",
+    "start_seconds": 5753.0,
+    "similarity": 0.941,
+    "passed": true,
+    "clip_transcription": "So I actually used to date a girl who's bisexual. She's kind of like a medium gay. You want to know something embarrassing? When her and I first started dating, she had actually slept with more women ",
+    "expected_start": "So I actually used to date a girl who's bisexual. She's kind of like a medium gay. You wanna know something embarrassing? When her and I first started dating, she had actually slept with more women th"
+  }
+]

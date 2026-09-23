@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 659,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 659,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 659,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 659,
+    "set_number": 4,
+    "comedian": "Giovanni Badana",
+    "start_seconds": 2049.0,
+    "similarity": 0.886,
+    "passed": true,
+    "clip_transcription": "guys. I know what it is Uh, so I just got of a long relationship, I've been trying to date more. And dating women in Austin is insane. Uh, I had a back problem the other day, and I go back to her plac",
+    "expected_start": "So I just got out of a long relationship. I've been trying to date more. And dating women in Austin is insane. I had a back problem the other day, and I go back to her place, and she's like, take your"
+  }
+]

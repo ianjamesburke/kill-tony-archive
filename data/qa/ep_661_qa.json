@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 661,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 661,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 661,
+    "passed": false,
+    "warnings": [
+      "set #11 (Jelly Roll) and set #12 (Jelly Roll) are only 0.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

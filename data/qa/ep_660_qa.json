@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 660,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 660,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 660,
+    "passed": false,
+    "warnings": [
+      "set #9 (Jose Ornelas) and set #10 (Hans Kim) are only 4.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 660,
+    "set_number": 3,
+    "comedian": "Jerry Carlin",
+    "start_seconds": 2161.0,
+    "similarity": 0.947,
+    "passed": true,
+    "clip_transcription": "I had a mustache for a while, but I think it looked silly on me so I started clean shaving my pubes.",
+    "expected_start": "I had a mustache for a while, but I think it looked silly on me, so I started clean shaving my pubes. I used to be a cutter, but now I just spit on people. My grandpa is starting to lose his judgment."
+  }
+]

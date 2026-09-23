@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 662,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 662,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 662,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 662,
+    "set_number": 2,
+    "comedian": "Joseph Kirkemi",
+    "start_seconds": 881.0,
+    "similarity": 0.903,
+    "passed": true,
+    "clip_transcription": "What's up, everyone? I'm half Middle Eastern, half white. Just thought I'd solve the mystery for everyone. I know it's a little bit confusing when I walk be, look a little bit ambiguous. I get Mexican",
+    "expected_start": "What's up, everyone? I'm half Middle Eastern, half white. Just thought I'd solve the mystery for everyone. I know it's a little bit confusing when I walk up here. Look a little bit ambiguous. I get Me"
+  }
+]
