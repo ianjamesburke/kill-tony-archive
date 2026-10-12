@@ -1772,7 +1772,7 @@ def process_episode(client: genai.Client, ep: dict, model_override: str | None =
     try:
         audio_path = download_audio(url, episode_number)
     except Exception as e:
-        if "Sign in to confirm your age" in str(e) or "age" in str(e).lower():
+        if _is_age_restricted_error(e):
             log.warning(f"  Skipping age-restricted episode #{episode_number}")
             update_episode_status(episode_number, "age_restricted")
             return
