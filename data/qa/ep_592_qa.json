@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 592,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 592,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 592,
+    "passed": false,
+    "warnings": [
+      "set #9 (David Lucas) and set #10 (Katie Felton) are only 2.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

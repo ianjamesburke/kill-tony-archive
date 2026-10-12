@@ -1,0 +1,25 @@
+[
+  {
+    "check": "set_count",
+    "episode": 596,
+    "set_count": 18,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 596,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 596,
+    "passed": false,
+    "warnings": [
+      "set #3 (Juan Torres) and set #4 (John Henry) are only 3.2min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #4 (John Henry) and set #5 (Matt Henry) are only 4.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #10 (Nathan Garner) and set #11 (Robbie Cumesso) are only 4.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

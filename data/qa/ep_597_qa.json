@@ -21,12 +21,12 @@
   {
     "check": "timecode",
     "episode": 597,
-    "set_number": 4,
-    "comedian": "David Lucas",
-    "start_seconds": 2013.0,
-    "similarity": 0.952,
+    "set_number": 6,
+    "comedian": "Todd Royce",
+    "start_seconds": 3078.0,
+    "similarity": 0.758,
     "passed": true,
-    "clip_transcription": "Yeah. I got the new iPhone. It's not as racist as the old iPhone. I tried to type the word nigga and the phone refused to spell the word nigga.",
-    "expected_start": "I got the new iPhone. It's not as racist as the old iPhone. I tried to type the word nigga and the phone refused to spell the word nigga. It was like, perhaps you mean Nigeria. Or maybe you mean Nicar"
+    "clip_transcription": "What's up, Boston? I'm wearing a brand-new shirt that I just ordered recently online. Uh the guy actually called me and said, \"Hey, Todd, you ordered a 5XL. Want to make sure that wasn't a typo.\" I sa",
+    "expected_start": "I'm wearing a brand new shirt that I just ordered recently online. The guy actually called me and said, hey, Todd, you ordered a 5XL. Wanted to make sure that wasn't a typo. I said, typo? No, it's pro"
   }
 ]
