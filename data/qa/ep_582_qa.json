@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 582,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 582,
+    "passed": false,
+    "warnings": [
+      "61min gap between set #7 (Jonah Campos) and set #8 (John Burns) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 582,
+    "passed": true,
+    "warnings": []
+  }
+]

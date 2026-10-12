@@ -21,12 +21,12 @@
   {
     "check": "timecode",
     "episode": 584,
-    "set_number": 4,
-    "comedian": "Leonardo Joni",
-    "start_seconds": 2050.0,
-    "similarity": 0.875,
+    "set_number": 7,
+    "comedian": "Christina Mariani",
+    "start_seconds": 3614.0,
+    "similarity": 0.862,
     "passed": true,
-    "clip_transcription": "I'm a conspiracy theorist. Anybody else in here like the truth? I don't trust the government for shit. I don't care what they tell me. They're like, hey, you should drink eight glasses of water a day.",
-    "expected_start": "I'm a conspiracy theorist. Anybody else in here like the truth? I don't trust the government for shit I don't care what they tell me they're like hey you should drink eight glasses of water a day I'm "
+    "clip_transcription": "I was really nervous so um I had a few drinks and then I drove here. And I don't know why they say your reaction times are slower when you drive drunk cuz",
+    "expected_start": "I was really nervous, so I had a few drinks and then I drove here. And I don't know why they say your reaction times are slower when you drive drunk, because I hit those kids just fine. I'm not super "
   }
 ]
