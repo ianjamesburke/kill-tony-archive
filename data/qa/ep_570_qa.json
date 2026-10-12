@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 570,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 570,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 570,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 570,
+    "set_number": 5,
+    "comedian": "Cameron Mai",
+    "start_seconds": 3090.0,
+    "similarity": 0.882,
+    "passed": true,
+    "clip_transcription": "Hey. How you guys doing? You guys hanging out? That's cool man. My life is falling apart. No, it's true man. The amenities where I live are going to absolute dog shit, you know. Like I looked at my wa",
+    "expected_start": "My life is falling apart. No, it's true, man. The amenities where I live are going to absolute dog shit, you know? Like, I looked at my washing machine the other day. I was like, I don't know how many"
+  }
+]

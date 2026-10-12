@@ -1,0 +1,27 @@
+[
+  {
+    "check": "set_count",
+    "episode": 574,
+    "set_count": 15,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 574,
+    "passed": false,
+    "warnings": [
+      "24min gap between set #4 (Molly Vivant) and set #5 (Molly Vivant) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 574,
+    "passed": false,
+    "warnings": [
+      "set #7 (Mike Stagg) and set #8 (David Lucas) are only 1.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #10 (Bak) and set #11 (Ben Albert) are only 4.3min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #12 (Monica P) and set #13 (Will Williams) are only 3.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]
