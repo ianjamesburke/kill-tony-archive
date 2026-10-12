@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 589,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 589,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 589,
+    "passed": false,
+    "warnings": [
+      "set #8 (Chris Carreon) and set #9 (Sergio Gabriel) are only 2.7min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

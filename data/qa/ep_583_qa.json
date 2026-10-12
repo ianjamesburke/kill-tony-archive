@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 583,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 583,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 583,
+    "passed": false,
+    "warnings": [
+      "set #2 (Samantha Corigliano) and set #3 (Steve Jones) are only 4.2min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 583,
+    "set_number": 3,
+    "comedian": "Steve Jones",
+    "start_seconds": 1259.0,
+    "similarity": 0.88,
+    "passed": true,
+    "clip_transcription": "So, I just moved in with my girlfriend. She's really nice. She's actually a triplet. That's really interesting. She also just let me know that she's down with three somes.",
+    "expected_start": "So I just moved in with my girlfriend. She's really nice. She's actually a triplet. That's really interesting. She also just let me know that she's down with threesomes. So you guys know what I'm thin"
+  }
+]

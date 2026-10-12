@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 584,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 584,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 584,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 584,
+    "set_number": 4,
+    "comedian": "Leonardo Joni",
+    "start_seconds": 2050.0,
+    "similarity": 0.875,
+    "passed": true,
+    "clip_transcription": "I'm a conspiracy theorist. Anybody else in here like the truth? I don't trust the government for shit. I don't care what they tell me. They're like, hey, you should drink eight glasses of water a day.",
+    "expected_start": "I'm a conspiracy theorist. Anybody else in here like the truth? I don't trust the government for shit I don't care what they tell me they're like hey you should drink eight glasses of water a day I'm "
+  }
+]
