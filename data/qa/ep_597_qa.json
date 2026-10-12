@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 597,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 597,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 597,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 597,
+    "set_number": 4,
+    "comedian": "David Lucas",
+    "start_seconds": 2013.0,
+    "similarity": 0.952,
+    "passed": true,
+    "clip_transcription": "Yeah. I got the new iPhone. It's not as racist as the old iPhone. I tried to type the word nigga and the phone refused to spell the word nigga.",
+    "expected_start": "I got the new iPhone. It's not as racist as the old iPhone. I tried to type the word nigga and the phone refused to spell the word nigga. It was like, perhaps you mean Nigeria. Or maybe you mean Nicar"
+  }
+]
