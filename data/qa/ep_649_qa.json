@@ -1,0 +1,35 @@
+[
+  {
+    "check": "set_count",
+    "episode": 649,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 649,
+    "passed": false,
+    "warnings": [
+      "20min gap between set #8 (Zach Hedrick) and set #9 (Priya Bluntz) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 649,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 649,
+    "set_number": 10,
+    "comedian": "Davey Jackson",
+    "start_seconds": 6064.0,
+    "similarity": 0.174,
+    "passed": false,
+    "clip_transcription": "What's up, Boston? Oh, man, I'm so glad I dressed like a competitive vapor tonight. This is cool. Excited. Um, question for God.",
+    "expected_start": "Question for God. If God didn't want me to have sex with Down syndrome people, why did he make all their asses so fat? Like, all of them? They're all caked up fucking dump trucks on retard... What? Al",
+    "warning": "Timecode mismatch for set #10 (Davey Jackson) at 6064s. Similarity: 17.4%. Audio says: 'What's up, Boston? Oh, man, I'm so glad I dressed like a competitive vapor tonig...' but transcript starts: 'Question for God. If God didn't want me to have sex with Down syndrome people, w...'"
+  }
+]

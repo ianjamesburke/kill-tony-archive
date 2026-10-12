@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 611,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 611,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 611,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 611,
+    "set_number": 11,
+    "comedian": "Justin Bradford",
+    "start_seconds": 5347.0,
+    "similarity": 0.9,
+    "passed": true,
+    "clip_transcription": "My grandparents didn't have a color TV till like three years ago, because every time they go to the store, they would see the color TV section and thought it was only for blacks.",
+    "expected_start": "My grandparents didn't have a colored TV until like three years ago. Because every time they'd go to the store, they would see the colored TV section and thought it was only for blacks. Imagine a fuck"
+  }
+]

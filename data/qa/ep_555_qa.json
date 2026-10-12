@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 555,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 555,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 555,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 555,
+    "set_number": 5,
+    "comedian": "Kat Swantner",
+    "start_seconds": 3432.0,
+    "similarity": 1.0,
+    "passed": true,
+    "clip_transcription": "I have not had an abortion, but I have driven a lot of my friends to have abortions. You know, always the bridesmaid, never the bride.",
+    "expected_start": "I have not had an abortion, but I have driven a lot of my friends to have abortions. You know, always the bridesmaid, never the bride. I'm wearing the gown next time. The hospital gown. Okay, you guys"
+  }
+]

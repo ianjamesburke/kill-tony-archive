@@ -1,0 +1,35 @@
+[
+  {
+    "check": "set_count",
+    "episode": 420,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 420,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 420,
+    "passed": false,
+    "warnings": [
+      "set #6 (Henny Kennegar) and set #7 (Jacob Nichols) are only 2.6min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #11 (Tony B. Cruz) and set #12 (Justin Adkins) are only 2.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 420,
+    "set_number": 10,
+    "comedian": "Jordan Fulton",
+    "start_seconds": 5591.0,
+    "similarity": 0.944,
+    "passed": true,
+    "clip_transcription": "Am I the only one that thinks it's odd that the word ostracize has nothing to do with exercising ostriches?",
+    "expected_start": "Am I the only one that thinks it's odd that the word ostracized has nothing to do with exercising ostriches? I think that's a good start. I can't tell if my dick is small or if my balls are just reall"
+  }
+]

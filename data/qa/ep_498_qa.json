@@ -1,0 +1,33 @@
+[
+  {
+    "check": "set_count",
+    "episode": 498,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 498,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 498,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 498,
+    "set_number": 7,
+    "comedian": "Jack Timmons",
+    "start_seconds": 4373.0,
+    "similarity": 0.0,
+    "passed": false,
+    "clip_transcription": "",
+    "expected_start": "Hey, being a pedophile, kind of childish, right? You know, liking kids? I don't know. I feel bad for pedophiles, because it's just like they're a normal guy until they turn 16, and it's like, come on,",
+    "warning": "Timecode mismatch for set #7 (Jack Timmons) at 4373s. Similarity: 0.0%. Audio says: '...' but transcript starts: 'Hey, being a pedophile, kind of childish, right? You know, liking kids? I don't ...'"
+  }
+]

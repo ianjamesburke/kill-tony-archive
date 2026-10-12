@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 630,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 630,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 630,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 630,
+    "set_number": 6,
+    "comedian": "Tony Robinson",
+    "start_seconds": 3533.0,
+    "similarity": 1.0,
+    "passed": true,
+    "clip_transcription": "I'm from East Texas, so I am so nervous. I don't want to offend anyone. I don't have the wokeness you guys have here. I have a lot of questions.",
+    "expected_start": "I'm from East Texas, so I am so nervous. I don't want to offend anyone. I don't have the wokeness you guys have here. I have a lot of questions. Do black people's lives still matter the most? Can I sk"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "check": "set_count",
+    "episode": 439,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 439,
+    "passed": false,
+    "warnings": [
+      "31min gap between set #9 (Megan Langley) and set #10 (Mark McGuinn) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 439,
+    "passed": false,
+    "warnings": [
+      "set #1 (Megan Langley) and set #2 (Mark McGuinn) are only 0.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #10 (Mark McGuinn) and set #11 (Evan) are only 3.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 439,
+    "set_number": 3,
+    "comedian": "Peter Mullane",
+    "start_seconds": 622.0,
+    "similarity": 1.0,
+    "passed": true,
+    "clip_transcription": "Thank you, God. Might be hard for you to tell, but I'm Irish. That means I was born pissed off. Since I'm always pissed off, my hands, they just never stop shaking.",
+    "expected_start": "Thank you, God. Might be hard for you to tell, but I'm Irish. That means I was born pissed off. Since I'm always pissed off, my hands, they just never stop shaking. They even shake here when I'm nervo"
+  }
+]

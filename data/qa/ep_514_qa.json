@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 514,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 514,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 514,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 514,
+    "set_number": 6,
+    "comedian": "Nicole Tran",
+    "start_seconds": 2697.0,
+    "similarity": 0.769,
+    "passed": true,
+    "clip_transcription": "Now let's talk about my cousin Bingbing. My cousin Bingbing snores. She snores like this.",
+    "expected_start": "Now let's talk about my cousin, Bing Bing. My cousin, Bing Bing, snores. She snores like this. Bing, bing, bing, bing, bing, bing, bing. Bing, bing, bing, bing, bing, bing, bing. It can be annoying an"
+  }
+]

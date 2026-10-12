@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 639,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 639,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 639,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 639,
+    "set_number": 7,
+    "comedian": "Ryer Cameraman",
+    "start_seconds": 3875.0,
+    "similarity": 0.926,
+    "passed": true,
+    "clip_transcription": "Hello. Is anybody home? The door was unlocked. Right. Relatable. Talk about the hole in the pen cap. That's what they want. I've been going to the gas station Domingo.",
+    "expected_start": "Hello. Is anybody home? The door was unlocked. Right, relatable. Talk about the hole in the pen cap. That's what they want. I've been going to the gas station to mingle. I tell myself, all right, righ"
+  }
+]

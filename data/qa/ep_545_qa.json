@@ -1,0 +1,33 @@
+[
+  {
+    "check": "set_count",
+    "episode": 545,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 545,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 545,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 545,
+    "set_number": 2,
+    "comedian": "Tyler Quick",
+    "start_seconds": 1273.0,
+    "similarity": 0.0,
+    "passed": false,
+    "clip_transcription": "",
+    "expected_start": "I have seasonal depression, so tonight I'm going to dress up like an ornament and then hang myself. It's not sad, Mom. I'm being festive. My sister likes child pornography. Completely different thing.",
+    "warning": "Timecode mismatch for set #2 (Tyler Quick) at 1273s. Similarity: 0.0%. Audio says: '...' but transcript starts: 'I have seasonal depression, so tonight I'm going to dress up like an ornament an...'"
+  }
+]

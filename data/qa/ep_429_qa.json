@@ -1,0 +1,38 @@
+[
+  {
+    "check": "set_count",
+    "episode": 429,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 429,
+    "passed": false,
+    "warnings": [
+      "37min gap between set #3 (Bronson) and set #4 (Candy) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 429,
+    "passed": false,
+    "warnings": [
+      "set #4 (Candy) and set #5 (James Arden) are only 1.9min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #6 (Radu Bondar) and set #7 (Leah Sampson) are only 4.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #8 (Brandy Banties) and set #9 (Jared Hawley) are only 2.4min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 429,
+    "set_number": 7,
+    "comedian": "Leah Sampson",
+    "start_seconds": 5374.0,
+    "similarity": 0.839,
+    "passed": true,
+    "clip_transcription": "Hello. Um a little bit about me. Um I like my men how I like my coffee, uh black, thanks. And um available in the lobby of an abortion clinic. That way I know that he and I both have",
+    "expected_start": "Hello, a little bit about me. I like my man how I like my coffee. Black, thanks. And available in the lobby of an abortion clinic. That way I know that he and I both have the same political views, you"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 520,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 520,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 520,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 520,
+    "set_number": 10,
+    "comedian": "Tyler Braun",
+    "start_seconds": 5478.0,
+    "similarity": 0.939,
+    "passed": true,
+    "clip_transcription": "Hey everybody, how's it going? I just got this sweet new cell phone. Comes with all these nice new features, you know? Turns out you can disable those amber alerts you guys are getting all the time. I",
+    "expected_start": "Hey, everybody. How's it going? I just got this sweet new cell phone. Comes with all these nice new features, you know? Turns out you can disable those amber alerts you guys are getting all the time. "
+  }
+]

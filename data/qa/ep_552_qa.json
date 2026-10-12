@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 552,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 552,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 552,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 552,
+    "set_number": 2,
+    "comedian": "Alden Schaub",
+    "start_seconds": 1068.0,
+    "similarity": 0.929,
+    "passed": true,
+    "clip_transcription": "Hey, uh they say uh one in the hand's worth two in the bush. Unless we're talking about big fat cocks. They say the journey of a thousand miles begins with a single step, but uh",
+    "expected_start": "Hey, they say one in the hand is worth two in the bush. Unless we're talking about big fat cocks. They say the journey of a thousand miles begins with a single step, but it takes a lot longer when you"
+  }
+]

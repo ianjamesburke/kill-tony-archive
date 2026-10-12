@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 500,
+    "set_count": 15,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 500,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 500,
+    "passed": false,
+    "warnings": [
+      "set #14 (Ski Mask Pete) and set #15 (Michael Gonzalez) are only 2.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 500,
+    "set_number": 7,
+    "comedian": "Justin Sanford",
+    "start_seconds": 4534.0,
+    "similarity": 0.844,
+    "passed": true,
+    "clip_transcription": "How's everyone doing? Stopped to get a haircut on the way here, but my barbershop wasn't open, so I had to go to the Puerto Rican barbershop down the road, and I'm from Texas, I speak Spanish but I do",
+    "expected_start": "How's everyone doing? Stopped to get a haircut on the way here, but my barber shop wasn't open, so I had to go to the Puerto Rican barber shop down the road. And I'm from Texas. I speak Spanish, but I"
+  }
+]

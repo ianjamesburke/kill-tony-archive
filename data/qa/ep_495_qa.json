@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 495,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 495,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 495,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 495,
+    "set_number": 2,
+    "comedian": "Christopher Neil Walker",
+    "start_seconds": 874.0,
+    "similarity": 0.889,
+    "passed": true,
+    "clip_transcription": "So, uh isn't it the worst when there's someone who just won't accept your apologies? It's like, fine. Maybe I'm not sorry I was acting all faggity.",
+    "expected_start": "So, isn't it the worst when there's someone who just won't accept your apologies? It's like, fine, maybe I'm not sorry I was acting all faggoty. I have a son, he's turning 14. Thank you. Raising a chi"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 426,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 426,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 426,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 426,
+    "set_number": 7,
+    "comedian": "William Montgomery",
+    "start_seconds": 4369.0,
+    "similarity": 0.909,
+    "passed": true,
+    "clip_transcription": "Let's give it up for Jimmy Buffett Atlanta. I don't know. I don't know.",
+    "expected_start": "Let's give it up for Jimmy Buffett, Atlanta. I don't know. I don't know. I don't know where I'm gonna go when the volcano blows. It's funny how we can assassinate an Iranian general, but we can't find"
+  }
+]

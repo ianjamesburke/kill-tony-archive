@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 623,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 623,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 623,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 623,
+    "set_number": 2,
+    "comedian": "Janice Min",
+    "start_seconds": 1078.0,
+    "similarity": 1.0,
+    "passed": true,
+    "clip_transcription": "Um, there's a lot of Asian stereotypes. Some are true, some aren't, but that's for another time.",
+    "expected_start": "Um, there's a lot of Asian stereotypes. Some are true, some aren't, but that's for another time. Uh, here's a new one for you, and you can actually test it out for yourself. So every time an Asian per"
+  }
+]

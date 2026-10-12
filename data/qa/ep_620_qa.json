@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 620,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 620,
+    "passed": false,
+    "warnings": [
+      "22min gap between set #9 (Ellie in Space) and set #10 (William Montgomery) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 620,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 620,
+    "set_number": 5,
+    "comedian": "Cam Patterson",
+    "start_seconds": 2585.0,
+    "similarity": 0.964,
+    "passed": true,
+    "clip_transcription": "I used to want to be a thug, before I became a comedian. It's not funny, bitch. I could have been a good thug. White lady, I could have been a great thug, but I knew I couldn't be a thug cuz one day I",
+    "expected_start": "I used to want to be a thug before I became a comedian. It's not funny, bitch. I could have been a good thug, white lady. I could have been a great thug, but I knew I couldn't be a thug, and one day I"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 443,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 443,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 443,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 443,
+    "set_number": 2,
+    "comedian": "Darius Bennett",
+    "start_seconds": 1306.0,
+    "similarity": 0.957,
+    "passed": true,
+    "clip_transcription": "I want to get married because I believe in love. I just don't believe in how people get married nowadays. People get married to people they love, and that shit's stupid, I think it is.",
+    "expected_start": "I want to get married because I believe in love. I just don't believe in how people get married nowadays. People get married to people they love, and that shit's stupid. I think it is. Because you got"
+  }
+]

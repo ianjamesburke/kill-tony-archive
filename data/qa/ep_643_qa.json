@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 643,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 643,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 643,
+    "passed": false,
+    "warnings": [
+      "set #1 (Genevieve) and set #2 (Tony Cruz) are only 3.6min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 643,
+    "set_number": 4,
+    "comedian": "Michael Hines",
+    "start_seconds": 1807.0,
+    "similarity": 0.912,
+    "passed": true,
+    "clip_transcription": "I'm not pro Hamas, but I can always go for a little chickpea. No, but, uh, seriously, I am stoked on this new war. I'm super excited about it because that Russia versus Ukraine shit was getting boring",
+    "expected_start": "I'm not pro-Hamas, but I can always go for a little chickpea. No, but seriously, I am stoked on this new war. I'm super excited about it, because that Russia versus Ukraine shit was getting boring. No"
+  }
+]

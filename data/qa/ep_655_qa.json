@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 655,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 655,
+    "passed": false,
+    "warnings": [
+      "35min gap between set #8 (Brian Lumbra) and set #9 (Trish Smart) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 655,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 655,
+    "set_number": 7,
+    "comedian": "Kam Patterson",
+    "start_seconds": 3940.0,
+    "similarity": 0.688,
+    "passed": true,
+    "clip_transcription": "What's up white bitch? All right, let's You have a pre-came on yourself, sir? You a pre-ejaculate on yourself?",
+    "expected_start": "What's up, white bitch? You ever pre-came on yourself, sir? You ever pre-ejaculate on yourself? I did a lot when I was 17. It was weird, because I would ask my dad, I'd be like, hey pops, I keep comin"
+  }
+]

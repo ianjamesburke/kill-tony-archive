@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 550,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 550,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 550,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 550,
+    "set_number": 4,
+    "comedian": "Eddie Mack",
+    "start_seconds": 2015.0,
+    "similarity": 0.903,
+    "passed": true,
+    "clip_transcription": "Yeah, so uh, my name is Eddie. I'm from Ireland. In case it wasn't obvious from the red hair and the pale skin. So, I'm half Irish, half black, because I guess black is a nationality now.",
+    "expected_start": "Yo, so my name is Eddie. I'm from Ireland. In case it wasn't obvious from the red hair and the pale skin. So I'm half Irish, half black. Because I guess black is a nationality now. My father is from I"
+  }
+]

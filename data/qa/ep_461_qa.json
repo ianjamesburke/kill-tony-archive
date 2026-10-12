@@ -1,0 +1,33 @@
+[
+  {
+    "check": "set_count",
+    "episode": 461,
+    "set_count": 6,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 6 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 461,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 461,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 461,
+    "set_number": 3,
+    "comedian": "Manolo",
+    "start_seconds": 1567.0,
+    "similarity": 0.667,
+    "passed": true,
+    "clip_transcription": "Tick that, tick that, tick that",
+    "expected_start": "Take that, take that, take that. And remember, black lives matter. Don't speak to me in that tone. What do you mean? What tone? That skin tone. What?"
+  }
+]

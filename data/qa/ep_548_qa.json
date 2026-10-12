@@ -1,0 +1,35 @@
+[
+  {
+    "check": "set_count",
+    "episode": 548,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 548,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 548,
+    "passed": false,
+    "warnings": [
+      "set #4 (Yasha Kuzman) and set #5 (Freddie Gibbs) are only 3.4min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #5 (Freddie Gibbs) and set #6 (Ellis H.) are only 4.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 548,
+    "set_number": 3,
+    "comedian": "Yasha Kuzman",
+    "start_seconds": 1931.0,
+    "similarity": 0.914,
+    "passed": true,
+    "clip_transcription": "Fuck yeah. I'm a little upset. My girlfriend broke up with me cuz I peed the bed. Which, that's a bit harsh, don't you think? You pee the bed one time and you get dumped. Me in her defense, I was stan",
+    "expected_start": "Fuck yeah, I'm a little upset. My girlfriend broke up with me because I peed the bed. Which, that's a bit harsh, don't you think? You pee the bed one time and you get dumped. I mean, in her defense, I"
+  }
+]

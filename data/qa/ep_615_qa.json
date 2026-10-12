@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 615,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 615,
+    "passed": false,
+    "warnings": [
+      "23min gap between set #8 (Karen Jones) and set #9 (Carly Anderson) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 615,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 615,
+    "set_number": 6,
+    "comedian": "Ron White",
+    "start_seconds": 3647.0,
+    "similarity": 0.926,
+    "passed": true,
+    "clip_transcription": "I shitted my pants on the golf course today. Let me walk you through that. I got back from California. I had a stomach virus, but I promised I would play.",
+    "expected_start": "I shit my pants on the golf course today. Let me walk you through that. I got back from California. I had a stomach virus, but I promised I would play in a charity event, and I fucking showed up for i"
+  }
+]

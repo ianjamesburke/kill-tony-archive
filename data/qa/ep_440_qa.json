@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 440,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 440,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 440,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 440,
+    "set_number": 8,
+    "comedian": "Lorraine Lopez",
+    "start_seconds": 4673.0,
+    "similarity": 1.0,
+    "passed": true,
+    "clip_transcription": "So I just found out that my mom and dad are getting divorced in six months. Really wish they would have told me because I had to find out from my psychic.",
+    "expected_start": "So I just found out that my mom and dad are getting divorced in six months. Really wish that they would have told me because I had to find out from my psychic. I ended up telling my dad and he was rea"
+  }
+]

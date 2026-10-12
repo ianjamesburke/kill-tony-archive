@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 441,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 441,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 441,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 441,
+    "set_number": 10,
+    "comedian": "Michael Lair",
+    "start_seconds": 4943.0,
+    "similarity": 0.846,
+    "passed": true,
+    "clip_transcription": "I'm so you know, I'm secure safely to my power to buy a butt plug.",
+    "expected_start": "I, so you know, I'm secured safely to my power chair by a butt plug. If I start cumming red beans, that don't count towards my time. I actually only come once every six months or whenever I can medica"
+  }
+]

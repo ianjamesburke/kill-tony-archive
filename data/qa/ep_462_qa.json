@@ -1,0 +1,33 @@
+[
+  {
+    "check": "set_count",
+    "episode": 462,
+    "set_count": 7,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 7 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 462,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 462,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 462,
+    "set_number": 4,
+    "comedian": "David Lucas",
+    "start_seconds": 3158.0,
+    "similarity": 0.897,
+    "passed": true,
+    "clip_transcription": "The world is crazy right now. Black people asked for equality and white people started taking niggas off of breakfast foods. Like bitch I want black people on my fucking pancake box.",
+    "expected_start": "The world is crazy right now. Black people ask for equality and white people started taking niggas off of breakfast foods. Like, man, I want black people on my fucking pancake box. Don't nobody want n"
+  }
+]

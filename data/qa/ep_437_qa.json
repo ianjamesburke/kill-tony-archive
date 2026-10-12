@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 437,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 437,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 437,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 437,
+    "set_number": 8,
+    "comedian": "Todd Royce",
+    "start_seconds": 4067.0,
+    "similarity": 0.923,
+    "passed": true,
+    "clip_transcription": "My name is Todd Royce. My preferred pronouns are he/him. My preferred adjectives are robust and massive.",
+    "expected_start": "My name is Todd Royce. My preferred pronouns are he, him. My preferred adjectives are robust and massive. I am married. Sorry, ladies. Y'all can look, but you can't touch. A friend of mine said it's t"
+  }
+]

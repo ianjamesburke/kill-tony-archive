@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 622,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 622,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 622,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 622,
+    "set_number": 6,
+    "comedian": "Riel Silva",
+    "start_seconds": 3999.0,
+    "similarity": 0.967,
+    "passed": true,
+    "clip_transcription": "What up, everybody? Y'all been thinking about your health recently? Cuz I have. I've been trying to cut back on the drinking a little bit, try to eat a little cleaner, cuz I feel like there's a fairly",
+    "expected_start": "What up, everybody? Y'all been thinking about your health recently? Because I have. I've been trying to cut back on the drinking a little bit, try to eat a little cleaner, because I feel like there's "
+  }
+]

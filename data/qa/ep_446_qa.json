@@ -1,0 +1,35 @@
+[
+  {
+    "check": "set_count",
+    "episode": 446,
+    "set_count": 4,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 4 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 446,
+    "passed": false,
+    "warnings": [
+      "25min gap between set #1 (Ron White) and set #2 (William Montgomery) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 446,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 446,
+    "set_number": 3,
+    "comedian": "Razor",
+    "start_seconds": 2488.0,
+    "similarity": 0.893,
+    "passed": true,
+    "clip_transcription": "What's up? What's what's up with turtles? I mean, you know, they're like this and I'm thinking pick up the pace. You ever you ever notice, you ever on a bus and and and you and you you mean to pull yo",
+    "expected_start": "What's up with turtles? I mean, you know, they're like this and I'm thinking, pick up the pace. You ever notice, you ever on a bus and you mean to pull your stop and you forget it and then you pull it"
+  }
+]

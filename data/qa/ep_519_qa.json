@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 519,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 519,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 519,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 519,
+    "set_number": 2,
+    "comedian": "Paxton Schiltz",
+    "start_seconds": 1615.0,
+    "similarity": 0.773,
+    "passed": true,
+    "clip_transcription": "Jesus can help. You guys seen those signs? I am super curious. Is that apply to all types of frustration? Like sexual?",
+    "expected_start": "jesus can help you guys seen those signs i am super curious is that apply to all types of frustration like sexual like can i get a fucking handy from the lord you know what i'm saying you know like ca"
+  }
+]

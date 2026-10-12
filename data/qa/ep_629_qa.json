@@ -1,0 +1,35 @@
+[
+  {
+    "check": "set_count",
+    "episode": 629,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 629,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 629,
+    "passed": false,
+    "warnings": [
+      "set #4 (Rick Diaz) and set #5 (Guy Peart) are only 3.6min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #10 (Stephanie Cargill) and set #11 (Justin Hedrick) are only 3.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 629,
+    "set_number": 2,
+    "comedian": "Daniel Shepard",
+    "start_seconds": 1540.0,
+    "similarity": 0.963,
+    "passed": true,
+    "clip_transcription": "I've been having a lot of makeup sex lately with myself. I had to take a break from porn, but there was no point that was my true calling.",
+    "expected_start": "I've been having a lot of makeup sex lately with myself. I had to take a break from porn, but there was no point. That was my true calling. Nothing would work for me anymore, though. I had to try NoFa"
+  }
+]

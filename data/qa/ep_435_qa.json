@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 435,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 435,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 435,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 435,
+    "set_number": 8,
+    "comedian": "Michael Lair",
+    "start_seconds": 5302.0,
+    "similarity": 0.95,
+    "passed": true,
+    "clip_transcription": "This has been my favorite Black History Month ever. I think there is a master race and it is the Blacks. I think Black",
+    "expected_start": "This has been my favorite Black History Month ever. I think there is a master race and it's the blacks. I think black is so beautiful we should outlaw interracial marriage and stop deluding all that b"
+  }
+]

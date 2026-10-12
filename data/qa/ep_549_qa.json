@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 549,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 549,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 549,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 549,
+    "set_number": 2,
+    "comedian": "Chris Keen",
+    "start_seconds": 1006.0,
+    "similarity": 0.967,
+    "passed": true,
+    "clip_transcription": "Nice to be here. I've been working a lot. Ah, I work in customer service. Everyone I work with is angry. They got to wear a mask to work. Doesn't bother me, man. I've been wearing a mask to work for y",
+    "expected_start": "I've been working a lot. I work in customer service. Everyone I work with is angry. They got to wear a mask to work. Doesn't bother me, man. I've been wearing a mask to work for years. It's called the"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 413,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 413,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 413,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 413,
+    "set_number": 11,
+    "comedian": "Brittany Danielle",
+    "start_seconds": 5991.0,
+    "similarity": 0.971,
+    "passed": true,
+    "clip_transcription": "So, I was raised by a crack whore. She still sucks dick for money, but she doesn't so much dabble in the crack anymore. She's just kind of like a super cute little old grandma now, and she's super goo",
+    "expected_start": "So I was raised by a crack whore. She still sucks dick for money, but she doesn't so much dabble in the crack anymore. She's just kind of like a super cute little old grandma now, and she's super good"
+  }
+]

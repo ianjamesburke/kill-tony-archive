@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 507,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 507,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 507,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 507,
+    "set_number": 2,
+    "comedian": "Aaron Sirowski",
+    "start_seconds": 1291.0,
+    "similarity": 0.824,
+    "passed": true,
+    "clip_transcription": "I was in I was in New York and I saw a peddler and the only thing he was selling was a box of condoms.",
+    "expected_start": "I was in New York, and I saw a peddler, and the only thing he was selling was a box of condoms, right? And so I was like, are they new? He's like, they're refurbished. And, like, if it works for him, "
+  }
+]

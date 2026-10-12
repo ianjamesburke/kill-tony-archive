@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 631,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 631,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 631,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 631,
+    "set_number": 10,
+    "comedian": "John Stork",
+    "start_seconds": 6764.0,
+    "similarity": 0.941,
+    "passed": true,
+    "clip_transcription": "I wasn't the most promising child scholastically. I remember thinking there was a letter in the alphabet called LMNOP.",
+    "expected_start": "I wasn't the most promising child scholastically. I remember thinking there was a letter in the alphabet called Elemento. For over 10 years, my main gig was being a busker. For those of you who don't "
+  }
+]

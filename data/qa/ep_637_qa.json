@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 637,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 637,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 637,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 637,
+    "set_number": 10,
+    "comedian": "Bill Carroll",
+    "start_seconds": 5680.0,
+    "similarity": 0.962,
+    "passed": true,
+    "clip_transcription": "Yes, I lose stuff all the time. I lose my wallet, my keys. I'm the kind of guy who's got his passport out with him when he goes to the bar.",
+    "expected_start": "So I lose stuff all the time. I lose my wallet, my keys. I'm the kind of guy who's got his passport out with him when he goes to the bar. I recently bought an AirTag for my girlfriend's clitoris. Caug"
+  }
+]

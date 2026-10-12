@@ -1,0 +1,24 @@
+[
+  {
+    "check": "set_count",
+    "episode": 654,
+    "set_count": 14,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 654,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 654,
+    "passed": false,
+    "warnings": [
+      "set #8 (Mike Ryan) and set #9 (Carlos Lopez) are only 3.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #12 (Matt Cohen) and set #13 (Sydney Abusawan) are only 2.9min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

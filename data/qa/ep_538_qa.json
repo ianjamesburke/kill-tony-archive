@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 538,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 538,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 538,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 538,
+    "set_number": 3,
+    "comedian": "Angela Kay",
+    "start_seconds": 1346.0,
+    "similarity": 0.706,
+    "passed": true,
+    "clip_transcription": "Hello, everyone. Hi, my name is Angela K. I'm a blurter. That's like a squirter, but with my words.",
+    "expected_start": "My name is Angela Kay. I am a blurter. That's like a squirter, but with my words. Yeah. Hey, fucker, lay off the porn. Lay off the porn, lay off the porn, lay off the porn. Because during fellatio, th"
+  }
+]

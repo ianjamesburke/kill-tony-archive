@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 647,
+    "set_count": 17,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 647,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 647,
+    "passed": false,
+    "warnings": [
+      "set #11 (Edward Cirovitz) and set #12 (Nikki Coleman) are only 3.4min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 647,
+    "set_number": 12,
+    "comedian": "Nikki Coleman",
+    "start_seconds": 6926.0,
+    "similarity": 0.6,
+    "passed": true,
+    "clip_transcription": "Yeah doing, I'm Nikki and I'm from Laura, Mississippi. That means with a population 1500 and I'm related to 1498 of them motherfuckers.",
+    "expected_start": "I'm Nikki, and I'm from Lorimer, Mississippi. That means we're the population of 1,500, and I'm related to 1,498 of them motherfuckers. I moved all the way to Texas because I had dick on the railway, "
+  }
+]

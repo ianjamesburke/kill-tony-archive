@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 561,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 561,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 561,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 561,
+    "set_number": 6,
+    "comedian": "Liz Splatt",
+    "start_seconds": 4688.0,
+    "similarity": 0.903,
+    "passed": true,
+    "clip_transcription": "What's up, guys? I get told all the time I'm very aggressive and abrasive. Sometimes people tell me I got big dick energy. I don't like that. I prefer the term big clit energy. You know what I mean?",
+    "expected_start": "I get told all the time I'm very aggressive and abrasive. Sometimes people tell me I have big dick energy. I don't like that. I prefer the term big clit energy. You know what I mean? Especially becaus"
+  }
+]

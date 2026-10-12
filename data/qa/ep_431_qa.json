@@ -1,0 +1,36 @@
+[
+  {
+    "check": "set_count",
+    "episode": 431,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 431,
+    "passed": false,
+    "warnings": [
+      "31min gap between set #10 (William Montgomery) and set #11 (Michael Lehrer) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 431,
+    "passed": false,
+    "warnings": [
+      "set #1 (William Montgomery) and set #2 (Michael Lehrer) are only 0.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 431,
+    "set_number": 6,
+    "comedian": "Mohamed Aslam",
+    "start_seconds": 2100.0,
+    "similarity": 0.556,
+    "passed": true,
+    "clip_transcription": "She said, \"I eat pizzas too slow, I'm passive aggressive.\" I told her it burns my If I eat fast.",
+    "expected_start": "She said I eat pizza too slow. I'm passive-aggressive. I told her it burns my... If I eat fast... She was a social worker. She was a sushi maker? No, social worker. Social worker. Sushi maker. What we"
+  }
+]

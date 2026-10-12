@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 609,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 609,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 609,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 609,
+    "set_number": 6,
+    "comedian": "Tim Warner",
+    "start_seconds": 3037.0,
+    "similarity": 0.903,
+    "passed": true,
+    "clip_transcription": "This is dope man. I am fucking six months clean today. This is amazing. Wow. Wow. Dude, I had to quit. You know what I mean? Like, you ever think you're good at something and realized you're not?",
+    "expected_start": "I am fucking six months clean today. This is amazing. Wow. Dude, I had to quit. You know what I mean? You ever think you were good at something and realize you're not? You know, like, I had to quit. L"
+  }
+]

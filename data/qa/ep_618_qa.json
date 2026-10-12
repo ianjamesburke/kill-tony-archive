@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 618,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 618,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 618,
+    "passed": false,
+    "warnings": [
+      "set #8 (Daniel Shepard) and set #9 (Nico De Cesare) are only 3.9min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 618,
+    "set_number": 8,
+    "comedian": "Daniel Shepard",
+    "start_seconds": 3570.0,
+    "similarity": 0.875,
+    "passed": true,
+    "clip_transcription": "How's it going Mothership? All right. I'm not super famous yet. I'll admit, but my aunt actually just made it big. She's in a major Netflix series. Yeah, right, right. But anyway, it's actually the co",
+    "expected_start": "How's it going, mothership? All right, I'm not super famous yet, I'll admit, but my aunt actually just made it big. She's in a major Netflix series. Yeah, right, right? But anyway, it's actually the c"
+  }
+]

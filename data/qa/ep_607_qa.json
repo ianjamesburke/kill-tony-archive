@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 607,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 607,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 607,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 607,
+    "set_number": 4,
+    "comedian": "Mariano DiVincenzo",
+    "start_seconds": 2665.0,
+    "similarity": 0.895,
+    "passed": true,
+    "clip_transcription": "Hello everybody. Hello everybody. My name is Mariano. Uh some people say I'm very self-centered, uh but I don't care. My pronouns are I I",
+    "expected_start": "Hello, everybody. Hi. Hello, everybody. My name is Mariano. Some people say I'm very self-centered, but I don't care. My pronouns are ay-ay! Yeah, I'm not even Mexican. But people tell me I am, so... "
+  }
+]

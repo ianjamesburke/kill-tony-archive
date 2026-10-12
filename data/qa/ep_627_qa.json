@@ -1,0 +1,37 @@
+[
+  {
+    "check": "set_count",
+    "episode": 627,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 627,
+    "passed": false,
+    "warnings": [
+      "40min gap between set #3 (Heath Wambolt) and set #4 (Cam Patterson) \u2014 possible missed sets",
+      "21min gap between set #9 (Alex Jones) and set #10 (Kevin Willard) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 627,
+    "passed": false,
+    "warnings": [
+      "set #4 (Cam Patterson) and set #5 (Kevin Willard) are only 2.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 627,
+    "set_number": 2,
+    "comedian": "Jacob Cantor",
+    "start_seconds": 1296.0,
+    "similarity": 0.857,
+    "passed": true,
+    "clip_transcription": "So, my name is Jacob, a little bit about me. I'm an Uber driver and I've discovered this whole population of people that I didn't know was very entertaining until just recently and that's MAGA Asians.",
+    "expected_start": "So, my name is Jacob. A little bit about me, I'm an Uber driver. And I've discovered this whole population of people that I didn't know was very entertaining until just recently. And that's MAGA Asian"
+  }
+]

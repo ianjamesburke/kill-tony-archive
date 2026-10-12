@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 624,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 624,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 624,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 624,
+    "set_number": 8,
+    "comedian": "Dave Borowski",
+    "start_seconds": 5429.0,
+    "similarity": 1.0,
+    "passed": true,
+    "clip_transcription": "So I had to go home for a funeral recently. And I was driving my mom to the funeral home and we got into a car accident.",
+    "expected_start": "So I had to go home for a funeral recently. And I was driving my mom to the funeral home, and we got into a car accident. She flew right out of the hearse. Tough week for mom. Two car accidents one we"
+  }
+]

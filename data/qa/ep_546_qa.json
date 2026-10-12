@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 546,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 546,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 546,
+    "passed": false,
+    "warnings": [
+      "set #9 (Dom Cantu and Carolyn Montiel) and set #10 (William Montgomery) are only 3.9min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 546,
+    "set_number": 8,
+    "comedian": "Christopher Neil Walker",
+    "start_seconds": 4407.0,
+    "similarity": 0.769,
+    "passed": true,
+    "clip_transcription": "So uh hey, you guys know that one guy who thinks everybody wants to fuck him? Yeah, I'm like pretty sure he wants to fuck me. Oh my goodness.",
+    "expected_start": "so hey you guys know that one guy who thinks everybody wants to fuck him yeah I'm like pretty sure he wants to fuck me. So yeah, friends don't let friends drive drunk, right? Like that's a saying, rig"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 505,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 505,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 505,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 505,
+    "set_number": 2,
+    "comedian": "Mitch Brown",
+    "start_seconds": 1027.0,
+    "similarity": 0.905,
+    "passed": true,
+    "clip_transcription": "My problem with God theory is that we blame everything on the women. You try telling a woman well anything today.",
+    "expected_start": "My problem with God theory is that we blame everything on the women. You try telling a woman, well, anything today. But more importantly, that they came from an extra rib we men had floating around. I"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 432,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 432,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 432,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 432,
+    "set_number": 2,
+    "comedian": "Ashley Boutelier",
+    "start_seconds": 1109.0,
+    "similarity": 0.722,
+    "passed": true,
+    "clip_transcription": "Hi guys, what's up? Okay, so you want to get Canadian. I'm like the most Canadian because I'm so nice.",
+    "expected_start": "hi guys what's up okay so you want to get canadian i'm like the most canadian because i'm so nice i was voted most nice in high school um you run into me and i will tell you i'm sorry what else I'm so"
+  }
+]

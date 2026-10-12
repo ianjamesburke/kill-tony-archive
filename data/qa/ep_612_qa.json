@@ -1,0 +1,35 @@
+[
+  {
+    "check": "set_count",
+    "episode": 612,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 612,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 612,
+    "passed": false,
+    "warnings": [
+      "set #5 (Arunbir Mangat) and set #6 (Jake Tale) are only 4.3min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #6 (Jake Tale) and set #7 (Daniel Dwan) are only 3.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 612,
+    "set_number": 10,
+    "comedian": "Vic Cedeno",
+    "start_seconds": 4831.0,
+    "similarity": 0.939,
+    "passed": true,
+    "clip_transcription": "I used to get picked on a lot because growing up I had this long ass Spanish conquistador name Victor Manuel Cedeno. That's a lot of vowels to hit people with right in one shot. And I grew up around a",
+    "expected_start": "I used to get picked on a lot because growing up I had this long-ass Spanish conquistador name, Victor Manuel Cedeno. That's a lot of vowels to hit people with right in one shot. And I grew up around "
+  }
+]

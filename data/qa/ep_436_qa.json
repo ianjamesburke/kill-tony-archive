@@ -1,0 +1,37 @@
+[
+  {
+    "check": "set_count",
+    "episode": 436,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 436,
+    "passed": false,
+    "warnings": [
+      "23min gap between set #3 (Soccer Mom) and set #4 (Cheryl (Soccer Mom)) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 436,
+    "passed": false,
+    "warnings": [
+      "set #6 (William Montgomery) and set #7 (John Conroy) are only 3.3min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 436,
+    "set_number": 9,
+    "comedian": "Tommy Carolan",
+    "start_seconds": 5658.0,
+    "similarity": 0.125,
+    "passed": false,
+    "clip_transcription": "There's never any left cuz one a fucking open mic who's in this room probably has a fake handicap plate. Woah, is this true? Is there anyone?",
+    "expected_start": "I just quit smoking cigarettes not too long ago, and people always say quitting cigarettes is harder than quitting heroin, which makes a lot of sense to me, because you can't just go into any 7-Eleven",
+    "warning": "Timecode mismatch for set #9 (Tommy Carolan) at 5658s. Similarity: 12.5%. Audio says: 'There's never any left cuz one a fucking open mic who's in this room probably ha...' but transcript starts: 'I just quit smoking cigarettes not too long ago, and people always say quitting ...'"
+  }
+]

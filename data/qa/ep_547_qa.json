@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 547,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 547,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 547,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 547,
+    "set_number": 7,
+    "comedian": "Molly Vivant",
+    "start_seconds": 4172.0,
+    "similarity": 0.846,
+    "passed": true,
+    "clip_transcription": "I've gained some weight recently and I think that can be a good thing, you know, because I'm probably not going to get drugged at a bar.",
+    "expected_start": "I've gained some weight recently. And I think that can be a good thing, you know? Because I'm probably not gonna get drugged at a bar. And if I do, the dosage won't be right. Sometimes the weight gain"
+  }
+]

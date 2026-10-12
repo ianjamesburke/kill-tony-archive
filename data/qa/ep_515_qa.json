@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 515,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 515,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 515,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 515,
+    "set_number": 5,
+    "comedian": "Hans Kim",
+    "start_seconds": 3003.0,
+    "similarity": 0.923,
+    "passed": true,
+    "clip_transcription": "I saw a sign in my neighborhood that said 20 miles per hour when children are present, but how fast do I drive if the children are dwelling in the past?",
+    "expected_start": "I saw a sign in my neighborhood that said, 20 miles per hour when children are present. But how fast do I drive if the children are dwelling in the past? It's a bit of a thinker. I saw the skateboarde"
+  }
+]

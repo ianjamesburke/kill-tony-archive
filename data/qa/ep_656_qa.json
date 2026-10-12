@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 656,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 656,
+    "passed": false,
+    "warnings": [
+      "43min gap between set #6 (Tanner Amiglio) and set #7 (William Montgomery) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 656,
+    "passed": true,
+    "warnings": []
+  }
+]

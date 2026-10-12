@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 554,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 554,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 554,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 554,
+    "set_number": 8,
+    "comedian": "Ellis H.",
+    "start_seconds": 4237.0,
+    "similarity": 0.853,
+    "passed": true,
+    "clip_transcription": "Oh my god. Y'all, I was thinking if I went back in time and I talked to Martin Luther King, what do you think he'd be more excited about? Like Obama or interracial porn. Like, you know what I'm saying",
+    "expected_start": "Austin! Oh, my God. Y'all, I was thinking, if I went back in time and I talked to Martin Luther King, what do you think he'd be more excited about, like, Obama or interracial porn? Like, you know what"
+  }
+]

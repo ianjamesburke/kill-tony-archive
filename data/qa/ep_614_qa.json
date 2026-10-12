@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 614,
+    "set_count": 14,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 614,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 614,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 614,
+    "set_number": 10,
+    "comedian": "Aaron Belisle",
+    "start_seconds": 5450.0,
+    "similarity": 1.0,
+    "passed": true,
+    "clip_transcription": "A lot of things are harder for me like putting on a jacket, taking off a jacket, and texting while driving.",
+    "expected_start": "A lot of things are harder for me like putting on a jacket, taking off a jacket, and texting while driving. Anything I do is an inspiration. I took a dump in a Home Depot the other day and I got a sta"
+  }
+]

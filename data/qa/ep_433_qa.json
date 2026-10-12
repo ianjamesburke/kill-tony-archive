@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 433,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 433,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 433,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 433,
+    "set_number": 3,
+    "comedian": "William Montgomery",
+    "start_seconds": 1799.0,
+    "similarity": 0.931,
+    "passed": true,
+    "clip_transcription": "What do you mean there's no more ham? That's my uh it's my impression of my dad when we went to Hawaii and we were on an island with no more ham. What a nightmare.",
+    "expected_start": "What do you mean there's no more ham? It's my impression of my dad when we went to Hawaii and we were on an island with no more ham. What a nightmare. I just sold a screenplay about the apocalypse, an"
+  }
+]

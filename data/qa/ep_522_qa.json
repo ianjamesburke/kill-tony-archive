@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 522,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 522,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 522,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 522,
+    "set_number": 5,
+    "comedian": "David Lucas",
+    "start_seconds": 3188.0,
+    "similarity": 0.963,
+    "passed": true,
+    "clip_transcription": "I'm trying to, uh, understand white people because I got to be around y'all so much. But it's hard to understand y'all. Like, I don't understand why white people work out so hard. Like, why do y'all n",
+    "expected_start": "I'm trying to understand white people, because I got to be around y'all so much. But it's hard to understand y'all. I don't understand why white people work out so hard. Like, why do y'all need to be "
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 625,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 625,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 625,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 625,
+    "set_number": 9,
+    "comedian": "Drew Santana",
+    "start_seconds": 4312.0,
+    "similarity": 1.0,
+    "passed": true,
+    "clip_transcription": "I'm taking applications for a full-time position as my sugar mama. I don't care how old you are, how blown out your titties are, you know, if they're hanging down to the floor, if you got a pink deplo",
+    "expected_start": "I'm taking applications for a full-time position as my sugar mama. I don't care how old you are, how blown out your titties are, if they're hanging down to the floor, if you got a pink deployed airbag"
+  }
+]

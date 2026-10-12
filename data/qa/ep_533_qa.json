@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 533,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 533,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 533,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 533,
+    "set_number": 6,
+    "comedian": "Katie Felton",
+    "start_seconds": 3983.0,
+    "similarity": 0.882,
+    "passed": true,
+    "clip_transcription": "I'm 32, which means my biological clock has started to kick in. Um, so you know, I'm ready to settle down and have some kids cuz I know I'm not going to be a baby making machine forever. Uh, so I down",
+    "expected_start": "I'm 32, which means my biological clock has started to kick in. So, you know, I'm ready to settle down and have some kids because I know I'm not going to be a baby-making machine forever. So I downloa"
+  }
+]

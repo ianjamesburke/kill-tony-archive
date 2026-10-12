@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 634,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 634,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 634,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 634,
+    "set_number": 6,
+    "comedian": "Connor Nutt",
+    "start_seconds": 3963.0,
+    "similarity": 0.806,
+    "passed": true,
+    "clip_transcription": "I'm in a good mood. I uh I had a one night stand this weekend and uh yeah. I uh got the awesome compliment. I woke up in her bed the next morning and she was like, \"Connor, got to be honest with you. ",
+    "expected_start": "I'm in a good mood. I had a one night stand this weekend. And yeah, I got the awesome compliment. I woke up in her bed the next morning. She was like, Connor, gotta be honest with you. Last night, tha"
+  }
+]

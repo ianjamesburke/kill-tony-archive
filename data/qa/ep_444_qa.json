@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 444,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 444,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 444,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 444,
+    "set_number": 5,
+    "comedian": "KC",
+    "start_seconds": 3508.0,
+    "similarity": 0.969,
+    "passed": true,
+    "clip_transcription": "Yeah, how we doing? Uh, yeah I work a job. I like to start out with a brag. I work a job, uh work in a grocery store. It's not a good brag. Uh I work this job because of racism. That's the only way I ",
+    "expected_start": "Yeah, how we doing? I work a job. I like to start out with a brag. I work a job. I work in a grocery store. It's not a good brag. I work this job because of racism. It's the only way I can put it. I w"
+  }
+]

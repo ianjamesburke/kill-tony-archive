@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 506,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 506,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 506,
+    "passed": false,
+    "warnings": [
+      "set #9 (Emily) and set #10 (Leanne Wallace) are only 4.4min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 506,
+    "set_number": 7,
+    "comedian": "Jack Timmons",
+    "start_seconds": 4063.0,
+    "similarity": 0.96,
+    "passed": true,
+    "clip_transcription": "Guys, my dad's kind of gay. My other dad is really gay. It's cool. They wrestle sometimes, at least that's what it looked like that one time.",
+    "expected_start": "Guys, my dad's kind of gay. My other dad is really gay. It's cool. They wrestle sometimes. At least that's what it looked like that one time. I thought they were having sex, too, but then there's a th"
+  }
+]

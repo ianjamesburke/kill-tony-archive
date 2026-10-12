@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 543,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 543,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 543,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 543,
+    "set_number": 6,
+    "comedian": "Eric Clark",
+    "start_seconds": 3567.0,
+    "similarity": 0.935,
+    "passed": true,
+    "clip_transcription": "Hello, everyone. Uh I like white women. That's my first joke. Thank you very much. I started this new diet the other day. It's called the magic diet. It consists of mushrooms and",
+    "expected_start": "Hello, everyone. I like white women. That's my first joke. Thank you very much. I started this new diet the other day. It's called the Magic Diet. It consists of mushrooms and... Sorry, hello everyone"
+  }
+]

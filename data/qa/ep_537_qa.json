@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 537,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 537,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 537,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 537,
+    "set_number": 7,
+    "comedian": "David Lucas",
+    "start_seconds": 4080.0,
+    "similarity": 0.824,
+    "passed": true,
+    "clip_transcription": "Yeah. Uh I think rape is bad. Uh, but if I had to rape somebody, I think I would rape a deaf lady.",
+    "expected_start": "I think rape is bad. But if I had to rape somebody, I think I would rape a deaf lady. I feel like that's an easy not guilty. Like, I'll be goddamn if I'm found guilty on Sound Alone. You know what I'm"
+  }
+]

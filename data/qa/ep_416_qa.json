@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 416,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 416,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 416,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 416,
+    "set_number": 6,
+    "comedian": "Nicole Tran",
+    "start_seconds": 3804.0,
+    "similarity": 0.842,
+    "passed": true,
+    "clip_transcription": "I want a beauty contest for girls who speak bad English. And now the brand new 2019 Miss pronounce.",
+    "expected_start": "I won a beauty contest for girls who speak bad English. I'm now the brand new 2019 Miss Pronounced. When I first started driving, I got a ticket for driving 100 miles an hour. I said to the cop, hey m"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "check": "set_count",
+    "episode": 425,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 425,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 425,
+    "passed": false,
+    "warnings": [
+      "set #6 (William Montgomery) and set #7 (David Lucas) are only 2.6min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 425,
+    "set_number": 8,
+    "comedian": "Abraham Minolian",
+    "start_seconds": 4919.0,
+    "similarity": 0.0,
+    "passed": false,
+    "clip_transcription": "",
+    "expected_start": "You know how you hear about, like, people getting molested by their family and how it ruins their life? Well, in my household, that was a normal thing. I'll be walking through my living room. My grand",
+    "warning": "Timecode mismatch for set #8 (Abraham Minolian) at 4919s. Similarity: 0.0%. Audio says: '...' but transcript starts: 'You know how you hear about, like, people getting molested by their family and h...'"
+  }
+]

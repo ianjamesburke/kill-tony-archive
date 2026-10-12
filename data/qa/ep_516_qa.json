@@ -1,0 +1,36 @@
+[
+  {
+    "check": "set_count",
+    "episode": 516,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 516,
+    "passed": false,
+    "warnings": [
+      "23min gap between set #7 (Dalen Mendoza) and set #8 (Hans Kim) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 516,
+    "passed": false,
+    "warnings": [
+      "set #10 (Jackson Fagundes) and set #11 (William Montgomery) are only 3.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 516,
+    "set_number": 3,
+    "comedian": "Darian Irwin",
+    "start_seconds": 1707.0,
+    "similarity": 0.84,
+    "passed": true,
+    "clip_transcription": "It's fine guys. I know I look like I make sleep apnea noises during the day. Cuz I do, you know? Big man, I've been big my whole life, you know?",
+    "expected_start": "Guys, I know I look like I make sleep apnea noises during the day. Because I do, you know? Big, man, I've been big my whole life, you know? I've never played a game of tag and not just been it the who"
+  }
+]

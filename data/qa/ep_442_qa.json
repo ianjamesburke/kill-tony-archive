@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 442,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 442,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 442,
+    "passed": false,
+    "warnings": [
+      "set #7 (Carlton Hedens) and set #8 (Carlton Heaton) are only 0.8min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 442,
+    "set_number": 10,
+    "comedian": "Michael Lehrer",
+    "start_seconds": 5219.0,
+    "similarity": 0.786,
+    "passed": true,
+    "clip_transcription": "If I ride the bus it likes to transform into a ramp. It exceeds every",
+    "expected_start": "If I ride the bus, it has to transform into a ramp. It exceeds everyone's day by 30 minutes. I'm all for disability rights, but there's got to be a limit. All right, look, don't feel bad for me. Feel "
+  }
+]

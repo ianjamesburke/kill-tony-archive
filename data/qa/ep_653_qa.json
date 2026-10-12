@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 653,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 653,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 653,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 653,
+    "set_number": 5,
+    "comedian": "Jeff Scott",
+    "start_seconds": 2726.0,
+    "similarity": 0.824,
+    "passed": true,
+    "clip_transcription": "Alright, growing up, I would only watch lesbian porn. I didn't want to see another man's dick. I thought that would you know, give me the gay. And when I was younger, having the gay was a sin. But you",
+    "expected_start": "Growing up, I would only watch lesbian porn. didn't want to see another man's dick i thought that would you know give me the gay and when i was younger having the gay was a sin but you see porn well t"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 657,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 657,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 657,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 657,
+    "set_number": 9,
+    "comedian": "Uncle Laser",
+    "start_seconds": 5088.0,
+    "similarity": 0.826,
+    "passed": true,
+    "clip_transcription": "You like true love, you ain't going to like this. I was reading that STD pamphlet in the in the planned Parenthood this morning. And I just learned",
+    "expected_start": "Y'all like true love. Y'all ain't gonna like this. I was reading the STD pamphlet in the Planned Parenthood this morning. And I just learned that PH actually stands for pussy health. Now ladies, when "
+  }
+]

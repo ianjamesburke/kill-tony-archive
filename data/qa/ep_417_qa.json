@@ -1,0 +1,37 @@
+[
+  {
+    "check": "set_count",
+    "episode": 417,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 417,
+    "passed": false,
+    "warnings": [
+      "39min gap between set #5 (Jeff Horst) and set #6 (William Montgomery) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 417,
+    "passed": false,
+    "warnings": [
+      "set #1 (Mitchell Lamar) and set #2 (William Montgomery) are only 0.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 417,
+    "set_number": 2,
+    "comedian": "William Montgomery",
+    "start_seconds": 68.33,
+    "similarity": 0.038,
+    "passed": false,
+    "clip_transcription": "The great Brian Redban sitting next to me. The house artist Ryan J. Ebel already beginning his work on tonight's episode. The brand new Kill Tony the Book, Volumes one, two, and three, available now o",
+    "expected_start": "Let's give it up for Thanksgiving America! Let's give it up for the Pilgrim's Pride! Let's give it up for Indians! So he's not the best funeral director, but he's a hell of a puppeteer. I don't know w",
+    "warning": "Timecode mismatch for set #2 (William Montgomery) at 68s. Similarity: 3.8%. Audio says: 'The great Brian Redban sitting next to me. The house artist Ryan J. Ebel already...' but transcript starts: 'Let's give it up for Thanksgiving America! Let's give it up for the Pilgrim's Pr...'"
+  }
+]

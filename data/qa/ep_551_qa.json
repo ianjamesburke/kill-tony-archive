@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 551,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 551,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 551,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 551,
+    "set_number": 6,
+    "comedian": "Aaron McCann",
+    "start_seconds": 3751.0,
+    "similarity": 0.933,
+    "passed": true,
+    "clip_transcription": "What's happening, fuckers? How are you? It's good to be here. My ex-girlfriend was American. Irish girls and American girls are very different. You know, Irish girls only do dirty talk, thank God. Um ",
+    "expected_start": "What's happening, fuckers? How are we? It's good to be here. My ex-girlfriend was American. Irish girls and American girls are very different. You know, Irish girls only do dirty talk. Thank God. With"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "check": "set_count",
+    "episode": 497,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 497,
+    "passed": false,
+    "warnings": [
+      "39min gap between set #5 (Colton Dowling) and set #6 (Mike Dragon) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 497,
+    "passed": false,
+    "warnings": [
+      "set #1 (Colton Dowling) and set #2 (Mike Dragon) are only 0.6min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #9 (Andrew Breen) and set #10 (Michael Lehrer) are only 2.9min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 497,
+    "set_number": 4,
+    "comedian": "Andrew Breen",
+    "start_seconds": 1485.0,
+    "similarity": 0.972,
+    "passed": true,
+    "clip_transcription": "Now, as everybody can tell by looking at me, I take fantasy football very seriously. I have to, because the league I'm in is a punishment league, right? That means if I come in last place, I got to do",
+    "expected_start": "Now, as everybody can tell by looking at me, I take fantasy football very seriously. I have to, because the league I'm in is a punishment league, right? That means if I come in last place, I've got to"
+  }
+]

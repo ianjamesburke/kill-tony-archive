@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 419,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 419,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 419,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 419,
+    "set_number": 2,
+    "comedian": "Jasleen Power",
+    "start_seconds": 1477.0,
+    "similarity": 0.92,
+    "passed": true,
+    "clip_transcription": "I just got out of a relationship with a Mexican who is now my exican. But I got to thank him because that fool that fool taught me how to fuck.",
+    "expected_start": "I just got out of a relationship with a Mexican who is now my ex-sican. But I gotta thank him because that fool, that fool taught me how to fuck and to cry a lot. But before that, I was malnourished o"
+  }
+]

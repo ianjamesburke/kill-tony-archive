@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 635,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 635,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 635,
+    "passed": false,
+    "warnings": [
+      "set #10 (Justin Hedrick) and set #11 (Uncle Laser) are only 4.3min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 635,
+    "set_number": 6,
+    "comedian": "Sam Armfield",
+    "start_seconds": 3776.0,
+    "similarity": 0.923,
+    "passed": true,
+    "clip_transcription": "So we all feel down sometimes, sometimes I feel down, but I feel unaccomplished in my life, and then I just remember that I could destroy Michael Jordan in a swim race.",
+    "expected_start": "So we all feel down sometimes. Sometimes I feel down, but I feel unaccomplished in my life. And then I just remember that I could destroy Michael Jordan in a swim race. I mean... I don't know if you g"
+  }
+]

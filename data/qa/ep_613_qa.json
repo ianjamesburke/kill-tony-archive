@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 613,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 613,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 613,
+    "passed": false,
+    "warnings": [
+      "set #5 (Andreas Rodriguez) and set #6 (Adam C. Pickens) are only 4.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 613,
+    "set_number": 7,
+    "comedian": "David Lucas",
+    "start_seconds": 3473.0,
+    "similarity": 0.8,
+    "passed": true,
+    "clip_transcription": "I'm one of those black people who like racism. For real, because like I'm on y'all side, the whites, you know, and",
+    "expected_start": "I'm one of those black people who like racism. For real, because I'm on y'all's side, the whites. And I do love racism, because if there was no racism, there would be no Carhartt. I really love Carhar"
+  }
+]

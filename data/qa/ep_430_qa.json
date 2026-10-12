@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 430,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 430,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 430,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 430,
+    "set_number": 3,
+    "comedian": "Chris Keen",
+    "start_seconds": 1882.0,
+    "similarity": 0.852,
+    "passed": true,
+    "clip_transcription": "Hey everybody. I'm originally from Boston. Anyone from Boston here? Yeah, man. Whenever I tell people that, they're like, really, you don't seem like you're from Boston. That's why I left.",
+    "expected_start": "Hey, everybody. I'm originally from Boston. Anyone from Boston here? Whenever I tell people that, they're like, really? You don't seem like you're from Boston. That's why I left. I don't have anything"
+  }
+]

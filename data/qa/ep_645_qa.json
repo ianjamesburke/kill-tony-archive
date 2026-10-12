@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 645,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 645,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 645,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 645,
+    "set_number": 8,
+    "comedian": "Spencer Franco",
+    "start_seconds": 4797.0,
+    "similarity": 0.818,
+    "passed": true,
+    "clip_transcription": "What's up, Austin? It's great to be here on the low budget version of American Idol for comics. Um, I uh, Sorry, we just talking out here. Uh, I like many of the comics you've seen here today.",
+    "expected_start": "What's up, Austin? It's great to be here on the low-budget version of American Idol for comics. Sorry, we're just talking out here. I, like many of the comics you've seen here tonight, decided to go i"
+  }
+]

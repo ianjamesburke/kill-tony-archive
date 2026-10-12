@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 509,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 509,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 509,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 509,
+    "set_number": 2,
+    "comedian": "Fuzzy Killowy",
+    "start_seconds": 1443.0,
+    "similarity": 0.938,
+    "passed": true,
+    "clip_transcription": "So, uh Israel or Palestine, who you got? I just want to see a good game.",
+    "expected_start": "So, Israel or Palestine, who you got? I just want to see a good game. You guys didn't fill out your World War III brackets? Okay, let's fill them out. Who's the one seed, right? USA, China, Russia, Ge"
+  }
+]
