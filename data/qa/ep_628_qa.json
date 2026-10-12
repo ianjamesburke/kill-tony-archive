@@ -1,0 +1,25 @@
+[
+  {
+    "check": "set_count",
+    "episode": 628,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 628,
+    "passed": false,
+    "warnings": [
+      "56min gap between set #7 (Sean Clark) and set #8 (Sean Clark) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 628,
+    "passed": false,
+    "warnings": [
+      "set #8 (Sean Clark) and set #9 (Rick Diaz) are only 2.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

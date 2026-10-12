@@ -1,0 +1,37 @@
+[
+  {
+    "check": "set_count",
+    "episode": 648,
+    "set_count": 21,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 648,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 648,
+    "passed": false,
+    "warnings": [
+      "set #2 (David Jolly) and set #3 (Cameron Tuggerood) are only 4.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #8 (David Perez) and set #9 (Mike Pack) are only 2.6min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #14 (Michael Veramontes) and set #15 (Rick Diaz) are only 2.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #20 (William Montgomery) and set #21 (Danny Brown) are only 3.4min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 648,
+    "set_number": 20,
+    "comedian": "William Montgomery",
+    "start_seconds": 10771.0,
+    "similarity": 0.944,
+    "passed": true,
+    "clip_transcription": "And also not to be a downer, but I have six months left to live. There's skin cancer again, so",
+    "expected_start": "And also not to be a downer, but I have six months left to live. There's skin cancer again."
+  }
+]

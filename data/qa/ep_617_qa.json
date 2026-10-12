@@ -1,0 +1,33 @@
+[
+  {
+    "check": "set_count",
+    "episode": 617,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 617,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 617,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 617,
+    "set_number": 2,
+    "comedian": "Jared Nathan",
+    "start_seconds": 889.0,
+    "similarity": 0.0,
+    "passed": false,
+    "clip_transcription": "Here we go. Oh my god.",
+    "expected_start": "For myself, speech therapy has involved Over the years, it first started with me saying tongue twisters. How much wood can a woodchuck chuck if a woodchuck can't chuck wood? Now it involves, to me, an",
+    "warning": "Timecode mismatch for set #2 (Jared Nathan) at 889s. Similarity: 0.0%. Audio says: 'Here we go. Oh my god....' but transcript starts: 'For myself, speech therapy has involved Over the years, it first started with me...'"
+  }
+]

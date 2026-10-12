@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 605,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 605,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 605,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 605,
+    "set_number": 2,
+    "comedian": "Hakeem Yasat",
+    "start_seconds": 1274.0,
+    "similarity": 0.875,
+    "passed": true,
+    "clip_transcription": "Man, so I kind of feel bad for short guys, my dad's a short guy. He's like 5-2 and my mom's 5-7. Any guys here the stereotypes for short guys? If a guy's short, he must and he's with a hot woman who's",
+    "expected_start": "Man, so I kind of feel bad for short guys. My dad's a short guy. He's like 5'2\", and my mom's 5'7\". And you guys hear the stereotypes for short guys. If a guy's short, and he's with a hot woman who's "
+  }
+]

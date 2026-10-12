@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 646,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 646,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 646,
+    "passed": false,
+    "warnings": [
+      "set #3 (ZZ) and set #4 (Corinne Aaliyah) are only 3.8min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]
