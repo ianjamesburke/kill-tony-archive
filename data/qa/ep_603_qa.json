@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 603,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 603,
+    "passed": false,
+    "warnings": [
+      "32min gap between set #8 (Nick James) and set #9 (Casey Rockett) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 603,
+    "passed": true,
+    "warnings": []
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 730,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 730,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 730,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 730,
+    "set_number": 6,
+    "comedian": "Hans Kim",
+    "start_seconds": 3874.0,
+    "similarity": 0.905,
+    "passed": true,
+    "clip_transcription": "Hey. I like how Texans will make fun of liberal cities, but when they jerk off they set their VPN to California.",
+    "expected_start": "I like how Texans will make fun of liberal cities, but when they jerk off, they set their VPN to California. That's gay as fuck, bro. I have a gun. Not on me. Somewhere in the room. I don't even leave"
+  }
+]
