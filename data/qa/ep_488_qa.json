@@ -1,0 +1,24 @@
+[
+  {
+    "check": "set_count",
+    "episode": 488,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 488,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 488,
+    "passed": false,
+    "warnings": [
+      "set #4 (Ivan Garcia) and set #5 (Brittany Ledesma) are only 3.8min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #12 (Trevor Williams) and set #13 (Julian Madrid) are only 2.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 482,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 482,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 482,
+    "passed": false,
+    "warnings": [
+      "set #6 (Dan Levin) and set #7 (Jessica Lee Foster) are only 1.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

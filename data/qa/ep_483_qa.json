@@ -1,0 +1,22 @@
+[
+  {
+    "check": "set_count",
+    "episode": 483,
+    "set_count": 6,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 6 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 483,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 483,
+    "passed": true,
+    "warnings": []
+  }
+]
