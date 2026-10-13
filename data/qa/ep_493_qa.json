@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 493,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 493,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 493,
+    "passed": false,
+    "warnings": [
+      "set #3 (Benjamin Saffron) and set #4 (Benjamin Cephron) are only 3.2min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

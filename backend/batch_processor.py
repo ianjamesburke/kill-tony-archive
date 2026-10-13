@@ -14,6 +14,7 @@ import json
 import logging
 import os
 import re
+import requests
 import sqlite3
 import subprocess
 import sys
@@ -61,6 +62,9 @@ def get_next_api_key() -> str:
 PASS1_MODEL = "gemini-3.1-flash-lite"  # legacy audio transcription (fallback if Modal unavailable)
 PASS1_FALLBACK_MODEL = "gemini-3.5-flash"  # fallback when lite fails to return valid JSON
 PASS2_MODEL = "gemini-3.1-flash-lite"  # text-only set extraction (500 RPD free tier)
+PASS2_PROVIDER = "gemini"  # "gemini" (google-genai, free-tier keys) or "openrouter" (paid, needs OPENROUTER_API_KEY)
+OPENROUTER_PASS2_MODEL = "google/gemini-3.1-flash-lite"
+openrouter_cost_usd = 0.0  # running total of OpenRouter spend in this process
 GUEST_MODEL = "gemini-3.1-flash-lite"  # cheap model for title parsing
 LAUGHTER_MODEL = "gemini-3.1-flash-lite"  # chunked laughter detection (500 RPD free tier)
 LAUGHTER_WINDOW_SIZE = 1  # per-second resolution for event-based detection
@@ -1026,6 +1030,34 @@ PASS2_CHUNK_SIZE = 2400       # 40 minutes per chunk — keeps each Gemini call 
 PASS2_OVERLAP_SECONDS = 300   # 5-minute overlap between adjacent chunks
 
 
+def _pass2_generate(client: genai.Client, prompt: str) -> str:
+    """One Pass 2 generation. Returns the raw response text (may be empty)."""
+    global openrouter_cost_usd
+    if PASS2_PROVIDER == "openrouter":
+        resp = requests.post(
+            "https://openrouter.ai/api/v1/chat/completions",
+            headers={"Authorization": f"Bearer {os.environ['OPENROUTER_API_KEY']}"},
+            json={
+                "model": OPENROUTER_PASS2_MODEL,
+                "messages": [{"role": "user", "content": prompt}],
+                "response_format": {"type": "json_object"},
+            },
+            timeout=600,
+        )
+        resp.raise_for_status()
+        body = resp.json()
+        cost = (body.get("usage") or {}).get("cost") or 0.0
+        openrouter_cost_usd += cost
+        log.info(f"  OpenRouter Pass 2 call cost ${cost:.4f} (process total ${openrouter_cost_usd:.4f})")
+        return body["choices"][0]["message"]["content"] or ""
+    response = client.models.generate_content(
+        model=PASS2_MODEL,
+        contents=[{"role": "user", "parts": [{"text": prompt}]}],
+        config={"response_mime_type": "application/json", "http_options": {"timeout": 600000}},
+    )
+    return response.text or ""
+
+
 def _pass2_call(client: genai.Client, transcript_text: str, episode_number: int, has_speakers: bool, chunk_context: str = "") -> dict:
     """Single Pass 2 API call. Returns parsed JSON dict."""
     if has_speakers:
@@ -1035,12 +1067,7 @@ def _pass2_call(client: genai.Client, transcript_text: str, episode_number: int,
 
     for attempt in range(4):
         try:
-            response = client.models.generate_content(
-                model=PASS2_MODEL,
-                contents=[{"role": "user", "parts": [{"text": prompt}]}],
-                config={"response_mime_type": "application/json", "http_options": {"timeout": 600000}},
-            )
-            raw_text = (response.text or "").strip()
+            raw_text = _pass2_generate(client, prompt).strip()
             if not raw_text:
                 if attempt < 3:
                     wait = 30 * (attempt + 1)

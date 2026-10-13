@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 536,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 536,
+    "passed": false,
+    "warnings": [
+      "20min gap between set #5 (Jared Nathan) and set #6 (Scott Sauter) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 536,
+    "passed": true,
+    "warnings": []
+  }
+]

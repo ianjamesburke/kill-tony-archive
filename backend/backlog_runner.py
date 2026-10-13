@@ -8,9 +8,10 @@ Rate-limit handling: after any failure, sleeps with exponential backoff (60s dou
 resetting on success. One instance per worker id enforced via a lock file.
 
 Usage:
-    python3 backlog_runner.py <worker_id>
+    python3 backlog_runner.py <worker_id> [--provider gemini|openrouter] [--limit N]
 """
 
+import argparse
 import fcntl
 import logging
 import sqlite3
@@ -19,6 +20,7 @@ import time
 
 from google import genai
 
+import batch_processor
 from batch_processor import DB_PATH, ROOT, get_next_api_key, init_db, process_episode, update_episode_status
 from daily_processor import find_backfill_episode
 
@@ -38,7 +40,7 @@ def claim(ep_num: int) -> bool:
     return cur.rowcount == 1
 
 
-def main(worker_id: str):
+def main(worker_id: str, limit: int | None):
     lock_path = ROOT / "data" / f".backlog_runner_{worker_id}.lock"
     lock = open(lock_path, "w")
     try:
@@ -49,7 +51,8 @@ def main(worker_id: str):
 
     init_db()
     backoff = BACKOFF_START
-    while True:
+    attempted = 0
+    while limit is None or attempted < limit:
         ep = find_backfill_episode()
         if not ep:
             log.info("Backlog empty. Done.")
@@ -57,6 +60,7 @@ def main(worker_id: str):
         if not claim(ep["episode_number"]):
             continue
 
+        attempted += 1
         client = genai.Client(api_key=get_next_api_key())
         try:
             process_episode(client, ep, skip_laughter=True)
@@ -75,6 +79,10 @@ def main(worker_id: str):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        sys.exit("usage: backlog_runner.py <worker_id>")
-    main(sys.argv[1])
+    parser = argparse.ArgumentParser()
+    parser.add_argument("worker_id")
+    parser.add_argument("--provider", choices=["gemini", "openrouter"], default="gemini")
+    parser.add_argument("--limit", type=int, help="Stop after attempting this many episodes")
+    args = parser.parse_args()
+    batch_processor.PASS2_PROVIDER = args.provider
+    main(args.worker_id, args.limit)
