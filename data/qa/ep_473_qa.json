@@ -17,16 +17,5 @@
     "episode": 473,
     "passed": true,
     "warnings": []
-  },
-  {
-    "check": "timecode",
-    "episode": 473,
-    "set_number": 6,
-    "comedian": "Casval Wolf",
-    "start_seconds": 5314.0,
-    "similarity": 1.0,
-    "passed": true,
-    "clip_transcription": "I've been on a plant-based diet for the last four years now. And this shit has really opened my mind.",
-    "expected_start": "I've been on a plant-based diet for the last four years now. And this shit has really opened my mind. I'm at a point now where I'm not opposed to the idea of sleeping with a transgender woman. I figur"
   }
 ]

@@ -17,16 +17,5 @@
     "episode": 472,
     "passed": true,
     "warnings": []
-  },
-  {
-    "check": "timecode",
-    "episode": 472,
-    "set_number": 2,
-    "comedian": "Jason Rodello",
-    "start_seconds": 1653.0,
-    "similarity": 0.875,
-    "passed": true,
-    "clip_transcription": "I'll stay in bed, that is my style, and Donald Trump is running wild, all you pedophiles, get the fuck out of my face, this is the quarantine. This is the quarantine.",
-    "expected_start": "I'll stay in bed, that is my style. And Donald Trump is running wild. All you pedophiles, get the fuck out of my face. This is the quarantine. This is the quarantine. No, I'm not gay. But I did just g"
   }
 ]

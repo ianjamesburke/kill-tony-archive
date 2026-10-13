@@ -17,17 +17,5 @@
     "episode": 476,
     "passed": true,
     "warnings": []
-  },
-  {
-    "check": "timecode",
-    "episode": 476,
-    "set_number": 5,
-    "comedian": "Jeff Rias",
-    "start_seconds": 4124.0,
-    "similarity": 0.269,
-    "passed": false,
-    "clip_transcription": "Oh what fun it is to ride in a one horse open sleigh. Hey, here he is Jeff Reyes. Uh hey everyone. I just uh I uh just got separated from",
-    "expected_start": "I just got separated from my wife. It's been about a month we're living together still. It's pretty weird. I feel like I look like I got separated maybe. Maybe I sound like it. One of my sons just rec",
-    "warning": "Timecode mismatch for set #5 (Jeff Rias) at 4124s. Similarity: 26.9%. Audio says: 'Oh what fun it is to ride in a one horse open sleigh. Hey, here he is Jeff Reyes...' but transcript starts: 'I just got separated from my wife. It's been about a month we're living together...'"
   }
 ]

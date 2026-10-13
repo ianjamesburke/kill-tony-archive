@@ -19,16 +19,5 @@
     "episode": 468,
     "passed": true,
     "warnings": []
-  },
-  {
-    "check": "timecode",
-    "episode": 468,
-    "set_number": 13,
-    "comedian": "Mitch Burrow",
-    "start_seconds": 9828.0,
-    "similarity": 0.857,
-    "passed": true,
-    "clip_transcription": "Yeah, it's Mitch. You know, I know it don't look like it, but I I fuck sometimes. Uh the last time I was fucking a chick, she had a dog in the room and I was like, hey, you got to get this dog out of ",
-    "expected_start": "You know, I know I don't look like it, but I fuck sometimes. The last time I was fucking a chick, she had her dog in the room, and I was like, hey, you gotta get this dog out of here. And she said, yo"
   }
 ]

@@ -18,16 +18,5 @@
     "episode": 467,
     "passed": true,
     "warnings": []
-  },
-  {
-    "check": "timecode",
-    "episode": 467,
-    "set_number": 2,
-    "comedian": "Tony Gidley",
-    "start_seconds": 1389.0,
-    "similarity": 0.897,
-    "passed": true,
-    "clip_transcription": "So do you guys what the you guys know what the the most popular 2020 children's new names are? G-Lane and Maxwell. Uh, too soon? No. There's a few couple. There's a couple months left in the",
-    "expected_start": "So do you guys know what the most popular 2020 children's new names are? G-Lane and Maxwell. Too soon? No. There's a couple months left in the year. She's still got some time to die. Let's see. I'm ou"
   }
 ]

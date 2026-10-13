@@ -18,16 +18,5 @@
     "episode": 483,
     "passed": true,
     "warnings": []
-  },
-  {
-    "check": "timecode",
-    "episode": 483,
-    "set_number": 2,
-    "comedian": "Moha",
-    "start_seconds": 1642.0,
-    "similarity": 0.621,
-    "passed": true,
-    "clip_transcription": "Um, I'm Somali and everything I say, they people be like, they think I'm aggressive because of the Somali pirates and you know, Captain Phillips. I'm the captain, uh I'm also Swedish, the most friendl",
-    "expected_start": "I'm Somalian. Every time I say that, people will be like, they think I'm aggressive because of the Somali pirates. And, you know, Captain Phillips, I'm the captain. I'm also Swedish, the most friendli"
   }
 ]

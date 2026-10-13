@@ -17,16 +17,5 @@
     "episode": 463,
     "passed": true,
     "warnings": []
-  },
-  {
-    "check": "timecode",
-    "episode": 463,
-    "set_number": 4,
-    "comedian": "David Lucas",
-    "start_seconds": 3133.0,
-    "similarity": 1.0,
-    "passed": true,
-    "clip_transcription": "The most scariest thing about the coronavirus was not getting pneumonia. The scariest thing for me was losing my sense of taste and smell.",
-    "expected_start": "The most scariest thing about the coronavirus was not getting pneumonia. The scariest thing for me was losing my sense of taste and smell. Like, you mean to tell me I can fry chicken and not smell a m"
   }
 ]

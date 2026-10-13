@@ -20,16 +20,5 @@
     "warnings": [
       "set #6 (Gino Riccardi) and set #7 (Gino Riccardi) are only 0.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
     ]
-  },
-  {
-    "check": "timecode",
-    "episode": 486,
-    "set_number": 5,
-    "comedian": "Mike Silver",
-    "start_seconds": 4576.0,
-    "similarity": 0.793,
-    "passed": true,
-    "clip_transcription": "I bet racist hate coloring books. Think about it. But you know it's their baby boy. So maybe for the birthday one year they get them a brand new.",
-    "expected_start": "I bet racists hate coloring books. Think about it, but you know, it's their baby boy. So maybe for their birthday one year, they get them a brand new, brand new coloring book. He's so excited about it"
   }
 ]

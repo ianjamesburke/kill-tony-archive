@@ -17,16 +17,5 @@
     "episode": 477,
     "passed": true,
     "warnings": []
-  },
-  {
-    "check": "timecode",
-    "episode": 477,
-    "set_number": 5,
-    "comedian": "Frank Yu",
-    "start_seconds": 4096.0,
-    "similarity": 0.917,
-    "passed": true,
-    "clip_transcription": "everybody Hey uh what's up? First off I don't got to tell you guys I'm Mexican. You see the yarmulke, right? Well, uh I've been doing my part to fight racism by sticking up for other cultures. A few m",
-    "expected_start": "First off, I don't got to tell you guys I'm Mexican. You see the yarmulke, right? Well, I've been doing my part to fight racism by sticking up for other cultures. A few months ago, I was at a party, a"
   }
 ]
