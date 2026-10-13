@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 345,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 345,
+    "passed": false,
+    "warnings": [
+      "21min gap between set #6 (Tristan Bowling) and set #7 (Ryan VanderWold) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 345,
+    "passed": true,
+    "warnings": []
+  }
+]
