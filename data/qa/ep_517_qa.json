@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 517,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 517,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 517,
+    "passed": false,
+    "warnings": [
+      "set #11 (Matt Robertson) and set #12 (Jonah Fujikawa) are only 2.8min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]
