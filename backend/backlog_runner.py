@@ -59,7 +59,7 @@ def main(worker_id: str):
 
         client = genai.Client(api_key=get_next_api_key())
         try:
-            process_episode(client, ep)
+            process_episode(client, ep, skip_laughter=True)
         except Exception as e:
             log.error(f"Episode #{ep['episode_number']} failed: {e}")
             if "PerDay" in str(e):

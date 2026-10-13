@@ -1740,7 +1740,7 @@ def sync_db_to_railway():
         log.warning(f"Railway sync failed (non-fatal): {e}")
 
 
-def process_episode(client: genai.Client, ep: dict, model_override: str | None = None):
+def process_episode(client: genai.Client, ep: dict, model_override: str | None = None, skip_laughter: bool = False):
     episode_number = ep["episode_number"]
     url = ep["url"]
     log.info(f"{'='*60}")
@@ -1792,11 +1792,14 @@ def process_episode(client: genai.Client, ep: dict, model_override: str | None =
     save_episode(yt_info, transcript, analysis, guests)
 
     # Laughter detection (2.5 Pro, uses full audio file)
-    try:
-        laughter_windows, laughter_duration = detect_laughter(client, audio_path, episode_number)
-        save_laughter_frames(episode_number, laughter_windows, laughter_duration)
-    except Exception as e:
-        log.warning(f"Laughter detection failed for ep #{episode_number} (non-fatal): {e}")
+    if skip_laughter:
+        log.info(f"Skipping laughter detection for ep #{episode_number} (backfill later with --laughter-only)")
+    else:
+        try:
+            laughter_windows, laughter_duration = detect_laughter(client, audio_path, episode_number)
+            save_laughter_frames(episode_number, laughter_windows, laughter_duration)
+        except Exception as e:
+            log.warning(f"Laughter detection failed for ep #{episode_number} (non-fatal): {e}")
 
     # Summary
     sets = analysis.get("sets", [])
