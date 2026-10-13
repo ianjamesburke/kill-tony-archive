@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 327,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 327,
+    "passed": false,
+    "warnings": [
+      "23min gap between set #3 (Ollie White) and set #4 (Lee Hudson) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 327,
+    "passed": true,
+    "warnings": []
+  }
+]

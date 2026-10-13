@@ -1,0 +1,24 @@
+[
+  {
+    "check": "set_count",
+    "episode": 323,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 323,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 323,
+    "passed": false,
+    "warnings": [
+      "set #4 (Kevin Klattman) and set #5 (Kleitsch Brothers) are only 1.4min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #6 (Don Barris) and set #7 (Daniel Magdon) are only 1.3min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]
