@@ -2,21 +2,24 @@
   {
     "check": "set_count",
     "episode": 562,
-    "set_count": 5,
+    "set_count": 8,
     "min_expected": 8,
-    "passed": false,
-    "warning": "Only 5 sets found (expected >= 8). Pass 2 may have missed sets."
+    "passed": true
   },
   {
     "check": "gaps",
     "episode": 562,
-    "passed": true,
-    "warnings": []
+    "passed": false,
+    "warnings": [
+      "22min gap between set #3 (Michael Ridley) and set #4 (Happy Bones Jones) \u2014 possible missed sets"
+    ]
   },
   {
     "check": "proximity",
     "episode": 562,
-    "passed": true,
-    "warnings": []
+    "passed": false,
+    "warnings": [
+      "set #5 (Rachel McMillan) and set #6 (Jack Horner) are only 0.9min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
   }
 ]
