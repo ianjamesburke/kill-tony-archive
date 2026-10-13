@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 348,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 348,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 348,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 348,
+    "set_number": 6,
+    "comedian": "Adolfo Valdez",
+    "start_seconds": 3587.0,
+    "similarity": 0.828,
+    "passed": true,
+    "clip_transcription": "So how is everybody doing tonight? I hope everybody's having a good time. So, I'm a little sick today so don't mind me sniffling. But when I get sick I get it really bad. I get headaches.",
+    "expected_start": "So how's everybody doing tonight? Hope everybody's having a good time. So I'm a little sick today, so don't mind me sniffling. But when I get sick, I get it really bad. I get headaches, sore throat, e"
+  }
+]

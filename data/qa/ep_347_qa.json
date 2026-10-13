@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 347,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 347,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 347,
+    "passed": false,
+    "warnings": [
+      "set #4 (Ian Russo) and set #5 (Campos) are only 2.2min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

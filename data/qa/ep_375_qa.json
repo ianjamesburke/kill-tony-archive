@@ -10,13 +10,17 @@
   {
     "check": "gaps",
     "episode": 375,
-    "passed": true,
-    "warnings": []
+    "passed": false,
+    "warnings": [
+      "36min gap between set #4 (Joel Malams) and set #5 (William Montgomery) \u2014 possible missed sets"
+    ]
   },
   {
     "check": "proximity",
     "episode": 375,
-    "passed": true,
-    "warnings": []
+    "passed": false,
+    "warnings": [
+      "set #6 (Mina Q) and set #7 (Mina Q) are only -0.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
   }
 ]

@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 504,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 504,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 504,
+    "passed": false,
+    "warnings": [
+      "set #4 (Anthony Zamora) and set #5 (Mariano DiVincenzo) are only 2.6min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]
