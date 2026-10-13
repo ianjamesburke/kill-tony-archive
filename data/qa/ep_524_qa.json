@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 524,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 524,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 524,
+    "passed": false,
+    "warnings": [
+      "set #10 (Miss Amy O) and set #11 (William Montgomery) are only 3.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]
