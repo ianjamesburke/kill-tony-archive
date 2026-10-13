@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 528,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 528,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 528,
+    "passed": false,
+    "warnings": [
+      "set #11 (Arlene Hayes) and set #12 (Joshua Harris) are only 4.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

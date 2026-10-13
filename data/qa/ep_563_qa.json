@@ -2,10 +2,9 @@
   {
     "check": "set_count",
     "episode": 563,
-    "set_count": 7,
+    "set_count": 8,
     "min_expected": 8,
-    "passed": false,
-    "warning": "Only 7 sets found (expected >= 8). Pass 2 may have missed sets."
+    "passed": true
   },
   {
     "check": "gaps",
