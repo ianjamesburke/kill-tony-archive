@@ -1,0 +1,25 @@
+[
+  {
+    "check": "set_count",
+    "episode": 336,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 336,
+    "passed": false,
+    "warnings": [
+      "30min gap between set #6 (JC Sabala) and set #7 (John Holtgreave) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 336,
+    "passed": false,
+    "warnings": [
+      "set #1 (Ben Wade) and set #2 (John Holtgreve) are only 0.6min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]
