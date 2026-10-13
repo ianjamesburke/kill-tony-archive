@@ -62,7 +62,11 @@ def main(worker_id: str):
             process_episode(client, ep)
         except Exception as e:
             log.error(f"Episode #{ep['episode_number']} failed: {e}")
-            update_episode_status(ep["episode_number"], "error", str(e))
+            if "PerDay" in str(e):
+                # Daily quota exhaustion on this key says nothing about the episode; requeue without counting it.
+                update_episode_status(ep["episode_number"], "pending")
+            else:
+                update_episode_status(ep["episode_number"], "error", str(e))
             log.info(f"Backing off {backoff}s")
             time.sleep(backoff)
             backoff = min(backoff * 2, BACKOFF_MAX)

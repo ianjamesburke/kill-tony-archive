@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 567,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 567,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 567,
+    "passed": false,
+    "warnings": [
+      "set #5 (Kate Hermson) and set #6 (Trevor Klumpner) are only 4.3min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]
