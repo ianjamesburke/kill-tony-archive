@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 384,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 384,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 384,
+    "passed": false,
+    "warnings": [
+      "set #6 (Alyssa Henderson) and set #7 (Zane Scott) are only 4.4min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

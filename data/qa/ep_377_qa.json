@@ -1,0 +1,25 @@
+[
+  {
+    "check": "set_count",
+    "episode": 377,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 377,
+    "passed": false,
+    "warnings": [
+      "37min gap between set #9 (John McMillan) and set #10 (Pang Dang) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 377,
+    "passed": false,
+    "warnings": [
+      "set #1 (Billy Cox) and set #2 (Pang Dang) are only 0.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

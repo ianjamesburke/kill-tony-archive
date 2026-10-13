@@ -1,0 +1,27 @@
+[
+  {
+    "check": "set_count",
+    "episode": 381,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 381,
+    "passed": false,
+    "warnings": [
+      "34min gap between set #3 (Jacob Dempsey) and set #4 (Dylan Lines) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 381,
+    "passed": false,
+    "warnings": [
+      "set #4 (Dylan Lines) and set #5 (Phil M.) are only 3.9min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #6 (Calvin Charles Calhoun) and set #7 (Andrew Balliet) are only 2.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #8 (Allison) and set #9 (Jonas Notaro) are only 4.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

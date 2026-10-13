@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 364,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 364,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 364,
+    "passed": false,
+    "warnings": [
+      "set #6 (Tom Santucci) and set #7 (Danny Radovanovich) are only 4.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]
