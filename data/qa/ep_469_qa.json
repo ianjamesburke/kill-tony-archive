@@ -1,0 +1,35 @@
+[
+  {
+    "check": "set_count",
+    "episode": 469,
+    "set_count": 6,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 6 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 469,
+    "passed": false,
+    "warnings": [
+      "29min gap between set #2 (Brandon Biederstadt) and set #3 (Joy Eileen) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 469,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 469,
+    "set_number": 3,
+    "comedian": "Joy Eileen",
+    "start_seconds": 3238.0,
+    "similarity": 0.895,
+    "passed": true,
+    "clip_transcription": "So my mom just told me that she doesn't trust the magicians because they lie. She also told me she doesn't like bisexual people.",
+    "expected_start": "So my mom just told me that she doesn't trust magicians because they lie. She also told me she doesn't like bisexual people because they can't make up their mind. And this is from a lady who cannot de"
+  }
+]

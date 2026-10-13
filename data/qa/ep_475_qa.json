@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 475,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 475,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 475,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 475,
+    "set_number": 4,
+    "comedian": "David Lucas",
+    "start_seconds": 2822.0,
+    "similarity": 0.391,
+    "passed": true,
+    "clip_transcription": "and gentlemen, here he is, super regular, awesome comedian, David Lucas. Yeah. Um, men don't give a fuck about lingerie. We don't. Uh.",
+    "expected_start": "men don't give a fuck about lingerie. we don't as long as you end up naked that's all we care about. Like lingerie to a man is like wrapping paper on a toy to a kid. Like hurry up and take this shit o"
+  }
+]

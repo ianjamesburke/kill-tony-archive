@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 470,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 470,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 470,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 470,
+    "set_number": 4,
+    "comedian": "Urube Armenta",
+    "start_seconds": 3198.0,
+    "similarity": 0.65,
+    "passed": true,
+    "clip_transcription": "After going everybody, my name is Ube. I've been getting with that name for years. It went from Ube to Ugay.",
+    "expected_start": "How's it going, everybody? My name's Urube. I've been getting screwed up with that name for years. It went from Urube to Uruge, all the way to Uberge. How the hell did I become an app? I shit you not,"
+  }
+]

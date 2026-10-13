@@ -18,5 +18,16 @@
     "episode": 485,
     "passed": true,
     "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 485,
+    "set_number": 5,
+    "comedian": "Brandon Bricks",
+    "start_seconds": 3094.0,
+    "similarity": 0.931,
+    "passed": true,
+    "clip_transcription": "Before I begin, can you guys follow me on Instagram at Diabetes the Second? You got to watch what you post on Instagram. You got to watch it, man. Cuz I had a picture on Instagram that cost me a gig. ",
+    "expected_start": "Before I begin, can you guys follow me on Instagram at diabetes the second? You got to watch what you post on Instagram. You got to watch it, man. Because I had a picture on Instagram that cost me a g"
   }
 ]

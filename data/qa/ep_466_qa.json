@@ -1,0 +1,33 @@
+[
+  {
+    "check": "set_count",
+    "episode": 466,
+    "set_count": 6,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 6 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 466,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 466,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 466,
+    "set_number": 4,
+    "comedian": "Smokey Augusta",
+    "start_seconds": 3001.0,
+    "similarity": 0.848,
+    "passed": true,
+    "clip_transcription": "So I was watching the old Brad Pitt movie, Seven, the other day, and I realized what in my past relationships work out, not enough head. Just kidding. Just kidding. What I did realize is that the wome",
+    "expected_start": "So I was watching the old Brad Pitt movie Seven the other day, and I realized one of my past relationships worked out. Not enough head. Just kidding, just kidding. What I did realize is that the women"
+  }
+]

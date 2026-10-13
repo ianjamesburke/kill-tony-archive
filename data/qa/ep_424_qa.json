@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 424,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 424,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 424,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 424,
+    "set_number": 3,
+    "comedian": "Aphrodite",
+    "start_seconds": 1271.0,
+    "similarity": 0.913,
+    "passed": true,
+    "clip_transcription": "Hi. Say hello to my big friends. Custom made titties for your lips and your tongue. You know, this is a very interesting place.",
+    "expected_start": "Hi. Say hello to my big friends. Custom-made titties for your lips and your tongue. You know, this is a very interesting place. You go to the bathroom, the ladies' bathroom is right next to the men's "
+  }
+]

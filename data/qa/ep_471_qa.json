@@ -1,0 +1,33 @@
+[
+  {
+    "check": "set_count",
+    "episode": 471,
+    "set_count": 7,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 7 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 471,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 471,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 471,
+    "set_number": 2,
+    "comedian": "Trey Peacock",
+    "start_seconds": 1449.0,
+    "similarity": 0.886,
+    "passed": true,
+    "clip_transcription": "What's up, guys? So, I once went on a date with this one girl who, to put it lightly, was my cousin. But it's okay because our Nana hooked us up. Really, it was her her high school",
+    "expected_start": "So I once went on a date with this one girl who, to put it lightly, was my cousin. But it's okay because our nana hooked us up. Really, it was her high school prom and no one wanted to take her, so I "
+  }
+]

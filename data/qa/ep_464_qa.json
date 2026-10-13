@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 464,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 464,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 464,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 464,
+    "set_number": 2,
+    "comedian": "Kyler Bentley",
+    "start_seconds": 1666.0,
+    "similarity": 0.909,
+    "passed": true,
+    "clip_transcription": "I fucking knew that shit was going to happen. That bucket is rigged. God, I can't even remember my set. Now fucking Michael killed it.",
+    "expected_start": "I fucking knew that shit was going to happen. That bucket is rigged. God, I can't even remember my set now. Fucking Michael Laird killed it. I do remember the last thing I said to my dad before I got "
+  }
+]
