@@ -2,18 +2,16 @@
   {
     "check": "set_count",
     "episode": 469,
-    "set_count": 6,
+    "set_count": 7,
     "min_expected": 8,
     "passed": false,
-    "warning": "Only 6 sets found (expected >= 8). Pass 2 may have missed sets."
+    "warning": "Only 7 sets found (expected >= 8). Pass 2 may have missed sets."
   },
   {
     "check": "gaps",
     "episode": 469,
-    "passed": false,
-    "warnings": [
-      "29min gap between set #2 (Brandon Biederstadt) and set #3 (Joy Eileen) \u2014 possible missed sets"
-    ]
+    "passed": true,
+    "warnings": []
   },
   {
     "check": "proximity",

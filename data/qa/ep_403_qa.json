@@ -1,0 +1,24 @@
+[
+  {
+    "check": "set_count",
+    "episode": 403,
+    "set_count": 14,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 403,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 403,
+    "passed": false,
+    "warnings": [
+      "set #1 (David Lucas) and set #2 (John Holt) are only 4.2min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #8 (Ashton Tate) and set #9 (Dave Brissoud) are only 4.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

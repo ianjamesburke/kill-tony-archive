@@ -1,0 +1,28 @@
+[
+  {
+    "check": "set_count",
+    "episode": 407,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 407,
+    "passed": false,
+    "warnings": [
+      "23min gap between set #4 (Nick Ledger) and set #5 (Nick Ledger) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 407,
+    "passed": false,
+    "warnings": [
+      "set #6 (Bridget Hased) and set #7 (Elon Scully) are only 2.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #9 (Darren Watson) and set #10 (Twiggy Bundles) are only 2.9min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #11 (Adric McLeod) and set #12 (Garth James) are only 1.6min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #12 (Garth James) and set #13 (Anthony Rofe) are only 3.8min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

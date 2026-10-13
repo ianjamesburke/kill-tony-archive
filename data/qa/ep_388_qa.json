@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 388,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 388,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 388,
+    "passed": false,
+    "warnings": [
+      "set #3 (Pauly Wally) and set #4 (Polly Wally) are only 0.7min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 388,
+    "set_number": 6,
+    "comedian": "Alex Holliday",
+    "start_seconds": 3316.0,
+    "similarity": 0.971,
+    "passed": true,
+    "clip_transcription": "Any dog people here tonight? Oh yeah, I love dogs. Dogs are great because that's one thing I get to cuddle with that I like definitely don't want to fuck. No. Like I can cuddle with my dog for hours a",
+    "expected_start": "Got any dog people here tonight? Oh yeah, I love dogs. Dogs are great because that's one thing I get to cuddle with that I definitely don't want to fuck. I can cuddle with my dog for hours and I'm not"
+  }
+]

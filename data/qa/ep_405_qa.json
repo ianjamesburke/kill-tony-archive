@@ -1,0 +1,24 @@
+[
+  {
+    "check": "set_count",
+    "episode": 405,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 405,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 405,
+    "passed": false,
+    "warnings": [
+      "set #2 (David Lucas) and set #3 (John Gabb) are only 4.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #12 (Ryan Callahan) and set #13 (Todd Royce) are only 3.8min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

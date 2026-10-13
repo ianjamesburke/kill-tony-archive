@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 395,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 395,
+    "passed": false,
+    "warnings": [
+      "47min gap between set #6 (William Montgomery) and set #7 (William Montgomery) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 395,
+    "passed": true,
+    "warnings": []
+  }
+]

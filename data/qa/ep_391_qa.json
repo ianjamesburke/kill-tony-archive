@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 391,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 391,
+    "passed": false,
+    "warnings": [
+      "56min gap between set #7 (Lorena from Puerto Rico) and set #8 (Dyson Stiles) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 391,
+    "passed": true,
+    "warnings": []
+  }
+]

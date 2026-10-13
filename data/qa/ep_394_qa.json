@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 394,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 394,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 394,
+    "passed": false,
+    "warnings": [
+      "set #9 (Kajan Jeeva) and set #10 (Matt Mellon) are only 1.9min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

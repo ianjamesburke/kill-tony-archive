@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 408,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 408,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 408,
+    "passed": false,
+    "warnings": [
+      "set #10 (Mark Borg) and set #11 (Ian Howlett) are only 1.6min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]
