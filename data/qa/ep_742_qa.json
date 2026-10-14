@@ -5,5 +5,28 @@
     "set_count": 13,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 742,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 742,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 742,
+    "set_number": 6,
+    "comedian": "David Wayne",
+    "start_seconds": 3200.0,
+    "similarity": 0.897,
+    "passed": true,
+    "clip_transcription": "I used to have a job where I read a lot of police reports, and sometimes in the police reports the arresting officer would write in the narrative my body worn camera was active during the arrest. Then",
+    "expected_start": "I used to have a job where I read a lot of police reports, and sometimes in the police reports, the arresting officer would write in the narrative, my body-worn camera was active during the arrest. Th"
   }
 ]

@@ -1,0 +1,33 @@
+[
+  {
+    "check": "set_count",
+    "episode": 186,
+    "set_count": 7,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 7 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 186,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 186,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 186,
+    "set_number": 5,
+    "comedian": "Eric Lampert",
+    "start_seconds": 3329.0,
+    "similarity": 0.84,
+    "passed": true,
+    "clip_transcription": "Hi guys. Um, yeah. I know. I know. As I sound like this, so this is gold for these guys. Um, I do sound British, so um, but I am American. I married one of you.",
+    "expected_start": "I know, I know. I sound like this, so this is gold for these guys. I do sound British, but I am American. I married one of you. No, not one of you, you idiot. I married a lady from Pittsburgh. Lady fr"
+  }
+]

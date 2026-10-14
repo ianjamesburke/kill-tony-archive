@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 188,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 188,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 188,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 188,
+    "set_number": 3,
+    "comedian": "Dietrich Shelton",
+    "start_seconds": 2206.0,
+    "similarity": 0.864,
+    "passed": true,
+    "clip_transcription": "I usually, uh, when I do get a chance to get with girls, I date Caucasian ladies. Um, matter of fact, I was I was having the sex.",
+    "expected_start": "I usually, when I do get a chance to get with girls, I date Caucasian ladies. As a matter of fact, I was having the sex with this Caucasian lady, and she whispers in my ear, can I say the N-word? Okay"
+  }
+]

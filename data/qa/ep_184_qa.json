@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 184,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 184,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 184,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 184,
+    "set_number": 4,
+    "comedian": "Aphrodite",
+    "start_seconds": 2640.0,
+    "similarity": 0.9,
+    "passed": true,
+    "clip_transcription": "You know, I really think that God must be a stand-up comedian. Cuz who the hell would create something like this? Who the hell would create that? You know, I'm getting tired of people thinking that fa",
+    "expected_start": "You know, I really think that God must be a stand-up comedian. Because who the hell would create something like this? Who the hell would create that? You know? I'm getting tired of people thinking tha"
+  }
+]

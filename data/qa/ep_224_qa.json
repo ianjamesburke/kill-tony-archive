@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 224,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 224,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 224,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 224,
+    "set_number": 3,
+    "comedian": "Amy Gonzalez",
+    "start_seconds": 1875.0,
+    "similarity": 0.773,
+    "passed": true,
+    "clip_transcription": "So far, I like it. Hello everyone. My name is Amy. My real name is Amy Peterson Gonz\u00e1lez, you know? I wonder why I'm talking like this, you know?",
+    "expected_start": "So far, I like it. Hello, everyone. My name is Amy. My real name is Amy Peterson Gonzalez. I wonder why I'm talking like this. My dad is white from Minnesota, and my mom is from Venezuela. She's Latin"
+  }
+]

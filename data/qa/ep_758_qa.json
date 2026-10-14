@@ -2,8 +2,22 @@
   {
     "check": "set_count",
     "episode": 758,
-    "set_count": 13,
+    "set_count": 14,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 758,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 758,
+    "passed": false,
+    "warnings": [
+      "set #13 (Tony Scar) and set #14 (Adam Ray (as Tony Stark)) are only 2.6min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
   }
 ]

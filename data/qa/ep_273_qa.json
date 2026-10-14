@@ -1,0 +1,38 @@
+[
+  {
+    "check": "set_count",
+    "episode": 273,
+    "set_count": 11,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 273,
+    "passed": false,
+    "warnings": [
+      "28min gap between set #2 (Marquette) and set #3 (Lydia Shahid) \u2014 possible missed sets",
+      "35min gap between set #4 (Centofanti) and set #5 (Marquette) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 273,
+    "passed": false,
+    "warnings": [
+      "set #1 (Centofanti) and set #2 (Marquette) are only 0.6min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #9 (Jolina) and set #10 (Alex Berman) are only 2.8min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 273,
+    "set_number": 8,
+    "comedian": "Alex Berman",
+    "start_seconds": 6066.0,
+    "similarity": 0.944,
+    "passed": true,
+    "clip_transcription": "Man, I knocked over that table. I I started putting my phone in my front pocket and it's it's been the worst.",
+    "expected_start": "Man, I knocked over that table. I started putting my phone in my front pocket, and it's been the worst. Okay, so I'm from the streets. Cheswick Court is a neighborhood I grew up in. They had a couple "
+  }
+]

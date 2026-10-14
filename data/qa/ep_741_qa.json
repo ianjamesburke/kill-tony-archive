@@ -5,5 +5,21 @@
     "set_count": 12,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 741,
+    "passed": false,
+    "warnings": [
+      "21min gap between set #9 (Sir Winston Pickles) and set #10 (Adam Dyes) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 741,
+    "passed": false,
+    "warnings": [
+      "set #11 (William Montgomery) and set #12 (William Montgomery) are only -0.3min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
   }
 ]

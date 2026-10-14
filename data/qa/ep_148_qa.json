@@ -1,0 +1,25 @@
+[
+  {
+    "check": "set_count",
+    "episode": 148,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 148,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 148,
+    "passed": false,
+    "warnings": [
+      "set #9 (Stevie Timble) and set #10 (Melissa Esslinger) are only 4.2min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #10 (Melissa Esslinger) and set #11 (Vanessa Johnston) are only 3.7min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #11 (Vanessa Johnston) and set #12 (Alfred K. Naswa) are only 3.8min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

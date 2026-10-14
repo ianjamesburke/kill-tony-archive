@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 274,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 274,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 274,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 274,
+    "set_number": 4,
+    "comedian": "Catherine Faith",
+    "start_seconds": 2369.0,
+    "similarity": 0.971,
+    "passed": true,
+    "clip_transcription": "I want to talk about the poop bucket. This is how I was raised. My parents had a Volkswagen van, and my dad was a very busy man. And, um, there wasn't time for things like pulling over to go to the ba",
+    "expected_start": "I want to talk about the poop bucket. This is how I was raised. My parents had a Volkswagen van, and my dad was a very busy man. And there wasn't time for things like pulling over to go to the bathroo"
+  }
+]

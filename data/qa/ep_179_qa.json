@@ -1,0 +1,35 @@
+[
+  {
+    "check": "set_count",
+    "episode": 179,
+    "set_count": 6,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 6 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 179,
+    "passed": false,
+    "warnings": [
+      "20min gap between set #3 (Pallave Gunalan) and set #4 (Vanessa Johnston) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 179,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 179,
+    "set_number": 3,
+    "comedian": "Pallave Gunalan",
+    "start_seconds": 2321.0,
+    "similarity": 0.97,
+    "passed": true,
+    "clip_transcription": "Um, I was on Wikipedia today looking at this ethnic slurs page, cuz that's what I do with my time. And I feel like a lot of the slurs on there shouldn't even be on there because they're like too cute ",
+    "expected_start": "I was on Wikipedia today looking at this ethnic slurs page because that's what I do with my time. And I feel like a lot of the slurs on there shouldn't even be on there because they're too cute to be "
+  }
+]

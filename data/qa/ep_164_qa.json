@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 164,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 164,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 164,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 164,
+    "set_number": 6,
+    "comedian": "Anthony Decimito",
+    "start_seconds": 3852.0,
+    "similarity": 0.941,
+    "passed": true,
+    "clip_transcription": "So if you're a fat guy and you're not wearing a funny shirt, you are just wasting everybody's time.",
+    "expected_start": "if you're a fat guy and you're not wearing a funny shirt, you are just wasting everybody's time. You're giving us 50%, guys. I like my jizz like I like my economics. Trickle down all the way down to t"
+  }
+]

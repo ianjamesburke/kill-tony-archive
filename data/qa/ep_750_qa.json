@@ -5,5 +5,20 @@
     "set_count": 15,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 750,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 750,
+    "passed": false,
+    "warnings": [
+      "set #11 (Ron White) and set #12 (Pauly Shore) are only 3.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #12 (Pauly Shore) and set #13 (Liv Taylor) are only 2.9min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
   }
 ]

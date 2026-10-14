@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 162,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 162,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 162,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 162,
+    "set_number": 7,
+    "comedian": "Vanessa Johnston",
+    "start_seconds": 4858.0,
+    "similarity": 0.941,
+    "passed": true,
+    "clip_transcription": "I know the government's watching me because I've never received a dick pick, which is fucking impossible.",
+    "expected_start": "I know the government's watching me because I've never received a dick pic, which is fucking impossible. My face to dicks is like Florida to old Jews. It's like a beacon. It doesn't make any sense. Th"
+  }
+]

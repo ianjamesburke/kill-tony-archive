@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 283,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 283,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 283,
+    "passed": false,
+    "warnings": [
+      "set #7 (Lucas Mateus) and set #8 (Connor Schrader) are only 4.2min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

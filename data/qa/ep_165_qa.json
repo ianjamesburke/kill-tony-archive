@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 165,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 165,
+    "passed": false,
+    "warnings": [
+      "21min gap between set #4 (Anthony Amorello) and set #5 (Tyler Guizar) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 165,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 165,
+    "set_number": 5,
+    "comedian": "Tyler Guizar",
+    "start_seconds": 3519.0,
+    "similarity": 0.524,
+    "passed": true,
+    "clip_transcription": "Hello, hi. That sound all right? It's all good? All right. I'm in the Navy, and uh I'm about to get out right now.",
+    "expected_start": "Hello. I'm in the Navy, and I'm about to get out right now. Pretty stoked. Grow some facial hair. Look a little generically white. And I joined the Navy like 60 years ago. And when I joined the Navy, "
+  }
+]

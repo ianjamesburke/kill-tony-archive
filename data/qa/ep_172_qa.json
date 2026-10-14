@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 172,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 172,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 172,
+    "passed": false,
+    "warnings": [
+      "set #7 (Vanessa Johnston) and set #8 (Joe Watler) are only 3.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 172,
+    "set_number": 7,
+    "comedian": "Vanessa Johnston",
+    "start_seconds": 4592.0,
+    "similarity": 1.0,
+    "passed": true,
+    "clip_transcription": "holocaust. Nazis turned Jews into soap, which is kind of fucked up. Why would you make soap out of a group",
+    "expected_start": "Holocaust. Nazis turned Jews into soap, which is kind of fucked up. Why would you make soap out of a group of people who you think are dirty? I'm never going to round up a bunch of homeless people, tu"
+  }
+]

@@ -5,5 +5,19 @@
     "set_count": 15,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 752,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 752,
+    "passed": false,
+    "warnings": [
+      "set #11 (Matt Rebus) and set #12 (Emmanuel Martinez) are only 4.4min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
   }
 ]

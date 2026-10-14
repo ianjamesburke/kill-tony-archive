@@ -2,8 +2,22 @@
   {
     "check": "set_count",
     "episode": 740,
-    "set_count": 13,
+    "set_count": 14,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 740,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 740,
+    "passed": false,
+    "warnings": [
+      "set #11 (Jordan Yates) and set #12 (David Lucas) are only 2.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
   }
 ]

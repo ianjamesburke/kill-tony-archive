@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 278,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 278,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 278,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 278,
+    "set_number": 3,
+    "comedian": "Jacob Charmack",
+    "start_seconds": 1889.0,
+    "similarity": 0.667,
+    "passed": true,
+    "clip_transcription": "How's everyone doing tonight? Good. Uh I just drove here from Maryland uh cross-country. Uh one thing I realized is driving across-country takes longer than running cross-country. I don't know if you ",
+    "expected_start": "I just drove here from Maryland, cross-country. One thing I realized is driving cross-country takes longer than running cross-country. I don't know if you guys know that. Think about it. So I'm very p"
+  }
+]

@@ -18,5 +18,16 @@
     "episode": 303,
     "passed": true,
     "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 303,
+    "set_number": 2,
+    "comedian": "Dariq Santos",
+    "start_seconds": 1657.0,
+    "similarity": 0.85,
+    "passed": true,
+    "clip_transcription": "You guys know, I always rub one out before I leave the house. So that way, I last longer when I rub one out on the bus.",
+    "expected_start": "You guys, so I always rub one out before I leave the house. So that way I last longer when I rub one out on the bus. Excuse me, driver, this is where I get off, right here. I wear diapers, I'll tell y"
   }
 ]

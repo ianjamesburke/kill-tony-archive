@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 296,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 296,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 296,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 296,
+    "set_number": 9,
+    "comedian": "Jessica Lee",
+    "start_seconds": 5313.0,
+    "similarity": 0.929,
+    "passed": true,
+    "clip_transcription": "So I lost 180 lb recently. Thank you. I'm kind of sad about it, though. He was really fine as fuck. He had to go, though. He wasn't eating the pussy.",
+    "expected_start": "So I lost 180 pounds recently. Thank you. I'm kind of sad about it, though. He was really fine as fuck. He had to go, though. He wasn't eating a pussy. Where's that chic guy at? No, but he did try to "
+  }
+]

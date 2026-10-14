@@ -5,5 +5,20 @@
     "set_count": 13,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 751,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 751,
+    "passed": false,
+    "warnings": [
+      "set #4 (Holly Jensen) and set #5 (Floyd Jones) are only 4.3min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #11 (Gordon Dixon) and set #12 (Lindsey Campbell) are only 2.8min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
   }
 ]

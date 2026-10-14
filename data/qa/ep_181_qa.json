@@ -1,0 +1,33 @@
+[
+  {
+    "check": "set_count",
+    "episode": 181,
+    "set_count": 7,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 7 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 181,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 181,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 181,
+    "set_number": 4,
+    "comedian": "Samir Suri",
+    "start_seconds": 2965.0,
+    "similarity": 0.821,
+    "passed": true,
+    "clip_transcription": "Hello hello my darlings I am so fucking pissed tonight. We are going to discuss this now. We are going to discuss this because another stupid ass white friend wants to vacation in India. Why? Why? The",
+    "expected_start": "Hello, hello, my darlings. I am so fucking pissed tonight. We're going to discuss this now. We are going to discuss this because another stupid-ass white friend wants to vacation in India. Why? Why? T"
+  }
+]

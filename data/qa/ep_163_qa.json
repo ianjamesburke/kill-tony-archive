@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 163,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 163,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 163,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 163,
+    "set_number": 5,
+    "comedian": "Bo Laffman",
+    "start_seconds": 2476.0,
+    "similarity": 0.913,
+    "passed": true,
+    "clip_transcription": "Yeah, so my girlfriend thinks that I'm cheating on her with a coworker, which is great because she totally thinks that I still have a job.",
+    "expected_start": "so my girlfriend thinks that I'm cheating on her with a co-worker. which is great because she totally thinks that I still have a job. Speaking of being employed, I think white people need to stop tell"
+  }
+]

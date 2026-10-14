@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 158,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 158,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 158,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 158,
+    "set_number": 3,
+    "comedian": "Madison Sinclair",
+    "start_seconds": 2100.0,
+    "similarity": 1.0,
+    "passed": true,
+    "clip_transcription": "Is anybody in Orlando not named after a stripper? I don't think so. It's all, all porn star names. Even Tony Orlando. So, your plans to do stand up for for a living? Yeah, I'd like to, yeah.",
+    "expected_start": "Is anybody in Orlando not named after a stripper? I don't think so. It's all porn star names. Even Tony Orlando."
+  }
+]

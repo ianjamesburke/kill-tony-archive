@@ -1,0 +1,35 @@
+[
+  {
+    "check": "set_count",
+    "episode": 263,
+    "set_count": 7,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 7 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 263,
+    "passed": false,
+    "warnings": [
+      "72min gap between set #5 (Uncle Ron) and set #6 (Malcolm Hatchett) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 263,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 263,
+    "set_number": 2,
+    "comedian": "Naomi Fitter",
+    "start_seconds": 1458.0,
+    "similarity": 0.3,
+    "passed": true,
+    "clip_transcription": "Hi everybody. I'm really shy. You start. I'm originally from Appala",
+    "expected_start": "I'm originally from Appalachia, so at this point most people I graduate with have more kids than teeth. And I went home two weeks ago. I went home and I married my brother. That's true, actually, but "
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 266,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 266,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 266,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 266,
+    "set_number": 7,
+    "comedian": "Sarah Lawrence",
+    "start_seconds": 4568.0,
+    "similarity": 0.9,
+    "passed": true,
+    "clip_transcription": "you can't say retarded anymore, correct word is vaccinated. my friend went on a date so I'm fucking puffed out.",
+    "expected_start": "You can't say retarded anymore. Correct word is vaccinated. My friend went on a date. I'm fucking puffed out. My friend went on a date with a guy the other night, and at the end of the date, she said "
+  }
+]

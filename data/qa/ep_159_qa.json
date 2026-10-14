@@ -1,0 +1,33 @@
+[
+  {
+    "check": "set_count",
+    "episode": 159,
+    "set_count": 7,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 7 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 159,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 159,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 159,
+    "set_number": 2,
+    "comedian": "Fang Chao",
+    "start_seconds": 1369.0,
+    "similarity": 0.952,
+    "passed": true,
+    "clip_transcription": "About seven years ago, I left China to come to America. I took three things with me: my half-white, half-Chinese baby, my white girlfriend,",
+    "expected_start": "About seven years ago, I left China to come to America. I took three things with me. My half-white, half-Chinese baby, my white girlfriend, and my yellow dog. No jokes there. Just fact. My mom got pis"
+  }
+]

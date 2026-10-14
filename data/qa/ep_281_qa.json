@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 281,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 281,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 281,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 281,
+    "set_number": 4,
+    "comedian": "Matthew Maloney",
+    "start_seconds": 2143.0,
+    "similarity": 1.0,
+    "passed": true,
+    "clip_transcription": "My grandfather died two nights ago, and I can't believe I already got jokes about it, you know?",
+    "expected_start": "My grandfather died two nights ago, and I can't believe I already got jokes about it, you know? Please don't feel bad about it because he didn't pass away. You know, only decent people get to pass awa"
+  }
+]

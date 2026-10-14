@@ -1,0 +1,35 @@
+[
+  {
+    "check": "set_count",
+    "episode": 170,
+    "set_count": 5,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 5 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 170,
+    "passed": false,
+    "warnings": [
+      "42min gap between set #2 (Alexis Grossman) and set #3 (Quinn Wright) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 170,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 170,
+    "set_number": 4,
+    "comedian": "Vanessa Johnston",
+    "start_seconds": 4751.0,
+    "similarity": 1.0,
+    "passed": true,
+    "clip_transcription": "Did you know that if a Muslim woman gets raped in a Muslim country, it's considered her fault? Clap if you knew that.",
+    "expected_start": "Did you know that if a Muslim woman gets raped in a Muslim country, it's considered her fault? Clap if you knew that. Clap. Clap for rape. Keep it going. They say it's the woman's fault because she us"
+  }
+]

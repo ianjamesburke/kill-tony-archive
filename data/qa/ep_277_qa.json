@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 277,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 277,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 277,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 277,
+    "set_number": 7,
+    "comedian": "Ally McCoskey",
+    "start_seconds": 3797.0,
+    "similarity": 0.944,
+    "passed": true,
+    "clip_transcription": "Hi. It's good to be here. Uh, just by a round of applause, who here thinks I'm a lesbian?",
+    "expected_start": "Hi. It's good to be here. Just by a round of applause, who here thinks I'm a lesbian? All right, cool. I'm just trying to figure it out. I've had a crush on this guy Bobby for four years. He's so hot."
+  }
+]

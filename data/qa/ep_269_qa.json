@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 269,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 269,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 269,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 269,
+    "set_number": 7,
+    "comedian": "Mike Ishak",
+    "start_seconds": 4657.0,
+    "similarity": 1.0,
+    "passed": true,
+    "clip_transcription": "I served four years in the Marine Corps. Thank you. Thank you. And I'm a Muslim. Exactly.",
+    "expected_start": "I served four years in the Marine Corps. Thank you. Thank you. And I'm a Muslim. Exactly. Being a Marine with this face is interesting because people will say racist shit to me all the time. One time "
+  }
+]

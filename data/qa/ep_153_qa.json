@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 153,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 153,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 153,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 153,
+    "set_number": 3,
+    "comedian": "Nicole Buchanan",
+    "start_seconds": 2095.0,
+    "similarity": 0.963,
+    "passed": true,
+    "clip_transcription": "Uh I grew up in Orange County and going to high school in Orange County is pretty much like going to high school anywhere else. Uh you have your artists, your jocks, your nerds, a black guy.",
+    "expected_start": "I grew up in Orange County, and going to high school in Orange County is pretty much like going to high school anywhere else. You have your artists, your jocks, your nerds, a black guy. Just one. Kind"
+  }
+]

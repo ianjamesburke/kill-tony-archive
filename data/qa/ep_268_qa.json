@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 268,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 268,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 268,
+    "passed": false,
+    "warnings": [
+      "set #4 (Johnny Roth) and set #5 (Cassandra Cass) are only 3.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 268,
+    "set_number": 7,
+    "comedian": "Peter Kim",
+    "start_seconds": 3655.0,
+    "similarity": 0.789,
+    "passed": true,
+    "clip_transcription": "Hey guys. Hi, it's me. Gay Bobby Lee. Uh, I'm just kidding. Bobby is Korean and I'm just a very sleepy Mexican.",
+    "expected_start": "Hi, it's me, Gay Bobby Lee. I'm just kidding. Bobby is Korean and I'm just a very sleepy Mexican. That wasn't a racist joke, but if you didn't laugh at that, you might be a racist. I'm trying to be a "
+  }
+]

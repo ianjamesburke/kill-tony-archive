@@ -1,0 +1,35 @@
+[
+  {
+    "check": "set_count",
+    "episode": 174,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 174,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 174,
+    "passed": false,
+    "warnings": [
+      "set #2 (Nicole Buchanan) and set #3 (Jarrell Benafre) are only 4.3min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #8 (Martin Harris) and set #9 (Travis Frazee) are only 3.6min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 174,
+    "set_number": 2,
+    "comedian": "Nicole Buchanan",
+    "start_seconds": 900.0,
+    "similarity": 0.906,
+    "passed": true,
+    "clip_transcription": "I wish I was less approachable. Uh just kind of the vibe I have. Like guys will hit on me not always because they're attracted to me, but because I'm like a safe person to practice on.",
+    "expected_start": "I wish I was less approachable. It's kind of the vibe I have. Like guys will hit on me not always because they're attracted to me but because I'm like a safe person to practice on. Like a cute chubby "
+  }
+]

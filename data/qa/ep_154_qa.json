@@ -1,0 +1,35 @@
+[
+  {
+    "check": "set_count",
+    "episode": 154,
+    "set_count": 7,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 7 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 154,
+    "passed": false,
+    "warnings": [
+      "67min gap between set #5 (The Verzi Triplets) and set #6 (Melissa Esslinger) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 154,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 154,
+    "set_number": 2,
+    "comedian": "Ryan Higgins",
+    "start_seconds": 1357.0,
+    "similarity": 0.935,
+    "passed": true,
+    "clip_transcription": "Oh guys, I uh I recently quit drinking. Um you're a nice friendly crowd. I've actually been getting like booed for that at shows. People have been booing me. Always like one guy just boo. Boo, I'm I'm",
+    "expected_start": "Guys, I recently quit drinking. You're a nice, friendly crowd. I've actually been getting booed for that at shows. People have been booing me. Always one guy just, boo. Boo. I'm booing you for trying "
+  }
+]

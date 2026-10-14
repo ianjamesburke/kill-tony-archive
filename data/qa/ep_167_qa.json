@@ -1,0 +1,33 @@
+[
+  {
+    "check": "set_count",
+    "episode": 167,
+    "set_count": 7,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 7 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 167,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 167,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 167,
+    "set_number": 3,
+    "comedian": "Max White",
+    "start_seconds": 2633.0,
+    "similarity": 0.731,
+    "passed": true,
+    "clip_transcription": "I grew up in the 1980s and it's weird back then my dad was a drinker, right? Like drinker is fun like you invite a drinker to a party, okay?",
+    "expected_start": "Hi, I grew up in the 1980s, and it's weird. Back then, my dad was a drinker, right? Like, drinker's fun. Like, you'd invite a drinker to a party, okay? In 2016, though, my dad's an alcoholic. Like, ew"
+  }
+]

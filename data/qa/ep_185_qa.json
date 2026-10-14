@@ -1,0 +1,37 @@
+[
+  {
+    "check": "set_count",
+    "episode": 185,
+    "set_count": 7,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 7 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 185,
+    "passed": false,
+    "warnings": [
+      "24min gap between set #3 (Todd Risenmay) and set #4 (Verzi Triplets) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 185,
+    "passed": false,
+    "warnings": [
+      "set #5 (Vanessa Johnston) and set #6 (Ally Makovsky) are only 4.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 185,
+    "set_number": 2,
+    "comedian": "Yusuf Ali",
+    "start_seconds": 1260.0,
+    "similarity": 1.0,
+    "passed": true,
+    "clip_transcription": "So yeah, we are. I'm too, so I'm too broke to be out here. From Cleveland, I just noticed that they don't have any dollar stores out here. Y'all have dollar stores out here? Yeah. See, that's not a gr",
+    "expected_start": "I'm too broke to be out here. From Cleveland, I just noticed that they don't have any dollar stores out here. Y'all have dollar stores out here? Yeah. See, that's not a grammatical error. I don't mean"
+  }
+]

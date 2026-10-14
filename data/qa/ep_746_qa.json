@@ -5,5 +5,19 @@
     "set_count": 14,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 746,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 746,
+    "passed": false,
+    "warnings": [
+      "set #13 (William Montgomery) and set #14 (William Montgomery) are only 0.0min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
   }
 ]

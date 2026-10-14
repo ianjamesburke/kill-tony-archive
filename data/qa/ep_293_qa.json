@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 293,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 293,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 293,
+    "passed": false,
+    "warnings": [
+      "set #7 (Jacob Drosha) and set #8 (Adam Drosha) are only 4.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 293,
+    "set_number": 7,
+    "comedian": "Jacob Drosha",
+    "start_seconds": 3967.0,
+    "similarity": 0.783,
+    "passed": true,
+    "clip_transcription": "Really wasn't planning on this. My uh brother put my name in the in the bucket there. So um, um, I don't I don't know what it is, man.",
+    "expected_start": "I really wasn't planning on this. My brother put my name in the bucket there, so... Um... I don't know what that is, man. Yeah, I really don't have anything funny to say. I haven't had this much fun s"
+  }
+]

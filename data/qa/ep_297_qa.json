@@ -1,0 +1,34 @@
+[
+  {
+    "check": "set_count",
+    "episode": 297,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 297,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 297,
+    "passed": false,
+    "warnings": [
+      "set #7 (Michael Borden) and set #8 (Sarah Wren) are only 3.4min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 297,
+    "set_number": 7,
+    "comedian": "Michael Borden",
+    "start_seconds": 4708.0,
+    "similarity": 1.0,
+    "passed": true,
+    "clip_transcription": "I'm so fat, girls can blow me in the rain and stay dry.",
+    "expected_start": "I'm so fat, girls can blow me in the rain and stay dry. I'm so fat they don't. My dad died two years ago. It was the hardest year of my life. I had to clean the eaves troughs, close the pool, Fuck my "
+  }
+]

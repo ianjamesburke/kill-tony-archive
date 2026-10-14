@@ -5,5 +5,17 @@
     "set_count": 14,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 755,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 755,
+    "passed": true,
+    "warnings": []
   }
 ]

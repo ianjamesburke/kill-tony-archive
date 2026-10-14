@@ -2,8 +2,22 @@
   {
     "check": "set_count",
     "episode": 738,
-    "set_count": 13,
+    "set_count": 14,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 738,
+    "passed": false,
+    "warnings": [
+      "25min gap between set #12 (Ronnie Rohrbach) and set #13 (William Montgomery) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 738,
+    "passed": true,
+    "warnings": []
   }
 ]

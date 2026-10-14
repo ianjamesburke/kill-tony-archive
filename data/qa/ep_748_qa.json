@@ -2,8 +2,22 @@
   {
     "check": "set_count",
     "episode": 748,
-    "set_count": 12,
+    "set_count": 13,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 748,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 748,
+    "passed": false,
+    "warnings": [
+      "set #7 (Dedrick Flynn) and set #8 (Mitch) are only 2.7min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
   }
 ]

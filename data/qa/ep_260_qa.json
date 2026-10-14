@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 260,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 260,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 260,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 260,
+    "set_number": 4,
+    "comedian": "Drake Nelson",
+    "start_seconds": 2868.0,
+    "similarity": 0.957,
+    "passed": true,
+    "clip_transcription": "My name is Drake Nelson. Drake is my real name. People ask me all the time if that's my real name. They get me confused with that rapper guy Drake.",
+    "expected_start": "Hi, everybody. My name is Drake Nelson. Drake is my real name. People ask me all the time if that's my real name. They get me confused with that rapper guy, Drake. And as a black man, I find that offe"
+  }
+]

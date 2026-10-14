@@ -2,8 +2,22 @@
   {
     "check": "set_count",
     "episode": 749,
-    "set_count": 13,
+    "set_count": 14,
     "min_expected": 8,
     "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 749,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 749,
+    "passed": false,
+    "warnings": [
+      "set #8 (Dedrick Flynn) and set #9 (Keegan Carmichael) are only 4.2min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
   }
 ]

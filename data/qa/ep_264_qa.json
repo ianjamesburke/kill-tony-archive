@@ -1,0 +1,33 @@
+[
+  {
+    "check": "set_count",
+    "episode": 264,
+    "set_count": 7,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 7 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 264,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 264,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 264,
+    "set_number": 6,
+    "comedian": "Malcolm Hatchett",
+    "start_seconds": 4663.0,
+    "similarity": 0.938,
+    "passed": true,
+    "clip_transcription": "Fellas, did you ever get some head so good that your ass start hurting? Got some head the other day and walked away like this. Oh shit. Bitch took the air out of both cheeks.",
+    "expected_start": "Fellas, you ever get some hair so good that your ass start hurting? Got some hair the other day and walked away like this. Oh shit. Bitch took the air out of both cheeks. Other day I seen a gay dude b"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "check": "set_count",
+    "episode": 155,
+    "set_count": 6,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 6 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 155,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 155,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 155,
+    "set_number": 5,
+    "comedian": "Vanessa Johnston",
+    "start_seconds": 4614.0,
+    "similarity": 0.852,
+    "passed": true,
+    "clip_transcription": "Ah. Smoking. Um, I I I hate passive aggressive people. I hate them so much. I want to vote for Trump just so that all the passive aggressive people just shrivel up and die. Because like, passive",
+    "expected_start": "It's smoky. I hate passive aggressive people. I hate them so much. I want to vote for Trump just so that all the passive aggressive people just shrivel up and die. Because passive aggression is such a"
+  }
+]

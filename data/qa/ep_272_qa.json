@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 272,
+    "set_count": 13,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 272,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 272,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 272,
+    "set_number": 2,
+    "comedian": "Justin Orzalar",
+    "start_seconds": 1164.0,
+    "similarity": 1.0,
+    "passed": true,
+    "clip_transcription": "How you doing tonight, guys? Fucking A. Hey, so my brother the other day came home, and he smelled like some shit. But I'll tell you what, he smelled like some shit I never smelled before. It's called",
+    "expected_start": "How you doing tonight, guys? Fucking A. Hey, so my brother the other day came home, and he smelled like some shit. But I'll tell you what, he smelled like some shit I never smelled before. It's called"
+  }
+]

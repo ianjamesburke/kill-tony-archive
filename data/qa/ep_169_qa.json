@@ -1,0 +1,36 @@
+[
+  {
+    "check": "set_count",
+    "episode": 169,
+    "set_count": 4,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 4 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 169,
+    "passed": false,
+    "warnings": [
+      "21min gap between set #1 (Spencer Gill) and set #2 (John Gamora) \u2014 possible missed sets",
+      "22min gap between set #2 (John Gamora) and set #3 (Vanessa Johnston) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 169,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 169,
+    "set_number": 2,
+    "comedian": "John Gamora",
+    "start_seconds": 1974.0,
+    "similarity": 0.842,
+    "passed": true,
+    "clip_transcription": "Ah, you guys are good people. We don't have good people like you back home in hell, you know? How's it going?",
+    "expected_start": "Ah, you guys are good people. We don't have good people like you back home in hell, you know? A little bit about me, I come from a family that likes to buy a lot of meat rubs. Anyone else? I can feel "
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "check": "set_count",
+    "episode": 189,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 189,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 189,
+    "passed": false,
+    "warnings": [
+      "set #4 (Taylor Rizzo) and set #5 (Versi Triplets) are only 3.8min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #8 (Vanessa Johnston) and set #9 (Brett Morris) are only 4.1min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 189,
+    "set_number": 5,
+    "comedian": "Versi Triplets",
+    "start_seconds": 2368.0,
+    "similarity": 0.972,
+    "passed": true,
+    "clip_transcription": "Uh, you know, we've been thinking about if we were ever going to run train on a bitch, you know? Yeah. I know we look like we only do missionary, but you know it'd be it'd be less of a train, more of ",
+    "expected_start": "You know, we've been thinking about if we were ever going to run train on a bitch. You know? I know we look like we only do missionary, but it'd be less of a train, more of a Congo line. Kind of a fun"
+  }
+]

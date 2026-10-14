@@ -1,0 +1,33 @@
+[
+  {
+    "check": "set_count",
+    "episode": 166,
+    "set_count": 7,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 7 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 166,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 166,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 166,
+    "set_number": 4,
+    "comedian": "Steve Breeze",
+    "start_seconds": 2723.0,
+    "similarity": 0.947,
+    "passed": true,
+    "clip_transcription": "My DNA doesn't belong in a baby, genetically or physically. So wear condoms, you guys. That's what I'm saying.",
+    "expected_start": "My DNA doesn't belong in a baby. Genetically or physically. So wear condoms, you guys. That's what I'm saying. Don't want to have your DNA somewhere in a child. I don't know. Weird joke to start off w"
+  }
+]

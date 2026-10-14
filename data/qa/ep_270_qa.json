@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 270,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 270,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 270,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 270,
+    "set_number": 2,
+    "comedian": "Tuto Marangula",
+    "start_seconds": 1237.0,
+    "similarity": 0.938,
+    "passed": true,
+    "clip_transcription": "My name sounds like an African war cry. It sounds like some shit they'd say in Black Panther before they charge out into battle. I'm from, I'm from South Africa. Yeah, I'm a poor man's Trevor Noah.",
+    "expected_start": "My name sounds like an African war cry. It sounds like some shit they say in Black Panther before they charge out into battle. I'm from South Africa. Yeah, my poor man's Trevor Noah. Interesting facts"
+  }
+]

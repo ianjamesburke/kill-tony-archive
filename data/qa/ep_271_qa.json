@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 271,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 271,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 271,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 271,
+    "set_number": 4,
+    "comedian": "Rita Lee",
+    "start_seconds": 2750.0,
+    "similarity": 0.897,
+    "passed": true,
+    "clip_transcription": "Hi! I'm Rita Lee. I'm a 42-year-old divorcee who lives with three cats. Yes, so welcome to the lady portion of the show. Uh who's ready for clit jokes? Perfect. Like",
+    "expected_start": "Hi, I'm Rita Lee. I'm a 42-year-old divorcee who lives with three cats. Yes, so welcome to the lady portion of the show. Who's ready for clit jokes? Perfect. Half of you are looking at me like, why ar"
+  }
+]

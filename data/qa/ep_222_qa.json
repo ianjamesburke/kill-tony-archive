@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 222,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 222,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 222,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 222,
+    "set_number": 4,
+    "comedian": "Jesse Johnson",
+    "start_seconds": 2094.0,
+    "similarity": 0.867,
+    "passed": true,
+    "clip_transcription": "Hey, uh so I've been living in LA now for a couple months. Thank you. Uh I've met a lot of people. Uh I actually met someone. Uh Well, I mean like I said, I've met a lot of people but I'm uh fuck.",
+    "expected_start": "Hey, so I've been living in LA now for a couple months. Thank you. I've met a lot of people. I actually met someone. Well, I mean, like I said, I've met a lot of people, but I'm a fucking one of them."
+  }
+]

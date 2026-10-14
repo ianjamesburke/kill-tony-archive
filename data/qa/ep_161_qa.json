@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 161,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 161,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 161,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 161,
+    "set_number": 3,
+    "comedian": "Phil Kemp",
+    "start_seconds": 1104.0,
+    "similarity": 0.853,
+    "passed": true,
+    "clip_transcription": "So a lot of women don't want to fuck me. Probably cuz I do a really good impersonation of Smeagol from Lord of the Rings in the bedroom while having sex. I'll be in there like, \"Us! Us! My precious! W",
+    "expected_start": "So a lot of women don't want to fuck me. Probably because I do a really good impersonation of Schmeagle from Lord of the Rings in the bedroom while having sex. I'll be in there like this, this, my pre"
+  }
+]

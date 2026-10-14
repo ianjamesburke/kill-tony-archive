@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 225,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 225,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 225,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 225,
+    "set_number": 4,
+    "comedian": "Judd Zumwalt",
+    "start_seconds": 2753.0,
+    "similarity": 0.933,
+    "passed": true,
+    "clip_transcription": "I got a complaint with that uh that Indiana Jones movie. Y'all seen that? Indiana Jones was born in 1899, 34 years earlier, slavery was abolished, but somebody had to teach him how to use that",
+    "expected_start": "I got a complaint with that Indiana Jones movie. Y'all seen that? Indiana Jones was born in 1899. 34 years earlier, slavery was abolished, but somebody had to teach him how to use that bullwhip. I thi"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 232,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 232,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 232,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 232,
+    "set_number": 3,
+    "comedian": "C.J. Kelly",
+    "start_seconds": 1964.0,
+    "similarity": 0.857,
+    "passed": true,
+    "clip_transcription": "My name's C.J. Kelly. I was born in Boston, Massachusetts, I grew up in South Florida. And I hate to admit it, guys, but I'm white trash through and through, you know.",
+    "expected_start": "My name is C.J. Kelly. I was born in Boston, Massachusetts. I grew up in South Florida. And I hate to admit it, guys, but I am white trash through and through, you know? Like straight up, if Kid Rock "
+  }
+]

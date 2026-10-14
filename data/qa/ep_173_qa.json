@@ -1,0 +1,38 @@
+[
+  {
+    "check": "set_count",
+    "episode": 173,
+    "set_count": 7,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 7 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 173,
+    "passed": false,
+    "warnings": [
+      "24min gap between set #3 (Isaac Hirsch) and set #4 (Bella Rose) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 173,
+    "passed": false,
+    "warnings": [
+      "set #2 (Melissa Esslinger) and set #3 (Isaac Hirsch) are only 3.2min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #4 (Bella Rose) and set #5 (Stephen Holloman) are only 3.7min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 173,
+    "set_number": 5,
+    "comedian": "Stephen Holloman",
+    "start_seconds": 3621.0,
+    "similarity": 0.905,
+    "passed": true,
+    "clip_transcription": "Hi. I'm a punny comic and I went to New York and I was doing some puns and I had nine puns and then I added 11 more.",
+    "expected_start": "Hi, I'm a punny comic and I went to New York and I was doing some puns and I had nine puns and then I added 11 more and I called the joke 9-11. Thank you. And the joke crashed in Baron real bad. Thank"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "check": "set_count",
+    "episode": 151,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 151,
+    "passed": false,
+    "warnings": [
+      "40min gap between set #3 (Fatso Raven (Matthew Maloney)) and set #4 (Melissa Esslinger) \u2014 possible missed sets",
+      "26min gap between set #7 (Veerzy Triplets) and set #8 (Melissa Esslinger) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 151,
+    "passed": false,
+    "warnings": [
+      "set #4 (Melissa Esslinger) and set #5 (Dan Ramirez) are only 2.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  },
+  {
+    "check": "timecode",
+    "episode": 151,
+    "set_number": 3,
+    "comedian": "Fatso Raven (Matthew Maloney)",
+    "start_seconds": 1911.0,
+    "similarity": 0.897,
+    "passed": true,
+    "clip_transcription": "I just showed my pet scorpion to a friend of mine. And he asked me, I just showed a pet scorpion to my friend of mine and he asked me, is it poisonous? And I said no, not at all. But that's not what h",
+    "expected_start": "I just showed my pet scorpion to a friend of mine, and he asked me, is it poisonous? And I said, no, not at all. But that's not what he heard. Based off of what he did next, he must have heard me say,"
+  }
+]
