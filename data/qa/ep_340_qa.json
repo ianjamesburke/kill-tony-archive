@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 340,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 340,
+    "passed": false,
+    "warnings": [
+      "42min gap between set #9 (Jeffrey Eggleston) and set #10 (William Montgomery) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 340,
+    "passed": true,
+    "warnings": []
+  }
+]
