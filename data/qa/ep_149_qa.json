@@ -18,5 +18,16 @@
     "episode": 149,
     "passed": true,
     "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 149,
+    "set_number": 3,
+    "comedian": "Preacher Lawson",
+    "start_seconds": 1907.0,
+    "similarity": 0.857,
+    "passed": true,
+    "clip_transcription": "Yeah. Yes. Um I got an iPhone Plus 6 Plus, uh so big, it's too big. Like every time I swipe down my screen, I feel like I'm playing the prices right. That's how big it is. Let me see what's down my Fa",
+    "expected_start": "Yes, I got an iPhone Plus, 6 Plus. It's too big. It's too big. Like every time I swipe down my screen, I feel like I'm playing The Price is Right. That's how big it is. Let me see what's down my Faceb"
   }
 ]

@@ -1,0 +1,32 @@
+[
+  {
+    "check": "set_count",
+    "episode": 371,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 371,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 371,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "timecode",
+    "episode": 371,
+    "set_number": 6,
+    "comedian": "Brandon Garrison",
+    "start_seconds": 3263.0,
+    "similarity": 0.75,
+    "passed": true,
+    "clip_transcription": "All right. I hate the uh Sorry, my voice. I hate the the saying, \"You can be whatever you want to be when you grow up.\"",
+    "expected_start": "I hate the... Sorry, my voice. I hate the saying, you can be whatever you want to be when you grow up. For instance, I don't believe in police officers. Should be dwarfs. The other way around. Fuck. U"
+  }
+]
