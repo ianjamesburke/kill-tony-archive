@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 344,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 344,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 344,
+    "passed": false,
+    "warnings": [
+      "set #6 (Eli Halpern (Octavius Thunder)) and set #7 (Eli) are only 3.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]
