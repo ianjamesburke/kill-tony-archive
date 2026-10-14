@@ -1771,12 +1771,17 @@ def process_episode(client: genai.Client, ep: dict, model_override: str | None =
     episode_number = ep["episode_number"]
     url = ep["url"]
     log.info(f"{'='*60}")
-    log.info(f"Processing episode #{episode_number}: {ep['title']}")
     log.info(f"{'='*60}")
 
+    # Title comes from YouTube metadata: backlog rows can have NULL title
+    yt_info = get_youtube_info(url)
+    title = yt_info["title"]
+    if not title:
+        raise ValueError(f"Episode #{episode_number}: YouTube returned no title for {url}")
+    log.info(f"Processing episode #{episode_number}: {title}")
+
     # Validate before processing
-    title = ep.get("title", "")
-    duration = ep.get("duration_seconds")
+    duration = yt_info["duration"]
     if not is_valid_episode(title, duration):
         log.warning(f"  Skipping: not a valid episode (no ep# or under 1hr). Title: '{title}', Duration: {duration}s")
         update_episode_status(episode_number, "skipped")
@@ -1784,16 +1789,13 @@ def process_episode(client: genai.Client, ep: dict, model_override: str | None =
 
     update_episode_status(episode_number, "processing")
 
-    # Get YouTube stats
-    log.info("Fetching YouTube metadata...")
-    yt_info = get_youtube_info(url)
     def _fmt(v: object) -> str:
         return f"{v:,}" if isinstance(v, int) else "N/A"
     log.info(f"  Views: {_fmt(yt_info.get('view_count'))} | Likes: {_fmt(yt_info.get('like_count'))} | Comments: {_fmt(yt_info.get('comment_count'))}")
 
     # Extract guests from YouTube title
     log.info("Extracting guests from title...")
-    guests = extract_guests_from_title(client, ep.get("title", ""))
+    guests = extract_guests_from_title(client, title)
 
     # Download audio
     try:
