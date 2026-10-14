@@ -1,0 +1,24 @@
+[
+  {
+    "check": "set_count",
+    "episode": 301,
+    "set_count": 10,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 301,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 301,
+    "passed": false,
+    "warnings": [
+      "set #2 (Mikey McKernan) and set #3 (Kayla Keller) are only 1.9min apart \u2014 likely interview content or a cold-open clip mistaken for a set",
+      "set #7 (Josh Martin) and set #8 (Cor) are only 3.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

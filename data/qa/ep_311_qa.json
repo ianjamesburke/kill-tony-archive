@@ -1,0 +1,25 @@
+[
+  {
+    "check": "set_count",
+    "episode": 311,
+    "set_count": 8,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 311,
+    "passed": false,
+    "warnings": [
+      "41min gap between set #5 (Jamie Jakes) and set #6 (Jordan Mack) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 311,
+    "passed": false,
+    "warnings": [
+      "set #7 (Jordan Black) and set #8 (Ginny) are only 3.2min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]

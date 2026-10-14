@@ -1,0 +1,24 @@
+[
+  {
+    "check": "set_count",
+    "episode": 316,
+    "set_count": 7,
+    "min_expected": 8,
+    "passed": false,
+    "warning": "Only 7 sets found (expected >= 8). Pass 2 may have missed sets."
+  },
+  {
+    "check": "gaps",
+    "episode": 316,
+    "passed": false,
+    "warnings": [
+      "42min gap between set #4 (Lisa Shishakeha) and set #5 (William Montgomery) \u2014 possible missed sets"
+    ]
+  },
+  {
+    "check": "proximity",
+    "episode": 316,
+    "passed": true,
+    "warnings": []
+  }
+]

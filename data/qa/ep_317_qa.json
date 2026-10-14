@@ -1,0 +1,21 @@
+[
+  {
+    "check": "set_count",
+    "episode": 317,
+    "set_count": 9,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 317,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 317,
+    "passed": true,
+    "warnings": []
+  }
+]

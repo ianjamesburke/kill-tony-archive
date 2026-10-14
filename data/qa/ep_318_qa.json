@@ -1,0 +1,23 @@
+[
+  {
+    "check": "set_count",
+    "episode": 318,
+    "set_count": 12,
+    "min_expected": 8,
+    "passed": true
+  },
+  {
+    "check": "gaps",
+    "episode": 318,
+    "passed": true,
+    "warnings": []
+  },
+  {
+    "check": "proximity",
+    "episode": 318,
+    "passed": false,
+    "warnings": [
+      "set #4 (Gonzo) and set #5 (Drew Robertson) are only 3.5min apart \u2014 likely interview content or a cold-open clip mistaken for a set"
+    ]
+  }
+]
