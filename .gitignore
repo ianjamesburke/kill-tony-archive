@@ -62,3 +62,7 @@ __pycache__/
 # OpenClaw project context
 .openclaw.md
 .plexi-beta/
+
+# Local wtp config and backlog runner lock files
+.wtp.yml
+data/.backlog_runner*.lock
